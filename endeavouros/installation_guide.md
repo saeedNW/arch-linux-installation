@@ -54,6 +54,7 @@ Let's dive into the installation process and unleash the power of EndeavourOS on
     - [Enable and Start Touchegg Service](#enable-and-start-touchegg-service)
     - [Again Reboot System](#again-reboot-system)
     - [Configure Touché](#configure-touché)
+  - [Enable Terminal Password Feedback](#enable-terminal-password-feedback)
   - [Conclusion](#conclusion)
 
 ## Downloading EndeavourOS
@@ -775,6 +776,44 @@ After installation, open Touché and configure your desired multi-touch gestures
 ![Alt text](../arch_linux/images/20230505141350.png)
 
 ![Alt text](../arch_linux/images/20230505141415.png)
+
+## Enable Terminal Password Feedback
+
+To enable terminal password feedback, follow these steps:
+
+1. **Open Terminal**:
+
+   First, open a terminal on your system. You can do this by searching for "konsole" in the application launcher or by pressing `Ctrl + Alt + T` as a shortcut.
+
+2. **Open visudo**:
+
+   Type the following command in the terminal and press Enter. This will open the sudoers file using the `visudo` command, which ensures safe editing of the sudoers file.
+
+   ```bash
+   sudo visudo
+   ```
+
+3. **Find the Defaults Line**:
+
+   Inside the sudoers file, find the line that starts with "Defaults". This line specifies various default settings for sudo.
+
+4. **Add the pwfeedback Line**:
+
+   Add the following line after the "Defaults" line to enable password feedback:
+
+   ```bash
+   Defaults         pwfeedback
+   ```
+
+   This line tells sudo to display asterisks (\*) when typing your password.
+
+5. **Save and Exit**:
+
+   After adding the line, save and exit the editor. If you're using the nano text editor, press `Ctrl + X` to exit, then press `Y` to confirm changes, and `Enter` to save.
+
+6. **Test the Changes**:
+
+   Close and reopen a new terminal window to apply the changes. Now, when you use sudo and are prompted for your password, you should see asterisks (\*) as you type.
 
 ## Conclusion
 
