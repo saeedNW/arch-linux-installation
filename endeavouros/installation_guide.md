@@ -514,6 +514,8 @@ This command installs the following utilities:
 - `supergfxctl`: A tool for managing GPU settings and performance on Asus laptops.
 - `rog-control-center`: A control center application designed for Asus Republic of Gamers (ROG) laptops, providing centralized access to various system settings and features.
 
+**Note:** Add rog-control-center to your system startup applications
+
 ## Configure Nvidia Settings
 
 After installing Nvidia drivers and utilities like Optimus or ROG Control Center, you'll need to configure the Nvidia X Server Settings to optimize your graphics settings.
@@ -715,6 +717,8 @@ Install additional KDE applications to enhance functionality:
 - **noto-fonts-cjk:** Noto Sans CJK fonts for East Asian languages.
 - **noto-fonts-emoji:** Noto Color Emoji fonts for displaying emoji characters.
 - **noto-fonts-extra:** Additional Noto fonts for various languages and scripts.
+
+**Note:** Add yakuake to your system startup applications
 
 ## Configure Touchpad Multi-Touch Gestures
 

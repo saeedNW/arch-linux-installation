@@ -263,6 +263,8 @@ Install additional KDE applications to enhance functionality:
 
 These applications provide various tools and utilities to enhance your KDE desktop environment.
 
+**Note:** Add yakuake to your system startup applications
+
 ### Enable SDDM
 
 Enable SDDM, the KDE display manager, for login management:

@@ -1326,6 +1326,8 @@ Albert is a fast and flexible application launcher for Linux systems. It allows 
 paru -S albert
 ```
 
+**Note:** Add Albert to your system startup applications
+
 ### Albert Recommended Configs
 
 ![Alt text](./images/20230505135607.png)
@@ -1373,6 +1375,8 @@ Follow the guidance and instructions below to integrate Rclone with your Google 
 - [Rclone Google Drive Configuration documentation](https://rclone.org/drive/)
 - [StaempunkTV YouTube Guidance Video](https://www.youtube.com/watch?v=ff8Ogk8NIPU)
 - [Rclone browser GitHub Repository](https://github.com/kapitainsky/RcloneBrowser)
+
+**Note:** Add Rclone browser to your system startup applications
 
 ## Installing uGet
 
