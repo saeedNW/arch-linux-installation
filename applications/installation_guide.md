@@ -64,6 +64,8 @@ In this guide, I'll walk you through the installation process of essential appli
   - [Installing MongoDB-bin](#installing-mongodb-bin)
   - [Installing MongoDB Tools](#installing-mongodb-tools)
   - [Installing MongoDB Compass from AUR](#installing-mongodb-compass-from-aur)
+  - [Installing HandBrake](#installing-handbrake)
+  - [Installing DaVinci Resolve](#installing-davinci-resolve)
   - [Installing Albert Application Launcher](#installing-albert-application-launcher)
     - [Albert Recommended Configs](#albert-recommended-configs)
   - [Installing AnyDesk](#installing-anydesk)
@@ -1316,6 +1318,22 @@ MongoDB Compass is a graphical user interface (GUI) for MongoDB. It allows you t
 
 ```bash
 paru -S mongodb-compass
+```
+
+## Installing HandBrake
+
+HandBrake is an open-source video transcoder that allows you to convert video files into various formats. Here's how to install HandBrake on Arch Linux using the official repositories:
+
+```bash
+sudo pacman -S handbrake
+```
+
+## Installing DaVinci Resolve
+
+DaVinci Resolve is a professional video editing software with advanced features for color correction, visual effects, and audio post-production. Here's how to install DaVinci Resolve on Arch Linux:
+
+```bash
+paru -S davinci-resolve
 ```
 
 ## Installing Albert Application Launcher
