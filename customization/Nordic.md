@@ -611,6 +611,15 @@ Enhance your Konsole terminal with the following customizations:
    cp -f ~/Downloads/neofetch_config.conf ~/.config/neofetch/config.conf
    ```
 
+5. If you like to change the length of the path shown in `powerlevel10k` them in
+   konsole, you can change the values mentioned bellow in `~/.p10k.zsh` file
+
+   ```shell
+   nano ~/.p10k.zsh
+
+   # Change the value of POWERLEVEL9K_DIR_MAX_LENGTH to 3
+   ```
+
 ## Yakuake Customization
 
 Elevate your Yakuake terminal experience with the following customizations:
