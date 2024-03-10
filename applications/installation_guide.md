@@ -70,7 +70,6 @@ In this guide, I'll walk you through the installation process of essential appli
     - [Albert Recommended Configs](#albert-recommended-configs)
   - [Installing AnyDesk](#installing-anydesk)
   - [Installing Rclone \& Rclone Browser](#installing-rclone--rclone-browser)
-    - [Rclone Google Drive Configuration](#rclone-google-drive-configuration)
   - [Installing uGet](#installing-uget)
     - [Install uGet](#install-uget)
     - [integration](#integration)
@@ -1376,25 +1375,30 @@ Rclone is a command-line program to manage files on cloud storage services and r
    sudo pacman -S rclone
    ```
 
-2. **Configure Rclone**:
+2. **Install Rclone Browser**:
 
-   After installing Rclone, you'll need to configure it to connect to your cloud storage services or remote servers. You can do this by running:
+   Simple cross platform GUI for rclone command line tool. You can install Rclone Browser using the Arch User Repository (AUR). Here's how:
 
    ```bash
-   rclone config
+   paru -S rclone-browser
    ```
 
-   Follow the on-screen prompts to set up remote connections. You'll need to provide details such as the name of the remote, type of storage, and authentication credentials.
+   Config Rclone Browser to close to systemtry and add it to your system startup applications.
 
-### Rclone Google Drive Configuration
+3. **Configure Rclone**:
 
-Follow the guidance and instructions below to integrate Rclone with your Google Drive.
+   After installing Rclone and Rclone Browser, you'll need to configure it to connect to your cloud storage services such as google drive. In order to do that, first open Rclone Browser and click on the **Config** button at the bottom left side of the application. Now you have to follow the on-screen prompts to set up remote connections. You'll need to provide details such as the name of the remote, type of storage, and authentication credentials.
 
-- [Rclone Google Drive Configuration documentation](https://rclone.org/drive/)
-- [StaempunkTV YouTube Guidance Video](https://www.youtube.com/watch?v=ff8Ogk8NIPU)
-- [Rclone browser GitHub Repository](https://github.com/kapitainsky/RcloneBrowser)
+   - The first question is if you want to create a new remote? Type **n** and press enter.
+   - After that you'll be prompted to choose a name for your remote. Type your desired name such as **google**.
+   - In the next step, you need to choose a type for your remote, here we use **Google Drive**, find the corresponding number and enter it as input.
+   - the Two next steps would ask you to input your google application's **client id** and **client secret**, you can leave them empty.
+   - Now you need to give rclone access to the files in your google drive, choose the access level you prefer.
+   - At the next prompt you can choose which folder rclone will sync with. Leave it blank and press enter for full access
+   - At the next prompt you will be asked if you want to open advanced settings, type **n** and press enter.
+   - At the end you will be asked to login to your google drive using your browser, type **y** and press enter.
 
-**Note:** Add Rclone browser to your system startup applications
+   You have now installed and configured everything you need to sync the cloud storage service with your system. To use this service, just open the Rclone Browser program and double-click on the service you want to synchronize. After it opens, select the mount option from the action menu and select the desired directory where you want the data to be synchronized.
 
 ## Installing uGet
 
