@@ -660,7 +660,7 @@ This command verifies that Docker Compose has been successfully installed on you
 CPUFetch is a simple yet effective command-line tool that displays detailed information about your CPU. It provides a quick overview of your CPU's architecture, model, and various other details. Here's how you can install CPUFetch on your system:
 
 ```bash
-sudo pacman -S cpufetch
+paru -S cpufetch
 ```
 
 ## Installing Neofetch
