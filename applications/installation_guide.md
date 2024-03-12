@@ -603,7 +603,7 @@ Enabling and starting the Docker service ensures that Docker starts automaticall
 ### Step 3: Verify Docker Installation
 
 ```bash
-docker --version
+sudo docker --version
 ```
 
 This command verifies that Docker has been successfully installed on your system by displaying the installed Docker version.
@@ -614,9 +614,8 @@ To avoid using `sudo` every time you run a Docker command, you can add your user
 
 ```bash
 sudo usermod -aG docker $USER
+newgrp docker
 ```
-
-After running this command, log out and log back in or restart your system for the changes to take effect.
 
 ### Step 5: Verify Docker Installation (Non-sudo)
 
