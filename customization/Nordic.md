@@ -1,12 +1,17 @@
-# KDE Plasma Nordic Customization
+# KDE Plasma Nordic Customization (Deprecated)
 
 This section provides guidance on customizing KDE Plasma desktop environments, drawing inspiration from a tutorial on the [LinuxScoop](https://www.youtube.com/@linuxscoop) YouTube channel. The original video can be found [here](https://www.youtube.com/watch?list=PLKopOf5__2tj0aVUX68Kyr9rNltrLTWDq&v=2GYT7BK41zk&feature=youtu.be).
 
 Please note that as the video is 2 years old, some themes, icons, and other elements may no longer be available or may not function as intended due to updates. For this guide, I've provided links to download the older versions of these files that were confirmed to work well together.
 
+## Notice of obsolescence
+
+Due to the major changes in **Plasma 6**, some plugins, software and modules used in this guide can no longer be installed and used, as a result of which this guide is outdated and can no longer be implemented.
+
 ## Table of Contents
 
-- [KDE Plasma Nordic Customization](#kde-plasma-nordic-customization)
+- [KDE Plasma Nordic Customization (Deprecated)](#kde-plasma-nordic-customization-deprecated)
+  - [Notice of obsolescence](#notice-of-obsolescence)
   - [Table of Contents](#table-of-contents)
   - [Final Result](#final-result)
   - [Installing Plasma Customization Saver Widget](#installing-plasma-customization-saver-widget)
