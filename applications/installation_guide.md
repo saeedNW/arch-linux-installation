@@ -54,8 +54,8 @@ In this guide, I'll walk you through the installation process of essential appli
     - [Custom Snippets](#custom-snippets)
     - [Theme](#theme)
     - [Custom Color Schema](#custom-color-schema)
-    - [Custom Shortcuts](#custom-shortcuts)
     - [Recommended Settings](#recommended-settings)
+    - [Custom Shortcuts](#custom-shortcuts)
   - [Installing Postman](#installing-postman)
   - [Installing WhatsApp Nativefier](#installing-whatsapp-nativefier)
   - [Installing RedisInsight](#installing-redisinsight)
@@ -705,32 +705,32 @@ paru -S visual-studio-code-bin
 
 ### Recommended Plugins
 
-| Plugin Name                    | Plugin Name                     | Plugin Name               | Plugin Name                    | Plugin Name                              | Plugin Name                |
-| ------------------------------ | ------------------------------- | ------------------------- | ------------------------------ | ---------------------------------------- | -------------------------- |
-| Git lens                       | Git Graph                       | HTML CSS Support          | Ignore files                   | Atom Material Icons                      | Bash Beautify              |
-| Bash IDE                       | Docker                          | better comments           | EJS language support           | GraphQL                                  | Turbo Console Log          |
-| Log File Highlighter           | Markdown Table                  | Markdown Table Prettifier | Material Theme                 | Rainbow Brackets                         | CodeSnap                   |
-| JavaScript (ES6) code snippets | node-snippets                   | REST Client               | Vscode NestJs Snippets         | YAML                                     | advanced-new-file          |
-| Nested Comments                | Prettier                        | Auto Rename Tag           | Code Spell Checker             | Markdown All in One                      | Auto-Open Markdown Preview |
-| Azura Repos                    | Dev Containers                  | better folding            | Draw.io Integration            | Error Lens                               | ESLint                     |
-| Explorer Exclude               | GitHub Repositories             | Import Cost               | JavaScript (ES6) code snippets | lazygit                                  | Live Server                |
-| Markdownlint                   | Markdown Preview Github Styling | node-snippets             | Postman                        | Pretty TypeScript Errors                 | Project Manager            |
-| python                         | Python Debugger                 | Random Everything         | Remote - SSH                   | Remote -SSH: Editing Configuration Files | Remote - Tunnels           |
-| Remote Development             | Remote Explorer                 | Remote Repositories       | REST Client                    | Test Adapter Converter                   | Thunder Client             |
-| Todo Tree                      | Toggle Quotes                   | vscode-proto3             |                                |                                          |                            |
+| Plugin Name          | Plugin Name              | Plugin Name                               | Plugin Name                  | Plugin Name               | Plugin Name      |
+| -------------------- | ------------------------ | ----------------------------------------- | ---------------------------- | ------------------------- | ---------------- |
+| advanced-new-file    | Atom Material Icons      | Auto Rename Tag                           | Auto-Open Markdown Preview   | Azura Repos               | Bash Beautify    |
+| Bash IDE             | better comments          | better folding                            | Code Spell Checker           | CodeSnap                  | Codiumate        |
+| Dev Containers       | Docker                   | Draw.io Integration                       | EJS language support         | Error Lens                | ESLint           |
+| Explorer Exclude     | Git Graph                | GitHub Repositories                       | Git lens                     | GraphQL                   | HTML CSS Support |
+| Ignore files         | Import Cost              | JavaScript (ES6) code snippets            | lazygit                      | Live Server               | Live Share       |
+| Log File Highlighter | Markdown All in One      | Markdown Preview Github Styling           | Markdown Table               | Markdown Table Prettifier | Markdownlint     |
+| Material Theme       | Nested Comments          | node-snippets                             | Persian - Code Spell Checker | Postman                   | Prettier         |
+| Prettify Json        | Pretty TypeScript Errors | Project Manager                           | python                       | Python Debugger           | Rainbow Brackets |
+| Random Everything    | Remote - SSH             | Remote - SSH: Editing Configuration Files | Remote - Tunnels             | Remote Development        | Remote Explorer  |
+| Remote Repositories  | REST Client              | Select Line Status Bar                    | Test Adapter Converter       | Thunder Client            | Todo Tree        |
+| Toggle Quotes        | Turbo Console Log        | Vscode NestJs Snippets                    | vscode-proto3                | YAML                      |                  |
 
 ### Custom Snippets
 
 ```json
 {
-	"Node Class Method": {
+	"node class method": {
 		"prefix": "ncm",
 		"body": [
 			"/**",
 			"* $1",
-			"* @param req express request",
-			"* @param res express response",
-			"* @param next express next function",
+			"* @param {Object} req express request",
+			"* @param {Object} res express response",
+			"* @param {function} next express next function",
 			"* @returns {Promise<void>}",
 			"*/",
 			"async $2(req, res, next) {",
@@ -748,7 +748,7 @@ paru -S visual-studio-code-bin
 
 ```json
 {
-	"Simple try/catch Block": {
+	"simple try/catch block": {
 		"prefix": "tc",
 		"body": ["try {", "\t$2", "} catch (err) {", "\t$1", "}"],
 		"description": "Simple try/catch block"
@@ -758,7 +758,7 @@ paru -S visual-studio-code-bin
 
 ```json
 {
-	"Simple try/catch/log Block": {
+	"simple try/catch/log block": {
 		"prefix": "tcl",
 		"body": ["try {", "\t$1", "} catch (err) {", "\tconsole.error(err);", "}"],
 		"description": "Simple try/catch/log block"
@@ -768,7 +768,7 @@ paru -S visual-studio-code-bin
 
 ```json
 {
-	"Node try/catch/next Block": {
+	"node try/catch/next block": {
 		"prefix": "tcn",
 		"body": ["try {", "\t$1", "} catch (err) {", "\tnext(err);", "}"],
 		"description": "Node try/catch/next block"
@@ -778,7 +778,7 @@ paru -S visual-studio-code-bin
 
 ```json
 {
-	"Async Function": {
+	"async function": {
 		"prefix": "asf",
 		"body": ["async function $1($2) {", "\t$3", "}"],
 		"description": "Async function"
@@ -788,7 +788,7 @@ paru -S visual-studio-code-bin
 
 ```json
 {
-	"Test describe Block": {
+	"test describe block": {
 		"prefix": "desc",
 		"body": ["/** $1 */", "describe('$2', function () {", "\t$3", "});"],
 		"description": "Inserts describe() block"
@@ -798,7 +798,7 @@ paru -S visual-studio-code-bin
 
 ```json
 {
-	"Test it Block": {
+	"test it block": {
 		"prefix": "it",
 		"body": [
 			"/**",
@@ -815,7 +815,7 @@ paru -S visual-studio-code-bin
 
 ```json
 {
-	"Node Class Controller": {
+	"node class controller": {
 		"prefix": "nodeclass",
 		"body": [
 			"/** import main controller */",
@@ -839,37 +839,46 @@ paru -S visual-studio-code-bin
 
 ```json
 {
-"Express Router": {
+	"express router": {
 		"prefix": "erouter",
 		"body": [
 			"/** import express module */",
 			"const express = require('express');",
 			"/** create express Router instance */",
 			"const $1 = express.Router();\n",
-			"$2\n"
+			"$2\n",
 			"/** export router */",
 			"module.exports = {",
-				"\t$1",
+			"\t$1",
 			"}"
 		],
 		"description": "generat express router"
 	},
-}
+```
+
+```json
+	"custom module require":{
+		"prefix": "rec",
+		"body": [
+			"const { $2 } = require(\"$1\");"
+		],
+		"description": "custom module require"
+	}
 ```
 
 ```json
 {
-	"Multi-line Comment": {
+	"multi line comment": {
 		"prefix": "mcom",
-		"body": ["/**", "* $1", "*/"],
+		"body": ["/**", " * $1", " */"],
 		"description": "create multi-line comment"
 	},
-	"Single-line Comment": {
+	"single line comment": {
 		"prefix": "scom",
 		"body": ["/** $1 */"],
 		"description": "create single-line comment"
 	},
-	"Single-line Comment With Brake": {
+	"single line comment with brake": {
 		"prefix": "scome",
 		"body": ["/** $1 */\n"],
 		"description": "create single-line comment with brake"
@@ -882,6 +891,8 @@ paru -S visual-studio-code-bin
 - Material Theme Ocean
 
 ### Custom Color Schema
+
+You can find the usage of this color scheme in [VSCode Recommended Settings section](#recommended-settings)
 
 ```json
 {
@@ -927,6 +938,109 @@ paru -S visual-studio-code-bin
 			}
 		]
 	}
+}
+```
+
+### Recommended Settings
+
+```json
+{
+	/**** START: General ***********/
+	"RainbowBrackets.depreciation-notice": false,
+	"security.workspace.trust.untrustedFiles": "open",
+	"terminal.integrated.env.linux": {},
+	"files.autoSave": "afterDelay",
+	"errorLens.enabledDiagnosticLevels": ["error", "warning"],
+	"explorer.compactFolders": false,
+	"explorer.autoReveal": false,
+	/*********** END: General ****/
+
+	/**** START: Window ***********/
+	"window.titleBarStyle": "custom",
+	"window.menuBarVisibility": "toggle",
+	/*********** END: Window ****/
+
+	/**** START: Workbench ***********/
+	"workbench.iconTheme": "a-file-icon-vscode",
+	"workbench.layoutControl.enabled": false,
+	"workbench.productIconTheme": "a-file-icon-vscode-product-icon-theme",
+	// "workbench.editor.enablePreview": false,
+	"workbench.colorCustomizations": {
+		"[Material Theme Ocean]": {}
+	},
+	"workbench.colorTheme": "Material Theme Ocean",
+	/*********** END: Workbench ****/
+
+	/**** START: Git ***********/
+	"git.autofetch": true,
+	/*********** END: Git ****/
+
+	/**** START: Editor ***********/
+	"editor.fontLigatures": true,
+	"editor.mouseWheelZoom": true,
+	"editor.formatOnType": true,
+	"editor.formatOnPaste": true,
+	"editor.insertSpaces": false,
+	"editor.lineHeight": 2,
+	"editor.tabSize": 4,
+	"editor.fontFamily": "'Fira Code', monospace",
+	"editor.indentSize": "tabSize",
+	"editor.wordBasedSuggestions": "matchingDocuments",
+	"editor.cursorSmoothCaretAnimation": "on",
+	"editor.tokenColorCustomizations": {
+		"textMateRules": [
+			{
+				"name": "string color",
+				"scope": ["string"],
+				"settings": {
+					"foreground": "#fdee00" // change this COLOR
+				}
+			},
+			{
+				"name": "variable color",
+				"scope": ["variable"],
+				"settings": {
+					"foreground": "#ffffee" // change this COLOR
+				}
+			},
+			{
+				"name": "parameter color",
+				"scope": ["variable.parameter"],
+				"settings": {
+					"foreground": "#ffd390" // change this COLOR
+				}
+			}
+		]
+	},
+	/*********** END: Editor ****/
+
+	/**** START: Prettier ***********/
+	"prettier.useTabs": true,
+	"prettier.endOfLine": "auto",
+	/*********** END: Prettier ****/
+
+	/**** START: cSpell ***********/
+	"cSpell.userWords": ["fastify"],
+	"cSpell.language": "en,fa",
+	/*********** END: cSpell ****/
+
+	/**** START: Selected line ***********/
+	"selectline.alignment": "right",
+	/*********** END: Selected line ****/
+
+	/**** START: Formatter ***********/
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[proto3]": {
+		"editor.defaultFormatter": "zxh404.vscode-proto3"
+	},
+	"[shellscript]": {
+		"editor.defaultFormatter": "shakram02.bash-beautify"
+	},
+	"todo-tree.highlights.enabled": false
+	/*********** END: Formatter ****/
 }
 ```
 
@@ -1111,8 +1225,22 @@ paru -S visual-studio-code-bin
 	//? ***** START: Collapse explorer *****
 	{
 		//* Set new keybinding for Collapse explorer
-		"key": "ctrl+shift+q",
+		"key": "alt+q",
 		"command": "workbench.files.action.collapseExplorerFolders"
+	},
+
+	// //? ***** START: Sidebar Explorer Focus *****
+	{
+		//* Remove old keybinding for Sidebar Explorer Focus
+		"key": "ctrl+shift+e",
+		"command": "-workbench.view.explorer",
+		"when": "viewContainer.workbench.view.explorer.enabled"
+	},
+	{
+		//* Set new keybinding for Sidebar Explorer Focus
+		"key": "alt+e",
+		"command": "workbench.view.explorer",
+		"when": "viewContainer.workbench.view.explorer.enabled"
 	},
 
 	//? ***** START: Focus management *****
@@ -1152,50 +1280,6 @@ paru -S visual-studio-code-bin
 		"command": "workbench.action.focusRightGroup"
 	}
 ]
-```
-
-### Recommended Settings
-
-```json
-{
-	/**** START: General ***********/
-	"files.autoSave": "afterDelay",
-	"errorLens.enabledDiagnosticLevels": ["error", "warning"],
-	"explorer.compactFolders": false,
-	"explorer.autoReveal": false,
-	/*********** END: General ****/
-
-	/**** START: Workbench ***********/
-	"workbench.iconTheme": "a-file-icon-vscode",
-	"workbench.productIconTheme": "a-file-icon-vscode-product-icon-theme",
-	"workbench.colorCustomizations": {
-		"[Material Theme Ocean]": {}
-	},
-	"workbench.colorTheme": "Material Theme Ocean",
-	/*********** END: Workbench ****/
-
-	/**** START: Git ***********/
-	"git.autofetch": true,
-	/*********** END: Git ****/
-
-	/**** START: Editor ***********/
-	"editor.fontLigatures": true,
-	"editor.mouseWheelZoom": true,
-	"editor.formatOnType": true,
-	"editor.formatOnPaste": true,
-	"editor.insertSpaces": false,
-	"editor.lineHeight": 2,
-	"editor.tabSize": 4,
-	"editor.fontFamily": "'Fira Code', monospace",
-	"editor.indentSize": "tabSize",
-	"editor.wordBasedSuggestions": "matchingDocuments",
-	/*********** END: Editor ****/
-
-	/**** START: Prettier ***********/
-	"prettier.useTabs": true,
-	"prettier.endOfLine": "auto"
-	/*********** END: Prettier ****/
-}
 ```
 
 ## Installing Postman
