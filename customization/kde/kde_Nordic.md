@@ -226,15 +226,15 @@ To kickstart your customization journey, you'll need to download the following f
 
 4. **Nordic Folders Theme:**
 
-   - Download the Nordic Folders theme from its original source [here](https://www.gnome-look.org/p/1267246). Please note that an older version is provided due to recent updates affecting its functionality. You can access the older version [here](./Files/Nordic-Folders.tar.xz).
+   - Download the Nordic Folders theme from its original source [here](https://www.gnome-look.org/p/1267246). Please note that an older version is provided due to recent updates affecting its functionality. You can access the older version [here](./files/Nordic-Folders.tar.xz).
 
 5. **Nordic Folders Icon Pack:**
 
-   - While the Nordic Folders icon pack is no longer maintained, you can still download the older version [here](./Files/Nordic-Folders-icon-pack.tar.xz) to complement your theme.
+   - While the Nordic Folders icon pack is no longer maintained, you can still download the older version [here](./files/Nordic-Folders-icon-pack.tar.xz) to complement your theme.
 
 6. **Zafiro Icons Dark Black Icon Pack:**
 
-   - Obtain the Zafiro Icons Dark Black icon pack from its original source [here](https://www.gnome-look.org/p/1209330). Additionally, an older version is provided for compatibility purposes, accessible [here](./Files/Zafiro-Icons-Dark-Black-f.tar.xz).
+   - Obtain the Zafiro Icons Dark Black icon pack from its original source [here](https://www.gnome-look.org/p/1209330). Additionally, an older version is provided for compatibility purposes, accessible [here](./files/Zafiro-Icons-Dark-Black-f.tar.xz).
 
 ### Extracting Downloaded Files
 
@@ -406,10 +406,10 @@ Follow these steps to set up the Nordic-Darker theme fot Kvantum:
 To set the "mountain" image as your desktop wallpaper, follow these steps:
 
 1. **Set Wallpaper:**
-   - Download the [mountain](./Files/mountain-BG.jpg) image by clicking on the link.
+   - Download the [mountain](../general//mountain-BG.jpg) image by clicking on the link.
    - Use your system's wallpaper settings to set the downloaded image as your wallpaper.
 
-![mountain](./Files/mountain-BG.jpg)
+![mountain](../general//mountain-BG.jpg)
 
 ## Installing and Configuring Widgets
 
@@ -609,7 +609,7 @@ Enhance your Konsole terminal with the following customizations:
 4. **Replace Neofetch Config File:**
    Replace the Neofetch config file with the following one:
 
-   [Neofetch Custom Config](./Files/neofetch_config.conf)
+   [Neofetch Custom Config](../general//neofetch_config.conf)
 
    ```shell
    cp ~/.config/neofetch/config.conf ~/.config/neofetch/config.conf-backup
@@ -682,7 +682,7 @@ Enhance your Dolphin file manager experience with these customization options:
 
    After disabling this feature you'll be able to change the home page's background without changing the theme
 
-   ![Chrome Background](./Files/snow-mountains.jpg)
+   ![Chrome Background](../general//snow-mountains.jpg)
 
 ## Save New Desktop Configurations
 

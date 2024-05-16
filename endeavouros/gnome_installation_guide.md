@@ -16,12 +16,9 @@ Let's dive into the installation process and unleash the power of EndeavourOS on
     - [Using Balena Etcher](#using-balena-etcher)
     - [Using Linux `dd` Command](#using-linux-dd-command)
   - [Installation Process](#installation-process)
-  - [Fix Screen Scale](#fix-screen-scale)
   - [Enable Multilib Repository](#enable-multilib-repository)
   - [Install Core Applications (Skip Reinstallation)](#install-core-applications-skip-reinstallation)
     - [Install Node.js and npm](#install-nodejs-and-npm)
-    - [Install Network Manager Applet](#install-network-manager-applet)
-    - [Install Wireless Tools](#install-wireless-tools)
   - [Grant "wheel" Group Members "sudo" Privileges](#grant-wheel-group-members-sudo-privileges)
     - [Edit sudoers File](#edit-sudoers-file)
   - [Install Paru Package Manager](#install-paru-package-manager)
@@ -54,7 +51,30 @@ Let's dive into the installation process and unleash the power of EndeavourOS on
     - [Enable and Start Touchegg Service](#enable-and-start-touchegg-service)
     - [Again Reboot System](#again-reboot-system)
     - [Configure Touché](#configure-touché)
-  - [Enable Terminal Password Feedback](#enable-terminal-password-feedback)
+  - [Gnome Shell Extensions](#gnome-shell-extensions)
+    - [Extensions Requirements](#extensions-requirements)
+      - [Gnome Browser Connector Installation](#gnome-browser-connector-installation)
+      - [Browser Integration Extension](#browser-integration-extension)
+      - [Gnome Extensions Manager Application](#gnome-extensions-manager-application)
+    - [Recommended Extensions](#recommended-extensions)
+      - [ddterm](#ddterm)
+      - [Forge](#forge)
+      - [Quick Setting Tweaker](#quick-setting-tweaker)
+      - [AppIndicator](#appindicator)
+      - [Desktop Cube](#desktop-cube)
+      - [Rounded Window Corners](#rounded-window-corners)
+      - [Blur my Shell](#blur-my-shell)
+      - [Caffeine](#caffeine)
+      - [Custom Hot Corners](#custom-hot-corners)
+      - [Clipboard Indicator](#clipboard-indicator)
+      - [Coverflow Alt-Tab](#coverflow-alt-tab)
+      - [Dash to Dock](#dash-to-dock)
+      - [Hide Top Bar](#hide-top-bar)
+      - [Just Perfection](#just-perfection)
+      - [Privacy Quick Settings](#privacy-quick-settings)
+      - [Rounded Corners](#rounded-corners)
+      - [User Themes](#user-themes)
+      - [Wiggle](#wiggle)
   - [Conclusion](#conclusion)
 
 ## Downloading EndeavourOS
@@ -131,33 +151,6 @@ For the remaining installation steps, the guide linked below provides comprehens
 
 For detailed step-by-step guidance during the installation process, refer to the following comprehensive guide: [How to Install EndeavourOS: Step-by-Step Guide](https://www.debugpoint.com/endeavouros-install-guide/)
 
-## Fix Screen Scale
-
-In some instances, after installing EndeavourOS, you may encounter a screen scaling issue where everything appears oversized. This problem stems from a bug in the X Window System (X11). Below, I've outlined the simplest solution I found in a [Reddit post](https://www.reddit.com/r/kde/comments/qqi9z8/comment/hk1pwv4/?utm_source=reddit&utm_medium=web2x&context=3).
-
-1. To resolve this issue, begin by opening the `/etc/sddm.conf` file in an editor.
-
-   ```bash
-   sudo nano /etc/sddm.conf
-   ```
-
-2. Add the following line to the end of the file to force X11's DPI to be 96:
-
-   ```text
-   [X11]
-   ServerArguments=-nolisten tcp -dpi 96
-   ```
-
-3. Reboot your PC to apply the changes.
-
-   ```bash
-   sudo reboot
-   ```
-
-Please note that after signing back into your system, the taskbar may still appear large, but other parts of the interface should display correctly. To adjust the taskbar size, right-click on it, enter edit mode, and modify the taskbar height.
-
-Additionally, if you change the system's SDDM from the system settings, you may encounter this issue again. If so, repeat the steps above to rectify the problem.
-
 ## Enable Multilib Repository
 
 To enable the multilib repository, uncomment the "multilib" header and repository in the /etc/pacman.conf file:
@@ -179,24 +172,6 @@ Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine, and npm 
 ```bash
 sudo pacman -S nodejs npm
 ```
-
-### Install Network Manager Applet
-
-The Network Manager Applet provides a graphical interface to manage network connections on your system. It allows you to easily configure and monitor your wired and wireless network connections.
-
-```bash
-sudo pacman -S network-manager-applet
-```
-
-### Install Wireless Tools
-
-Wireless Tools is a collection of utilities for configuring and monitoring wireless network interfaces. These tools are essential for managing wireless connections and troubleshooting wireless network issues.
-
-```bash
-sudo pacman -S wireless_tools
-```
-
-By installing these core applications, you ensure that your system is equipped with the necessary tools for networking and development tasks.
 
 ## Grant "wheel" Group Members "sudo" Privileges
 
@@ -645,8 +620,8 @@ After installing the Nvidia driver, there is a patch available to address the FB
 cd ~/Downloads
 git clone https://github.com/keylase/nvidia-patch.git
 cd nvidia-patch
-bash ./patch.sh
-bash ./patch-fbc.sh
+sudo bash ./patch.sh
+sudo bash ./patch-fbc.sh
 ```
 
 ## Enable Bluetooth
@@ -687,38 +662,16 @@ sudo systemctl start --now bluetooth.service
 
 ### Install Additional Applications (Skip Reinstallation)
 
-Install additional KDE applications for enhanced functionality:
+Install additional Gnome applications for enhanced functionality:
 
 ```bash
-sudo pacman -S unrar dolphin-plugins partitionmanager kolourpaint yakuake kaccounts-providers gnome-sound-recorder \
-gedit gedit-plugins android-tools vlc thunderbird kdeplasma-addons kdegraphics-mobipocket kdegraphics-thumbnailers \
-kdesdk-thumbnailers kio-gdrive noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
+sudo pacman -S gnome-sound-recorder android-tools vlc thunderbird
 ```
 
-Install additional KDE applications to enhance functionality:
-
-- **unrar:** A utility used to extract files from RAR archives.
-- **dolphin-plugins:** Additional plugins and extensions for the Dolphin file manager.
-- **partitionmanager:** A graphical utility for managing disk partitions.
-- **kolourpaint:** A simple painting application similar to Microsoft Paint.
-- **yakuake:** A drop-down terminal emulator for KDE.
-- **kaccounts-providers:** Authentication providers for KDE applications.
 - **gnome-sound-recorder:** A simple sound recording application.
-- **gedit:** The default text editor for the GNOME desktop environment.
-- **gedit-plugins:** Additional plugins for enhancing the functionality of Gedit.
 - **android-tools:** Command-line tools for interacting with Android devices.
 - **vlc:** A popular multimedia player capable of playing various audio and video formats.
 - **thunderbird:** An email client developed by Mozilla.
-- **kdeplasma-addons:** Additional addons and widgets for the KDE Plasma desktop environment.
-- **kdegraphics-mobipocket:** Libraries and plugins for handling Mobipocket files in KDE applications.
-- **kdegraphics-thumbnailers:** Thumbnail generators for various image formats in KDE applications.
-- **kdesdk-thumbnailers:** Thumbnail generators for source code files in KDE applications.
-- **kio-gdrive:** A KIO slave for accessing Google Drive files in KDE applications.
-- **noto-fonts-cjk:** Noto Sans CJK fonts for East Asian languages.
-- **noto-fonts-emoji:** Noto Color Emoji fonts for displaying emoji characters.
-- **noto-fonts-extra:** Additional Noto fonts for various languages and scripts.
-
-**Note:** Add yakuake to your system startup applications
 
 ## Configure Touchpad Multi-Touch Gestures
 
@@ -781,43 +734,248 @@ After installation, open Touché and configure your desired multi-touch gestures
 
 ![Alt text](../arch_linux/images/20230505141415.png)
 
-## Enable Terminal Password Feedback
+## Gnome Shell Extensions
 
-To enable terminal password feedback, follow these steps:
+Gnome shell extensions are small pieces of code written by third party developers that modify the way GNOME works. (If you are familiar with Chrome Extensions or Firefox Addons, GNOME Shell extensions are similar to them.)
 
-1. **Open Terminal**:
+Since extensions are created outside of the normal GNOME design and development process, they are supported by their authors, rather than by the GNOME community. Some features first implemented as extensions might find their way into future versions of GNOME.
 
-   First, open a terminal on your system. You can do this by searching for "konsole" in the application launcher or by pressing `Ctrl + Alt + T` as a shortcut.
+In this section, we will install several useful and essential extensions aimed at enhancing productivity, performance, and customization within the Gnome desktop environment.
 
-2. **Open visudo**:
+You can find a full guide of how to use gnome extensions [here](https://www.baeldung.com/linux/gnome-shell-extension) if you needed any more information
 
-   Type the following command in the terminal and press Enter. This will open the sudoers file using the `visudo` command, which ensures safe editing of the sudoers file.
+### Extensions Requirements
 
-   ```bash
-   sudo visudo
-   ```
+To effectively use and manage GNOME Shell extensions, certain requirements must be met. Here, we'll outline these requirements and how to install and activate them.
 
-3. **Find the Defaults Line**:
+#### Gnome Browser Connector Installation
 
-   Inside the sudoers file, find the line that starts with "Defaults". This line specifies various default settings for sudo.
+The GNOME Browser Connector is an extension compatible with browsers like Google Chrome, Firefox, Vivaldi, and Opera. It acts as a link between these browsers and the GNOME Shell, facilitating integration with the GNOME Shell and its extension repository. In simple terms, it's a native connector enabling seamless interaction between your browser and extensions available on [extensions.gnome.org](https://extensions.gnome.org/).
 
-4. **Add the pwfeedback Line**:
+To install the GNOME Browser Connector, simply use the command below.
 
-   Add the following line after the "Defaults" line to enable password feedback:
+```shell
+sudo pacman -S gnome-browser-connector
+```
 
-   ```bash
-   Defaults         pwfeedback
-   ```
+For additional information or guidance on installing the package on other Linux distributions, refer to the instructions provided in the [GNOME Wiki](https://wiki.gnome.org/Projects/GnomeShellIntegration/Installation).
 
-   This line tells sudo to display asterisks (\*) when typing your password.
+#### Browser Integration Extension
 
-5. **Save and Exit**:
+To utilize the complete features of the GNOME Browser Connector and enable extension management from your browser, you must first install the GNOME Shell Integration extension. You can easily do this by opening and installing the extension for your preferred browser using one of the following links:
 
-   After adding the line, save and exit the editor. If you're using the nano text editor, press `Ctrl + X` to exit, then press `Y` to confirm changes, and `Enter` to save.
+- [Chrome GNOME Shell integration](https://chromewebstore.google.com/detail/gphhapmejobijbbhgpjhcjognlahblep)
+- [Firefox GNOME Shell integration](https://addons.mozilla.org/en-US/firefox/addon/gnome-shell-integration/)
 
-6. **Test the Changes**:
+#### Gnome Extensions Manager Application
 
-   Close and reopen a new terminal window to apply the changes. Now, when you use sudo and are prompted for your password, you should see asterisks (\*) as you type.
+Gnome extensions manager is a simple native application which will give you full control over all installed extensions and their setting. This application will be installed on your system by default during the OS installation process.
+
+![Alt text](./images/1715854635951.png)
+
+### Recommended Extensions
+
+Note #1: Some of the extensions listed might become incompatible with the GNOME version at the time of installing a new operating system. Keep in mind that if any of the mentioned extensions prove incompatible, you can search the Arch Repository and Arch User Repository for a functional version or an alternative.
+
+#### ddterm
+
+The DDTerm extension for GNOME introduces a convenient drop-down terminal directly accessible from the desktop. It provides users with quick access to a terminal window without the need to open a separate application.
+
+You can install this extension from the GNOME Extensions website.
+
+- [Gnome Extensions](https://extensions.gnome.org/extension/3780/ddterm/)
+
+Recommended config:
+
+![Alt text](./images/2024-05-16-22-59-04.png)
+![Alt text](./images/2024-05-16-22-59-12.png)
+![Alt text](./images/2024-05-16-23-00-34.png)
+
+#### Forge
+
+Forge is a versatile GNOME Shell extension that serves as both a tiling and window manager, offering seamless organization and navigation of your desktop environment. In addition to its tiling capabilities, Forge provides quick access to development tools and utilities, enhancing productivity for coding and software development tasks. For documentation and further information, visit the project's [GitHub repository](https://github.com/forge-ext/forge).
+
+You can install this extension from either the GNOME Extensions website or the Arch User Repository.
+
+- [Gnome Extensions (Recommended)](https://extensions.gnome.org/extension/4481/forge/)
+- [Arch User Repository](https://aur.archlinux.org/packages/gnome-shell-extension-forge)
+
+#### Quick Setting Tweaker
+
+Quick Settings Tweaker is a versatile GNOME Shell extension that empowers users with advanced control over their desktop environment. In addition to customizing various aspects of your system's appearance and behavior through a convenient settings panel accessible from the top bar, Quick Settings Tweaker offers additional features. With this extension, you can add Media Controls, Notifications, Volume Mixer, and remove unnecessary buttons.
+
+You can install this extension from the GNOME Extensions website.
+
+- [Gnome Extensions](https://extensions.gnome.org/extension/5446/quick-settings-tweaker/)
+
+Recommended config:
+
+![Alt text](./images/2024-05-16-23-19-38.png)
+![Alt text](./images/2024-05-16-23-19-46.png)
+![Alt text](./images/2024-05-16-23-19-55.png)
+![Alt text](./images/2024-05-16-23-20-22.png)
+![Alt text](./images/2024-05-16-23-20-34.png)
+
+#### AppIndicator
+
+AppIndicator Support is a GNOME Shell extension that enhances your desktop experience by enabling support for AppIndicators. With this extension, you can seamlessly integrate applications that use the AppIndicator protocol into your GNOME Shell environment.
+
+You can install this extension from the GNOME Extensions website.
+
+- [Gnome Extensions](https://extensions.gnome.org/extension/615/appindicator-support/)
+
+Recommended config:
+
+![Alt text](./images/2024-05-17-00-30-26.png)
+
+#### Desktop Cube
+
+Desktop Cube is a dynamic GNOME Shell extension that brings a visually stunning 3D desktop experience to your Linux system. By activating Desktop Cube, you can navigate between multiple virtual desktops in a captivating cube-like fashion, adding a touch of flair to your workflow.
+
+You can install this extension from either the GNOME Extensions website or the Arch User Repository.
+
+- [Gnome Extensions (Recommended)](https://extensions.gnome.org/extension/4648/desktop-cube/)
+- [Arch User Repository](https://aur.archlinux.org/packages/gnome-shell-extension-desktop-cube)
+
+Recommended config:
+
+![Alt text](./images/2024-05-17-00-31-47.png)
+![Alt text](./images/2024-05-17-00-31-50.png)
+![Alt text](./images/2024-05-17-00-31-53.png)
+
+#### Rounded Window Corners
+
+Rounded Window Corners is a sleek GNOME Shell extension designed to add a touch of elegance to your desktop environment. By applying subtle, rounded corners to your windows, this extension offers a modern and visually pleasing aesthetic.
+
+The version currently available on the GNOME Extensions website is incompatible with the latest version for the GNOME desktop environment. Therefore, the only option to install this extension is to opt for an alternative available through the Arch User Repository.
+
+- [Arch User Repository](https://aur.archlinux.org/packages/gnome-shell-extension-rounded-window-corners-reborn)
+
+Recommended config:
+
+![Alt text](./images/2024-05-17-00-34-05.png)
+
+#### Blur my Shell
+
+Blur My Shell is a stylish GNOME Shell extension that introduces a subtle blur effect to various elements of your desktop environment, adding a touch of sophistication to your user interface. By applying this effect to window backgrounds, menus, and notifications, Blur My Shell creates a visually pleasing and modern look.
+
+You can install this extension from the GNOME Extensions website.
+
+- [Gnome Extensions](https://extensions.gnome.org/extension/3193/blur-my-shell/)
+
+#### Caffeine
+
+Caffeine is a practical GNOME Shell extension designed to keep your system awake when you need it most. By toggling a simple switch in the top panel, you can prevent your computer from entering sleep mode or activating the screensaver, ensuring uninterrupted productivity during important tasks.
+
+You can install this extension from the GNOME Extensions website.
+
+- [Gnome Extensions](https://extensions.gnome.org/extension/517/caffeine/)
+
+#### Custom Hot Corners
+
+The Custom Hot Corners Extended extension for GNOME allows users to customize their desktop experience by enabling hot corners with various actions. Users can define specific actions to be triggered when they move their mouse cursor to different corners of the screen.
+
+You can install this extension from the GNOME Extensions website.
+
+- [Gnome Extensions](https://extensions.gnome.org/extension/4167/custom-hot-corners-extended/)
+
+Recommended config:
+
+![Alt text](./images/2024-05-17-00-37-26.png)
+![Alt text](./images/2024-05-17-00-37-32.png)
+
+#### Clipboard Indicator
+
+The Clipboard Indicator extension for GNOME enhances clipboard functionality by providing a convenient indicator icon in the top panel. It allows users to easily access their clipboard history, including text snippets, images, and files, that have been copied or cut
+
+You can install this extension from the GNOME Extensions website.
+
+- [Gnome Extensions](https://extensions.gnome.org/extension/779/clipboard-indicator/)
+
+Recommended config:
+
+![Alt text](./images/2024-05-17-00-40-25.png)
+![Alt text](./images/2024-05-17-00-40-34.png)
+
+#### Coverflow Alt-Tab
+
+The Coverflow Alt-Tab extension for GNOME transforms the traditional Alt-Tab application switcher into an elegant cover-flow style interface. With this extension, users can effortlessly navigate through their open applications in a visually appealing manner, making it easier to identify and switch between different windows.
+
+You can install this extension from the GNOME Extensions website.
+
+- [Gnome Extensions](https://extensions.gnome.org/extension/97/coverflow-alt-tab/)
+
+#### Dash to Dock
+
+A dock for the Gnome Shell. This extension moves the dash out of the overview transforming it in a dock for an easier launching of applications and a faster switching between windows and desktops.
+
+You can install this extension from the GNOME Extensions website.
+
+- [Gnome Extensions](https://extensions.gnome.org/extension/307/dash-to-dock/)
+
+#### Hide Top Bar
+
+The Hide Top Bar extension for GNOME offers users the ability to hide the top bar in the GNOME Shell desktop environment, providing a more immersive and clutter-free experience. By toggling this extension on, users can reclaim screen space and focus entirely on their applications or activities without the distraction of the top bar.
+
+You can install this extension from the GNOME Extensions website.
+
+- [Gnome Extensions](https://extensions.gnome.org/extension/545/hide-top-bar/)
+
+Recommended config:
+
+![Alt text](./images/2024-05-17-00-44-21.png)
+![Alt text](./images/2024-05-17-00-44-30.png)
+
+#### Just Perfection
+
+The "Just Perfection" extension for GNOME is a comprehensive customization tool that offers a wide range of options to tailor your desktop experience exactly to your liking. It provides fine-grained control over various aspects of the GNOME Shell, including the top bar, activities overview, workspace management, and more.
+
+You can install this extension from the GNOME Extensions website.
+
+- [Gnome Extensions](https://extensions.gnome.org/extension/3843/just-perfection/)
+
+Recommended config:
+
+![Alt text](./images/2024-05-17-00-45-57.png)
+![Alt text](./images/2024-05-17-00-47-03.png)
+![Alt text](./images/2024-05-17-00-47-12.png)
+![Alt text](./images/2024-05-17-00-47-25.png)
+
+#### Privacy Quick Settings
+
+The Privacy Settings Menu extension for GNOME enhances privacy control by providing quick access to essential privacy settings directly from the system menu. This extension streamlines the process of managing privacy preferences, allowing users to easily toggle options related to location services, usage data collection, screen lock, and more.
+
+You can install this extension from the GNOME Extensions website.
+
+- [Gnome Extensions](https://extensions.gnome.org/extension/4491/privacy-settings-menu/)
+
+Recommended config:
+
+![Alt text](./images/2024-05-17-00-49-14.png)
+
+#### Rounded Corners
+
+The Rounded Corners extension for GNOME introduces a subtle yet visually appealing change to the desktop environment by rounding off the corners of windows and dialogs. This aesthetic enhancement softens the overall look of the desktop, giving it a more modern and polished appearance.
+
+You can install this extension from the GNOME Extensions website.
+
+- [Gnome Extensions](https://extensions.gnome.org/extension/1514/rounded-corners/)
+
+#### User Themes
+
+The User Themes extension for GNOME empowers users to personalize their desktop environment by enabling the use of custom shell themes. With this extension, users can easily install and apply custom shell themes, including modifications to the top bar, activities overview, window decorations, and more.
+
+You can install this extension from the GNOME Extensions website.
+
+- [Gnome Extensions](https://extensions.gnome.org/extension/19/user-themes/)
+
+#### Wiggle
+
+Wiggle is a GNOME 45+ port/fix for the scaling effect from Jiggle with better performance. Wiggle magnifies your cursor when the mouse is moved rapidly.
+
+You can install this extension from the GNOME Extensions website.
+
+- [Gnome Extensions](https://extensions.gnome.org/extension/6784/wiggle/)
 
 ## Conclusion
 

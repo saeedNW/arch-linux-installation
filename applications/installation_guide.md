@@ -5,78 +5,77 @@ In this guide, I'll walk you through the installation process of essential appli
 ## Table of Contents
 
 - [Essential Applications Guide](#essential-applications-guide)
-  - [Table of Contents](#table-of-contents)
-  - [Installing bat](#installing-bat)
-  - [Installing exa](#installing-exa)
-  - [Installing yt-dlp](#installing-yt-dlp)
-  - [Installing python-spotdl](#installing-python-spotdl)
-  - [Installing Git](#installing-git)
-    - [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
-  - [Installing Zsh](#installing-zsh)
-  - [Installing Oh My Zsh](#installing-oh-my-zsh)
-    - [Installing Zsh Plugins: zsh-autosuggestions and zsh-syntax-highlighting](#installing-zsh-plugins-zsh-autosuggestions-and-zsh-syntax-highlighting)
-      - [Prerequisites](#prerequisites)
-      - [Installation](#installation)
-        - [zsh-autosuggestions](#zsh-autosuggestions)
-        - [zsh-syntax-highlighting](#zsh-syntax-highlighting)
-      - [Enabling Plugins](#enabling-plugins)
-    - [Custom Alias](#custom-alias)
-  - [sshuttle VPN](#sshuttle-vpn)
-  - [Installing LibreOffice](#installing-libreoffice)
-  - [Installing GIMP](#installing-gimp)
-    - [Change Gimp's look](#change-gimps-look)
-  - [Installing VLC Media Player on Arch Linux](#installing-vlc-media-player-on-arch-linux)
-  - [Installing qBittorrent](#installing-qbittorrent)
-  - [Installing OBS Studio](#installing-obs-studio)
-  - [Installing Kdenlive](#installing-kdenlive)
-  - [Installing Discord](#installing-discord)
-  - [Installing Telegram Desktop](#installing-telegram-desktop)
-  - [Installing Redis](#installing-redis)
-  - [Installing duf](#installing-duf)
-  - [Installing lazygit](#installing-lazygit)
-  - [Installing Docker](#installing-docker)
-    - [Step 1: Install Required Packages](#step-1-install-required-packages)
-    - [Step 2: Enable and Start Docker Service](#step-2-enable-and-start-docker-service)
-    - [Step 3: Verify Docker Installation](#step-3-verify-docker-installation)
-    - [Step 4: Manage Docker Without Sudo (Optional)](#step-4-manage-docker-without-sudo-optional)
-    - [Step 5: Verify Docker Installation (Non-sudo)](#step-5-verify-docker-installation-non-sudo)
-    - [Step 6: Test Docker Installation](#step-6-test-docker-installation)
-  - [Installing Docker Compose](#installing-docker-compose)
-    - [Step 1: Download Docker Compose Binary](#step-1-download-docker-compose-binary)
-    - [Step 2: Verify Docker Compose Installation](#step-2-verify-docker-compose-installation)
-  - [Installing CPUFetch](#installing-cpufetch)
-  - [Installing Neofetch](#installing-neofetch)
-  - [Installing gdu](#installing-gdu)
-  - [Installing Droidcam](#installing-droidcam)
-  - [Installing Google Chrome](#installing-google-chrome)
-  - [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
-    - [Recommended Plugins](#recommended-plugins)
-    - [Custom Snippets](#custom-snippets)
-    - [Theme](#theme)
-    - [Custom Color Schema](#custom-color-schema)
-    - [Recommended Settings](#recommended-settings)
-    - [Custom Shortcuts](#custom-shortcuts)
-  - [Installing Postman](#installing-postman)
-  - [Installing WhatsApp Nativefier](#installing-whatsapp-nativefier)
-  - [Installing RedisInsight](#installing-redisinsight)
-  - [Installing Amberol Music Player](#installing-amberol-music-player)
-  - [Installing nomacs Image Viewer](#installing-nomacs-image-viewer)
-  - [Installing MongoDB-bin](#installing-mongodb-bin)
-  - [Installing MongoDB Tools](#installing-mongodb-tools)
-  - [Installing MongoDB Compass from AUR](#installing-mongodb-compass-from-aur)
-  - [Installing HandBrake](#installing-handbrake)
-  - [Installing DaVinci Resolve](#installing-davinci-resolve)
-  - [Installing Albert Application Launcher](#installing-albert-application-launcher)
-    - [Albert Recommended Configs](#albert-recommended-configs)
-  - [Installing AnyDesk](#installing-anydesk)
-  - [Installing Rclone \& Rclone Browser](#installing-rclone--rclone-browser)
-  - [Installing uGet](#installing-uget)
-    - [Install uGet](#install-uget)
-    - [integration](#integration)
-    - [Implant IDM categories structure](#implant-idm-categories-structure)
-  - [Install Spot Player](#install-spot-player)
-  - [Installing Flatpak](#installing-flatpak)
-  - [Setting Up Timeshift for System Snapshots](#setting-up-timeshift-for-system-snapshots)
+	- [Table of Contents](#table-of-contents)
+	- [Installing bat](#installing-bat)
+	- [Installing exa](#installing-exa)
+	- [Installing yt-dlp](#installing-yt-dlp)
+	- [Installing python-spotdl](#installing-python-spotdl)
+	- [Installing Git](#installing-git)
+		- [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
+	- [Installing Zsh](#installing-zsh)
+	- [Installing Oh My Zsh](#installing-oh-my-zsh)
+		- [Installing Zsh Plugins: zsh-autosuggestions and zsh-syntax-highlighting](#installing-zsh-plugins-zsh-autosuggestions-and-zsh-syntax-highlighting)
+			- [Prerequisites](#prerequisites)
+			- [zsh-autosuggestions](#zsh-autosuggestions)
+			- [zsh-syntax-highlighting](#zsh-syntax-highlighting)
+			- [Enabling Plugins](#enabling-plugins)
+		- [Custom Alias](#custom-alias)
+	- [sshuttle VPN](#sshuttle-vpn)
+	- [Installing LibreOffice](#installing-libreoffice)
+	- [Installing GIMP](#installing-gimp)
+		- [Change Gimp's look](#change-gimps-look)
+	- [Installing VLC Media Player on Arch Linux](#installing-vlc-media-player-on-arch-linux)
+	- [Installing qBittorrent](#installing-qbittorrent)
+	- [Installing OBS Studio](#installing-obs-studio)
+	- [Installing Kdenlive](#installing-kdenlive)
+	- [Installing Discord](#installing-discord)
+	- [Installing Telegram Desktop](#installing-telegram-desktop)
+	- [Installing Redis](#installing-redis)
+	- [Installing duf](#installing-duf)
+	- [Installing lazygit](#installing-lazygit)
+	- [Installing Docker](#installing-docker)
+		- [Step 1: Install Required Packages](#step-1-install-required-packages)
+		- [Step 2: Enable and Start Docker Service](#step-2-enable-and-start-docker-service)
+		- [Step 3: Verify Docker Installation](#step-3-verify-docker-installation)
+		- [Step 4: Manage Docker Without Sudo (Optional)](#step-4-manage-docker-without-sudo-optional)
+		- [Step 5: Verify Docker Installation (Non-sudo)](#step-5-verify-docker-installation-non-sudo)
+		- [Step 6: Test Docker Installation](#step-6-test-docker-installation)
+	- [Installing Docker Compose](#installing-docker-compose)
+		- [Step 1: Download Docker Compose Binary](#step-1-download-docker-compose-binary)
+		- [Step 2: Verify Docker Compose Installation](#step-2-verify-docker-compose-installation)
+	- [Installing CPUFetch](#installing-cpufetch)
+	- [Installing Neofetch](#installing-neofetch)
+	- [Installing gdu](#installing-gdu)
+	- [Installing Droidcam](#installing-droidcam)
+	- [Installing Google Chrome](#installing-google-chrome)
+	- [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
+		- [Recommended Plugins](#recommended-plugins)
+		- [Custom Snippets](#custom-snippets)
+		- [Theme](#theme)
+		- [Custom Color Schema](#custom-color-schema)
+		- [Recommended Settings](#recommended-settings)
+		- [Custom Shortcuts](#custom-shortcuts)
+	- [Installing Postman](#installing-postman)
+	- [Installing WhatsApp Nativefier](#installing-whatsapp-nativefier)
+	- [Installing RedisInsight](#installing-redisinsight)
+	- [Installing Amberol Music Player](#installing-amberol-music-player)
+	- [Installing nomacs Image Viewer](#installing-nomacs-image-viewer)
+	- [Installing MongoDB-bin](#installing-mongodb-bin)
+	- [Installing MongoDB Tools](#installing-mongodb-tools)
+	- [Installing MongoDB Compass from AUR](#installing-mongodb-compass-from-aur)
+	- [Installing HandBrake](#installing-handbrake)
+	- [Installing DaVinci Resolve](#installing-davinci-resolve)
+	- [Installing Albert Application Launcher](#installing-albert-application-launcher)
+		- [Albert Recommended Configs](#albert-recommended-configs)
+	- [Installing AnyDesk](#installing-anydesk)
+	- [Installing Rclone \& Rclone Browser](#installing-rclone--rclone-browser)
+	- [Installing uGet](#installing-uget)
+		- [Install uGet](#install-uget)
+		- [integration](#integration)
+		- [Implant IDM categories structure](#implant-idm-categories-structure)
+	- [Install Spot Player](#install-spot-player)
+	- [Installing Flatpak](#installing-flatpak)
+	- [Setting Up Timeshift for System Snapshots](#setting-up-timeshift-for-system-snapshots)
 
 ## Installing bat
 
@@ -305,9 +304,7 @@ During Installation process of Oh My Zsh you will be prompted to set `zsh` as yo
 
 Ensure that you have Zsh and Oh My Zsh installed on your system. If not, refer to the previous guide on installing Oh My Zsh.
 
-#### Installation
-
-##### zsh-autosuggestions
+#### zsh-autosuggestions
 
 1. Clone the zsh-autosuggestions repository into the Oh My Zsh plugins directory:
 
@@ -321,7 +318,7 @@ Ensure that you have Zsh and Oh My Zsh installed on your system. If not, refer t
    plugins=(zsh-autosuggestions)
    ```
 
-##### zsh-syntax-highlighting
+#### zsh-syntax-highlighting
 
 1. Clone the zsh-syntax-highlighting repository into the Oh My Zsh plugins directory:
 
@@ -470,6 +467,10 @@ sudo pacman -S vlc
 
 This command installs the vlc package from the official Arch Linux repositories. Once installed, you can launch vlc from your system's application menu.
 
+Feel free to customize the VLC interface to your liking or you can .
+
+You have the option to either update the VLC interface according to your preferences or download and apply a [preset](https://github.com/dmtiir/VeLoCity-Skin-for-VLC) configuration.
+
 ## Installing qBittorrent
 
 qBittorrent is a popular open-source BitTorrent client. Follow these steps to install it on your system:
@@ -479,6 +480,8 @@ sudo pacman -S qbittorrent
 ```
 
 This command installs the qBittorrent package from the official Arch Linux repositories. Once installed, you can launch qBittorrent from your system's application menu.
+
+You have the option to either update the interface according to your preferences or download and apply a [preset](https://draculatheme.com/qbittorrent) configuration.
 
 ## Installing OBS Studio
 
@@ -708,7 +711,7 @@ paru -S visual-studio-code-bin
 | Plugin Name          | Plugin Name              | Plugin Name                               | Plugin Name                  | Plugin Name               | Plugin Name      |
 | -------------------- | ------------------------ | ----------------------------------------- | ---------------------------- | ------------------------- | ---------------- |
 | advanced-new-file    | Atom Material Icons      | Auto Rename Tag                           | Auto-Open Markdown Preview   | Azura Repos               | Bash Beautify    |
-| Bash IDE             | better comments          | better folding                            | Code Spell Checker           | CodeSnap                  | Codiumate        |
+| Bash IDE             | better comments          | better folding                            | Code Spell Checker           | CodeSnap                  | YAML             |
 | Dev Containers       | Docker                   | Draw.io Integration                       | EJS language support         | Error Lens                | ESLint           |
 | Explorer Exclude     | Git Graph                | GitHub Repositories                       | Git lens                     | GraphQL                   | HTML CSS Support |
 | Ignore files         | Import Cost              | JavaScript (ES6) code snippets            | lazygit                      | Live Server               | Live Share       |
@@ -717,7 +720,7 @@ paru -S visual-studio-code-bin
 | Prettify Json        | Pretty TypeScript Errors | Project Manager                           | python                       | Python Debugger           | Rainbow Brackets |
 | Random Everything    | Remote - SSH             | Remote - SSH: Editing Configuration Files | Remote - Tunnels             | Remote Development        | Remote Explorer  |
 | Remote Repositories  | REST Client              | Select Line Status Bar                    | Test Adapter Converter       | Thunder Client            | Todo Tree        |
-| Toggle Quotes        | Turbo Console Log        | Vscode NestJs Snippets                    | vscode-proto3                | YAML                      |                  |
+| Toggle Quotes        | Turbo Console Log        | Vscode NestJs Snippets                    | vscode-proto3                |                           |                  |
 
 ### Custom Snippets
 
@@ -1321,6 +1324,8 @@ nomacs is a free, open-source image viewer that supports multiple platforms, inc
 ```bash
 paru -S nomacs
 ```
+
+Note: You don't need to install this applicatin in Gnome desctop environment
 
 ## Installing MongoDB-bin
 

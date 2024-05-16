@@ -2,9 +2,7 @@
 
 This repository serves as a comprehensive guide for installing Arch Linux. Additionally, it includes instructions for installing EndeavourOS, a user-friendly Arch-based distribution, and customizing it as well.
 
-Note1: During the installation process of both Arch Linux and EndeavourOS, you will be prompted to choose your preferred desktop environment (DE). In this guide, we will proceed with the installation assuming KDE Plasma as the chosen DE. However, feel free to select the DE of your choice during the installation process according to your preferences.
-
-Note2: This guide has been created through my own struggles and trial and error. So make sure to do your own research before proceeding blindly.
+Note: This guide has been created through my own struggles and trial and error. So make sure to do your own research before proceeding blindly.
 
 ## Table of Contents
 
@@ -36,7 +34,9 @@ Follow the steps outlined in [Arch Linux Post Install Guide](./arch_linux/post_i
 
 ### EndeavourOS (Recommended)
 
-Refer to [EndeavourOS Installation Guide](./endeavouros/installation_guide.md) for a guided installation process of EndeavourOS with various desktop environments.
+Refer to [EndeavourOS KDE Installation Guide](./endeavouros/kde_installation_guide.md) for a guided installation process of EndeavourOS with KDE desktop environments.
+
+Refer to [EndeavourOS Gnome Installation Guide](./endeavouros/gnome_installation_guide.md) for a guided installation process of EndeavourOS with Gnome desktop environments.
 
 ## Applications
 
@@ -48,4 +48,6 @@ Once Arch Linux or EndeavourOS is installed, you have the freedom to tailor your
 
 Numerous customization guides are available online, including on platforms like YouTube. two standout channels providing comprehensive guidance for customizing various Linux desktop environments are [Arc Technologies](https://www.youtube.com/@ArcTechnologies) and [LinuxScoop](https://www.youtube.com/@linuxscoop). The content in this section draws inspiration from one of their videos.
 
-For further customization options, refer to the [KDE Plasma Nordic Customization](./customization/Nordic.md) guide.
+For further customization options for KDE, refer to the [KDE Plasma Nordic Customization](./customization/kde/kde_Nordic.md) guide.
+
+For further customization options for Gnome, refer to the [Gnome Plasma Nordic Customization](./customization/gnome/gnome_Nordic.md) guide.
