@@ -406,10 +406,10 @@ Follow these steps to set up the Nordic-Darker theme fot Kvantum:
 To set the "mountain" image as your desktop wallpaper, follow these steps:
 
 1. **Set Wallpaper:**
-   - Download the [mountain](../general//mountain-BG.jpg) image by clicking on the link.
+   - Download the [mountain](./files/mountain-BG.jpg) image by clicking on the link.
    - Use your system's wallpaper settings to set the downloaded image as your wallpaper.
 
-![mountain](../general//mountain-BG.jpg)
+![mountain](./files/mountain-BG.jpg)
 
 ## Installing and Configuring Widgets
 
@@ -682,7 +682,7 @@ Enhance your Dolphin file manager experience with these customization options:
 
    After disabling this feature you'll be able to change the home page's background without changing the theme
 
-   ![Chrome Background](../general//snow-mountains.jpg)
+   ![Chrome Background](./files/snow-mountains.jpg)
 
 ## Save New Desktop Configurations
 
