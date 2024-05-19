@@ -50,4 +50,4 @@ Numerous customization guides are available online, including on platforms like 
 
 For further customization options for KDE, refer to the [KDE Plasma Nordic Customization](./customization/kde/kde_Nordic.md) guide.
 
-For further customization options for Gnome, refer to the [Gnome Plasma Nordic Customization](./customization/gnome/gnome_Nordic.md) guide.
+For further customization options for Gnome, refer to the [Gnome Nordic Customization](./customization/gnome/gnome_Nordic.md) guide.
