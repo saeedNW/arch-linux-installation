@@ -16,9 +16,8 @@ In this guide, I'll walk you through the installation process of essential appli
   - [Installing Oh My Zsh](#installing-oh-my-zsh)
     - [Installing Zsh Plugins: zsh-autosuggestions and zsh-syntax-highlighting](#installing-zsh-plugins-zsh-autosuggestions-and-zsh-syntax-highlighting)
       - [Prerequisites](#prerequisites)
-      - [Installation](#installation)
-        - [zsh-autosuggestions](#zsh-autosuggestions)
-        - [zsh-syntax-highlighting](#zsh-syntax-highlighting)
+      - [zsh-autosuggestions](#zsh-autosuggestions)
+      - [zsh-syntax-highlighting](#zsh-syntax-highlighting)
       - [Enabling Plugins](#enabling-plugins)
     - [Custom Alias](#custom-alias)
   - [sshuttle VPN](#sshuttle-vpn)
@@ -305,9 +304,7 @@ During Installation process of Oh My Zsh you will be prompted to set `zsh` as yo
 
 Ensure that you have Zsh and Oh My Zsh installed on your system. If not, refer to the previous guide on installing Oh My Zsh.
 
-#### Installation
-
-##### zsh-autosuggestions
+#### zsh-autosuggestions
 
 1. Clone the zsh-autosuggestions repository into the Oh My Zsh plugins directory:
 
@@ -321,7 +318,7 @@ Ensure that you have Zsh and Oh My Zsh installed on your system. If not, refer t
    plugins=(zsh-autosuggestions)
    ```
 
-##### zsh-syntax-highlighting
+#### zsh-syntax-highlighting
 
 1. Clone the zsh-syntax-highlighting repository into the Oh My Zsh plugins directory:
 
@@ -470,6 +467,10 @@ sudo pacman -S vlc
 
 This command installs the vlc package from the official Arch Linux repositories. Once installed, you can launch vlc from your system's application menu.
 
+Feel free to customize the VLC interface to your liking or you can .
+
+You have the option to either update the VLC interface according to your preferences or download and apply a [preset](https://github.com/dmtiir/VeLoCity-Skin-for-VLC) configuration.
+
 ## Installing qBittorrent
 
 qBittorrent is a popular open-source BitTorrent client. Follow these steps to install it on your system:
@@ -479,6 +480,8 @@ sudo pacman -S qbittorrent
 ```
 
 This command installs the qBittorrent package from the official Arch Linux repositories. Once installed, you can launch qBittorrent from your system's application menu.
+
+You have the option to either update the interface according to your preferences or download and apply a [preset](https://draculatheme.com/qbittorrent) configuration.
 
 ## Installing OBS Studio
 
@@ -703,12 +706,18 @@ Visual Studio Code is a popular source-code editor developed by Microsoft. The `
 paru -S visual-studio-code-bin
 ```
 
+**Note**: After installing VSCode on Gnome, your system's default file manager may change to VSCode. To revert the default file manager back to Nautilus, run the following command:
+
+```bash
+xdg-mime default org.gnome.Nautilus.desktop inode/directory
+```
+
 ### Recommended Plugins
 
 | Plugin Name          | Plugin Name              | Plugin Name                               | Plugin Name                  | Plugin Name               | Plugin Name      |
 | -------------------- | ------------------------ | ----------------------------------------- | ---------------------------- | ------------------------- | ---------------- |
 | advanced-new-file    | Atom Material Icons      | Auto Rename Tag                           | Auto-Open Markdown Preview   | Azura Repos               | Bash Beautify    |
-| Bash IDE             | better comments          | better folding                            | Code Spell Checker           | CodeSnap                  | Codiumate        |
+| Bash IDE             | better comments          | better folding                            | Code Spell Checker           | CodeSnap                  | YAML             |
 | Dev Containers       | Docker                   | Draw.io Integration                       | EJS language support         | Error Lens                | ESLint           |
 | Explorer Exclude     | Git Graph                | GitHub Repositories                       | Git lens                     | GraphQL                   | HTML CSS Support |
 | Ignore files         | Import Cost              | JavaScript (ES6) code snippets            | lazygit                      | Live Server               | Live Share       |
@@ -717,7 +726,7 @@ paru -S visual-studio-code-bin
 | Prettify Json        | Pretty TypeScript Errors | Project Manager                           | python                       | Python Debugger           | Rainbow Brackets |
 | Random Everything    | Remote - SSH             | Remote - SSH: Editing Configuration Files | Remote - Tunnels             | Remote Development        | Remote Explorer  |
 | Remote Repositories  | REST Client              | Select Line Status Bar                    | Test Adapter Converter       | Thunder Client            | Todo Tree        |
-| Toggle Quotes        | Turbo Console Log        | Vscode NestJs Snippets                    | vscode-proto3                | YAML                      |                  |
+| Toggle Quotes        | Turbo Console Log        | Vscode NestJs Snippets                    | vscode-proto3                |                           |                  |
 
 ### Custom Snippets
 
@@ -1321,6 +1330,8 @@ nomacs is a free, open-source image viewer that supports multiple platforms, inc
 ```bash
 paru -S nomacs
 ```
+
+Note: You don't need to install this applicatin in Gnome desctop environment
 
 ## Installing MongoDB-bin
 
