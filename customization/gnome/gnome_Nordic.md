@@ -323,7 +323,7 @@ In order to fix the dash to dock them issue follow these steps
 2. Run the following command to fix the issue
 
    ```bash
-   ./install.sh -d
+   ./tweaks.sh -d
    ```
 
 ## Customize GDM Login Screen
