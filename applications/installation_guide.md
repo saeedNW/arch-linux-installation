@@ -63,6 +63,8 @@ In this guide, I'll walk you through the installation process of essential appli
   - [Installing MongoDB-bin](#installing-mongodb-bin)
   - [Installing MongoDB Tools](#installing-mongodb-tools)
   - [Installing MongoDB Compass from AUR](#installing-mongodb-compass-from-aur)
+  - [Installing Boxes](#installing-boxes)
+  - [Installing Blanket](#installing-blanket)
   - [Installing HandBrake](#installing-handbrake)
   - [Installing DaVinci Resolve](#installing-davinci-resolve)
   - [Installing Albert Application Launcher](#installing-albert-application-launcher)
@@ -1411,6 +1413,22 @@ MongoDB Compass is a graphical user interface (GUI) for MongoDB. It allows you t
 
 ```bash
 paru -S mongodb-compass
+```
+
+## Installing Boxes
+
+GNOME Boxes is a simple and user-friendly virtualization application designed for GNOME desktops. It allows users to easily create, manage, and run virtual machines, remote desktop sessions, and local virtual systems.
+
+```bash
+sudo pacman -S gnome-boxes
+```
+
+## Installing Blanket
+
+Blanket is a simple and minimalist GNOME app designed to help users focus, relax, or sleep better by providing a variety of ambient sounds.
+
+```bash
+sudo pacman -S Blanket
 ```
 
 ## Installing HandBrake

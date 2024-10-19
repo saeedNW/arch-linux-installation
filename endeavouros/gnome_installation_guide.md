@@ -75,6 +75,7 @@ Let's dive into the installation process and unleash the power of EndeavourOS on
       - [Rounded Corners](#rounded-corners)
       - [User Themes](#user-themes)
       - [Wiggle](#wiggle)
+      - [Compiz alike magic lamp effect](#compiz-alike-magic-lamp-effect)
   - [Conclusion](#conclusion)
 
 ## Downloading EndeavourOS
@@ -976,6 +977,14 @@ Wiggle is a GNOME 45+ port/fix for the scaling effect from Jiggle with better pe
 You can install this extension from the GNOME Extensions website.
 
 - [Gnome Extensions](https://extensions.gnome.org/extension/6784/wiggle/)
+
+#### Compiz alike magic lamp effect
+
+The Compiz-alike Magic Lamp Effect is a GNOME Shell extension that adds a visually stunning window minimization animation inspired by the classic "Magic Lamp" effect from the Compiz window manager
+
+You can install this extension from the GNOME Extensions website.
+
+- [Gnome Extensions](https://extensions.gnome.org/extension/3740/compiz-alike-magic-lamp-effect/)
 
 ## Conclusion
 

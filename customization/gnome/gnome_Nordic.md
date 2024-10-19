@@ -438,10 +438,8 @@ cp -f ~/Downloads/neofetch_config.conf ~/.config/neofetch/config.conf
 
 2. **Set Background:**
 
-   - In the new versions of the google chrome it's became much harder to change the home page background without changing application's theme. However there is a work around for this problem. Here is how to change the home page's background without changing the theme:
+   - In the new versions of the google chrome you can't change the home page background without changing the theme. However there is a work around for this problem. Which is to install an extension which will allow you to change and customize the look of the home page. There are several different extensions that you can install, but the one that I found the most useful is [MONKNOW New Tab](https://chromewebstore.google.com/detail/monknow-new-tab-personal/lnbjajkbekhkgablenknhapphbdbldeh)
 
-     1. DISABLE 'Customize Chrome Side Panel' in chrome://flags
-
-   After disabling this feature you'll be able to change the home page's background without changing the theme
+   After installing the extension you'll be able to change the home page's background without changing the theme
 
    ![Chrome Background](./files/Browser.png)
