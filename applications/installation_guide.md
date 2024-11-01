@@ -5,79 +5,80 @@ In this guide, I'll walk you through the installation process of essential appli
 ## Table of Contents
 
 - [Essential Applications Guide](#essential-applications-guide)
-  - [Table of Contents](#table-of-contents)
-  - [Installing bat](#installing-bat)
-  - [Installing exa](#installing-exa)
-  - [Installing yt-dlp](#installing-yt-dlp)
-  - [Installing python-spotdl](#installing-python-spotdl)
-  - [Installing Git](#installing-git)
-    - [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
-  - [Installing Zsh](#installing-zsh)
-  - [Installing Oh My Zsh](#installing-oh-my-zsh)
-    - [Installing Zsh Plugins: zsh-autosuggestions and zsh-syntax-highlighting](#installing-zsh-plugins-zsh-autosuggestions-and-zsh-syntax-highlighting)
-      - [Prerequisites](#prerequisites)
-      - [zsh-autosuggestions](#zsh-autosuggestions)
-      - [zsh-syntax-highlighting](#zsh-syntax-highlighting)
-      - [Enabling Plugins](#enabling-plugins)
-    - [Custom Alias](#custom-alias)
-  - [sshuttle VPN](#sshuttle-vpn)
-  - [Installing LibreOffice](#installing-libreoffice)
-  - [Installing GIMP](#installing-gimp)
-    - [Change Gimp's look](#change-gimps-look)
-  - [Installing VLC Media Player on Arch Linux](#installing-vlc-media-player-on-arch-linux)
-  - [Installing qBittorrent](#installing-qbittorrent)
-  - [Installing OBS Studio](#installing-obs-studio)
-  - [Installing Kdenlive](#installing-kdenlive)
-  - [Installing Discord](#installing-discord)
-  - [Installing Telegram Desktop](#installing-telegram-desktop)
-  - [Installing Redis](#installing-redis)
-  - [Installing duf](#installing-duf)
-  - [Installing lazygit](#installing-lazygit)
-  - [Installing Docker](#installing-docker)
-    - [Step 1: Install Required Packages](#step-1-install-required-packages)
-    - [Step 2: Enable and Start Docker Service](#step-2-enable-and-start-docker-service)
-    - [Step 3: Verify Docker Installation](#step-3-verify-docker-installation)
-    - [Step 4: Manage Docker Without Sudo (Optional)](#step-4-manage-docker-without-sudo-optional)
-    - [Step 5: Verify Docker Installation (Non-sudo)](#step-5-verify-docker-installation-non-sudo)
-    - [Step 6: Test Docker Installation](#step-6-test-docker-installation)
-  - [Installing Docker Compose](#installing-docker-compose)
-    - [Step 1: Download Docker Compose Binary](#step-1-download-docker-compose-binary)
-    - [Step 2: Verify Docker Compose Installation](#step-2-verify-docker-compose-installation)
-  - [Installing CPUFetch](#installing-cpufetch)
-  - [Installing Neofetch](#installing-neofetch)
-  - [Installing gdu](#installing-gdu)
-  - [Installing Droidcam](#installing-droidcam)
-  - [Installing Google Chrome](#installing-google-chrome)
-  - [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
-    - [Recommended Plugins](#recommended-plugins)
-    - [Custom Snippets](#custom-snippets)
-    - [Theme](#theme)
-    - [Custom Color Schema](#custom-color-schema)
-    - [Recommended Settings](#recommended-settings)
-    - [Custom Shortcuts](#custom-shortcuts)
-  - [Installing Postman](#installing-postman)
-  - [Installing WhatsApp Nativefier](#installing-whatsapp-nativefier)
-  - [Installing RedisInsight](#installing-redisinsight)
-  - [Installing Amberol Music Player](#installing-amberol-music-player)
-  - [Installing nomacs Image Viewer](#installing-nomacs-image-viewer)
-  - [Installing MongoDB-bin](#installing-mongodb-bin)
-  - [Installing MongoDB Tools](#installing-mongodb-tools)
-  - [Installing MongoDB Compass from AUR](#installing-mongodb-compass-from-aur)
-  - [Installing Boxes](#installing-boxes)
-  - [Installing Blanket](#installing-blanket)
-  - [Installing HandBrake](#installing-handbrake)
-  - [Installing DaVinci Resolve](#installing-davinci-resolve)
-  - [Installing Albert Application Launcher](#installing-albert-application-launcher)
-    - [Albert Recommended Configs](#albert-recommended-configs)
-  - [Installing AnyDesk](#installing-anydesk)
-  - [Installing Rclone \& Rclone Browser](#installing-rclone--rclone-browser)
-  - [Installing uGet](#installing-uget)
-    - [Install uGet](#install-uget)
-    - [integration](#integration)
-    - [Implant IDM categories structure](#implant-idm-categories-structure)
-  - [Install Spot Player](#install-spot-player)
-  - [Installing Flatpak](#installing-flatpak)
-  - [Setting Up Timeshift for System Snapshots](#setting-up-timeshift-for-system-snapshots)
+	- [Table of Contents](#table-of-contents)
+	- [Installing bat](#installing-bat)
+	- [Installing exa](#installing-exa)
+	- [Installing yt-dlp](#installing-yt-dlp)
+	- [Installing python-spotdl](#installing-python-spotdl)
+	- [Installing Git](#installing-git)
+		- [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
+	- [Installing Zsh](#installing-zsh)
+	- [Installing Oh My Zsh](#installing-oh-my-zsh)
+		- [Installing Zsh Plugins: zsh-autosuggestions and zsh-syntax-highlighting](#installing-zsh-plugins-zsh-autosuggestions-and-zsh-syntax-highlighting)
+			- [Prerequisites](#prerequisites)
+			- [zsh-autosuggestions](#zsh-autosuggestions)
+			- [zsh-syntax-highlighting](#zsh-syntax-highlighting)
+			- [Enabling Plugins](#enabling-plugins)
+		- [Custom Alias](#custom-alias)
+	- [sshuttle VPN](#sshuttle-vpn)
+	- [Installing LibreOffice](#installing-libreoffice)
+	- [Installing GIMP](#installing-gimp)
+		- [Change Gimp's look](#change-gimps-look)
+	- [Installing VLC Media Player on Arch Linux](#installing-vlc-media-player-on-arch-linux)
+	- [Installing qBittorrent](#installing-qbittorrent)
+	- [Installing OBS Studio](#installing-obs-studio)
+	- [Installing Kdenlive](#installing-kdenlive)
+	- [Installing Discord](#installing-discord)
+	- [Installing Telegram Desktop](#installing-telegram-desktop)
+	- [Installing Redis](#installing-redis)
+	- [Installing duf](#installing-duf)
+	- [Installing lazygit](#installing-lazygit)
+	- [Installing Docker](#installing-docker)
+		- [Step 1: Install Required Packages](#step-1-install-required-packages)
+		- [Step 2: Enable and Start Docker Service](#step-2-enable-and-start-docker-service)
+		- [Step 3: Verify Docker Installation](#step-3-verify-docker-installation)
+		- [Step 4: Manage Docker Without Sudo (Optional)](#step-4-manage-docker-without-sudo-optional)
+		- [Step 5: Verify Docker Installation (Non-sudo)](#step-5-verify-docker-installation-non-sudo)
+		- [Step 6: Test Docker Installation](#step-6-test-docker-installation)
+	- [Installing Docker Compose](#installing-docker-compose)
+		- [Step 1: Download Docker Compose Binary](#step-1-download-docker-compose-binary)
+		- [Step 2: Verify Docker Compose Installation](#step-2-verify-docker-compose-installation)
+	- [Installing CPUFetch](#installing-cpufetch)
+	- [Installing Neofetch](#installing-neofetch)
+	- [Installing gdu](#installing-gdu)
+	- [Installing Droidcam](#installing-droidcam)
+	- [Installing Google Chrome](#installing-google-chrome)
+	- [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
+		- [Recommended Plugins](#recommended-plugins)
+		- [Custom JS Snippets](#custom-js-snippets)
+		- [Custom TS Snippets](#custom-ts-snippets)
+		- [Theme](#theme)
+		- [Custom Color Schema](#custom-color-schema)
+		- [Recommended Settings](#recommended-settings)
+		- [Custom Shortcuts](#custom-shortcuts)
+	- [Installing Postman](#installing-postman)
+	- [Installing WhatsApp Nativefier](#installing-whatsapp-nativefier)
+	- [Installing RedisInsight](#installing-redisinsight)
+	- [Installing Amberol Music Player](#installing-amberol-music-player)
+	- [Installing nomacs Image Viewer](#installing-nomacs-image-viewer)
+	- [Installing MongoDB-bin](#installing-mongodb-bin)
+	- [Installing MongoDB Tools](#installing-mongodb-tools)
+	- [Installing MongoDB Compass from AUR](#installing-mongodb-compass-from-aur)
+	- [Installing Boxes](#installing-boxes)
+	- [Installing Blanket](#installing-blanket)
+	- [Installing HandBrake](#installing-handbrake)
+	- [Installing DaVinci Resolve](#installing-davinci-resolve)
+	- [Installing Albert Application Launcher](#installing-albert-application-launcher)
+		- [Albert Recommended Configs](#albert-recommended-configs)
+	- [Installing AnyDesk](#installing-anydesk)
+	- [Installing Rclone \& Rclone Browser](#installing-rclone--rclone-browser)
+	- [Installing uGet](#installing-uget)
+		- [Install uGet](#install-uget)
+		- [integration](#integration)
+		- [Implant IDM categories structure](#implant-idm-categories-structure)
+	- [Install Spot Player](#install-spot-player)
+	- [Installing Flatpak](#installing-flatpak)
+	- [Setting Up Timeshift for System Snapshots](#setting-up-timeshift-for-system-snapshots)
 
 ## Installing bat
 
@@ -730,7 +731,7 @@ xdg-mime default org.gnome.Nautilus.desktop inode/directory
 | Remote Repositories  | REST Client              | Select Line Status Bar                    | Test Adapter Converter       | Thunder Client            | Todo Tree        |
 | Toggle Quotes        | Turbo Console Log        | Vscode NestJs Snippets                    | vscode-proto3                |                           |                  |
 
-### Custom Snippets
+### Custom JS Snippets
 
 ```json
 {
@@ -894,6 +895,105 @@ xdg-mime default org.gnome.Nautilus.desktop inode/directory
 		"body": ["/** $1 */\n"],
 		"description": "create single-line comment with brake"
 	}
+}
+```
+
+### Custom TS Snippets
+
+```json
+"node class method": {
+	"prefix": "tncm",
+	"body": [
+		"/**",
+		"* $1",
+		"* @param {Request} req express request",
+		"* @param {Response} res express response",
+		"* @param {NextFunction} next express next function",
+		"* @returns {Promise<void>}",
+		"*/",
+		"async $2(req: Request, res: Response, next: NextFunction) {",
+		"\ttry {",
+		"\t\t$3",
+		"\t} catch (err) {",
+		"\t\tnext(err);",
+		"\t}",
+		"}"
+	],
+	"description": "Node.js Controller Method"
+}
+```
+
+```json
+"simple try/catch block": {
+	"prefix": "ttc",
+	"body": [
+		"try {",
+		"\t$2",
+		"} catch (err) {",
+		"\t$1",
+		"}",
+	],
+	"description": "Simple try/catch block"
+}
+```
+
+```json
+"simple try/catch/log block": {
+	"prefix": "ttcl",
+	"body": [
+		"try {",
+		"\t$1",
+		"} catch (err) {",
+		"\tconsole.error(err);",
+		"}",
+	],
+	"description": "Simple try/catch/log block"
+}
+```
+
+```json
+"try/catch/next block": {
+	"prefix": "ttcn",
+	"body": [
+		"try {",
+		"\t$1",
+		"} catch (err) {",
+		"\tnext(err);",
+		"}",
+	],
+	"description": "try/catch/next block"
+}
+```
+
+```json
+"multi line comment": {
+	"prefix": "mcom",
+	"body": [
+		"/**",
+		" * $1",
+		" */",
+	],
+	"description": "create multi-line comment"
+}
+```
+
+```json
+"single line comment": {
+	"prefix": "scom",
+	"body": [
+		"/** $1 */",
+	],
+	"description": "create single-line comment"
+}
+```
+
+```json
+"single line comment with brake": {
+	"prefix": "scome",
+	"body": [
+		"/** $1 */\n",
+	],
+	"description": "create single-line comment with brake"
 }
 ```
 
