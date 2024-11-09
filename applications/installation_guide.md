@@ -1046,6 +1046,13 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 				"settings": {
 					"foreground": "#ACE1AF" // change this COLOR
 				}
+			},
+			{
+				"name": "number color in env files",
+				"scope": ["source.ini"],
+				"settings": {
+					"foreground": "#76fd00" // change this COLOR
+				}
 			}
 		]
 	}
@@ -1119,6 +1126,13 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 				"scope": ["variable.parameter"],
 				"settings": {
 					"foreground": "#ffd390" // change this COLOR
+				}
+			},
+			{
+				"name": "number color in env files",
+				"scope": ["source.ini"],
+				"settings": {
+					"foreground": "#76fd00" // change this COLOR
 				}
 			}
 		]
