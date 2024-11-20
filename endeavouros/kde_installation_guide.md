@@ -16,12 +16,9 @@ Let's dive into the installation process and unleash the power of EndeavourOS on
     - [Using Balena Etcher](#using-balena-etcher)
     - [Using Linux `dd` Command](#using-linux-dd-command)
   - [Installation Process](#installation-process)
-  - [Fix Screen Scale](#fix-screen-scale)
   - [Enable Multilib Repository](#enable-multilib-repository)
   - [Install Core Applications (Skip Reinstallation)](#install-core-applications-skip-reinstallation)
     - [Install Node.js and npm](#install-nodejs-and-npm)
-    - [Install Network Manager Applet](#install-network-manager-applet)
-    - [Install Wireless Tools](#install-wireless-tools)
   - [Grant "wheel" Group Members "sudo" Privileges](#grant-wheel-group-members-sudo-privileges)
     - [Edit sudoers File](#edit-sudoers-file)
   - [Install Paru Package Manager](#install-paru-package-manager)
@@ -54,7 +51,6 @@ Let's dive into the installation process and unleash the power of EndeavourOS on
     - [Enable and Start Touchegg Service](#enable-and-start-touchegg-service)
     - [Again Reboot System](#again-reboot-system)
     - [Configure Touché](#configure-touché)
-  - [Enable Terminal Password Feedback (OPTIONAL)](#enable-terminal-password-feedback-optional)
   - [Conclusion](#conclusion)
 
 ## Downloading EndeavourOS
@@ -129,34 +125,12 @@ For the remaining installation steps, the guide linked below provides comprehens
 
 3. It is advisable to format the EndeavourOS root partition as `BTRFS` during the installation. This choice enables the use of advanced features such as snapshots.
 
+4. During the installation process, in the application selection window, you can deselect the options listed below. We will install third-party applications to replace these.
+   1. Gwanview
+   2. Haruna
+   3. Kwallet-pam
+
 For detailed step-by-step guidance during the installation process, refer to the following comprehensive guide: [How to Install EndeavourOS: Step-by-Step Guide](https://www.debugpoint.com/endeavouros-install-guide/)
-
-## Fix Screen Scale
-
-In some instances, after installing EndeavourOS, you may encounter a screen scaling issue where everything appears oversized. This problem stems from a bug in the X Window System (X11). Below, I've outlined the simplest solution I found in a [Reddit post](https://www.reddit.com/r/kde/comments/qqi9z8/comment/hk1pwv4/?utm_source=reddit&utm_medium=web2x&context=3).
-
-1. To resolve this issue, begin by opening the `/etc/sddm.conf` file in an editor.
-
-   ```bash
-   sudo nano /etc/sddm.conf
-   ```
-
-2. Add the following line to the end of the file to force X11's DPI to be 96:
-
-   ```text
-   [X11]
-   ServerArguments=-nolisten tcp -dpi 96
-   ```
-
-3. Reboot your PC to apply the changes.
-
-   ```bash
-   sudo reboot
-   ```
-
-Please note that after signing back into your system, the taskbar may still appear large, but other parts of the interface should display correctly. To adjust the taskbar size, right-click on it, enter edit mode, and modify the taskbar height.
-
-Additionally, if you change the system's SDDM from the system settings, you may encounter this issue again. If so, repeat the steps above to rectify the problem.
 
 ## Enable Multilib Repository
 
@@ -179,24 +153,6 @@ Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine, and npm 
 ```bash
 sudo pacman -S nodejs npm
 ```
-
-### Install Network Manager Applet
-
-The Network Manager Applet provides a graphical interface to manage network connections on your system. It allows you to easily configure and monitor your wired and wireless network connections.
-
-```bash
-sudo pacman -S network-manager-applet
-```
-
-### Install Wireless Tools
-
-Wireless Tools is a collection of utilities for configuring and monitoring wireless network interfaces. These tools are essential for managing wireless connections and troubleshooting wireless network issues.
-
-```bash
-sudo pacman -S wireless_tools
-```
-
-By installing these core applications, you ensure that your system is equipped with the necessary tools for networking and development tasks.
 
 ## Grant "wheel" Group Members "sudo" Privileges
 
@@ -226,15 +182,7 @@ Paru is an AUR helper and pacman wrapper that allows you to install packages fro
    sudo pacman -Syu
    ```
 
-2. Install Git
-
-   Git is required to clone the Paru repository from the AUR. Install it using pacman:
-
-   ```bash
-   sudo pacman -S git
-   ```
-
-3. Clone Paru Repository
+2. Clone Paru Repository
 
    Navigate to the `/opt` directory and clone the Paru repository from the AUR:
 
@@ -243,7 +191,7 @@ Paru is an AUR helper and pacman wrapper that allows you to install packages fro
    sudo git clone https://aur.archlinux.org/paru.git
    ```
 
-4. Set Permissions
+3. Set Permissions
 
    Set appropriate permissions for the Paru directory to allow building and installation:
 
@@ -251,7 +199,7 @@ Paru is an AUR helper and pacman wrapper that allows you to install packages fro
    sudo chown -R <username>:wheel ./paru
    ```
 
-5. Build and Install Paru
+4. Build and Install Paru
 
    Navigate into the Paru directory and build the package using makepkg:
 
@@ -690,31 +638,18 @@ sudo systemctl start --now bluetooth.service
 Install additional KDE applications for enhanced functionality:
 
 ```bash
-sudo pacman -S unrar dolphin-plugins partitionmanager kolourpaint yakuake kaccounts-providers gnome-sound-recorder \
-gedit gedit-plugins android-tools vlc thunderbird kdeplasma-addons kdegraphics-mobipocket kdegraphics-thumbnailers \
-kdesdk-thumbnailers kio-gdrive noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
+sudo pacman -S partitionmanager kolourpaint yakuake kaccounts-providers \
+android-tools thunderbird kio-gdrive kdesdk-thumbnailers
 ```
 
-- **unrar:** A utility used to extract files from RAR archives.
-- **dolphin-plugins:** Additional plugins and extensions for the Dolphin file manager.
 - **partitionmanager:** A graphical utility for managing disk partitions.
 - **kolourpaint:** A simple painting application similar to Microsoft Paint.
 - **yakuake:** A drop-down terminal emulator for KDE.
 - **kaccounts-providers:** Authentication providers for KDE applications.
-- **gnome-sound-recorder:** A simple sound recording application.
-- **gedit:** The default text editor for the GNOME desktop environment.
-- **gedit-plugins:** Additional plugins for enhancing the functionality of Gedit.
 - **android-tools:** Command-line tools for interacting with Android devices.
-- **vlc:** A popular multimedia player capable of playing various audio and video formats.
 - **thunderbird:** An email client developed by Mozilla.
-- **kdeplasma-addons:** Additional addons and widgets for the KDE Plasma desktop environment.
-- **kdegraphics-mobipocket:** Libraries and plugins for handling Mobipocket files in KDE applications.
-- **kdegraphics-thumbnailers:** Thumbnail generators for various image formats in KDE applications.
-- **kdesdk-thumbnailers:** Thumbnail generators for source code files in KDE applications.
 - **kio-gdrive:** A KIO slave for accessing Google Drive files in KDE applications.
-- **noto-fonts-cjk:** Noto Sans CJK fonts for East Asian languages.
-- **noto-fonts-emoji:** Noto Color Emoji fonts for displaying emoji characters.
-- **noto-fonts-extra:** Additional Noto fonts for various languages and scripts.
+- **kdesdk-thumbnailers:** Thumbnail generators for source code files in KDE applications.
 
 **Note:** Add yakuake to your system startup applications
 
@@ -779,48 +714,8 @@ After installation, open Touché and configure your desired multi-touch gestures
 
 ![Alt text](../arch_linux/images/20230505141415.png)
 
-## Enable Terminal Password Feedback (OPTIONAL)
-
-To enable terminal password feedback, follow these steps:
-
-1. **Open Terminal**:
-
-   First, open a terminal on your system. You can do this by searching for "konsole" in the application launcher or by pressing `Ctrl + Alt + T` as a shortcut.
-
-2. **Open visudo**:
-
-   Type the following command in the terminal and press Enter. This will open the sudoers file using the `visudo` command, which ensures safe editing of the sudoers file.
-
-   ```bash
-   sudo visudo
-   ```
-
-3. **Find the Defaults Line**:
-
-   Inside the sudoers file, find the line that starts with "Defaults". This line specifies various default settings for sudo.
-
-4. **Add the pwfeedback Line**:
-
-   Add the following line after the "Defaults" line to enable password feedback:
-
-   ```bash
-   Defaults         pwfeedback
-   ```
-
-   This line tells sudo to display asterisks (\*) when typing your password.
-
-5. **Save and Exit**:
-
-   After adding the line, save and exit the editor. If you're using the nano text editor, press `Ctrl + X` to exit, then press `Y` to confirm changes, and `Enter` to save.
-
-6. **Test the Changes**:
-
-   Close and reopen a new terminal window to apply the changes. Now, when you use sudo and are prompted for your password, you should see asterisks (\*) as you type.
-
 ## Conclusion
 
 Congratulations! You have successfully completed the installation steps for your EndeavourOS system. You now have a fully functional system and can start installing applications and customizing it according to your preferences.
 
 To further enhance your experience, consider exploring the Applications Installation Guide within this document, where you'll find recommendations for essential applications and configuration settings to optimize your system for various use cases.
-
-Enjoy exploring your new system and have fun customizing it to suit your needs!
