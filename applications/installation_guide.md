@@ -8,47 +8,49 @@ In this guide, I'll walk you through the installation process of essential appli
   - [Table of Contents](#table-of-contents)
   - [Installing bat](#installing-bat)
   - [Installing exa](#installing-exa)
+  - [Installing duf](#installing-duf)
+  - [Installing gdu](#installing-gdu)
   - [Installing yt-dlp](#installing-yt-dlp)
   - [Installing python-spotdl](#installing-python-spotdl)
-  - [Installing Git](#installing-git)
-    - [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
   - [Installing Zsh](#installing-zsh)
     - [Installing Oh My Zsh](#installing-oh-my-zsh)
-      - [Installing Zsh Plugins: zsh-autosuggestions and zsh-syntax-highlighting](#installing-zsh-plugins-zsh-autosuggestions-and-zsh-syntax-highlighting)
-        - [Prerequisites](#prerequisites)
+      - [Installing Zsh Plugins](#installing-zsh-plugins)
         - [zsh-autosuggestions](#zsh-autosuggestions)
         - [zsh-syntax-highlighting](#zsh-syntax-highlighting)
         - [Enabling Plugins](#enabling-plugins)
     - [Custom Alias](#custom-alias)
+  - [Installing Git](#installing-git)
+    - [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
   - [sshuttle VPN](#sshuttle-vpn)
   - [Installing LibreOffice](#installing-libreoffice)
   - [Installing GIMP](#installing-gimp)
-    - [Change Gimp's look](#change-gimps-look)
-  - [Installing VLC Media Player on Arch Linux](#installing-vlc-media-player-on-arch-linux)
+    - [Change Gimp's Look](#change-gimps-look)
+  - [Installing VLC Media Player](#installing-vlc-media-player)
+    - [Change VLC's Look](#change-vlcs-look)
   - [Installing qBittorrent](#installing-qbittorrent)
+    - [Change qBittorrent's Look](#change-qbittorrents-look)
   - [Installing OBS Studio](#installing-obs-studio)
-  - [Video Editing](#video-editing)
+  - [Video Editor](#video-editor)
     - [Installing Kdenlive](#installing-kdenlive)
     - [Installing DaVinci Resolve](#installing-davinci-resolve)
   - [Installing Discord](#installing-discord)
   - [Installing Telegram Desktop](#installing-telegram-desktop)
-  - [Installing Redis](#installing-redis)
-  - [Installing duf](#installing-duf)
   - [Installing lazygit](#installing-lazygit)
   - [Installing Docker](#installing-docker)
-    - [Step 1: Install Required Packages](#step-1-install-required-packages)
-    - [Step 2: Enable and Start Docker Service](#step-2-enable-and-start-docker-service)
-    - [Step 3: Verify Docker Installation](#step-3-verify-docker-installation)
-    - [Step 4: Manage Docker Without Sudo (Optional)](#step-4-manage-docker-without-sudo-optional)
-    - [Step 5: Verify Docker Installation (Non-sudo)](#step-5-verify-docker-installation-non-sudo)
-    - [Step 6: Test Docker Installation](#step-6-test-docker-installation)
-  - [Installing Docker Compose](#installing-docker-compose)
-    - [Step 1: Download Docker Compose Binary](#step-1-download-docker-compose-binary)
-    - [Step 2: Verify Docker Compose Installation](#step-2-verify-docker-compose-installation)
+    - [Installing Docker Compose](#installing-docker-compose)
+    - [Installing Portainer](#installing-portainer)
+  - [Installing RabbitMQ](#installing-rabbitmq)
+  - [Installing Databases](#installing-databases)
+    - [Installing Redis](#installing-redis)
+      - [Installing RedisInsight](#installing-redisinsight)
+    - [Installing MongoDB](#installing-mongodb)
+      - [Installing MongoDB Tools](#installing-mongodb-tools)
+      - [Installing MongoDB Compass](#installing-mongodb-compass)
+    - [MySQL and phpMyAdmin](#mysql-and-phpmyadmin)
+    - [Installing Elasticsearch and Kibana](#installing-elasticsearch-and-kibana)
+    - [installing Postgres and pgAdmin](#installing-postgres-and-pgadmin)
   - [Installing CPUFetch](#installing-cpufetch)
   - [Installing Neofetch](#installing-neofetch)
-  - [Installing gdu](#installing-gdu)
-  - [Installing Droidcam](#installing-droidcam)
   - [Installing Google Chrome](#installing-google-chrome)
   - [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
     - [Recommended Plugins](#recommended-plugins)
@@ -59,21 +61,18 @@ In this guide, I'll walk you through the installation process of essential appli
     - [Recommended Settings](#recommended-settings)
     - [Custom Shortcuts](#custom-shortcuts)
   - [Installing Postman](#installing-postman)
-  - [Installing RedisInsight](#installing-redisinsight)
   - [Installing Amberol Music Player](#installing-amberol-music-player)
   - [Image Viewer](#image-viewer)
+    - [Installing Loupe (Recomended)](#installing-loupe-recomended)
     - [Installing nomacs](#installing-nomacs)
-    - [Installing Loupe](#installing-loupe)
-  - [Installing MongoDB](#installing-mongodb)
-    - [Installing MongoDB Tools](#installing-mongodb-tools)
-    - [Installing MongoDB Compass](#installing-mongodb-compass)
-  - [Installing Boxes](#installing-boxes)
+  - [Installing GNOME Boxes](#installing-gnome-boxes)
   - [Installing Blanket](#installing-blanket)
   - [Installing HandBrake](#installing-handbrake)
   - [Installing Albert Application Launcher](#installing-albert-application-launcher)
     - [Albert Recommended Configs](#albert-recommended-configs)
   - [Installing Rclone \& Rclone Browser](#installing-rclone--rclone-browser)
   - [Installing AnyDesk](#installing-anydesk)
+  - [Installing Droidcam](#installing-droidcam)
   - [Install Spot Player](#install-spot-player)
   - [Installing Flatpak](#installing-flatpak)
   - [Setting Up Timeshift for System Snapshots](#setting-up-timeshift-for-system-snapshots)
@@ -134,6 +133,38 @@ exa -a
 
 `exa` provides many more options and features. You can explore them further by checking out the official documentation or by running `exa --help` in your terminal.
 
+## Installing duf
+
+`duf` is a modern replacement for the traditional `df` command, offering enhanced features and a more user-friendly interface for disk usage analysis. Here's how to install it on your system:
+
+```bash
+sudo pacman -S duf
+```
+
+Once installed, you can use `duf` to quickly and easily check disk usage information. For example, to display disk usage for all mounted filesystems, simply type:
+
+```bash
+duf
+```
+
+You can also specify a specific directory or filesystem to analyze. For instance, to check disk usage for the `/home` directory, use:
+
+```bash
+duf /home
+```
+
+Additionally, `duf` provides various options and flags for customizing its output. To explore these options, you can run `duf --help` in your terminal.
+
+With `duf`, managing disk space and analyzing storage usage becomes more intuitive and efficient.
+
+## Installing gdu
+
+gdu (Go Disk Usage) is a command-line disk usage analyzer written in Go. It provides a fast and efficient way to visualize disk usage on your system. Here's how to install gdu:
+
+```bash
+sudo pacman -S gdu
+```
+
 ## Installing yt-dlp
 
 `yt-dlp` is a command-line program to download videos from YouTube and other video platforms. It's an enhanced version of `youtube-dl` with additional features and improvements. Here's how to install it on your system:
@@ -159,6 +190,143 @@ python-spotdl is a command-line tool that allows you to download music from vari
 ```bash
 paru -S python-spotdl
 ```
+
+## Installing Zsh
+
+Zsh, or Z Shell, is a powerful and highly customizable shell that can be used as an interactive login shell and as a command interpreter for shell scripting. Here's how to install Zsh on your system:
+
+```bash
+sudo pacman -S zsh
+```
+
+### Installing Oh My Zsh
+
+Oh My Zsh is a delightful, open-source, community-driven framework for managing your Zsh configuration. It comes bundled with a vast number of helpful functions, plugins, and themes to enhance your command-line experience. Here's how to install Oh My Zsh on your system:
+
+You can install Oh My Zsh by running the following command in your terminal:
+
+```bash
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+Alternatively, if you prefer using `wget`:
+
+```bash
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+```
+
+During Installation process of Oh My Zsh you will be prompted to set `zsh` as your main shell choose yes.
+
+#### Installing Zsh Plugins
+
+[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) and [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) are popular plugins for Zsh that enhance your command-line experience by providing autosuggestions as you type and syntax highlighting for commands, respectively. Here's how to install them:
+
+##### zsh-autosuggestions
+
+1. Clone the zsh-autosuggestions repository into the Oh My Zsh plugins directory:
+
+   ```bash
+   git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+   ```
+
+2. Activate the plugin by adding it to the list of plugins in your `~/.zshrc` configuration file:
+
+   ```bash
+   plugins=(zsh-autosuggestions)
+   ```
+
+##### zsh-syntax-highlighting
+
+1. Clone the zsh-syntax-highlighting repository into the Oh My Zsh plugins directory:
+
+   ```bash
+   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+   ```
+
+2. Activate the plugin by adding it to the list of plugins in your `~/.zshrc` configuration file:
+
+   ```bash
+   plugins=(zsh-syntax-highlighting)
+   ```
+
+##### Enabling Plugins
+
+After adding the plugins to your `~/.zshrc` file, reload the Zsh configuration:
+
+```bash
+source ~/.zshrc
+```
+
+### Custom Alias
+
+Here's a simple guide on how to create a `~/.zprofile` file, define some alias in it, and then add it to your `~/.zshrc` file:
+
+1. **Create `~/.zprofile` file:**
+
+   - Open your terminal.
+   - Navigate to your home directory by typing: `cd ~`.
+   - Use a text editor of your choice to create the `~/.zprofile` file. For example, you can use nano by typing: `nano ~/.zprofile`.
+
+2. **Define alias in `~/.zprofile`:**
+
+   - Inside the `~/.zprofile` file, you can define aliases using the following syntax:
+
+     ```bash
+     alias alias_name='command_to_execute'
+     ```
+
+     Replace `alias_name` with the name you want to give to your alias, and `command_to_execute` with the command you want the alias to execute.
+
+   - For example, you can add the following aliases to the `~/.zprofile`:
+
+     - Replace `ls` command with `exa` command:
+
+       ```bash
+       alias ls='exa'
+       ```
+
+     - Replace `cat` command with `bat` command:
+
+       ```bash
+       alias cat='bat'
+       ```
+
+     - Create a new alias for `yt-dlp` command:
+
+       ```bash
+       alias ytdl='yt-dlp'
+       ```
+
+     - Create a new alias for `spotdl` command:
+
+       ```bash
+       alias spdl='spotdl'
+       ```
+
+3. **Save and exit the `~/.zprofile` file:**
+
+   - If you're using nano, you can save and exit the file by pressing `Ctrl + X`, then type `Y` to confirm saving, and press `Enter` to exit.
+
+4. **Add `~/.zprofile` to `~/.zshrc`:**
+
+   - Open your `~/.zshrc` file in a text editor. You can do this by typing: `nano ~/.zshrc`.
+   - Add the following line at the end of the file to ensure that your `~/.zprofile` file is sourced when you start a new shell session:
+
+     ```bash
+     source ~/.zprofile
+     ```
+
+   - Save and exit the `~/.zshrc` file (if you're using nano, press `Ctrl + X`, then type `Y` to confirm saving, and press `Enter` to exit).
+
+5. **Apply changes:**
+
+   - After saving both `~/.zprofile` and `~/.zshrc` files, you can either restart your terminal or source your `~/.zshrc` file to apply the changes immediately:
+
+     ```bash
+     source ~/.zshrc
+     ```
+
+Now your alias defined in `~/.zprofile` will be available every time you start a new shell session, and it will be automatically loaded from your `~/.zshrc` file.
 
 ## Installing Git
 
@@ -271,147 +439,6 @@ cat path/to/ssh/public/key
 
 After copying it, navigate to your GitHub account settings and add the new SSH key to your account.
 
-## Installing Zsh
-
-Zsh, or Z Shell, is a powerful and highly customizable shell that can be used as an interactive login shell and as a command interpreter for shell scripting. Here's how to install Zsh on your system:
-
-```bash
-sudo pacman -S zsh
-```
-
-### Installing Oh My Zsh
-
-Oh My Zsh is a delightful, open-source, community-driven framework for managing your Zsh configuration. It comes bundled with a vast number of helpful functions, plugins, and themes to enhance your command-line experience. Here's how to install Oh My Zsh on your system:
-
-You can install Oh My Zsh by running the following command in your terminal:
-
-```bash
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-Alternatively, if you prefer using `wget`:
-
-```bash
-sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-```
-
-During Installation process of Oh My Zsh you will be prompted to set `zsh` as your main shell choose yes.
-
-#### Installing Zsh Plugins: zsh-autosuggestions and zsh-syntax-highlighting
-
-[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) and [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) are popular plugins for Zsh that enhance your command-line experience by providing autosuggestions as you type and syntax highlighting for commands, respectively. Here's how to install them:
-
-##### Prerequisites
-
-Ensure that you have Zsh and Oh My Zsh installed on your system. If not, refer to the previous guide on installing Oh My Zsh.
-
-##### zsh-autosuggestions
-
-1. Clone the zsh-autosuggestions repository into the Oh My Zsh plugins directory:
-
-   ```bash
-   git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-   ```
-
-2. Activate the plugin by adding it to the list of plugins in your `~/.zshrc` configuration file:
-
-   ```bash
-   plugins=(zsh-autosuggestions)
-   ```
-
-##### zsh-syntax-highlighting
-
-1. Clone the zsh-syntax-highlighting repository into the Oh My Zsh plugins directory:
-
-   ```bash
-   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-   ```
-
-2. Activate the plugin by adding it to the list of plugins in your `~/.zshrc` configuration file:
-
-   ```bash
-   plugins=(zsh-syntax-highlighting)
-   ```
-
-##### Enabling Plugins
-
-After adding the plugins to your `~/.zshrc` file, reload the Zsh configuration:
-
-```bash
-source ~/.zshrc
-```
-
-### Custom Alias
-
-Here's a simple guide on how to create a `~/.zprofile` file, define some alias in it, and then add it to your `~/.zshrc` file:
-
-1. **Create `~/.zprofile` file:**
-
-   - Open your terminal.
-   - Navigate to your home directory by typing: `cd ~`.
-   - Use a text editor of your choice to create the `~/.zprofile` file. For example, you can use nano by typing: `nano ~/.zprofile`.
-
-2. **Define alias in `~/.zprofile`:**
-
-   - Inside the `~/.zprofile` file, you can define aliases using the following syntax:
-
-     ```bash
-     alias alias_name='command_to_execute'
-     ```
-
-     Replace `alias_name` with the name you want to give to your alias, and `command_to_execute` with the command you want the alias to execute.
-
-   - For example, you can add the following aliases to the `~/.zprofile`:
-
-     - Replace `ls` command with `exa` command:
-
-       ```bash
-       alias ls='exa'
-       ```
-
-     - Replace `cat` command with `bat` command:
-
-       ```bash
-       alias cat='bat'
-       ```
-
-     - Create a new alias for `yt-dlp` command:
-
-       ```bash
-       alias ytdl='yt-dlp'
-       ```
-
-     - Create a new alias for `spotdl` command:
-
-       ```bash
-       alias spdl='spotdl'
-       ```
-
-3. **Save and exit the `~/.zprofile` file:**
-
-   - If you're using nano, you can save and exit the file by pressing `Ctrl + X`, then type `Y` to confirm saving, and press `Enter` to exit.
-
-4. **Add `~/.zprofile` to `~/.zshrc`:**
-
-   - Open your `~/.zshrc` file in a text editor. You can do this by typing: `nano ~/.zshrc`.
-   - Add the following line at the end of the file to ensure that your `~/.zprofile` file is sourced when you start a new shell session:
-
-     ```bash
-     source ~/.zprofile
-     ```
-
-   - Save and exit the `~/.zshrc` file (if you're using nano, press `Ctrl + X`, then type `Y` to confirm saving, and press `Enter` to exit).
-
-5. **Apply changes:**
-
-   - After saving both `~/.zprofile` and `~/.zshrc` files, you can either restart your terminal or source your `~/.zshrc` file to apply the changes immediately:
-
-     ```bash
-     source ~/.zshrc
-     ```
-
-Now your alias defined in `~/.zprofile` will be available every time you start a new shell session, and it will be automatically loaded from your `~/.zshrc` file.
-
 ## sshuttle VPN
 
 If you're looking to establish a VPN connection using an SSH tunnel, sshuttle is a handy tool for the job. Alternatively, you can configure an OpenVPN connection using your system's network manager.
@@ -454,11 +481,11 @@ sudo pacman -S gimp
 
 This command installs the GIMP package from the official Arch Linux repositories. Once installed, you can launch GIMP from your system's application menu.
 
-### Change Gimp's look
+### Change Gimp's Look
 
 By following the instructions outlined in the [Diolinux/PhotoGIMP](https://github.com/Diolinux/PhotoGIMP) GitHub repository, you can customize the appearance of GIMP to closely resemble that of Photoshop.
 
-## Installing VLC Media Player on Arch Linux
+## Installing VLC Media Player
 
 VLC Media Player is a versatile multimedia player that supports various audio and video formats, as well as streaming protocols. Here's how to install VLC on your Linux system:
 
@@ -468,7 +495,7 @@ sudo pacman -S vlc
 
 This command installs the vlc package from the official Arch Linux repositories. Once installed, you can launch vlc from your system's application menu.
 
-Feel free to customize the VLC interface to your liking or you can .
+### Change VLC's Look
 
 You have the option to either update the VLC interface according to your preferences or download and apply a [preset](https://github.com/dmtiir/VeLoCity-Skin-for-VLC) configuration.
 
@@ -482,6 +509,8 @@ sudo pacman -S qbittorrent
 
 This command installs the qBittorrent package from the official Arch Linux repositories. Once installed, you can launch qBittorrent from your system's application menu.
 
+### Change qBittorrent's Look
+
 You have the option to either update the interface according to your preferences or download and apply a [preset](https://draculatheme.com/qbittorrent) configuration.
 
 ## Installing OBS Studio
@@ -494,7 +523,7 @@ sudo pacman -S obs-studio
 
 This command installs the OBS Studio package from the official Arch Linux repositories. Once installed, you can launch OBS Studio from your system's application menu and start recording or streaming your content.
 
-## Video Editing
+## Video Editor
 
 ### Installing Kdenlive
 
@@ -534,7 +563,128 @@ sudo pacman -S telegram-desktop
 
 This command installs the Telegram Desktop package from the official Arch Linux repositories. Once installed, you can launch Telegram Desktop from your system's application menu and start using it to connect with your contacts and groups on the Telegram platform.
 
-## Installing Redis
+## Installing lazygit
+
+`lazygit` is a simple terminal-based UI for Git commands, designed to make the process of interacting with Git repositories more intuitive and efficient. Here's how to install it on your system:
+
+```bash
+sudo pacman -S lazygit
+```
+
+Once installed, you can launch `lazygit` by simply typing `lazygit` in your terminal. This will open up the terminal UI where you can navigate through your Git repositories, view changes, stage files, commit changes, and perform other Git operations with ease.
+
+`lazygit` offers a variety of keyboard shortcuts and features to streamline your Git workflow. You can explore these features further within the `lazygit` interface or by referring to the official documentation.
+
+## Installing Docker
+
+Docker is a platform for developing, shipping, and running applications inside containers. Follow these steps to install Docker on your system:
+
+**Step 1 - Install Required Packages**:
+
+```bash
+sudo pacman -S docker
+```
+
+This command installs the Docker package, which includes the Docker daemon and command-line tools.
+
+**Step 2 - Enable and Start Docker Service**:
+
+```bash
+sudo systemctl enable docker.service
+sudo systemctl start docker.service
+```
+
+Enabling and starting the Docker service ensures that Docker starts automatically upon system boot and is currently running.
+
+**Step 3 - Verify Docker Installation**:
+
+```bash
+sudo docker --version
+```
+
+This command verifies that Docker has been successfully installed on your system by displaying the installed Docker version.
+
+**Step 4 - Manage Docker Without Sudo (Optional)**:
+
+To avoid using `sudo` every time you run a Docker command, you can add your user to the `docker` group:
+
+```bash
+sudo usermod -aG docker $USER
+newgrp docker
+```
+
+**Step 5 - Verify Docker Installation (Non-sudo)**:
+
+```bash
+docker --version
+```
+
+After adding your user to the `docker` group, you can verify the Docker installation again without using `sudo`.
+
+**Step 6 - Test Docker Installation**:
+
+You can verify that Docker is working correctly by running a simple test container:
+
+```bash
+docker run hello-world
+```
+
+This command downloads a test image, creates a container from it, and runs it. If everything is set up correctly, you should see a message indicating that Docker is running and configured correctly.
+
+### Installing Docker Compose
+
+Docker Compose is a tool for defining and running multi-container Docker applications. It uses YAML files to configure the application's services and dependencies. Follow these steps to install Docker Compose on your system:
+
+**Step 1 - Download Docker Compose Binary**:
+
+```bash
+sudo pacman -S docker-compose
+```
+
+This command installs the Docker Compose package from the official package repositories.
+
+**Step 2 - Verify Docker Compose Installation**:
+
+```bash
+docker-compose --version
+```
+
+This command verifies that Docker Compose has been successfully installed on your system by displaying the installed version.
+
+### Installing Portainer
+
+Portainer is a user-friendly container management platform designed to simplify the deployment, management, and monitoring of containerized applications. It provides an intuitive web-based interface, making it easier to work with Docker, Kubernetes, and other container orchestration systems.
+
+**Pull and Run Portainer**:
+
+```shell
+docker run -d \
+    -p 8000:8000 \
+    -p 9443:9443 \
+    --name portainer \
+    --restart=always \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v portainer_data:/data \
+    portainer/portainer-ce:2.21.4
+```
+
+## Installing RabbitMQ
+
+RabbitMQ is available in the Arch Repositories (Official/AUR). However, I personally prefer using Docker to install and run the package.
+
+```shell
+docker run -d \
+    -it --rm --name rabbitmq \
+    -p 5672:5672 \
+    -p 15672:15672 \
+    rabbitmq:4.0-management
+
+# User/Pass => guest/guest
+```
+
+## Installing Databases
+
+### Installing Redis
 
 Redis is an open-source, in-memory data structure store used as a database, cache, and message broker. Here's how to install it on your system:
 
@@ -557,117 +707,225 @@ sudo systemctl restart redis
 
 Redis is now installed and ready to use on your system. You can interact with Redis using its command-line interface `redis-cli` or by integrating it into your applications.
 
-## Installing duf
+#### Installing RedisInsight
 
-`duf` is a modern replacement for the traditional `df` command, offering enhanced features and a more user-friendly interface for disk usage analysis. Here's how to install it on your system:
-
-```bash
-sudo pacman -S duf
-```
-
-Once installed, you can use `duf` to quickly and easily check disk usage information. For example, to display disk usage for all mounted filesystems, simply type:
+RedisInsight is a graphical user interface (GUI) for managing Redis databases. It provides a user-friendly interface to interact with your Redis instances. Here's how you can install RedisInsight:
 
 ```bash
-duf
+paru -S redisinsight-bin
 ```
 
-You can also specify a specific directory or filesystem to analyze. For instance, to check disk usage for the `/home` directory, use:
+### Installing MongoDB
+
+MongoDB-bin is the binary distribution of MongoDB, a popular NoSQL database management system. Here's how to install MongoDB-bin on your system:
+
+1. **Install MongoDB-bin Package**:
+
+   Open your terminal and use the following pacman command to install the MongoDB-bin package:
+
+   ```bash
+   paru -S mongodb-bin
+   ```
+
+2. **Start MongoDB Service**:
+
+   After the installation is complete, start the MongoDB service using the following systemctl command:
+
+   ```bash
+   sudo systemctl start mongodb
+   ```
+
+3. **Enable MongoDB Service**:
+
+   If you want MongoDB to start automatically at boot, enable the MongoDB service using the systemctl enable command:
+
+   ```bash
+   sudo systemctl enable mongodb
+   ```
+
+4. **Verify Installation**:
+
+   To verify that MongoDB is running, you can check its status using the systemctl status command:
+
+   ```bash
+   sudo systemctl status mongodb
+   ```
+
+#### Installing MongoDB Tools
+
+MongoDB Tools is a set of command-line utilities for working with MongoDB instances. Here's how to install MongoDB Tools on your Arch Linux system:
+
+1. **Install MongoDB Tools Package**:
+
+   Open your terminal and use the following paru command to install the MongoDB Tools package:
+
+   ```bash
+   paru -S mongodb-tools
+   ```
+
+2. **Verify Installation**:
+
+   To verify that MongoDB Tools is installed correctly, you can check the version of the installed tools using the following command:
+
+   ```bash
+   mongodump --version
+   ```
+
+   This command should display the version information for mongodump, indicating that MongoDB Tools is installed.
+
+3. **Explore MongoDB Tools**:
+
+   MongoDB Tools includes various utilities such as mongodump, mongorestore, mongoexport, mongoimport, and mongotop. You can explore these tools and their usage by running them in your terminal with the --help option:
+
+   ```bash
+   mongodump --help
+   mongorestore --help
+   mongoexport --help
+   mongoimport --help
+   mongotop --help
+   ```
+
+   This will display usage information for each tool, allowing you to understand their functionality and options.
+
+#### Installing MongoDB Compass
+
+MongoDB Compass is a graphical user interface (GUI) for MongoDB. It allows you to visually explore your data, run ad hoc queries, and interact with your MongoDB databases. Here's how to install MongoDB Compass on your Linux system using the AUR (Arch User Repository):
 
 ```bash
-duf /home
+paru -S mongodb-compass
 ```
 
-Additionally, `duf` provides various options and flags for customizing its output. To explore these options, you can run `duf --help` in your terminal.
+### MySQL and phpMyAdmin
 
-With `duf`, managing disk space and analyzing storage usage becomes more intuitive and efficient.
+MySQL and phpMyAdmin are available in the Arch Repositories (Official/AUR). However, I personally prefer using Docker to install and run these packages.
 
-## Installing lazygit
+**Step 1 - Create a Network Called "asgard"**:
 
-`lazygit` is a simple terminal-based UI for Git commands, designed to make the process of interacting with Git repositories more intuitive and efficient. Here's how to install it on your system:
-
-```bash
-sudo pacman -S lazygit
+```shell
+docker network create asgard
 ```
 
-Once installed, you can launch `lazygit` by simply typing `lazygit` in your terminal. This will open up the terminal UI where you can navigate through your Git repositories, view changes, stage files, commit changes, and perform other Git operations with ease.
+**Step 2 - Create mySQL Data Volume direction**:
 
-`lazygit` offers a variety of keyboard shortcuts and features to streamline your Git workflow. You can explore these features further within the `lazygit` interface or by referring to the official documentation.
-
-## Installing Docker
-
-Docker is a platform for developing, shipping, and running applications inside containers. Follow these steps to install Docker on your system:
-
-### Step 1: Install Required Packages
-
-```bash
-sudo pacman -S docker
+```shell
+sudo mkdir -p /opt/mysql
+sudo chown <username>:wheel /opt/mysql
 ```
 
-This command installs the Docker package, which includes the Docker daemon and command-line tools.
+**Step 3 - Pull and Run MySQL**:
 
-### Step 2: Enable and Start Docker Service
-
-```bash
-sudo systemctl enable docker.service
-sudo systemctl start docker.service
+```shell
+docker run -d \
+    --name asgard-mysql \
+    --network asgard \
+    -e MYSQL_ROOT_PASSWORD="root" \
+    -v /opt/mysql:/var/lib/mysql \
+    -p 3306:3306 \
+    mysql
 ```
 
-Enabling and starting the Docker service ensures that Docker starts automatically upon system boot and is currently running.
+Keep in mind that this container needs to be started manually each time you restart your system. To have it start automatically, you can add the `--restart unless-stopped \` option when running the container. This ensures it starts automatically after a system reboot.
 
-### Step 3: Verify Docker Installation
+**Step 4 -Pull and Run phpMyAdmin**:
 
-```bash
-sudo docker --version
+```shell
+docker run -d \
+    --name asgard-phpmyadmin \
+    --network asgard \
+    -e PMA_HOST=asgard-mysql \
+    -p 8080:80 \
+    phpmyadmin/phpmyadmin
+
+# PMA_HOST is the IP or domain of the MySQL server,
+# so we can use the MySQL container name as the domain
+# cause the Docker network create the route as a DNS server.
 ```
 
-This command verifies that Docker has been successfully installed on your system by displaying the installed Docker version.
+Keep in mind that this container needs to be started manually each time you restart your system. To have it start automatically, you can add the `--restart unless-stopped \` option when running the container. This ensures it starts automatically after a system reboot.
 
-### Step 4: Manage Docker Without Sudo (Optional)
+### Installing Elasticsearch and Kibana
 
-To avoid using `sudo` every time you run a Docker command, you can add your user to the `docker` group:
+Elasticsearch and Kibana are available in the Arch Repositories (Official/AUR). However, I personally prefer using Docker to install and run these packages.
 
-```bash
-sudo usermod -aG docker $USER
-newgrp docker
+**Step 1 - Create a Network Called "elastic"**:
+
+```shell
+docker network create elastic
 ```
 
-### Step 5: Verify Docker Installation (Non-sudo)
+**Step 2 - Pull Elasticsearch Docker Image**:
 
-```bash
-docker --version
+```shell
+docker pull docker.elastic.co/elasticsearch/elasticsearch:8.16.0 # Current latest
 ```
 
-After adding your user to the `docker` group, you can verify the Docker installation again without using `sudo`.
+**Step 3 - Increase System's `vm.max_map_count` (required in linux and mac)**:
 
-### Step 6: Test Docker Installation
-
-You can verify that Docker is working correctly by running a simple test container:
-
-```bash
-docker run hello-world
+```shell
+sudo sysctl -w vm.max_map_count=262144
 ```
 
-This command downloads a test image, creates a container from it, and runs it. If everything is set up correctly, you should see a message indicating that Docker is running and configured correctly.
+**Step 4 - Run Elasticsearch**:
 
-## Installing Docker Compose
-
-Docker Compose is a tool for defining and running multi-container Docker applications. It uses YAML files to configure the application's services and dependencies. Follow these steps to install Docker Compose on your system:
-
-### Step 1: Download Docker Compose Binary
-
-```bash
-sudo pacman -S docker-compose
+```shell
+docker run -d \
+    --name es01 \
+    --net elastic \
+    -p 9200:9200 \
+    -it -m 1GB \
+    docker.elastic.co/elasticsearch/elasticsearch:8.16.0
 ```
 
-This command installs the Docker Compose package from the official package repositories.
+Keep in mind that this container needs to be started manually each time you restart your system. To have it start automatically, you can add the `--restart unless-stopped \` option when running the container. This ensures it starts automatically after a system reboot.
 
-### Step 2: Verify Docker Compose Installation
+**Step 5 - Pull Kibana Docker Image**:
 
-```bash
-docker-compose --version
+```shell
+docker pull docker.elastic.co/kibana/kibana:8.16.0 # Current latest
 ```
 
-This command verifies that Docker Compose has been successfully installed on your system by displaying the installed version.
+**Step 6 - Run Kibana**:
+
+```shell
+docker run -d \
+    --name kib01 \
+    --net elastic \
+    -p 5601:5601 \
+    docker.elastic.co/kibana/kibana:8.16.0
+```
+
+Keep in mind that this container needs to be started manually each time you restart your system. To have it start automatically, you can add the `--restart unless-stopped \` option when running the container. This ensures it starts automatically after a system reboot.
+
+### installing Postgres and pgAdmin
+
+Postgres and pgAdmin are available in the Arch Repositories (Official/AUR). However, I personally prefer using Docker to install and run these packages.
+
+**Step 1 - Pull and Run Postgres**:
+
+```shell
+docker run -d \
+  --name postgres_container \
+  -e POSTGRES_USER=postgres \
+  -e POSTGRES_PASSWORD=root \
+  -p 5432:5432 \
+  postgres
+```
+
+Keep in mind that this container needs to be started manually each time you restart your system. To have it start automatically, you can add the `--restart unless-stopped \` option when running the container. This ensures it starts automatically after a system reboot.
+
+**Step 2 - Pull and Run PgAdmin**:
+
+```shell
+docker run -d \
+  --name pgadmin_container \
+  -e PGADMIN_DEFAULT_EMAIL=admin@example.com \
+  -e PGADMIN_DEFAULT_PASSWORD=admin \
+  -p 8081:80 \
+  --link postgres_container:postgres \
+  dpage/pgadmin4
+```
+
+Keep in mind that this container needs to be started manually each time you restart your system. To have it start automatically, you can add the `--restart unless-stopped \` option when running the container. This ensures it starts automatically after a system reboot.
 
 ## Installing CPUFetch
 
@@ -683,22 +941,6 @@ Neofetch is a command-line tool that displays system information in a visually a
 
 ```bash
 sudo pacman -S neofetch
-```
-
-## Installing gdu
-
-gdu (Go Disk Usage) is a command-line disk usage analyzer written in Go. It provides a fast and efficient way to visualize disk usage on your system. Here's how to install gdu:
-
-```bash
-sudo pacman -S gdu
-```
-
-## Installing Droidcam
-
-Droidcam is a tool that allows you to use your Android device as a webcam for your computer. Here's how to install it from the Arch User Repository (AUR):
-
-```bash
-paru -S droidcam
 ```
 
 ## Installing Google Chrome
@@ -1423,14 +1665,6 @@ Postman is a popular collaboration platform for API development, used by develop
 paru -S postman-bin
 ```
 
-## Installing RedisInsight
-
-RedisInsight is a graphical user interface (GUI) for managing Redis databases. It provides a user-friendly interface to interact with your Redis instances. Here's how you can install RedisInsight:
-
-```bash
-paru -S redisinsight-bin
-```
-
 ## Installing Amberol Music Player
 
 Amberol Music Player is a lightweight and customizable music player designed for simplicity and ease of use. You can install Amberol Music Player using the Arch User Repository (AUR). Here's how:
@@ -1440,6 +1674,14 @@ paru -S amberol
 ```
 
 ## Image Viewer
+
+### Installing Loupe (Recomended)
+
+Loupe is the default image viewer for GNOME, providing a modern, lightweight, and user-friendly interface for viewing images. Loupe is included in the official Arch Linux repositories, . Here's how to install it:
+
+```bash
+sudo pacman -S loupe
+```
 
 ### Installing nomacs
 
@@ -1451,95 +1693,7 @@ paru -S nomacs
 
 Note: You don't need to install this applicatin in Gnome desctop environment
 
-### Installing Loupe
-
-Loupe is the default image viewer for GNOME, providing a modern, lightweight, and user-friendly interface for viewing images. Loupe is included in the official Arch Linux repositories, . Here's how to install it:
-
-```bash
-sudo pacman -S loupe
-```
-
-## Installing MongoDB
-
-MongoDB-bin is the binary distribution of MongoDB, a popular NoSQL database management system. Here's how to install MongoDB-bin on your system:
-
-1. **Install MongoDB-bin Package**:
-
-   Open your terminal and use the following pacman command to install the MongoDB-bin package:
-
-   ```bash
-   paru -S mongodb-bin
-   ```
-
-2. **Start MongoDB Service**:
-
-   After the installation is complete, start the MongoDB service using the following systemctl command:
-
-   ```bash
-   sudo systemctl start mongodb
-   ```
-
-3. **Enable MongoDB Service**:
-
-   If you want MongoDB to start automatically at boot, enable the MongoDB service using the systemctl enable command:
-
-   ```bash
-   sudo systemctl enable mongodb
-   ```
-
-4. **Verify Installation**:
-
-   To verify that MongoDB is running, you can check its status using the systemctl status command:
-
-   ```bash
-   sudo systemctl status mongodb
-   ```
-
-### Installing MongoDB Tools
-
-MongoDB Tools is a set of command-line utilities for working with MongoDB instances. Here's how to install MongoDB Tools on your Arch Linux system:
-
-1. **Install MongoDB Tools Package**:
-
-   Open your terminal and use the following paru command to install the MongoDB Tools package:
-
-   ```bash
-   paru -S mongodb-tools
-   ```
-
-2. **Verify Installation**:
-
-   To verify that MongoDB Tools is installed correctly, you can check the version of the installed tools using the following command:
-
-   ```bash
-   mongodump --version
-   ```
-
-   This command should display the version information for mongodump, indicating that MongoDB Tools is installed.
-
-3. **Explore MongoDB Tools**:
-
-   MongoDB Tools includes various utilities such as mongodump, mongorestore, mongoexport, mongoimport, and mongotop. You can explore these tools and their usage by running them in your terminal with the --help option:
-
-   ```bash
-   mongodump --help
-   mongorestore --help
-   mongoexport --help
-   mongoimport --help
-   mongotop --help
-   ```
-
-   This will display usage information for each tool, allowing you to understand their functionality and options.
-
-### Installing MongoDB Compass
-
-MongoDB Compass is a graphical user interface (GUI) for MongoDB. It allows you to visually explore your data, run ad hoc queries, and interact with your MongoDB databases. Here's how to install MongoDB Compass on your Linux system using the AUR (Arch User Repository):
-
-```bash
-paru -S mongodb-compass
-```
-
-## Installing Boxes
+## Installing GNOME Boxes
 
 GNOME Boxes is a simple and user-friendly virtualization application designed for GNOME desktops. It allows users to easily create, manage, and run virtual machines, remote desktop sessions, and local virtual systems.
 
@@ -1626,6 +1780,14 @@ AnyDesk is a remote desktop application that allows users to access and control 
 
 ```bash
 paru -S anydesk-bin
+```
+
+## Installing Droidcam
+
+Droidcam is a tool that allows you to use your Android device as a webcam for your computer. Here's how to install it from the Arch User Repository (AUR):
+
+```bash
+paru -S droidcam
 ```
 
 ## Install Spot Player
