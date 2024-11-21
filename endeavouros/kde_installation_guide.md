@@ -128,7 +128,6 @@ For the remaining installation steps, the guide linked below provides comprehens
 4. During the installation process, in the application selection window, you can deselect the options listed below. We will install third-party applications to replace these.
    1. Gwanview
    2. Haruna
-   3. Kwallet-pam
 
 For detailed step-by-step guidance during the installation process, refer to the following comprehensive guide: [How to Install EndeavourOS: Step-by-Step Guide](https://www.debugpoint.com/endeavouros-install-guide/)
 
