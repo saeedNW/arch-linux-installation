@@ -638,7 +638,7 @@ Install additional KDE applications for enhanced functionality:
 
 ```bash
 sudo pacman -S partitionmanager kolourpaint yakuake kaccounts-providers \
-android-tools thunderbird kio-gdrive kdesdk-thumbnailers
+android-tools thunderbird kio-gdrive kdesdk-thumbnailers kwalletmanager
 ```
 
 - **partitionmanager:** A graphical utility for managing disk partitions.
@@ -649,6 +649,7 @@ android-tools thunderbird kio-gdrive kdesdk-thumbnailers
 - **thunderbird:** An email client developed by Mozilla.
 - **kio-gdrive:** A KIO slave for accessing Google Drive files in KDE applications.
 - **kdesdk-thumbnailers:** Thumbnail generators for source code files in KDE applications.
+- **kwalletmanager:** KDE kwallet manager.
 
 **Note:** Add yakuake to your system startup applications
 
