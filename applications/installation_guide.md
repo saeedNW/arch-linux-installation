@@ -5,80 +5,78 @@ In this guide, I'll walk you through the installation process of essential appli
 ## Table of Contents
 
 - [Essential Applications Guide](#essential-applications-guide)
-	- [Table of Contents](#table-of-contents)
-	- [Installing bat](#installing-bat)
-	- [Installing exa](#installing-exa)
-	- [Installing yt-dlp](#installing-yt-dlp)
-	- [Installing python-spotdl](#installing-python-spotdl)
-	- [Installing Git](#installing-git)
-		- [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
-	- [Installing Zsh](#installing-zsh)
-	- [Installing Oh My Zsh](#installing-oh-my-zsh)
-		- [Installing Zsh Plugins: zsh-autosuggestions and zsh-syntax-highlighting](#installing-zsh-plugins-zsh-autosuggestions-and-zsh-syntax-highlighting)
-			- [Prerequisites](#prerequisites)
-			- [zsh-autosuggestions](#zsh-autosuggestions)
-			- [zsh-syntax-highlighting](#zsh-syntax-highlighting)
-			- [Enabling Plugins](#enabling-plugins)
-		- [Custom Alias](#custom-alias)
-	- [sshuttle VPN](#sshuttle-vpn)
-	- [Installing LibreOffice](#installing-libreoffice)
-	- [Installing GIMP](#installing-gimp)
-		- [Change Gimp's look](#change-gimps-look)
-	- [Installing VLC Media Player on Arch Linux](#installing-vlc-media-player-on-arch-linux)
-	- [Installing qBittorrent](#installing-qbittorrent)
-	- [Installing OBS Studio](#installing-obs-studio)
-	- [Installing Kdenlive](#installing-kdenlive)
-	- [Installing Discord](#installing-discord)
-	- [Installing Telegram Desktop](#installing-telegram-desktop)
-	- [Installing Redis](#installing-redis)
-	- [Installing duf](#installing-duf)
-	- [Installing lazygit](#installing-lazygit)
-	- [Installing Docker](#installing-docker)
-		- [Step 1: Install Required Packages](#step-1-install-required-packages)
-		- [Step 2: Enable and Start Docker Service](#step-2-enable-and-start-docker-service)
-		- [Step 3: Verify Docker Installation](#step-3-verify-docker-installation)
-		- [Step 4: Manage Docker Without Sudo (Optional)](#step-4-manage-docker-without-sudo-optional)
-		- [Step 5: Verify Docker Installation (Non-sudo)](#step-5-verify-docker-installation-non-sudo)
-		- [Step 6: Test Docker Installation](#step-6-test-docker-installation)
-	- [Installing Docker Compose](#installing-docker-compose)
-		- [Step 1: Download Docker Compose Binary](#step-1-download-docker-compose-binary)
-		- [Step 2: Verify Docker Compose Installation](#step-2-verify-docker-compose-installation)
-	- [Installing CPUFetch](#installing-cpufetch)
-	- [Installing Neofetch](#installing-neofetch)
-	- [Installing gdu](#installing-gdu)
-	- [Installing Droidcam](#installing-droidcam)
-	- [Installing Google Chrome](#installing-google-chrome)
-	- [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
-		- [Recommended Plugins](#recommended-plugins)
-		- [Custom JS Snippets](#custom-js-snippets)
-		- [Custom TS Snippets](#custom-ts-snippets)
-		- [Theme](#theme)
-		- [Custom Color Schema](#custom-color-schema)
-		- [Recommended Settings](#recommended-settings)
-		- [Custom Shortcuts](#custom-shortcuts)
-	- [Installing Postman](#installing-postman)
-	- [Installing WhatsApp Nativefier](#installing-whatsapp-nativefier)
-	- [Installing RedisInsight](#installing-redisinsight)
-	- [Installing Amberol Music Player](#installing-amberol-music-player)
-	- [Installing nomacs Image Viewer](#installing-nomacs-image-viewer)
-	- [Installing MongoDB-bin](#installing-mongodb-bin)
-	- [Installing MongoDB Tools](#installing-mongodb-tools)
-	- [Installing MongoDB Compass from AUR](#installing-mongodb-compass-from-aur)
-	- [Installing Boxes](#installing-boxes)
-	- [Installing Blanket](#installing-blanket)
-	- [Installing HandBrake](#installing-handbrake)
-	- [Installing DaVinci Resolve](#installing-davinci-resolve)
-	- [Installing Albert Application Launcher](#installing-albert-application-launcher)
-		- [Albert Recommended Configs](#albert-recommended-configs)
-	- [Installing AnyDesk](#installing-anydesk)
-	- [Installing Rclone \& Rclone Browser](#installing-rclone--rclone-browser)
-	- [Installing uGet](#installing-uget)
-		- [Install uGet](#install-uget)
-		- [integration](#integration)
-		- [Implant IDM categories structure](#implant-idm-categories-structure)
-	- [Install Spot Player](#install-spot-player)
-	- [Installing Flatpak](#installing-flatpak)
-	- [Setting Up Timeshift for System Snapshots](#setting-up-timeshift-for-system-snapshots)
+  - [Table of Contents](#table-of-contents)
+  - [Installing bat](#installing-bat)
+  - [Installing exa](#installing-exa)
+  - [Installing yt-dlp](#installing-yt-dlp)
+  - [Installing python-spotdl](#installing-python-spotdl)
+  - [Installing Git](#installing-git)
+    - [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
+  - [Installing Zsh](#installing-zsh)
+    - [Installing Oh My Zsh](#installing-oh-my-zsh)
+      - [Installing Zsh Plugins: zsh-autosuggestions and zsh-syntax-highlighting](#installing-zsh-plugins-zsh-autosuggestions-and-zsh-syntax-highlighting)
+        - [Prerequisites](#prerequisites)
+        - [zsh-autosuggestions](#zsh-autosuggestions)
+        - [zsh-syntax-highlighting](#zsh-syntax-highlighting)
+        - [Enabling Plugins](#enabling-plugins)
+    - [Custom Alias](#custom-alias)
+  - [sshuttle VPN](#sshuttle-vpn)
+  - [Installing LibreOffice](#installing-libreoffice)
+  - [Installing GIMP](#installing-gimp)
+    - [Change Gimp's look](#change-gimps-look)
+  - [Installing VLC Media Player on Arch Linux](#installing-vlc-media-player-on-arch-linux)
+  - [Installing qBittorrent](#installing-qbittorrent)
+  - [Installing OBS Studio](#installing-obs-studio)
+  - [Video Editing](#video-editing)
+    - [Installing Kdenlive](#installing-kdenlive)
+    - [Installing DaVinci Resolve](#installing-davinci-resolve)
+  - [Installing Discord](#installing-discord)
+  - [Installing Telegram Desktop](#installing-telegram-desktop)
+  - [Installing Redis](#installing-redis)
+  - [Installing duf](#installing-duf)
+  - [Installing lazygit](#installing-lazygit)
+  - [Installing Docker](#installing-docker)
+    - [Step 1: Install Required Packages](#step-1-install-required-packages)
+    - [Step 2: Enable and Start Docker Service](#step-2-enable-and-start-docker-service)
+    - [Step 3: Verify Docker Installation](#step-3-verify-docker-installation)
+    - [Step 4: Manage Docker Without Sudo (Optional)](#step-4-manage-docker-without-sudo-optional)
+    - [Step 5: Verify Docker Installation (Non-sudo)](#step-5-verify-docker-installation-non-sudo)
+    - [Step 6: Test Docker Installation](#step-6-test-docker-installation)
+  - [Installing Docker Compose](#installing-docker-compose)
+    - [Step 1: Download Docker Compose Binary](#step-1-download-docker-compose-binary)
+    - [Step 2: Verify Docker Compose Installation](#step-2-verify-docker-compose-installation)
+  - [Installing CPUFetch](#installing-cpufetch)
+  - [Installing Neofetch](#installing-neofetch)
+  - [Installing gdu](#installing-gdu)
+  - [Installing Droidcam](#installing-droidcam)
+  - [Installing Google Chrome](#installing-google-chrome)
+  - [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
+    - [Recommended Plugins](#recommended-plugins)
+    - [Custom JS Snippets](#custom-js-snippets)
+    - [Custom TS Snippets](#custom-ts-snippets)
+    - [Theme](#theme)
+    - [Custom Color Schema](#custom-color-schema)
+    - [Recommended Settings](#recommended-settings)
+    - [Custom Shortcuts](#custom-shortcuts)
+  - [Installing Postman](#installing-postman)
+  - [Installing RedisInsight](#installing-redisinsight)
+  - [Installing Amberol Music Player](#installing-amberol-music-player)
+  - [Image Viewer](#image-viewer)
+    - [Installing nomacs](#installing-nomacs)
+    - [Installing Loupe](#installing-loupe)
+  - [Installing MongoDB](#installing-mongodb)
+    - [Installing MongoDB Tools](#installing-mongodb-tools)
+    - [Installing MongoDB Compass](#installing-mongodb-compass)
+  - [Installing Boxes](#installing-boxes)
+  - [Installing Blanket](#installing-blanket)
+  - [Installing HandBrake](#installing-handbrake)
+  - [Installing Albert Application Launcher](#installing-albert-application-launcher)
+    - [Albert Recommended Configs](#albert-recommended-configs)
+  - [Installing Rclone \& Rclone Browser](#installing-rclone--rclone-browser)
+  - [Installing AnyDesk](#installing-anydesk)
+  - [Install Spot Player](#install-spot-player)
+  - [Installing Flatpak](#installing-flatpak)
+  - [Setting Up Timeshift for System Snapshots](#setting-up-timeshift-for-system-snapshots)
 
 ## Installing bat
 
@@ -281,7 +279,7 @@ Zsh, or Z Shell, is a powerful and highly customizable shell that can be used as
 sudo pacman -S zsh
 ```
 
-## Installing Oh My Zsh
+### Installing Oh My Zsh
 
 Oh My Zsh is a delightful, open-source, community-driven framework for managing your Zsh configuration. It comes bundled with a vast number of helpful functions, plugins, and themes to enhance your command-line experience. Here's how to install Oh My Zsh on your system:
 
@@ -299,15 +297,15 @@ sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O 
 
 During Installation process of Oh My Zsh you will be prompted to set `zsh` as your main shell choose yes.
 
-### Installing Zsh Plugins: zsh-autosuggestions and zsh-syntax-highlighting
+#### Installing Zsh Plugins: zsh-autosuggestions and zsh-syntax-highlighting
 
 [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) and [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) are popular plugins for Zsh that enhance your command-line experience by providing autosuggestions as you type and syntax highlighting for commands, respectively. Here's how to install them:
 
-#### Prerequisites
+##### Prerequisites
 
 Ensure that you have Zsh and Oh My Zsh installed on your system. If not, refer to the previous guide on installing Oh My Zsh.
 
-#### zsh-autosuggestions
+##### zsh-autosuggestions
 
 1. Clone the zsh-autosuggestions repository into the Oh My Zsh plugins directory:
 
@@ -321,7 +319,7 @@ Ensure that you have Zsh and Oh My Zsh installed on your system. If not, refer t
    plugins=(zsh-autosuggestions)
    ```
 
-#### zsh-syntax-highlighting
+##### zsh-syntax-highlighting
 
 1. Clone the zsh-syntax-highlighting repository into the Oh My Zsh plugins directory:
 
@@ -335,7 +333,7 @@ Ensure that you have Zsh and Oh My Zsh installed on your system. If not, refer t
    plugins=(zsh-syntax-highlighting)
    ```
 
-#### Enabling Plugins
+##### Enabling Plugins
 
 After adding the plugins to your `~/.zshrc` file, reload the Zsh configuration:
 
@@ -496,12 +494,22 @@ sudo pacman -S obs-studio
 
 This command installs the OBS Studio package from the official Arch Linux repositories. Once installed, you can launch OBS Studio from your system's application menu and start recording or streaming your content.
 
-## Installing Kdenlive
+## Video Editing
+
+### Installing Kdenlive
 
 Kdenlive is a popular open-source video editing software that provides a comprehensive set of features for editing videos. Here's how to install it on your system:
 
 ```bash
 sudo pacman -S kdenlive
+```
+
+### Installing DaVinci Resolve
+
+DaVinci Resolve is a professional video editing software with advanced features for color correction, visual effects, and audio post-production. Here's how to install DaVinci Resolve on Arch Linux:
+
+```bash
+paru -S davinci-resolve
 ```
 
 This command installs the Kdenlive package from the official Arch Linux repositories. Once installed, you can launch Kdenlive from your system's application menu and start editing your videos with its intuitive interface and powerful editing tools.
@@ -1415,20 +1423,12 @@ Postman is a popular collaboration platform for API development, used by develop
 paru -S postman-bin
 ```
 
-## Installing WhatsApp Nativefier
-
-WhatsApp Nativefier is a wrapper application that allows you to run WhatsApp Web as a standalone desktop application on your Linux system. Here's how you can install it:
-
-```bash
-paru -S whatsapp-nativefier
-```
-
 ## Installing RedisInsight
 
 RedisInsight is a graphical user interface (GUI) for managing Redis databases. It provides a user-friendly interface to interact with your Redis instances. Here's how you can install RedisInsight:
 
 ```bash
-paru -S redisinsight
+paru -S redisinsight-bin
 ```
 
 ## Installing Amberol Music Player
@@ -1439,7 +1439,9 @@ Amberol Music Player is a lightweight and customizable music player designed for
 paru -S amberol
 ```
 
-## Installing nomacs Image Viewer
+## Image Viewer
+
+### Installing nomacs
 
 nomacs is a free, open-source image viewer that supports multiple platforms, including Linux. You can install nomacs using the Arch User Repository (AUR). Here's how:
 
@@ -1449,7 +1451,15 @@ paru -S nomacs
 
 Note: You don't need to install this applicatin in Gnome desctop environment
 
-## Installing MongoDB-bin
+### Installing Loupe
+
+Loupe is the default image viewer for GNOME, providing a modern, lightweight, and user-friendly interface for viewing images. Loupe is included in the official Arch Linux repositories, . Here's how to install it:
+
+```bash
+sudo pacman -S loupe
+```
+
+## Installing MongoDB
 
 MongoDB-bin is the binary distribution of MongoDB, a popular NoSQL database management system. Here's how to install MongoDB-bin on your system:
 
@@ -1485,7 +1495,7 @@ MongoDB-bin is the binary distribution of MongoDB, a popular NoSQL database mana
    sudo systemctl status mongodb
    ```
 
-## Installing MongoDB Tools
+### Installing MongoDB Tools
 
 MongoDB Tools is a set of command-line utilities for working with MongoDB instances. Here's how to install MongoDB Tools on your Arch Linux system:
 
@@ -1521,7 +1531,7 @@ MongoDB Tools is a set of command-line utilities for working with MongoDB instan
 
    This will display usage information for each tool, allowing you to understand their functionality and options.
 
-## Installing MongoDB Compass from AUR
+### Installing MongoDB Compass
 
 MongoDB Compass is a graphical user interface (GUI) for MongoDB. It allows you to visually explore your data, run ad hoc queries, and interact with your MongoDB databases. Here's how to install MongoDB Compass on your Linux system using the AUR (Arch User Repository):
 
@@ -1542,7 +1552,7 @@ sudo pacman -S gnome-boxes
 Blanket is a simple and minimalist GNOME app designed to help users focus, relax, or sleep better by providing a variety of ambient sounds.
 
 ```bash
-sudo pacman -S Blanket
+sudo pacman -S blanket
 ```
 
 ## Installing HandBrake
@@ -1551,14 +1561,6 @@ HandBrake is an open-source video transcoder that allows you to convert video fi
 
 ```bash
 sudo pacman -S handbrake
-```
-
-## Installing DaVinci Resolve
-
-DaVinci Resolve is a professional video editing software with advanced features for color correction, visual effects, and audio post-production. Here's how to install DaVinci Resolve on Arch Linux:
-
-```bash
-paru -S davinci-resolve
 ```
 
 ## Installing Albert Application Launcher
@@ -1580,14 +1582,6 @@ paru -S albert
 ![Alt text](./images/20231216110858.png)
 
 ![Alt text](./images/20240209224715.png)
-
-## Installing AnyDesk
-
-AnyDesk is a remote desktop application that allows users to access and control computers remotely. It is available in the Arch Linux User Repository (AUR). Here's how to install AnyDesk on your Linux system:
-
-```bash
-paru -S anydesk-bin
-```
 
 ## Installing Rclone & Rclone Browser
 
@@ -1626,48 +1620,13 @@ Rclone is a command-line program to manage files on cloud storage services and r
 
    You have now installed and configured everything you need to sync the cloud storage service with your system. To use this service, just open the Rclone Browser program and double-click on the service you want to synchronize. After it opens, select the mount option from the action menu and select the desired directory where you want the data to be synchronized.
 
-## Installing uGet
+## Installing AnyDesk
 
-uGet is a lightweight and customizable download manager for Linux. It supports multi-threaded downloading, pause and resume functionality, and integration with various web browsers. Here's how to install uGet on your Arch Linux system:
-
-### Install uGet
-
-uGet is available in the Arch Linux repositories. You can install it using the package manager, `pacman`:
+AnyDesk is a remote desktop application that allows users to access and control computers remotely. It is available in the Arch Linux User Repository (AUR). Here's how to install AnyDesk on your Linux system:
 
 ```bash
-sudo pacman -S uget
+paru -S anydesk-bin
 ```
-
-### integration
-
-"uGet offers a range of plugins to augment its capabilities, allowing users to tailor their experience to their specific needs. For instance, if you wish to integrate uGet with your Linux system, you have two options. You can either refer to the instructions provided in the [ugetdm/uget-extension](https://github.com/ugetdm/uget-extension) GitHub repository directly or follow the steps outlined below, which have been extracted from the aforementioned repository:"
-
-1. Install `uget-integrator` packages:
-
-   ```bash
-   paru -S uget-integrator-chrome uget-integrator-chromium uget-integrator-opera uget-integrator-firefox
-   ```
-
-2. Install `uget-extension` on your browser and restart the browser:
-
-   - [Google Chrome, Chromium & Vivaldi](https://chrome.google.com/webstore/detail/uget-integration/efjgjleilhflffpbnkaofpmdnajdpepi)
-   - [Mozilla Firefox](https://addons.mozilla.org/en-US/firefox/addon/ugetintegration/)
-   - [Opera](https://addons.opera.com/en/extensions/details/uget-integration)
-
-### Implant IDM categories structure
-
-uGet's notable advantage lies in its ability to emulate the familiar structure of the popular IDM (Internet Download Manager) application. To replicate IDM's structure within uGet, you can follow the steps below:
-
-1. Open `categories` window and select “new category”
-2. config categories like the table bellow (Replace `username` in `directories` with your actual username)
-
-   | Category name        | Compressed                                      | Documents                          | Musics                                 | Programs                          | Videos                                                                 |
-   | -------------------- | ----------------------------------------------- | ---------------------------------- | -------------------------------------- | --------------------------------- | ---------------------------------------------------------------------- |
-   | Active downloads     | 1                                               | 1                                  | 1                                      | 1                                 | 1                                                                      |
-   | Capacity of finished | 99999                                           | 99999                              | 99999                                  | 99999                             | 99999                                                                  |
-   | Capacity of recycled | 99999                                           | 99999                              | 99999                                  | 99999                             | 99999                                                                  |
-   | Matched types        | zip;rar;r0*;r1*;arj;gz;sit;sitx;sea;ace;bz2;7z; | doc;pdf;ppt;pps;docx;pptx          | mp3;wav;wma;mpa;ram;ra;aac;aif;m4a;tsa | Exe;msi;deb                       | avi;mpg;mpe;mpeg;asf;wmv;mov;qt;rm;mp4;flv;m4v;webm;ogv;ogg;mkv;ts;tsv |
-   | directories          | /home/username/Downloads/Compressed             | /home/username/Downloads/Documents | /home/username/Downloads/Musics        | /home/username/Downloads/Programs | /home/username/Downloads/Videos                                        |
 
 ## Install Spot Player
 
