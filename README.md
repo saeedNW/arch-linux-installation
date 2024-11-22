@@ -48,6 +48,6 @@ Once Arch Linux or EndeavourOS is installed, you have the freedom to tailor your
 
 Numerous customization guides are available online, including on platforms like YouTube. two standout channels providing comprehensive guidance for customizing various Linux desktop environments are [Arc Technologies](https://www.youtube.com/@ArcTechnologies) and [LinuxScoop](https://www.youtube.com/@linuxscoop). The content in this section draws inspiration from one of their videos.
 
-For further customization options for KDE, refer to the [KDE Plasma Nordic Customization](./customization/kde/kde_Nordic.md) guide.
+For further customization options for KDE Plasma 6, refer to the [KDE Plasma Nordic Customization](./customization/kde/kde_Nordic.md) guide.
 
 For further customization options for Gnome, refer to the [Gnome Nordic Customization](./customization/gnome/gnome_Nordic.md) guide.
