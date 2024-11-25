@@ -54,17 +54,22 @@ Enhancing your desktop experience involves enabling additional effects that can 
 
 **Steps to Enable Additional Desktop Effects:**
 
-1. **Enable "Dim Inactive":**
+1. **Enable "Sheet":**
+
+   - Navigate to System Settings > Windows Management > Desktop Effects.
+   - Check the box next to "Sheet" to activate the effect, enhancing window animations for a smooth and elegant appearance.
+
+2. **Enable "Dim Inactive":**
 
    - Navigate to System Settings > Windows Management > Desktop Effects.
    - Check the box next to "Dim Inactive" to visually distinguish between active and inactive windows, improving focus and productivity.
 
-2. **Enable "Dim Screen for Administrator Mode":**
+3. **Enable "Dim Screen for Administrator Mode":**
 
    - Navigate to System Settings > Windows Management > Desktop Effects.
    - Check the box next to "Dim Screen for Administrator Mode" to dim the screen when entering administrator mode, signaling a change in system permissions.
 
-3. **Enable "Slide Back":**
+4. **Enable "Slide Back":**
 
    - Navigate to System Settings > Windows Management > Desktop Effects.
    - Check the box next to "Slide Back" to add a smooth sliding animation when switching between desktops or virtual workspaces, enhancing navigation fluidity.

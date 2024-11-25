@@ -63,7 +63,8 @@ In this guide, I'll walk you through the installation process of essential appli
   - [Installing Postman](#installing-postman)
   - [Installing Amberol Music Player](#installing-amberol-music-player)
   - [Image Viewer](#image-viewer)
-    - [Installing Loupe (Recomended)](#installing-loupe-recomended)
+    - [Installing qview (Recomended)](#installing-qview-recomended)
+    - [Installing Loupe](#installing-loupe)
     - [Installing nomacs](#installing-nomacs)
   - [Installing GNOME Boxes](#installing-gnome-boxes)
   - [Installing Blanket](#installing-blanket)
@@ -497,7 +498,11 @@ This command installs the vlc package from the official Arch Linux repositories.
 
 ### Change VLC's Look
 
-You have the option to either update the VLC interface according to your preferences or download and apply a [preset](https://github.com/dmtiir/VeLoCity-Skin-for-VLC) configuration.
+You have the option to either update the VLC interface according to your preferences or download and apply a preset configuration such as ones bellow:
+
+[Hind VLC Skin](https://www.pling.com/p/1647074)
+
+[VeLoCity-Skin-for-VLC](https://github.com/dmtiir/VeLoCity-Skin-for-VLC)
 
 ## Installing qBittorrent
 
@@ -665,7 +670,7 @@ docker run -d \
     --restart=always \
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v portainer_data:/data \
-    portainer/portainer-ce:2.21.4
+    portainer/portainer-ce
 ```
 
 ## Installing RabbitMQ
@@ -1675,7 +1680,15 @@ paru -S amberol
 
 ## Image Viewer
 
-### Installing Loupe (Recomended)
+### Installing qview (Recomended)
+
+QView is a lightweight and fast image viewer for Linux, designed for simplicity and ease of use. It supports a wide range of image formats. With its minimal interface, QView provides a clean and distraction-free environment for viewing images.
+
+```bash
+paru -S qview
+```
+
+### Installing Loupe
 
 Loupe is the default image viewer for GNOME, providing a modern, lightweight, and user-friendly interface for viewing images. Loupe is included in the official Arch Linux repositories, . Here's how to install it:
 
