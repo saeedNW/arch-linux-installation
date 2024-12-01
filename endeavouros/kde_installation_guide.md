@@ -19,6 +19,7 @@ Let's dive into the installation process and unleash the power of EndeavourOS on
   - [Enable Multilib Repository](#enable-multilib-repository)
   - [Install Core Applications (Skip Reinstallation)](#install-core-applications-skip-reinstallation)
     - [Install Node.js and npm](#install-nodejs-and-npm)
+    - [Install TypeScript and NestJS](#install-typescript-and-nestjs)
   - [Grant "wheel" Group Members "sudo" Privileges](#grant-wheel-group-members-sudo-privileges)
     - [Edit sudoers File](#edit-sudoers-file)
   - [Install Paru Package Manager](#install-paru-package-manager)
@@ -143,6 +144,16 @@ Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine, and npm 
 
 ```bash
 sudo pacman -S nodejs npm
+```
+
+### Install TypeScript and NestJS
+
+TypeScript is a strongly typed programming language that builds on JavaScript, and NestJS is a progressive Node.js framework for building efficient, reliable, and scalable server-side applications.
+
+To install TypeScript and NestJS CL globally, use the following command:
+
+```bash
+sudo npm install -g typescript @nestjs/cli
 ```
 
 ## Grant "wheel" Group Members "sudo" Privileges
