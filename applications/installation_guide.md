@@ -5,78 +5,78 @@ In this guide, I'll walk you through the installation process of essential appli
 ## Table of Contents
 
 - [Essential Applications Guide](#essential-applications-guide)
-  - [Table of Contents](#table-of-contents)
-  - [Installing bat](#installing-bat)
-  - [Installing exa](#installing-exa)
-  - [Installing duf](#installing-duf)
-  - [Installing gdu](#installing-gdu)
-  - [Installing yt-dlp](#installing-yt-dlp)
-  - [Installing python-spotdl](#installing-python-spotdl)
-  - [Installing Zsh](#installing-zsh)
-    - [Installing Oh My Zsh](#installing-oh-my-zsh)
-      - [Installing Zsh Plugins](#installing-zsh-plugins)
-        - [zsh-autosuggestions](#zsh-autosuggestions)
-        - [zsh-syntax-highlighting](#zsh-syntax-highlighting)
-        - [Enabling Plugins](#enabling-plugins)
-    - [Custom Alias](#custom-alias)
-  - [Installing Git](#installing-git)
-    - [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
-  - [sshuttle VPN](#sshuttle-vpn)
-  - [Installing LibreOffice](#installing-libreoffice)
-  - [Installing GIMP](#installing-gimp)
-    - [Change Gimp's Look](#change-gimps-look)
-  - [Installing VLC Media Player](#installing-vlc-media-player)
-    - [Change VLC's Look](#change-vlcs-look)
-  - [Installing qBittorrent](#installing-qbittorrent)
-    - [Change qBittorrent's Look](#change-qbittorrents-look)
-  - [Installing OBS Studio](#installing-obs-studio)
-  - [Video Editor](#video-editor)
-    - [Installing Kdenlive](#installing-kdenlive)
-    - [Installing DaVinci Resolve](#installing-davinci-resolve)
-  - [Installing Discord](#installing-discord)
-  - [Installing Telegram Desktop](#installing-telegram-desktop)
-  - [Installing lazygit](#installing-lazygit)
-  - [Installing Docker](#installing-docker)
-    - [Installing Docker Compose](#installing-docker-compose)
-    - [Installing Portainer](#installing-portainer)
-  - [Installing RabbitMQ](#installing-rabbitmq)
-  - [Installing Databases](#installing-databases)
-    - [Installing Redis](#installing-redis)
-      - [Installing RedisInsight](#installing-redisinsight)
-    - [Installing MongoDB](#installing-mongodb)
-      - [Installing MongoDB Tools](#installing-mongodb-tools)
-      - [Installing MongoDB Compass](#installing-mongodb-compass)
-    - [MySQL and phpMyAdmin](#mysql-and-phpmyadmin)
-    - [Installing Elasticsearch and Kibana](#installing-elasticsearch-and-kibana)
-    - [installing Postgres and pgAdmin](#installing-postgres-and-pgadmin)
-  - [Installing CPUFetch](#installing-cpufetch)
-  - [Installing Neofetch](#installing-neofetch)
-  - [Installing Google Chrome](#installing-google-chrome)
-  - [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
-    - [Recommended Plugins](#recommended-plugins)
-    - [Custom JS Snippets](#custom-js-snippets)
-    - [Custom TS Snippets](#custom-ts-snippets)
-    - [Theme](#theme)
-    - [Custom Color Schema](#custom-color-schema)
-    - [Recommended Settings](#recommended-settings)
-    - [Custom Shortcuts](#custom-shortcuts)
-  - [Installing Postman](#installing-postman)
-  - [Installing Amberol Music Player](#installing-amberol-music-player)
-  - [Image Viewer](#image-viewer)
-    - [Installing qview (Recomended)](#installing-qview-recomended)
-    - [Installing Loupe](#installing-loupe)
-    - [Installing nomacs](#installing-nomacs)
-  - [Installing GNOME Boxes](#installing-gnome-boxes)
-  - [Installing Blanket](#installing-blanket)
-  - [Installing HandBrake](#installing-handbrake)
-  - [Installing Albert Application Launcher](#installing-albert-application-launcher)
-    - [Albert Recommended Configs](#albert-recommended-configs)
-  - [Installing Rclone \& Rclone Browser](#installing-rclone--rclone-browser)
-  - [Installing AnyDesk](#installing-anydesk)
-  - [Installing Droidcam](#installing-droidcam)
-  - [Install Spot Player](#install-spot-player)
-  - [Installing Flatpak](#installing-flatpak)
-  - [Setting Up Timeshift for System Snapshots](#setting-up-timeshift-for-system-snapshots)
+	- [Table of Contents](#table-of-contents)
+	- [Installing bat](#installing-bat)
+	- [Installing eza](#installing-eza)
+	- [Installing duf](#installing-duf)
+	- [Installing gdu](#installing-gdu)
+	- [Installing yt-dlp](#installing-yt-dlp)
+	- [Installing python-spotdl](#installing-python-spotdl)
+	- [Installing Zsh](#installing-zsh)
+		- [Installing Oh My Zsh](#installing-oh-my-zsh)
+			- [Installing Zsh Plugins](#installing-zsh-plugins)
+				- [zsh-autosuggestions](#zsh-autosuggestions)
+				- [zsh-syntax-highlighting](#zsh-syntax-highlighting)
+				- [Enabling Plugins](#enabling-plugins)
+		- [Custom Alias](#custom-alias)
+	- [Installing Git](#installing-git)
+		- [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
+	- [sshuttle VPN](#sshuttle-vpn)
+	- [Installing LibreOffice](#installing-libreoffice)
+	- [Installing GIMP](#installing-gimp)
+		- [Change Gimp's Look](#change-gimps-look)
+	- [Installing VLC Media Player](#installing-vlc-media-player)
+		- [Change VLC's Look](#change-vlcs-look)
+	- [Installing qBittorrent](#installing-qbittorrent)
+		- [Change qBittorrent's Look](#change-qbittorrents-look)
+	- [Installing OBS Studio](#installing-obs-studio)
+	- [Video Editor](#video-editor)
+		- [Installing Kdenlive](#installing-kdenlive)
+		- [Installing DaVinci Resolve](#installing-davinci-resolve)
+	- [Installing Discord](#installing-discord)
+	- [Installing Telegram Desktop](#installing-telegram-desktop)
+	- [Installing lazygit](#installing-lazygit)
+	- [Installing Docker](#installing-docker)
+		- [Installing Docker Compose](#installing-docker-compose)
+		- [Installing Portainer](#installing-portainer)
+	- [Installing RabbitMQ](#installing-rabbitmq)
+	- [Installing Databases](#installing-databases)
+		- [Installing Redis](#installing-redis)
+			- [Installing RedisInsight](#installing-redisinsight)
+		- [Installing MongoDB](#installing-mongodb)
+			- [Installing MongoDB Tools](#installing-mongodb-tools)
+			- [Installing MongoDB Compass](#installing-mongodb-compass)
+		- [MySQL and phpMyAdmin](#mysql-and-phpmyadmin)
+		- [Installing Elasticsearch and Kibana](#installing-elasticsearch-and-kibana)
+		- [installing Postgres and pgAdmin](#installing-postgres-and-pgadmin)
+	- [Installing CPUFetch](#installing-cpufetch)
+	- [Installing Neofetch](#installing-neofetch)
+	- [Installing Google Chrome](#installing-google-chrome)
+	- [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
+		- [Recommended Plugins](#recommended-plugins)
+		- [Custom JS Snippets](#custom-js-snippets)
+		- [Custom TS Snippets](#custom-ts-snippets)
+		- [Theme](#theme)
+		- [Custom Color Schema](#custom-color-schema)
+		- [Recommended Settings](#recommended-settings)
+		- [Custom Shortcuts](#custom-shortcuts)
+	- [Installing Postman](#installing-postman)
+	- [Installing Amberol Music Player](#installing-amberol-music-player)
+	- [Image Viewer](#image-viewer)
+		- [Installing qview (Recomended)](#installing-qview-recomended)
+		- [Installing Loupe](#installing-loupe)
+		- [Installing nomacs](#installing-nomacs)
+	- [Installing GNOME Boxes](#installing-gnome-boxes)
+	- [Installing Blanket](#installing-blanket)
+	- [Installing HandBrake](#installing-handbrake)
+	- [Installing Albert Application Launcher](#installing-albert-application-launcher)
+		- [Albert Recommended Configs](#albert-recommended-configs)
+	- [Installing Rclone \& Rclone Browser](#installing-rclone--rclone-browser)
+	- [Installing AnyDesk](#installing-anydesk)
+	- [Installing Droidcam](#installing-droidcam)
+	- [Install Spot Player](#install-spot-player)
+	- [Installing Flatpak](#installing-flatpak)
+	- [Setting Up Timeshift for System Snapshots](#setting-up-timeshift-for-system-snapshots)
 
 ## Installing bat
 
@@ -106,33 +106,33 @@ In this guide, I'll walk you through the installation process of essential appli
    bat --version
    ```
 
-## Installing exa
+## Installing eza
 
-`exa` is a modern replacement for the traditional `ls` command, providing more features and a more visually appealing output. Here's how to install it on your system:
-
-```bash
-sudo pacman -S exa
-```
-
-Once installed, you can use `exa` just like you would use `ls`, but with additional features and options. For example, to list files and directories in the current directory, simply type:
+`eza` is a modern replacement for the traditional `ls` command, providing more features and a more visually appealing output. Here's how to install it on your system:
 
 ```bash
-exa
+sudo pacman -S eza
 ```
 
-To see a detailed list including file sizes, permissions, and timestamps, use the `-l` flag:
+Once installed, you can use `eza` just like you would use `ls`, but with additional features and options. For example, to list files and directories in the current directory, simply type:
 
 ```bash
-exa -l
+eza
 ```
 
-To display hidden files, use the `-a` flag:
+But if you want to improce the visually appealing you can add `--icon` option to it:
 
 ```bash
-exa -a
+eza --icon
 ```
 
-`exa` provides many more options and features. You can explore them further by checking out the official documentation or by running `exa --help` in your terminal.
+You can also make it to show directories first:
+
+```bash
+eza --icons --group-directories-first
+```
+
+`eza` provides many more options and features. You can explore them further by checking out the official documentation or by running `eza --help` in your terminal.
 
 ## Installing duf
 
@@ -283,7 +283,9 @@ Here's a simple guide on how to create a `~/.zprofile` file, define some alias i
      - Replace `ls` command with `exa` command:
 
        ```bash
-       alias ls='exa'
+       alias ls='eza --icons --group-directories-first -G --no-quotes'
+       alias ll='eza --icons --group-directories-first -lG --no-quotes'
+       alias lt='eza --icons --group-directories-first --no-quotes -RTL'
        ```
 
      - Replace `cat` command with `bat` command:
