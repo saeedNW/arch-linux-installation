@@ -19,6 +19,10 @@ In this guide, I'll walk you through the installation process of essential appli
 				- [zsh-syntax-highlighting](#zsh-syntax-highlighting)
 				- [Enabling Plugins](#enabling-plugins)
 		- [Custom Alias](#custom-alias)
+	- [Installing direnv](#installing-direnv)
+		- [Setup](#setup)
+		- [Quick demo](#quick-demo)
+		- [Key Notes](#key-notes)
 	- [Installing Git](#installing-git)
 		- [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
 	- [sshuttle VPN](#sshuttle-vpn)
@@ -233,7 +237,7 @@ During Installation process of Oh My Zsh you will be prompted to set `zsh` as yo
 2. Activate the plugin by adding it to the list of plugins in your `~/.zshrc` configuration file:
 
    ```bash
-   plugins=(zsh-autosuggestions)
+   plugins=(... zsh-autosuggestions)
    ```
 
 ##### zsh-syntax-highlighting
@@ -247,7 +251,7 @@ During Installation process of Oh My Zsh you will be prompted to set `zsh` as yo
 2. Activate the plugin by adding it to the list of plugins in your `~/.zshrc` configuration file:
 
    ```bash
-   plugins=(zsh-syntax-highlighting)
+   plugins=(... zsh-syntax-highlighting)
    ```
 
 ##### Enabling Plugins
@@ -330,6 +334,78 @@ Here's a simple guide on how to create a `~/.zprofile` file, define some alias i
      ```
 
 Now your alias defined in `~/.zprofile` will be available every time you start a new shell session, and it will be automatically loaded from your `~/.zshrc` file.
+
+## Installing direnv
+
+direnv is a shell extension that automatically loads and unloads environment variables based on your project's directory. It's particularly useful for managing environment-specific configurations in .envrc files. Here's how to install it on your system:
+
+```bash
+sudo pacman -S direnv
+```
+
+### Setup
+
+For direnv to work properly it needs to be hooked into the shell. Once the hook is configured, restart your shell for direnv to be activated.
+
+**ZSH :** Add the following line at the end of the ~/.zshrc file:
+
+```bash
+eval "$(direnv hook zsh
+```
+
+**Oh my zsh :** Oh my zsh has a core plugin with direnv support. Add direnv to the plugins array in your zshrc file:
+
+```bash
+plugins=(... direnv)
+```
+
+### Quick demo
+
+```bash
+# Create a new folder for demo purposes.
+$ mkdir ~/my-project
+$ cd ~/my-project
+
+# Show that the FOO environment variable is not loaded.
+$ echo ${FOO-nope}
+nope
+
+# Create a new .envrc. This file is bash code that is going to be loaded by
+# direnv.
+$ echo export FOO=foo > .envrc
+.envrc is not allowed
+
+# The security mechanism didn't allow to load the .envrc. Since we trust it,
+# let's allow its execution.
+$ direnv allow .
+direnv: reloading
+direnv: loading .envrc
+direnv export: +FOO
+
+# Show that the FOO environment variable is loaded.
+$ echo ${FOO-nope}
+foo
+
+# Exit the project
+$ cd ..
+direnv: unloading
+
+# And now FOO is unset again
+$ echo ${FOO-nope}
+nope
+```
+
+### Key Notes
+
+1. **Applying Changes to `.envrc`**  
+   After updating the `.envrc` file in your directory, you must run the following command to apply the changes:
+
+   ```bash
+   direnv allow .
+   ```
+
+2. **Priority of Environment Variables**  
+   Environment variables defined in the `.envrc` file have higher precedence over those in the project's `.env` file. If the same variable exists in both files, the value from `.envrc` will be used. This allows you to override configurations when needed.
 
 ## Installing Git
 
