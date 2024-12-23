@@ -407,6 +407,14 @@ nope
 2. **Priority of Environment Variables**  
    Environment variables defined in the `.envrc` file have higher precedence over those in the project's `.env` file. If the same variable exists in both files, the value from `.envrc` will be used. This allows you to override configurations when needed.
 
+3. **Define alias in `~/.zprofile`:**
+
+   - Inside the `~/.zprofile` file, you can define an alias to simplify the usage of `direnv allow .`
+
+     ```bash
+     alias dia='direnv allow .'
+     ```
+
 ## Installing Git
 
 Git is a widely-used version control system that allows you to manage and track changes to your codebase efficiently. Here's how to install Git on your Linux system:
