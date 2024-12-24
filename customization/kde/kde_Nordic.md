@@ -469,6 +469,12 @@ Reset Konsole and configure the Powerlevel10k theme.
 - Search for `POWERLEVEL9K_SHORTEN_STRATEGY`.
 - Change its value to `truncate_to_last` to adjust the path shortening strategy.
 
+**Step 6 - Adjust current directory color**:
+
+- Open the `~/.p10k.zsh` file in a text editor.
+- Search for `POWERLEVEL9K_DIR_FOREGROUND`.
+- Change its value to `6` to adjust the color to match with the nordic color theme.
+
 ## Neofetch Custom Config
 
 Download Neofetch [custom config](../general/neofetch_config.conf)
