@@ -457,6 +457,18 @@ Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`.
 
 Reset Konsole and configure the Powerlevel10k theme.
 
+**Step 4 - Customize the OS Icon in the Prompt**:
+
+- Open the `~/.p10k.zsh` file in a text editor.
+- Search for `POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION`.
+- Set its value to `$'\uF303'` to always display the Arch Linux logo, regardless of your actual OS.
+
+**Step 5 - Adjust Path Shortening Strategy**:
+
+- Open the `~/.p10k.zsh` file in a text editor.
+- Search for `POWERLEVEL9K_SHORTEN_STRATEGY`.
+- Change its value to `truncate_to_last` to adjust the path shortening strategy.
+
 ## Neofetch Custom Config
 
 Download Neofetch [custom config](../general/neofetch_config.conf)
