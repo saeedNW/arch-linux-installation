@@ -5,82 +5,84 @@ In this guide, I'll walk you through the installation process of essential appli
 ## Table of Contents
 
 - [Essential Applications Guide](#essential-applications-guide)
-	- [Table of Contents](#table-of-contents)
-	- [Installing bat](#installing-bat)
-	- [Installing eza](#installing-eza)
-	- [Installing duf](#installing-duf)
-	- [Installing gdu](#installing-gdu)
-	- [Installing yt-dlp](#installing-yt-dlp)
-	- [Installing python-spotdl](#installing-python-spotdl)
-	- [Installing Zsh](#installing-zsh)
-		- [Installing Oh My Zsh](#installing-oh-my-zsh)
-			- [Installing Zsh Plugins](#installing-zsh-plugins)
-				- [zsh-autosuggestions](#zsh-autosuggestions)
-				- [zsh-syntax-highlighting](#zsh-syntax-highlighting)
-				- [Enabling Plugins](#enabling-plugins)
-		- [Custom Alias](#custom-alias)
-	- [Installing direnv](#installing-direnv)
-		- [Setup](#setup)
-		- [Quick demo](#quick-demo)
-		- [Key Notes](#key-notes)
-	- [Installing Git](#installing-git)
-		- [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
-	- [sshuttle VPN](#sshuttle-vpn)
-	- [Installing LibreOffice](#installing-libreoffice)
-	- [Installing GIMP](#installing-gimp)
-		- [Change Gimp's Look](#change-gimps-look)
-	- [Installing VLC Media Player](#installing-vlc-media-player)
-		- [Change VLC's Look](#change-vlcs-look)
-	- [Installing qBittorrent](#installing-qbittorrent)
-		- [Change qBittorrent's Look](#change-qbittorrents-look)
-	- [Installing OBS Studio](#installing-obs-studio)
-	- [Video Editor](#video-editor)
-		- [Installing Kdenlive](#installing-kdenlive)
-		- [Installing DaVinci Resolve](#installing-davinci-resolve)
-	- [Installing Discord](#installing-discord)
-	- [Installing Telegram Desktop](#installing-telegram-desktop)
-	- [Installing lazygit](#installing-lazygit)
-	- [Installing Docker](#installing-docker)
-		- [Installing Docker Compose](#installing-docker-compose)
-		- [Installing Portainer](#installing-portainer)
-	- [Installing RabbitMQ](#installing-rabbitmq)
-	- [Installing Databases](#installing-databases)
-		- [Installing Redis](#installing-redis)
-			- [Installing RedisInsight](#installing-redisinsight)
-		- [Installing MongoDB](#installing-mongodb)
-			- [Installing MongoDB Tools](#installing-mongodb-tools)
-			- [Installing MongoDB Compass](#installing-mongodb-compass)
-		- [MySQL and phpMyAdmin](#mysql-and-phpmyadmin)
-		- [Installing Elasticsearch and Kibana](#installing-elasticsearch-and-kibana)
-		- [installing Postgres and pgAdmin](#installing-postgres-and-pgadmin)
-	- [Installing CPUFetch](#installing-cpufetch)
-	- [Installing Neofetch](#installing-neofetch)
-	- [Installing Google Chrome](#installing-google-chrome)
-	- [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
-		- [Recommended Plugins](#recommended-plugins)
-		- [Custom JS Snippets](#custom-js-snippets)
-		- [Custom TS Snippets](#custom-ts-snippets)
-		- [Theme](#theme)
-		- [Custom Color Schema](#custom-color-schema)
-		- [Recommended Settings](#recommended-settings)
-		- [Custom Shortcuts](#custom-shortcuts)
-	- [Installing Postman](#installing-postman)
-	- [Installing Amberol Music Player](#installing-amberol-music-player)
-	- [Image Viewer](#image-viewer)
-		- [Installing qview (Recomended)](#installing-qview-recomended)
-		- [Installing Loupe](#installing-loupe)
-		- [Installing nomacs](#installing-nomacs)
-	- [Installing GNOME Boxes](#installing-gnome-boxes)
-	- [Installing Blanket](#installing-blanket)
-	- [Installing HandBrake](#installing-handbrake)
-	- [Installing Albert Application Launcher](#installing-albert-application-launcher)
-		- [Albert Recommended Configs](#albert-recommended-configs)
-	- [Installing Rclone \& Rclone Browser](#installing-rclone--rclone-browser)
-	- [Installing AnyDesk](#installing-anydesk)
-	- [Installing Droidcam](#installing-droidcam)
-	- [Install Spot Player](#install-spot-player)
-	- [Installing Flatpak](#installing-flatpak)
-	- [Setting Up Timeshift for System Snapshots](#setting-up-timeshift-for-system-snapshots)
+  - [Table of Contents](#table-of-contents)
+  - [Installing bat](#installing-bat)
+  - [Installing eza](#installing-eza)
+  - [Installing duf](#installing-duf)
+  - [Installing gdu](#installing-gdu)
+  - [Installing yt-dlp](#installing-yt-dlp)
+  - [Installing python-spotdl](#installing-python-spotdl)
+  - [Installing Zsh](#installing-zsh)
+    - [Installing Oh My Zsh](#installing-oh-my-zsh)
+      - [Installing Zsh Plugins](#installing-zsh-plugins)
+        - [zsh-autosuggestions](#zsh-autosuggestions)
+        - [zsh-syntax-highlighting](#zsh-syntax-highlighting)
+        - [zsh-completions](#zsh-completions)
+        - [Enabling Plugins](#enabling-plugins)
+    - [Custom Alias](#custom-alias)
+    - [ZSH History Configuration](#zsh-history-configuration)
+  - [Installing direnv](#installing-direnv)
+    - [Setup](#setup)
+    - [Quick demo](#quick-demo)
+    - [Key Notes](#key-notes)
+  - [Installing Git](#installing-git)
+    - [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
+  - [sshuttle VPN](#sshuttle-vpn)
+  - [Installing LibreOffice](#installing-libreoffice)
+  - [Installing GIMP](#installing-gimp)
+    - [Change Gimp's Look](#change-gimps-look)
+  - [Installing VLC Media Player](#installing-vlc-media-player)
+    - [Change VLC's Look](#change-vlcs-look)
+  - [Installing qBittorrent](#installing-qbittorrent)
+    - [Change qBittorrent's Look](#change-qbittorrents-look)
+  - [Installing OBS Studio](#installing-obs-studio)
+  - [Video Editor](#video-editor)
+    - [Installing Kdenlive](#installing-kdenlive)
+    - [Installing DaVinci Resolve](#installing-davinci-resolve)
+  - [Installing Discord](#installing-discord)
+  - [Installing Telegram Desktop](#installing-telegram-desktop)
+  - [Installing lazygit](#installing-lazygit)
+  - [Installing Docker](#installing-docker)
+    - [Installing Docker Compose](#installing-docker-compose)
+    - [Installing Portainer](#installing-portainer)
+  - [Installing RabbitMQ](#installing-rabbitmq)
+  - [Installing Databases](#installing-databases)
+    - [Installing Redis](#installing-redis)
+      - [Installing RedisInsight](#installing-redisinsight)
+    - [Installing MongoDB](#installing-mongodb)
+      - [Installing MongoDB Tools](#installing-mongodb-tools)
+      - [Installing MongoDB Compass](#installing-mongodb-compass)
+    - [MySQL and phpMyAdmin](#mysql-and-phpmyadmin)
+    - [Installing Elasticsearch and Kibana](#installing-elasticsearch-and-kibana)
+    - [installing Postgres and pgAdmin](#installing-postgres-and-pgadmin)
+  - [Installing CPUFetch](#installing-cpufetch)
+  - [Installing Neofetch](#installing-neofetch)
+  - [Installing Google Chrome](#installing-google-chrome)
+  - [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
+    - [Recommended Plugins](#recommended-plugins)
+    - [Custom JS Snippets](#custom-js-snippets)
+    - [Custom TS Snippets](#custom-ts-snippets)
+    - [Theme](#theme)
+    - [Custom Color Schema](#custom-color-schema)
+    - [Recommended Settings](#recommended-settings)
+    - [Custom Shortcuts](#custom-shortcuts)
+  - [Installing Postman](#installing-postman)
+  - [Installing Amberol Music Player](#installing-amberol-music-player)
+  - [Image Viewer](#image-viewer)
+    - [Installing qview (Recomended)](#installing-qview-recomended)
+    - [Installing Loupe](#installing-loupe)
+    - [Installing nomacs](#installing-nomacs)
+  - [Installing GNOME Boxes](#installing-gnome-boxes)
+  - [Installing Blanket](#installing-blanket)
+  - [Installing HandBrake](#installing-handbrake)
+  - [Installing Albert Application Launcher](#installing-albert-application-launcher)
+    - [Albert Recommended Configs](#albert-recommended-configs)
+  - [Installing Rclone \& Rclone Browser](#installing-rclone--rclone-browser)
+  - [Installing AnyDesk](#installing-anydesk)
+  - [Installing Droidcam](#installing-droidcam)
+  - [Install Spot Player](#install-spot-player)
+  - [Installing Flatpak](#installing-flatpak)
+  - [Setting Up Timeshift for System Snapshots](#setting-up-timeshift-for-system-snapshots)
 
 ## Installing bat
 
@@ -224,7 +226,7 @@ During Installation process of Oh My Zsh you will be prompted to set `zsh` as yo
 
 #### Installing Zsh Plugins
 
-[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) and [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) are popular plugins for Zsh that enhance your command-line experience by providing autosuggestions as you type and syntax highlighting for commands, respectively. Here's how to install them:
+[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions), [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) and [zsh-completions](https://github.com/zsh-users/zsh-completions) are popular plugins for Zsh that enhance your command-line experience by providing autosuggestions as you type, syntax highlighting for commands and extending Zsh's command completion capabilities. Here's how to install them:
 
 ##### zsh-autosuggestions
 
@@ -253,6 +255,22 @@ During Installation process of Oh My Zsh you will be prompted to set `zsh` as yo
    ```bash
    plugins=(... zsh-syntax-highlighting)
    ```
+
+##### zsh-completions
+
+1. Clone the zsh-completions repository into the Oh My Zsh custom plugins directory:
+
+   ```bash
+     git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
+   ```
+
+2. Add it to FPATH in your `.zshrc` by adding the following line before `source $ZSH/oh-my-zsh.sh`:
+
+   ```bash
+   fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+   ```
+
+   **Note:** adding it as a regular Oh My ZSH! plugin will not work properly
 
 ##### Enabling Plugins
 
@@ -334,6 +352,29 @@ Here's a simple guide on how to create a `~/.zprofile` file, define some alias i
      ```
 
 Now your alias defined in `~/.zprofile` will be available every time you start a new shell session, and it will be automatically loaded from your `~/.zshrc` file.
+
+### ZSH History Configuration
+
+To optimize Zsh history management, add the following configuration to your `~/.zshrc` file:
+
+```bash
+# History
+HISTSIZE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory        # Append commands to history file, not overwrite
+setopt hist_ignore_space    # Ignore commands starting with a space
+setopt hist_ignore_all_dups # Remove all duplicates in history
+setopt hist_save_no_dups    # Avoid saving duplicate entries
+setopt hist_ignore_dups     # Ignore duplicates in the current session
+```
+
+After saving the file, reload the Zsh configuration:
+
+```bash
+source ~/.zshrc
+```
 
 ## Installing direnv
 
