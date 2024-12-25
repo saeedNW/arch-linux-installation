@@ -69,6 +69,9 @@ In this guide, I'll walk you through the installation process of essential appli
 		- [Theme](#theme)
 		- [Custom Color Schema](#custom-color-schema)
 		- [Recommended Settings](#recommended-settings)
+		- [VSCode Custom CSS \& JS](#vscode-custom-css--js)
+			- [Steps to Enable Custom CSS \& JS in VS Code](#steps-to-enable-custom-css--js-in-vs-code)
+			- [Example Files](#example-files)
 		- [Custom Shortcuts](#custom-shortcuts)
 	- [Installing Postman](#installing-postman)
 	- [Installing Amberol Music Player](#installing-amberol-music-player)
@@ -590,14 +593,14 @@ nope
 
 ### Key Notes
 
-1. **Applying Changes to `.envrc`**  
+1. **Applying Changes to `.envrc`**
    After updating the `.envrc` file in your directory, you must run the following command to apply the changes:
 
    ```bash
    direnv allow .
    ```
 
-2. **Priority of Environment Variables**  
+2. **Priority of Environment Variables**
    Environment variables defined in the `.envrc` file have higher precedence over those in the project's `.env` file. If the same variable exists in both files, the value from `.envrc` will be used. This allows you to override configurations when needed.
 
 3. **Define alias in `~/.zprofile`:**
@@ -1251,19 +1254,15 @@ xdg-mime default org.gnome.Nautilus.desktop inode/directory
 
 ### Recommended Plugins
 
-| Plugin Name          | Plugin Name              | Plugin Name                               | Plugin Name                  | Plugin Name               | Plugin Name      |
-| -------------------- | ------------------------ | ----------------------------------------- | ---------------------------- | ------------------------- | ---------------- |
-| advanced-new-file    | Atom Material Icons      | Auto Rename Tag                           | Auto-Open Markdown Preview   | Azura Repos               | Bash Beautify    |
-| Bash IDE             | better comments          | better folding                            | Code Spell Checker           | CodeSnap                  | YAML             |
-| Dev Containers       | Docker                   | Draw.io Integration                       | EJS language support         | Error Lens                | ESLint           |
-| Explorer Exclude     | Git Graph                | GitHub Repositories                       | Git lens                     | GraphQL                   | HTML CSS Support |
-| Ignore files         | Import Cost              | JavaScript (ES6) code snippets            | lazygit                      | Live Server               | Live Share       |
-| Log File Highlighter | Markdown All in One      | Markdown Preview Github Styling           | Markdown Table               | Markdown Table Prettifier | Markdownlint     |
-| Material Theme       | Nested Comments          | node-snippets                             | Persian - Code Spell Checker | Postman                   | Prettier         |
-| Prettify Json        | Pretty TypeScript Errors | Project Manager                           | python                       | Python Debugger           | Rainbow Brackets |
-| Random Everything    | Remote - SSH             | Remote - SSH: Editing Configuration Files | Remote - Tunnels             | Remote Development        | Remote Explorer  |
-| Remote Repositories  | REST Client              | Select Line Status Bar                    | Test Adapter Converter       | Thunder Client            | Todo Tree        |
-| Toggle Quotes        | Turbo Console Log        | Vscode NestJs Snippets                    | vscode-proto3                |                           |                  |
+| Plugin Name       | Plugin Name                    | Plugin Name                  | Plugin Name                | Plugin Name          | Plugin Name                     |
+| ----------------- | ------------------------------ | ---------------------------- | -------------------------- | -------------------- | ------------------------------- |
+| advanced-new-file | Atom Material Icons            | Auto Rename Tag              | Auto-Open Markdown Preview | Bash Beautify        | Bash IDE                        |
+| better comments   | Code Spell Checker             | CodeSnap                     | Custom CSS and JS Loader   | EJS language support | Error Lens                      |
+| ESLint            | Explorer Exclude               | Git Graph                    | Git lens                   | GraphQL              | HTML CSS Support                |
+| Ignore files      | JavaScript (ES6) code snippets | lazygit                      | Live Server                | Markdown All in One  | Markdown Preview Github Styling |
+| Markdown Table    | Import Cost                    | Markdown Table Prettifier    | Markdownlint               | Nested Comments      | node-snippets                   |
+| Nord Theme        | Overtype                       | Persian - Code Spell Checker | Prettier                   | Prettify Json        | Pretty TypeScript Errors        |
+| Rainbow Brackets  | Select Line Status Bar         | Todo Tree                    | Toggle Quotes              | vscode-proto3        |                                 |
 
 ### Custom JS Snippets
 
@@ -1533,15 +1532,14 @@ xdg-mime default org.gnome.Nautilus.desktop inode/directory
 
 ### Theme
 
-- Material Theme Ocean
+- Nord Theme
 
 ### Custom Color Schema
 
 You can find the usage of this color scheme in [VSCode Recommended Settings section](#recommended-settings)
 
 ```json
-{
-	"editor.tokenColorCustomizations": {
+"editor.tokenColorCustomizations": {
 		"textMateRules": [
 			{
 				"name": "string color",
@@ -1558,16 +1556,6 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 				}
 			},
 			{
-				"name": "property color",
-				"scope": [
-					"variable.other.constant.property",
-					"variable.other.property"
-				],
-				"settings": {
-					"foreground": "#9c9594" // change this COLOR
-				}
-			},
-			{
 				"name": "parameter color",
 				"scope": ["variable.parameter"],
 				"settings": {
@@ -1575,22 +1563,14 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 				}
 			},
 			{
-				"name": "jsdoc color",
-				"scope": ["variable.other.jsdoc"],
-				"settings": {
-					"foreground": "#ACE1AF" // change this COLOR
-				}
-			},
-			{
 				"name": "number color in env files",
 				"scope": ["source.ini"],
 				"settings": {
-					"foreground": "#76fd00" // change this COLOR
+					"foreground": "#76fd00" // your desired color
 				}
 			}
 		]
-	}
-}
+	},
 ```
 
 ### Recommended Settings
@@ -1600,13 +1580,18 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 	/**** START: General ***********/
 	"RainbowBrackets.depreciation-notice": false,
 	"security.workspace.trust.untrustedFiles": "open",
-	"terminal.integrated.env.linux": {},
-	"files.autoSave": "afterDelay",
 	"errorLens.enabledDiagnosticLevels": ["error", "warning"],
 	"explorer.compactFolders": false,
 	// "explorer.autoReveal": false,
 	"todo-tree.highlights.enabled": false,
 	/*********** END: General ****/
+
+	/**** START: Files ***********/
+	"files.autoSave": "afterDelay",
+	"files.trimTrailingWhitespace": true,
+	"files.insertFinalNewline": true,
+	"files.trimFinalNewlines": true,
+	/*********** END: Files ****/
 
 	/**** START: Zen Mode ***********/
 	"zenMode.centerLayout": false,
@@ -1616,6 +1601,7 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 	/**** START: Window ***********/
 	"window.titleBarStyle": "custom",
 	"window.menuBarVisibility": "toggle",
+	"window.newWindowDimensions": "inherit",
 	/*********** END: Window ****/
 
 	/**** START: Workbench ***********/
@@ -1626,7 +1612,10 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 	"workbench.colorCustomizations": {
 		"[Material Theme Ocean]": {}
 	},
-	"workbench.colorTheme": "Material Theme Ocean",
+	"workbench.colorTheme": "Nord",
+	"workbench.navigationControl.enabled": false,
+	"workbench.tips.enabled": false,
+	"workbench.startupEditor": "none",
 	/*********** END: Workbench ****/
 
 	/**** START: Git & Git lense***********/
@@ -1641,12 +1630,16 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 	"editor.formatOnPaste": true,
 	"editor.insertSpaces": false,
 	"editor.linkedEditing": true,
+	"editor.copyWithSyntaxHighlighting": false,
+	"editor.detectIndentation": false,
 	"editor.lineHeight": 2,
 	"editor.tabSize": 4,
 	"editor.fontFamily": "'Fira Code', monospace",
 	"editor.indentSize": "tabSize",
 	"editor.wordBasedSuggestions": "matchingDocuments",
 	"editor.cursorSmoothCaretAnimation": "on",
+	"editor.lightbulb.enabled": "off",
+	"editor.renderLineHighlight": "all",
 	"editor.tokenColorCustomizations": {
 		"textMateRules": [
 			{
@@ -1682,6 +1675,7 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 	/*********** END: Editor ****/
 
 	/**** START: Terminal ***********/
+	"terminal.integrated.env.linux": {},
 	"terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
 	/*********** END: Terminal ****/
 
@@ -1709,10 +1703,73 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 	},
 	"[shellscript]": {
 		"editor.defaultFormatter": "shakram02.bash-beautify"
-	}
+	},
 	/*********** END: Formatter ****/
+
+	/**** START: Other ***********/
+	"diffEditor.renderSideBySide": false,
+	"chat.commandCenter.enabled": false,
+	"extensions.ignoreRecommendations": true,
+	"breadcrumbs.enabled": false
+	/*********** END: Other ****/
 }
 ```
+
+### VSCode Custom CSS & JS
+
+This section is inspired by [Glenn Raya](https://www.youtube.com/@glennraya)'s video, [Transforming VS Code: Beyond Themes](https://www.youtube.com/watch?v=9_I0bySQoCs).
+
+We will use the `Custom CSS and JS Loader` extension to customize the appearance of VS Code by applying custom CSS and JavaScript. This process involves creating configuration files, enabling the custom loader, and resolving any permission issues, particularly on Linux systems like Arch Linux.
+
+#### Steps to Enable Custom CSS & JS in VS Code
+
+1. **Install the Extension**
+   Ensure you have installed the `Custom CSS and JS Loader` extension in your VS Code.
+
+2. **Create Configuration Files**
+   Create the following files in your filesystem:
+   - **Custom CSS:** `/home/<user>/.overhaul/vscode/custom-vscode.css`
+   - **Custom JS:** `/home/<user>/.overhaul/vscode/vscode-script.js`
+
+3. **Update Settings**
+   Add the following snippet to your `settings.json` to link these files:
+
+   ```json
+   "vscode_custom_css.imports": [
+       "file:///home/<user>/.overhaul/vscode/custom-vscode.css",
+       "file:///home/<user>/.overhaul/vscode/vscode-script.js"
+   ]
+   ```
+
+4. **Enable Custom CSS & JS**
+   Open the VS Code Command Palette (`Ctrl+Shift+P`), search for `Enable Custom CSS and JS`, and run it. This step allows VS Code to load your custom scripts and styles.
+
+5. **Resolve Permission Issues on Linux**
+   On Linux systems, VS Code's permissions may block this functionality. To fix this, modify the permissions using the following commands:
+
+   ```shell
+   sudo chown -R $(whoami) "$(which code)"
+   sudo chown -R $(whoami) /opt/visual-studio-code
+   ```
+
+   If you use a different distribution or OS, refer to the plugin's documentation for the correct paths or commands.
+
+6. **Reload Changes**
+   After making changes to your CSS or JS files, reload them by running the `Reload Custom CSS and JS` command from the Command Palette.
+
+#### Example Files
+
+Here are example files inspired by Glenn Raya's video:
+
+- **CSS File**
+  Modifies visual aspects such as the sidebar title, tooltips, and Command Palette.
+  [Download CSS File](./files/vscode/custom-vscode.css)
+
+- **JS File**
+  Adds a blur effect to the application window when the Command Palette is open.
+  [Download JS File](./files/vscode/vscode-script.js)
+
+By following these steps, you can transform VS Code's appearance beyond standard themes, giving it a unique and personalized look.
 
 ### Custom Shortcuts
 
