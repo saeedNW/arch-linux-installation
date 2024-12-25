@@ -5,84 +5,88 @@ In this guide, I'll walk you through the installation process of essential appli
 ## Table of Contents
 
 - [Essential Applications Guide](#essential-applications-guide)
-  - [Table of Contents](#table-of-contents)
-  - [Installing bat](#installing-bat)
-  - [Installing eza](#installing-eza)
-  - [Installing duf](#installing-duf)
-  - [Installing gdu](#installing-gdu)
-  - [Installing yt-dlp](#installing-yt-dlp)
-  - [Installing python-spotdl](#installing-python-spotdl)
-  - [Installing Zsh](#installing-zsh)
-    - [Installing Oh My Zsh](#installing-oh-my-zsh)
-      - [Installing Zsh Plugins](#installing-zsh-plugins)
-        - [zsh-autosuggestions](#zsh-autosuggestions)
-        - [zsh-syntax-highlighting](#zsh-syntax-highlighting)
-        - [zsh-completions](#zsh-completions)
-        - [Enabling Plugins](#enabling-plugins)
-    - [Custom Alias](#custom-alias)
-    - [ZSH History Configuration](#zsh-history-configuration)
-  - [Installing direnv](#installing-direnv)
-    - [Setup](#setup)
-    - [Quick demo](#quick-demo)
-    - [Key Notes](#key-notes)
-  - [Installing Git](#installing-git)
-    - [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
-  - [sshuttle VPN](#sshuttle-vpn)
-  - [Installing LibreOffice](#installing-libreoffice)
-  - [Installing GIMP](#installing-gimp)
-    - [Change Gimp's Look](#change-gimps-look)
-  - [Installing VLC Media Player](#installing-vlc-media-player)
-    - [Change VLC's Look](#change-vlcs-look)
-  - [Installing qBittorrent](#installing-qbittorrent)
-    - [Change qBittorrent's Look](#change-qbittorrents-look)
-  - [Installing OBS Studio](#installing-obs-studio)
-  - [Video Editor](#video-editor)
-    - [Installing Kdenlive](#installing-kdenlive)
-    - [Installing DaVinci Resolve](#installing-davinci-resolve)
-  - [Installing Discord](#installing-discord)
-  - [Installing Telegram Desktop](#installing-telegram-desktop)
-  - [Installing lazygit](#installing-lazygit)
-  - [Installing Docker](#installing-docker)
-    - [Installing Docker Compose](#installing-docker-compose)
-    - [Installing Portainer](#installing-portainer)
-  - [Installing RabbitMQ](#installing-rabbitmq)
-  - [Installing Databases](#installing-databases)
-    - [Installing Redis](#installing-redis)
-      - [Installing RedisInsight](#installing-redisinsight)
-    - [Installing MongoDB](#installing-mongodb)
-      - [Installing MongoDB Tools](#installing-mongodb-tools)
-      - [Installing MongoDB Compass](#installing-mongodb-compass)
-    - [MySQL and phpMyAdmin](#mysql-and-phpmyadmin)
-    - [Installing Elasticsearch and Kibana](#installing-elasticsearch-and-kibana)
-    - [installing Postgres and pgAdmin](#installing-postgres-and-pgadmin)
-  - [Installing CPUFetch](#installing-cpufetch)
-  - [Installing Neofetch](#installing-neofetch)
-  - [Installing Google Chrome](#installing-google-chrome)
-  - [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
-    - [Recommended Plugins](#recommended-plugins)
-    - [Custom JS Snippets](#custom-js-snippets)
-    - [Custom TS Snippets](#custom-ts-snippets)
-    - [Theme](#theme)
-    - [Custom Color Schema](#custom-color-schema)
-    - [Recommended Settings](#recommended-settings)
-    - [Custom Shortcuts](#custom-shortcuts)
-  - [Installing Postman](#installing-postman)
-  - [Installing Amberol Music Player](#installing-amberol-music-player)
-  - [Image Viewer](#image-viewer)
-    - [Installing qview (Recomended)](#installing-qview-recomended)
-    - [Installing Loupe](#installing-loupe)
-    - [Installing nomacs](#installing-nomacs)
-  - [Installing GNOME Boxes](#installing-gnome-boxes)
-  - [Installing Blanket](#installing-blanket)
-  - [Installing HandBrake](#installing-handbrake)
-  - [Installing Albert Application Launcher](#installing-albert-application-launcher)
-    - [Albert Recommended Configs](#albert-recommended-configs)
-  - [Installing Rclone \& Rclone Browser](#installing-rclone--rclone-browser)
-  - [Installing AnyDesk](#installing-anydesk)
-  - [Installing Droidcam](#installing-droidcam)
-  - [Install Spot Player](#install-spot-player)
-  - [Installing Flatpak](#installing-flatpak)
-  - [Setting Up Timeshift for System Snapshots](#setting-up-timeshift-for-system-snapshots)
+	- [Table of Contents](#table-of-contents)
+	- [Installing bat](#installing-bat)
+	- [Installing eza](#installing-eza)
+	- [Installing duf](#installing-duf)
+	- [Installing gdu](#installing-gdu)
+	- [Installing yt-dlp](#installing-yt-dlp)
+	- [Installing python-spotdl](#installing-python-spotdl)
+	- [Installing Neovim](#installing-neovim)
+		- [Setting Up Neovim Configuration](#setting-up-neovim-configuration)
+		- [Installing and Using `vim-plug` for Neovim](#installing-and-using-vim-plug-for-neovim)
+		- [Installing Nordic Theme](#installing-nordic-theme)
+	- [Installing Zsh](#installing-zsh)
+		- [Installing Oh My Zsh](#installing-oh-my-zsh)
+			- [Installing Zsh Plugins](#installing-zsh-plugins)
+				- [zsh-autosuggestions](#zsh-autosuggestions)
+				- [zsh-syntax-highlighting](#zsh-syntax-highlighting)
+				- [zsh-completions](#zsh-completions)
+				- [Enabling Plugins](#enabling-plugins)
+		- [Custom Alias](#custom-alias)
+		- [ZSH History Configuration](#zsh-history-configuration)
+	- [Installing direnv](#installing-direnv)
+		- [Setup](#setup)
+		- [Quick demo](#quick-demo)
+		- [Key Notes](#key-notes)
+	- [Installing Git](#installing-git)
+		- [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
+	- [sshuttle VPN](#sshuttle-vpn)
+	- [Installing LibreOffice](#installing-libreoffice)
+	- [Installing GIMP](#installing-gimp)
+		- [Change Gimp's Look](#change-gimps-look)
+	- [Installing VLC Media Player](#installing-vlc-media-player)
+		- [Change VLC's Look](#change-vlcs-look)
+	- [Installing qBittorrent](#installing-qbittorrent)
+		- [Change qBittorrent's Look](#change-qbittorrents-look)
+	- [Installing OBS Studio](#installing-obs-studio)
+	- [Video Editor](#video-editor)
+		- [Installing Kdenlive](#installing-kdenlive)
+		- [Installing DaVinci Resolve](#installing-davinci-resolve)
+	- [Installing Discord](#installing-discord)
+	- [Installing Telegram Desktop](#installing-telegram-desktop)
+	- [Installing lazygit](#installing-lazygit)
+	- [Installing Docker](#installing-docker)
+		- [Installing Docker Compose](#installing-docker-compose)
+		- [Installing Portainer](#installing-portainer)
+	- [Installing RabbitMQ](#installing-rabbitmq)
+	- [Installing Databases](#installing-databases)
+		- [Installing Redis](#installing-redis)
+			- [Installing RedisInsight](#installing-redisinsight)
+		- [Installing MongoDB](#installing-mongodb)
+			- [Installing MongoDB Tools](#installing-mongodb-tools)
+			- [Installing MongoDB Compass](#installing-mongodb-compass)
+		- [MySQL and phpMyAdmin](#mysql-and-phpmyadmin)
+		- [Installing Elasticsearch and Kibana](#installing-elasticsearch-and-kibana)
+		- [installing Postgres and pgAdmin](#installing-postgres-and-pgadmin)
+	- [Installing CPUFetch](#installing-cpufetch)
+	- [Installing Neofetch](#installing-neofetch)
+	- [Installing Google Chrome](#installing-google-chrome)
+	- [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
+		- [Recommended Plugins](#recommended-plugins)
+		- [Custom JS Snippets](#custom-js-snippets)
+		- [Custom TS Snippets](#custom-ts-snippets)
+		- [Theme](#theme)
+		- [Custom Color Schema](#custom-color-schema)
+		- [Recommended Settings](#recommended-settings)
+		- [Custom Shortcuts](#custom-shortcuts)
+	- [Installing Postman](#installing-postman)
+	- [Installing Amberol Music Player](#installing-amberol-music-player)
+	- [Image Viewer](#image-viewer)
+		- [Installing qview (Recomended)](#installing-qview-recomended)
+		- [Installing Loupe](#installing-loupe)
+		- [Installing nomacs](#installing-nomacs)
+	- [Installing GNOME Boxes](#installing-gnome-boxes)
+	- [Installing Blanket](#installing-blanket)
+	- [Installing HandBrake](#installing-handbrake)
+	- [Installing Albert Application Launcher](#installing-albert-application-launcher)
+		- [Albert Recommended Configs](#albert-recommended-configs)
+	- [Installing Rclone \& Rclone Browser](#installing-rclone--rclone-browser)
+	- [Installing AnyDesk](#installing-anydesk)
+	- [Installing Droidcam](#installing-droidcam)
+	- [Install Spot Player](#install-spot-player)
+	- [Installing Flatpak](#installing-flatpak)
+	- [Setting Up Timeshift for System Snapshots](#setting-up-timeshift-for-system-snapshots)
 
 ## Installing bat
 
@@ -198,6 +202,154 @@ python-spotdl is a command-line tool that allows you to download music from vari
 paru -S python-spotdl
 ```
 
+## Installing Neovim
+
+`Neovim` is a modern, extensible, and highly customizable text editor, serving as an enhanced version of Vim. It is perfect for developers and system administrators who seek efficiency and flexibility in text editing. Here's how to install it on your system:
+
+```bash
+sudo pacman -S neovim
+```
+
+After installation, you can start Neovim by typing `nvim` in your terminal.
+
+### Setting Up Neovim Configuration
+
+After installing Neovim, you'll want to customize it to suit your preferences. The primary configuration file for Neovim is located at `~/.config/nvim/init.vim`. Here's how to set it up with some essential configurations:
+
+**Step 1**: Create the `init.vim` File
+
+Create the configuration directory and file:
+
+```bash
+mkdir -p ~/.config/nvim
+touch ~/.config/nvim/init.vim
+```
+
+**Step 2**: Add Custom Configurations
+
+Open the `init.vim` file with Neovim:
+
+```bash
+nvim ~/.config/nvim/init.vim
+```
+
+Add the following configurations to the file:
+
+```vim
+" Highlight search matches
+set hlsearch
+
+" Set the width of a tab character
+set tabstop=4
+
+" Set the width of a soft tab (used for editing)
+set softtabstop=4
+
+" Set the number of spaces for auto-indent
+set shiftwidth=4
+
+" Enable automatic indentation
+set autoindent
+
+" Show line numbers
+set number
+
+" Enable file type detection, plugins, and indentation
+filetype plugin indent on
+
+" Enable syntax highlighting
+syntax on
+
+" Enable mouse support in all modes
+set mouse=a
+
+" Use the system clipboard for copy-paste
+set clipboard=unnamedplus
+
+" Highlight the line under the cursor
+set cursorline
+```
+
+**Step 3**: Save and Apply
+
+Save the changes in Neovim by typing `:wq`. The configurations will be applied the next time you open Neovim.
+
+### Installing and Using `vim-plug` for Neovim
+
+`vim-plug` is a lightweight and fast plugin manager for Vim and Neovim. It allows you to easily install, update, and manage plugins.
+
+**Step 1**: Install `vim-plug`
+
+To install `vim-plug`, run the following command:
+
+```bash
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+This command downloads the `plug.vim` script and places it in the appropriate directory for Neovim.
+
+**Step 2**: Configure `vim-plug` in `init.vim`
+
+Open your `~/.config/nvim/init.vim` file and add the following lines to set up `vim-plug`:
+
+```vim
+" Specify the directory where plugins will be installed
+call plug#begin('~/.local/share/nvim/plugged')
+
+" Example plugins (feel free to add your own)
+Plug 'preservim/nerdtree'      " File explorer
+Plug 'vim-airline/vim-airline' " Status bar
+
+" Initialize plugin system
+call plug#end()
+```
+
+**Step 3**: Install Plugins
+
+1. Save the changes to `init.vim` and restart Neovim.
+2. In Neovim, enter the following command to install the specified plugins:
+
+```vim
+:PlugInstall
+```
+
+### Installing Nordic Theme
+
+**Step 1**: Add Nord Theme to Neovim plugins in Configuration file
+
+```vim
+" Specify the directory where plugins will be installed
+call plug#begin('~/.local/share/nvim/plugged')
+
+" Add Nord theme plugin
+Plug 'arcticicestudio/nord-vim'
+
+" Initialize plugin system
+call plug#end()
+
+" Enable Nord theme
+colorscheme nord
+```
+
+**Step 2**: Install Plugins
+
+1. Save the changes to `init.vim` and restart Neovim.
+2. In Neovim, enter the following command to install the specified plugins:
+
+```vim
+:PlugInstall
+```
+
+**Step 3**: Verify and Apply the Nord Theme
+
+1. Restart Neovim after the installation completes.
+2. If the theme doesn’t load automatically, you can manually set it with:
+
+   ```vim
+   :colorscheme nord
+   ```
+
 ## Installing Zsh
 
 Zsh, or Z Shell, is a powerful and highly customizable shell that can be used as an interactive login shell and as a command interpreter for shell scripting. Here's how to install Zsh on your system:
@@ -288,7 +440,7 @@ Here's a simple guide on how to create a `~/.zprofile` file, define some alias i
 
    - Open your terminal.
    - Navigate to your home directory by typing: `cd ~`.
-   - Use a text editor of your choice to create the `~/.zprofile` file. For example, you can use nano by typing: `nano ~/.zprofile`.
+   - Use a text editor of your choice to create the `~/.zprofile` file. For example, you can use neovim by typing: `nvim ~/.zprofile`.
 
 2. **Define alias in `~/.zprofile`:**
 
@@ -330,18 +482,18 @@ Here's a simple guide on how to create a `~/.zprofile` file, define some alias i
 
 3. **Save and exit the `~/.zprofile` file:**
 
-   - If you're using nano, you can save and exit the file by pressing `Ctrl + X`, then type `Y` to confirm saving, and press `Enter` to exit.
+   - If you're using nvim, you can save and exit the file by pressing `Esc`, then type `:wq` and press `Enter` to confirm saving and exit.
 
 4. **Add `~/.zprofile` to `~/.zshrc`:**
 
-   - Open your `~/.zshrc` file in a text editor. You can do this by typing: `nano ~/.zshrc`.
+   - Open your `~/.zshrc` file in a text editor. You can do this by typing: `nvim ~/.zshrc`.
    - Add the following line at the end of the file to ensure that your `~/.zprofile` file is sourced when you start a new shell session:
 
      ```bash
      source ~/.zprofile
      ```
 
-   - Save and exit the `~/.zshrc` file (if you're using nano, press `Ctrl + X`, then type `Y` to confirm saving, and press `Enter` to exit).
+   - Save and exit the `~/.zshrc` file.
 
 5. **Apply changes:**
 
@@ -1452,8 +1604,14 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 	"files.autoSave": "afterDelay",
 	"errorLens.enabledDiagnosticLevels": ["error", "warning"],
 	"explorer.compactFolders": false,
-	"explorer.autoReveal": false,
+	// "explorer.autoReveal": false,
+	"todo-tree.highlights.enabled": false,
 	/*********** END: General ****/
+
+	/**** START: Zen Mode ***********/
+	"zenMode.centerLayout": false,
+	"zenMode.hideLineNumbers": false,
+	/*********** END: Zen Mode ****/
 
 	/**** START: Window ***********/
 	"window.titleBarStyle": "custom",
@@ -1471,9 +1629,10 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 	"workbench.colorTheme": "Material Theme Ocean",
 	/*********** END: Workbench ****/
 
-	/**** START: Git ***********/
+	/**** START: Git & Git lense***********/
 	"git.autofetch": true,
-	/*********** END: Git ****/
+	"gitlens.graph.layout": "editor",
+	/*********** END: Git & Git lense****/
 
 	/**** START: Editor ***********/
 	"editor.fontLigatures": true,
@@ -1481,6 +1640,7 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 	"editor.formatOnType": true,
 	"editor.formatOnPaste": true,
 	"editor.insertSpaces": false,
+	"editor.linkedEditing": true,
 	"editor.lineHeight": 2,
 	"editor.tabSize": 4,
 	"editor.fontFamily": "'Fira Code', monospace",
@@ -1493,33 +1653,37 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 				"name": "string color",
 				"scope": ["string"],
 				"settings": {
-					"foreground": "#fdee00" // change this COLOR
+					"foreground": "#fdee00" // your desired color
 				}
 			},
 			{
 				"name": "variable color",
 				"scope": ["variable"],
 				"settings": {
-					"foreground": "#ffffee" // change this COLOR
+					"foreground": "#ffffee" // your desired color
 				}
 			},
 			{
 				"name": "parameter color",
 				"scope": ["variable.parameter"],
 				"settings": {
-					"foreground": "#ffd390" // change this COLOR
+					"foreground": "#ffd390" // your desired color
 				}
 			},
 			{
 				"name": "number color in env files",
 				"scope": ["source.ini"],
 				"settings": {
-					"foreground": "#76fd00" // change this COLOR
+					"foreground": "#76fd00" // your desired color
 				}
 			}
 		]
 	},
 	/*********** END: Editor ****/
+
+	/**** START: Terminal ***********/
+	"terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+	/*********** END: Terminal ****/
 
 	/**** START: Prettier ***********/
 	"prettier.useTabs": true,
@@ -1540,13 +1704,12 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 	"[javascript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"[proto3]": {
-		"editor.defaultFormatter": "zxh404.vscode-proto3"
-	},
+	// "[proto3]": {
+	// 	"editor.defaultFormatter": "zxh404.vscode-proto3"
+	// },
 	"[shellscript]": {
 		"editor.defaultFormatter": "shakram02.bash-beautify"
-	},
-	"todo-tree.highlights.enabled": false
+	}
 	/*********** END: Formatter ****/
 }
 ```
@@ -1693,6 +1856,11 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 	},
 
 	{
+		"key": "ctrl+alt+x",
+		"command": "gitlens.showGraphPage"
+	},
+
+	{
 		//* Remove old keybinding for open lazy git
 		"key": "ctrl+g g",
 		"command": "-lazygit.openLazygit"
@@ -1732,11 +1900,11 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 	//? ***** START: Collapse explorer *****
 	{
 		//* Set new keybinding for Collapse explorer
-		"key": "alt+q",
+		"key": "shift+alt+e",
 		"command": "workbench.files.action.collapseExplorerFolders"
 	},
 
-	// //? ***** START: Sidebar Explorer Focus *****
+	//? ***** START: Sidebar Explorer Focus *****
 	{
 		//* Remove old keybinding for Sidebar Explorer Focus
 		"key": "ctrl+shift+e",
@@ -1752,39 +1920,69 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 
 	//? ***** START: Focus management *****
 	{
+		//* Remove old keybinding for above group Focus
 		"key": "ctrl+k ctrl+up",
 		"command": "-workbench.action.focusAboveGroup"
 	},
 	{
+		//* Set new keybinding for above group Focus
 		"key": "ctrl+shift+c ctrl+shift+up",
 		"command": "workbench.action.focusAboveGroup"
 	},
 
 	{
+		//* Remove old keybinding for below group Focus
 		"key": "ctrl+k ctrl+down",
 		"command": "-workbench.action.focusBelowGroup"
 	},
 	{
+		//* Set new keybinding for below group Focus
 		"key": "ctrl+shift+c ctrl+shift+down",
 		"command": "workbench.action.focusBelowGroup"
 	},
 
 	{
+		//* Remove old keybinding for left group Focus
 		"key": "ctrl+k ctrl+left",
 		"command": "-workbench.action.focusLeftGroup"
 	},
 	{
+		//* Set new keybinding for left group Focus
 		"key": "ctrl+shift+c ctrl+shift+left",
 		"command": "workbench.action.focusLeftGroup"
 	},
 
 	{
+		//* Remove old keybinding for right group Focus
 		"key": "ctrl+k ctrl+right",
 		"command": "-workbench.action.focusRightGroup"
 	},
 	{
+		//* Set new keybinding for right group Focus
 		"key": "ctrl+shift+c ctrl+shift+right",
 		"command": "workbench.action.focusRightGroup"
+	},
+
+	//? ***** START: ZenMode management *****
+	{
+		//* Remove old keybinding for zen mode activation
+		"key": "ctrl+alt+z",
+		"command": "workbench.action.toggleZenMode",
+		"when": "!isAuxiliaryWindowFocusedContext"
+	},
+	{
+		//* Set new keybinding for zen mode activation
+		"key": "ctrl+k z",
+		"command": "-workbench.action.toggleZenMode",
+		"when": "!isAuxiliaryWindowFocusedContext"
+	},
+
+	//? ***** START: over type extension management *****
+	{
+		//* Remove keybinding for over type extension activation
+		"key": "ctrl+shift+i",
+		"command": "-overtype.toggle",
+		"when": "editorFocus"
 	}
 ]
 ```
