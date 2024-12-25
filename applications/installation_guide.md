@@ -1704,9 +1704,9 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 	"[javascript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	// "[proto3]": {
-	// 	"editor.defaultFormatter": "zxh404.vscode-proto3"
-	// },
+	"[proto3]": {
+		"editor.defaultFormatter": "zxh404.vscode-proto3"
+	},
 	"[shellscript]": {
 		"editor.defaultFormatter": "shakram02.bash-beautify"
 	}

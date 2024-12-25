@@ -34,6 +34,7 @@ Due to significant changes in **Plasma 6**, some plugins, software, and modules 
     - [Desktop](#desktop)
   - [Konsole Customization](#konsole-customization)
   - [Neofetch Custom Config](#neofetch-custom-config)
+  - [Bat Theme Configuration](#bat-theme-configuration)
   - [Yakuake Customization](#yakuake-customization)
   - [Dolphin Customization](#dolphin-customization)
   - [Google chrome](#google-chrome)
@@ -178,39 +179,27 @@ Open a terminal window in the same directory as the extracted files.
 
 **1. Move Kvantum Files**:
 
-    ```bash
     cp -r Nordic-master/kde/kvantum ~/.config/Kvantum
-    ```
 
 **2. Install kvantum**:
 
-    ```bash
     sudo pacman -S kvantum
-    ```
 
 **3 - Move Zafiro Icons Dark Black to the icons directory**:
 
-    ```bash
     cp -r ./Zafiro-Icons-Dark-Black-f ~/.local/share/icons
-    ```
 
 **4 - Move Nordic Darker to the icons directory**:
 
-    ```bash
     cp -r ./Nordic-Darker ~/.local/share/icons
-    ```
 
 **5 - Move Nordic Darker to the icons directory and rename it to Nordic**:
 
-    ```bash
     cp -r Nordic-Folders/Nordic-Darker ~/.local/share/icons/Nordic
-    ```
 
 **6 - Edit the index.theme file for the Nordic icon theme**:
 
-    ```bash
     code ~/.local/share/icons/Nordic/index.theme
-    ```
 
 - In the `index.theme` file, make the following changes:
   - Change the `Name` to `Nordic`.
@@ -276,9 +265,7 @@ Follow these steps to apply the Nordic theme and its variants:
 
 - Install [Nordzy cursors](https://github.com/guillaumeboehm/Nordzy-cursors)
 
-      ```shell
       paru -S nordzy-cursors
-      ```
 
 - Navigate to System Settings > Colors & Themes > Cursors.
 - Activate the `Nordzy-cursors` for consistent cursor appearance.
@@ -447,9 +434,7 @@ Enhance your Konsole terminal with the following customizations:
 
 **Step 2 - Install Powerlevel10k Theme**:
 
-    ```shell
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-    ```
 
 Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`.
 
@@ -479,17 +464,22 @@ Reset Konsole and configure the Powerlevel10k theme.
 
 Download Neofetch [custom config](../general/neofetch_config.conf)
 
-    ```shell
-      cp ~/.config/neofetch/config.conf ~/.config/neofetch/config.conf-backup
-      cp -f ~/Downloads/neofetch_config.conf ~/.config/neofetch/config.conf
-    ```
+    cp ~/.config/neofetch/config.conf ~/.config/neofetch/config.conf-backup
+    cp -f ~/Downloads/neofetch_config.conf ~/.config/neofetch/config.conf
+
+## Bat Theme Configuration
+
+Add the following line at the end of your `~/.zshrc` file in order to set the bat theme to match with the nordic theme
+
+    # Bat (Better cat)
+    export BAT_THEME=base16
 
 ## Yakuake Customization
 
 Elevate your Yakuake terminal experience with the following customizations:
 
 - **Theme Adjustment:**
-  Change the theme to "ROUNDED DARK" by Alexey Varfolomeev for a sleek and modern appearance.
+  Change the theme to "Yakuake Qogir Materia Dark" by Diegons490 for a sleek and modern appearance.
 
 - **Height Modification:**
   Adjust the height of the Yakuake terminal to 60% for optimized screen space utilization.
