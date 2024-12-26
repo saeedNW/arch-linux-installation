@@ -2040,8 +2040,55 @@ By following these steps, you can transform VS Code's appearance beyond standard
 		"key": "ctrl+shift+i",
 		"command": "-overtype.toggle",
 		"when": "editorFocus"
+	},
+
+	//? ***** START: Todo tree extension toggle *****
+	{
+		//* Set new keybinding for Todo tree toggle
+		"key": "shift+alt+t",
+		"command": "workbench.view.extension.todo-tree-container"
+	},
+
+	//? ***** START: Editor window zoom *****
+	{
+		//* Remove keybinding for window's zoom in
+		"key": "ctrl+numpad_add",
+		"command": "-workbench.action.zoomIn"
+	},
+	{
+		//* Set new keybinding for window's zoom in
+		"key": "shift+alt+numpad_add",
+		"command": "workbench.action.zoomIn"
+	},
+	{
+		//* Remove keybinding for window's zoom out
+		"key": "ctrl+numpad_subtract",
+		"command": "-workbench.action.zoomOut"
+	},
+	{
+		//* Set new keybinding for window's zoom out
+		"key": "shift+alt+numpad_subtract",
+		"command": "workbench.action.zoomOut"
+	},
+
+	//? ***** START: Font size manager *****
+	{
+		//* Set new keybinding for increasing font size
+		"key": "ctrl+numpad_add",
+		"command": "editor.action.fontZoomIn"
+	},
+	{
+		//* Set new keybinding for decreasing font size
+		"key": "ctrl+numpad_subtract",
+		"command": "editor.action.fontZoomOut"
+	},
+	{
+		//* Set new keybinding for resetting font size
+		"key": "ctrl+numpad_multiply",
+		"command": "editor.action.fontZoomReset"
 	}
 ]
+
 ```
 
 ## Installing Postman
