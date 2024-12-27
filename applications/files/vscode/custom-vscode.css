@@ -19,6 +19,10 @@
 	left: auto !important;
 }
 
+.split-view-view.visible:nth-child(3) {
+	box-shadow: rgba(0, 0, 0, 0.25) 14px 0px 60px;
+}
+
 .codicon-toolbar-more,
 .codicon-word-wrap {
 	display: block !important;
@@ -50,8 +54,7 @@
 
 /* Command Palette */
 .quick-input-widget {
-	transform: translateY(-50%) !important;
-	top: 50% !important;
+	top: 30% !important;
 	box-shadow: 0px 8px 20px rgba(46, 52, 64, 0.45) !important;
 	padding: 10px 10px 18px 10px !important;
 	background-image: linear-gradient(#3b4252 0%, #262b35 100%) !important;
@@ -92,6 +95,11 @@
 /* Container that holds the VS Code home icon. */
 .editor-group-watermark {
 	max-width: none !important;
+}
+
+.separator-border .monaco-sash.vertical {
+	background: #3b4252;
+	width: 3px;
 }
 
 .letterpress {

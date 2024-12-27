@@ -1262,7 +1262,7 @@ xdg-mime default org.gnome.Nautilus.desktop inode/directory
 | Ignore files      | JavaScript (ES6) code snippets | lazygit                      | Live Server                | Markdown All in One  | Markdown Preview Github Styling |
 | Markdown Table    | Import Cost                    | Markdown Table Prettifier    | Markdownlint               | Nested Comments      | node-snippets                   |
 | Nord Theme        | Overtype                       | Persian - Code Spell Checker | Prettier                   | Prettify Json        | Pretty TypeScript Errors        |
-| Rainbow Brackets  | Select Line Status Bar         | Todo Tree                    | Toggle Quotes              | vscode-proto3        |                                 |
+| Rainbow Brackets  | Select Line Status Bar         | Todo Tree                    | VSCode Animations          | Toggle Quotes        | vscode-proto3                   |
 
 ### Custom JS Snippets
 
@@ -1728,6 +1728,7 @@ We will use the `Custom CSS and JS Loader` extension to customize the appearance
 
 2. **Create Configuration Files**
    Create the following files in your filesystem:
+
    - **Custom CSS:** `/home/<user>/.overhaul/vscode/custom-vscode.css`
    - **Custom JS:** `/home/<user>/.overhaul/vscode/vscode-script.js`
 
@@ -2088,7 +2089,6 @@ By following these steps, you can transform VS Code's appearance beyond standard
 		"command": "editor.action.fontZoomReset"
 	}
 ]
-
 ```
 
 ## Installing Postman
