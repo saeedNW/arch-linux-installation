@@ -27,6 +27,7 @@ Let's dive into the installation process and unleash the power of EndeavourOS on
   - [Install AMD Drivers (if needed)](#install-amd-drivers-if-needed)
   - [Install Optimus Manager for Nvidia GPUs](#install-optimus-manager-for-nvidia-gpus)
   - [Asus Laptop Configuration](#asus-laptop-configuration)
+  - [KDE-Rounded-Corners](#kde-rounded-corners)
   - [WINE Installation](#wine-installation)
     - [Install WINE](#install-wine)
     - [Install Dependencies (Optional)](#install-dependencies-optional)
@@ -465,6 +466,14 @@ This command installs the following utilities:
 - `rog-control-center`: A control center application designed for Asus Republic of Gamers (ROG) laptops, providing centralized access to various system settings and features.
 
 **Note:** Add rog-control-center to your system startup applications
+
+## KDE-Rounded-Corners
+
+KDE-Rounded-Corners is a KWin effect that adds rounded corners to your windows, enhancing the visual appeal of your KDE Plasma desktop. Here's how to install it on your system:
+
+```bash
+paru -S kwin-effect-rounded-corners-git
+```
 
 ## WINE Installation
 

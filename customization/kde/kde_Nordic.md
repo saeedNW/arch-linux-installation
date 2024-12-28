@@ -9,35 +9,35 @@ Due to significant changes in **Plasma 6**, some plugins, software, and modules 
 ## Table of Contents
 
 - [KDE Plasma Nordic Customization](#kde-plasma-nordic-customization)
-  - [Notice of Obsolescence for the Original Video](#notice-of-obsolescence-for-the-original-video)
-  - [Table of Contents](#table-of-contents)
-  - [Final Result](#final-result)
-  - [Enhance Desktop Experience with Additional Effects](#enhance-desktop-experience-with-additional-effects)
-  - [Customize Desktop Layout](#customize-desktop-layout)
-  - [Customize Window Behavior](#customize-window-behavior)
-  - [Customize Task Switcher](#customize-task-switcher)
-  - [Install Fonts](#install-fonts)
-    - [Install FiraCode fonts](#install-firacode-fonts)
-    - [JetBrainsMono Nerd Font](#jetbrainsmono-nerd-font)
-  - [Theme Configuration](#theme-configuration)
-    - [Downloading Necessary Files](#downloading-necessary-files)
-    - [Setting Up Directories and Moving Files](#setting-up-directories-and-moving-files)
-    - [Applying Themes](#applying-themes)
-    - [Kvantum Configuration](#kvantum-configuration)
-    - [Wallpaper](#wallpaper)
-    - [Logout and Login](#logout-and-login)
-  - [Desktop \& panels Configuration](#desktop--panels-configuration)
-    - [Installing and Configuring Widgets](#installing-and-configuring-widgets)
-    - [Bottom Panel](#bottom-panel)
-    - [Side Panel](#side-panel)
-    - [Top Panel](#top-panel)
-    - [Desktop](#desktop)
-  - [Konsole Customization](#konsole-customization)
-  - [Neofetch Custom Config](#neofetch-custom-config)
-  - [Bat Theme Configuration](#bat-theme-configuration)
-  - [Yakuake Customization](#yakuake-customization)
-  - [Dolphin Customization](#dolphin-customization)
-  - [Google chrome](#google-chrome)
+	- [Notice of Obsolescence for the Original Video](#notice-of-obsolescence-for-the-original-video)
+	- [Table of Contents](#table-of-contents)
+	- [Final Result](#final-result)
+	- [Enhance Desktop Experience with Additional Effects](#enhance-desktop-experience-with-additional-effects)
+	- [Customize Desktop Layout](#customize-desktop-layout)
+	- [Customize Window Behavior](#customize-window-behavior)
+	- [Customize Task Switcher](#customize-task-switcher)
+	- [Install Fonts](#install-fonts)
+		- [Install FiraCode fonts](#install-firacode-fonts)
+		- [JetBrainsMono Nerd Font](#jetbrainsmono-nerd-font)
+	- [Theme Configuration](#theme-configuration)
+		- [Downloading Necessary Files](#downloading-necessary-files)
+		- [Setting Up Directories and Moving Files](#setting-up-directories-and-moving-files)
+		- [Applying Themes](#applying-themes)
+		- [Kvantum Configuration](#kvantum-configuration)
+		- [Wallpaper](#wallpaper)
+		- [Logout and Login](#logout-and-login)
+	- [Desktop \& panels Configuration](#desktop--panels-configuration)
+		- [Installing and Configuring Widgets](#installing-and-configuring-widgets)
+		- [Bottom Panel](#bottom-panel)
+		- [Side Panel](#side-panel)
+		- [Top Panel](#top-panel)
+		- [Desktop](#desktop)
+	- [Konsole Customization](#konsole-customization)
+	- [Neofetch Custom Config](#neofetch-custom-config)
+	- [Bat Theme Configuration](#bat-theme-configuration)
+	- [Yakuake Customization](#yakuake-customization)
+	- [Dolphin Customization](#dolphin-customization)
+	- [Google chrome](#google-chrome)
 
 ## Final Result
 
@@ -74,6 +74,12 @@ Enhancing your desktop experience involves enabling additional effects that can 
 
    - Navigate to System Settings > Windows Management > Desktop Effects.
    - Check the box next to "Slide Back" to add a smooth sliding animation when switching between desktops or virtual workspaces, enhancing navigation fluidity.
+
+5. **Enable "Rounded Corners":**
+
+   - Navigate to System Settings > Windows Management > Desktop Effects.
+   - Search for "Rounded Corners" and enable it.
+   - Open its configuration menu and disable primary and secondary outlines
 
 ## Customize Desktop Layout
 
