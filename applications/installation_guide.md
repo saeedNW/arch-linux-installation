@@ -14,8 +14,22 @@ In this guide, I'll walk you through the installation process of essential appli
   - [Installing python-spotdl](#installing-python-spotdl)
   - [Installing Neovim](#installing-neovim)
     - [Setting Up Neovim Configuration](#setting-up-neovim-configuration)
-    - [Installing and Using `vim-plug` for Neovim](#installing-and-using-vim-plug-for-neovim)
-    - [Installing Nordic Theme](#installing-nordic-theme)
+    - [Add Neovim core configs](#add-neovim-core-configs)
+    - [Add Neovim Custom keybinding](#add-neovim-custom-keybinding)
+    - [Add Neovim Lazy Plugin Manager](#add-neovim-lazy-plugin-manager)
+    - [Install Neovim Plugins](#install-neovim-plugins)
+      - [nord.nvim Theme](#nordnvim-theme)
+      - [Neo-tree](#neo-tree)
+      - [bufferline](#bufferline)
+      - [lualine](#lualine)
+      - [treesitter](#treesitter)
+      - [telescope](#telescope)
+      - [lsp](#lsp)
+      - [autocompletion](#autocompletion)
+      - [alpha](#alpha)
+      - [indent-blankline](#indent-blankline)
+      - [gitsigns](#gitsigns)
+      - [misc](#misc)
   - [Installing Zsh](#installing-zsh)
     - [Installing Oh My Zsh](#installing-oh-my-zsh)
       - [Installing Zsh Plugins](#installing-zsh-plugins)
@@ -213,145 +227,411 @@ paru -S python-spotdl
 sudo pacman -S neovim
 ```
 
-After installation, you can start Neovim by typing `nvim` in your terminal.
-
 ### Setting Up Neovim Configuration
 
-After installing Neovim, you'll want to customize it to suit your preferences. The primary configuration file for Neovim is located at `~/.config/nvim/init.vim`. Here's how to set it up with some essential configurations:
+source: [Full Neovim Setup from Scratch in 2025](https://www.youtube.com/watch?v=KYDG3AHgYEs)
 
-**Step 1**: Create the `init.vim` File
+After installing Neovim, you'll want to customize it to suit your preferences. The primary configuration file for Neovim is located at `~/.config/nvim`. The configurations we are going to implement are based on the [**kickstart.nvim**](https://github.com/nvim-lua/kickstart.nvim) project.
 
-Create the configuration directory and file:
+**Step 1**: Create the `init.lua` File and directory
 
 ```bash
 mkdir -p ~/.config/nvim
-touch ~/.config/nvim/init.vim
+cd ~/.config/nvim
+touch init.lua
 ```
 
-**Step 2**: Add Custom Configurations
-
-Open the `init.vim` file with Neovim:
+**Step 2**: Clone [**kickstart.nvim**](https://github.com/nvim-lua/kickstart.nvim) project.
 
 ```bash
-nvim ~/.config/nvim/init.vim
+cd ~
+git clone https://github.com/nvim-lua/kickstart.nvim
 ```
 
-Add the following configurations to the file:
-
-```vim
-" Highlight search matches
-set hlsearch
-
-" Set the width of a tab character
-set tabstop=4
-
-" Set the width of a soft tab (used for editing)
-set softtabstop=4
-
-" Set the number of spaces for auto-indent
-set shiftwidth=4
-
-" Enable automatic indentation
-set autoindent
-
-" Show line numbers
-set number
-
-" Enable file type detection, plugins, and indentation
-filetype plugin indent on
-
-" Enable syntax highlighting
-syntax on
-
-" Enable mouse support in all modes
-set mouse=a
-
-" Use the system clipboard for copy-paste
-set clipboard=unnamedplus
-
-" Highlight the line under the cursor
-set cursorline
-```
-
-**Step 3**: Save and Apply
-
-Save the changes in Neovim by typing `:wq`. The configurations will be applied the next time you open Neovim.
-
-### Installing and Using `vim-plug` for Neovim
-
-`vim-plug` is a lightweight and fast plugin manager for Vim and Neovim. It allows you to easily install, update, and manage plugins.
-
-**Step 1**: Install `vim-plug`
-
-To install `vim-plug`, run the following command:
+open kickstart's `init.lau` and you neovim `init.lau`. (Note: If you know how to use neovim hotkeys you can open the files in neovim otherwise it's better to use an editor that you art familiar with):
 
 ```bash
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+nvim ~/.config/nvim/init.lua
 ```
 
-This command downloads the `plug.vim` script and places it in the appropriate directory for Neovim.
-
-**Step 2**: Configure `vim-plug` in `init.vim`
-
-Open your `~/.config/nvim/init.vim` file and add the following lines to set up `vim-plug`:
-
-```vim
-" Specify the directory where plugins will be installed
-call plug#begin('~/.local/share/nvim/plugged')
-
-" Example plugins (feel free to add your own)
-Plug 'preservim/nerdtree'      " File explorer
-Plug 'vim-airline/vim-airline' " Status bar
-
-" Initialize plugin system
-call plug#end()
+```bash
+nvim ~/kickstart.nvim/init.lua
 ```
 
-**Step 3**: Install Plugins
+**Step 3**: Create neovim configurations main directory and files
 
-1. Save the changes to `init.vim` and restart Neovim.
-2. In Neovim, enter the following command to install the specified plugins:
+In Neovim, managing plugin configurations directly in the `init.lua` file can lead to clutter and reduced readability. To keep things organized, create a `lua` directory and place your plugin and core configurations there. Then, import these configurations into the `init.lua` file.
 
-```vim
-:PlugInstall
+```shell
+mkdir -p ~/.config/nvim/lua # Configurations main directory
+mkdir -p ~/.config/nvim/lua/core # Core configurations directory
+mkdir -p ~/.config/nvim/lua/plugins # Plugins configurations directory
 ```
 
-### Installing Nordic Theme
+In the `core` directory add these two files:
 
-**Step 1**: Add Nord Theme to Neovim plugins in Configuration file
-
-```vim
-" Specify the directory where plugins will be installed
-call plug#begin('~/.local/share/nvim/plugged')
-
-" Add Nord theme plugin
-Plug 'arcticicestudio/nord-vim'
-
-" Initialize plugin system
-call plug#end()
-
-" Enable Nord theme
-colorscheme nord
+```shell
+touch ~/.config/nvim/lua/core/keymaps.lua
+touch ~/.config/nvim/lua/core/options.lua
 ```
 
-**Step 2**: Install Plugins
+Import these files into the `init.lua` file.
 
-1. Save the changes to `init.vim` and restart Neovim.
-2. In Neovim, enter the following command to install the specified plugins:
-
-```vim
-:PlugInstall
+```lua
+require 'core.options'
+require 'core.keymaps'
 ```
 
-**Step 3**: Verify and Apply the Nord Theme
+### Add Neovim core configs
 
-1. Restart Neovim after the installation completes.
-2. If the theme doesn’t load automatically, you can manually set it with:
+Add the following configs to `options.lua` file:
 
-   ```vim
-   :colorscheme nord
-   ```
+**Note**: It's recommended to read through the configs before adding them to your neovim
+
+[options.lua](./files/nvim/lua/core/options.lua)
+
+### Add Neovim Custom keybinding
+
+Add the following configs to `keymaps.lua` file:
+
+**Note**: It's recommended to read through the configs before adding them to your neovim
+
+[keymaps.lua](./files/nvim/lua/core/keymaps.lua)
+
+### Add Neovim Lazy Plugin Manager
+
+The Neovim Lazy plugin manager is a lightweight and efficient plugin manager for Neovim. It allows you to easily manage and install plugins, ensuring a smooth and optimized workflow. With Lazy, you can quickly add, update, and remove plugins, making it an essential tool for customizing your Neovim setup.
+
+**Note**: To install the plugins added to the `init.lua` file, you need to close and reopen Neovim.
+
+in order to add the plugin manager to your config file you can copy the installer from kickstart config file
+
+```lua
+-- [[ Install `lazy.nvim` plugin manager ]]
+--    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
+local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+    local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
+    local out = vim.fn.system {'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath}
+    if vim.v.shell_error ~= 0 then
+        error('Error cloning lazy.nvim:\n' .. out)
+    end
+end ---@diagnostic disable-next-line: undefined-field
+vim.opt.rtp:prepend(lazypath)
+
+-- [[ Configure and install plugins ]]
+-- NOTE: Here is where you install your plugins.
+require('lazy').setup({
+
+})
+```
+
+### Install Neovim Plugins
+
+#### nord.nvim Theme
+
+nord.nvim is a neovim theme based off of the [Nord Color Palette](https://www.nordtheme.com/docs/colors-and-palettes). To install `nord.nvim` follow these steps:
+
+**Step 1**: Create a module file for the plugin configurations to be saved in:
+
+```bash
+touch ~/.config/nvim/lua/plugins/colortheme.lua
+```
+
+**step 2**: Add the following configs to the plugin configurations file
+
+```lua
+return {
+    'shaunsingh/nord.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+        vim.g.nord_contrast = true
+        vim.g.nord_borders = false
+        vim.g.nord_disable_background = false
+        vim.g.nord_italic = false
+        vim.g.nord_uniform_diff_background = true
+        vim.g.nord_bold = false
+
+        -- Load the colorscheme
+        require('nord').set()
+    end
+}
+```
+
+**step 3**: Add the following configs to `init.lua` file
+
+```lua
+require('lazy').setup({
+    -- Other Plugins
+
+    require 'plugins.colortheme'
+})
+```
+
+#### Neo-tree
+
+Neo-tree is a Neovim plugin to browse the file system and other tree like structures. To install `Neo-tree` follow these steps:
+
+**Step 1**: Create a module file for the plugin configurations to be saved in:
+
+```bash
+touch ~/.config/nvim/lua/plugins/Neotree.lua
+```
+
+**step 2**: Add the following configs to the plugin configurations file
+
+[Neotree.lua](./files/nvim/lua/plugins/Neotree.lua)
+
+**step 3**: Add the following configs to `init.lua` file
+
+```lua
+require('lazy').setup({
+    -- Other Plugins
+
+    require 'plugins.Neotree'
+})
+```
+
+#### bufferline
+
+The Bufferline plugin enhances the default buffer management by providing a more intuitive and visually appealing way to navigate between open buffers. To install `bufferline` follow these steps:
+
+**Step 1**: Create a module file for the plugin configurations to be saved in:
+
+```bash
+touch ~/.config/nvim/lua/plugins/bufferline.lua
+```
+
+**step 2**: Add the following configs to the plugin configurations file
+
+[bufferline.lua](./files/nvim/lua/plugins/bufferline.lua)
+
+**step 3**: Add the following configs to `init.lua` file
+
+```lua
+require('lazy').setup({
+    -- Other Plugins
+
+    require 'plugins.bufferline'
+})
+```
+
+#### lualine
+
+The Lualine plugin for Neovim provides a highly customizable and visually appealing status line. To install `lualine`, follow these steps:
+
+**Step 1**: Create a module file for the plugin configurations to be saved in:
+
+```bash
+touch ~/.config/nvim/lua/plugins/lualine.lua
+```
+
+**step 2**: Add the following configs to the plugin configurations file
+
+[lualine.lua](./files/nvim/lua/plugins/lualine.lua)
+
+**step 3**: Add the following configs to `init.lua` file
+
+```lua
+require('lazy').setup({
+    -- Other Plugins
+
+    require 'plugins.lualine'
+})
+```
+
+#### treesitter
+
+The Treesitter plugin for Neovim provides advanced syntax highlighting and code parsing capabilities. To install `treesitter`, follow these steps:
+
+**Step 1**: Create a module file for the plugin configurations to be saved in:
+
+```bash
+touch ~/.config/nvim/lua/plugins/treesitter.lua
+```
+
+**step 2**: Add the following configs to the plugin configurations file
+
+[treesitter.lua](./files/nvim/lua/plugins/treesitter.lua)
+
+**step 3**: Add the following configs to `init.lua` file
+
+```lua
+require('lazy').setup({
+    -- Other Plugins
+
+    require 'plugins.treesitter'
+})
+```
+
+#### telescope
+
+The Telescope plugin for Neovim is a highly extendable fuzzy finder that allows users to quickly search and navigate files, buffers, and other resources within Neovim. To install `telescope`, follow these steps:
+
+**Step 1**: Create a module file for the plugin configurations to be saved in:
+
+```bash
+touch ~/.config/nvim/lua/plugins/telescope.lua
+```
+
+**step 2**: Add the following configs to the plugin configurations file
+
+[telescope.lua](./files/nvim/lua/plugins/telescope.lua)
+
+**step 3**: Add the following configs to `init.lua` file
+
+```lua
+require('lazy').setup({
+    -- Other Plugins
+
+    require 'plugins.telescope'
+})
+```
+
+#### lsp
+
+The LSP (Language Server Protocol) plugin for Neovim provides powerful language-specific features such as code completion, diagnostics, go-to definition, and more. To install and configure the `LSP` plugin, follow these steps:
+
+**Step 1**: Create a module file for the plugin configurations to be saved in:
+
+```bash
+touch ~/.config/nvim/lua/plugins/lsp.lua
+```
+
+**step 2**: Add the following configs to the plugin configurations file
+
+[lsp.lua](./files/nvim/lua/plugins/lsp.lua)
+
+**step 3**: Add the following configs to `init.lua` file
+
+```lua
+require('lazy').setup({
+    -- Other Plugins
+
+    require 'plugins.lsp'
+})
+```
+
+#### autocompletion
+
+The Autocompletion plugin for Neovim enhances the coding experience by providing intelligent code completion suggestions as you type. To install and configure the `autocompletion` plugin, follow these steps:
+
+**Step 1**: Create a module file for the plugin configurations to be saved in:
+
+```bash
+touch ~/.config/nvim/lua/plugins/autocompletion.lua
+```
+
+**step 2**: Add the following configs to the plugin configurations file
+
+[autocompletion.lua](./files/nvim/lua/plugins/autocompletion.lua)
+
+**step 3**: Add the following configs to `init.lua` file
+
+```lua
+require('lazy').setup({
+    -- Other Plugins
+
+    require 'plugins.autocompletion'
+})
+```
+
+#### alpha
+
+The Alpha plugin for Neovim provides a customizable start screen for Neovim. To install and configure the `Alpha` plugin, follow these steps:
+
+**Step 1**: Create a module file for the plugin configurations to be saved in:
+
+```bash
+touch ~/.config/nvim/lua/plugins/alpha.lua
+```
+
+**step 2**: Add the following configs to the plugin configurations file
+
+[alpha.lua](./files/nvim/lua/plugins/alpha.lua)
+
+**step 3**: Add the following configs to `init.lua` file
+
+```lua
+require('lazy').setup({
+    -- Other Plugins
+
+    require 'plugins.alpha'
+})
+```
+
+#### indent-blankline
+
+The Indent-Blankline plugin for Neovim adds indentation guides to all lines. To install and configure the `Indent-Blankline` plugin, follow these steps:
+
+**Step 1**: Create a module file for the plugin configurations to be saved in:
+
+```bash
+touch ~/.config/nvim/lua/plugins/indent-blankline.lua
+```
+
+**step 2**: Add the following configs to the plugin configurations file
+
+[indent-blankline.lua](./files/nvim/lua/plugins/indent-blankline.lua)
+
+**step 3**: Add the following configs to `init.lua` file
+
+```lua
+require('lazy').setup({
+    -- Other Plugins
+
+    require 'plugins.indent-blankline'
+})
+```
+
+#### gitsigns
+
+The Gitsigns plugin for Neovim integrates Git functionalities directly into the editor. To install and configure the `Gitsigns` plugin, follow these steps:
+
+**Step 1**: Create a module file for the plugin configurations to be saved in:
+
+```bash
+touch ~/.config/nvim/lua/plugins/gitsigns.lua
+```
+
+**step 2**: Add the following configs to the plugin configurations file
+
+[gitsigns.lua](./files/nvim/lua/plugins/gitsigns.lua)
+
+**step 3**: Add the following configs to `init.lua` file
+
+```lua
+require('lazy').setup({
+    -- Other Plugins
+
+    require 'plugins.gitsigns'
+})
+```
+
+#### misc
+
+In addition to the core plugins, there are several miscellaneous plugins that can enhance your Neovim experience by adding various useful features and functionalities. To install and configure these plugins, follow these steps:
+
+**Step 1**: Create a module file for the plugin configurations to be saved in:
+
+```bash
+touch ~/.config/nvim/lua/plugins/misc.lua
+```
+
+**step 2**: Add the following configs to the plugin configurations file
+
+[misc.lua](./files/nvim/lua/plugins/misc.lua)
+
+**step 3**: Add the following configs to `init.lua` file
+
+```lua
+require('lazy').setup({
+    -- Other Plugins
+
+    require 'plugins.misc'
+})
+```
 
 ## Installing Zsh
 
