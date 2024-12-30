@@ -64,6 +64,9 @@ In this guide, I'll walk you through the installation process of essential appli
     - [Installing Docker Compose](#installing-docker-compose)
     - [Installing Portainer](#installing-portainer)
   - [Installing RabbitMQ](#installing-rabbitmq)
+  - [Installing Zookeeper and Kafka](#installing-zookeeper-and-kafka)
+    - [Installing Zookeeper](#installing-zookeeper)
+    - [Installing Kafka](#installing-kafka)
   - [Installing Databases](#installing-databases)
     - [Installing Redis](#installing-redis)
       - [Installing RedisInsight](#installing-redisinsight)
@@ -1247,6 +1250,42 @@ docker run -d \
     rabbitmq:4.0-management
 
 # User/Pass => guest/guest
+```
+
+## Installing Zookeeper and Kafka
+
+**Zookeeper** is a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services. It is used by Kafka to manage and coordinate the Kafka brokers.
+
+**Kafka** is a distributed streaming platform that is used to build real-time data pipelines and streaming applications. It is designed to handle large volumes of data with high throughput and low latency.
+
+Zookeeper and Kafka can be easily installed and run using Docker. Below are the commands to set them up.
+
+### Installing Zookeeper
+
+```shell
+docker run -d \
+  --name zookeeper \
+  -p 2181:2181 \
+  -e ZOOKEEPER_CLIENT_PORT=2181 \
+  -e ZOOKEEPER_TICK_TIME=2000 \
+  confluentinc/cp-zookeeper:latest
+```
+
+### Installing Kafka
+
+```shell
+docker run -d \
+  --name kafka \
+  --link zookeeper:zookeeper \
+  -p 9092:9092 \
+  -p 29092:29092 \
+  -e KAFKA_BROKER_ID=1 \
+  -e KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 \
+  -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092 \
+  -e KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT \
+  -e KAFKA_INTER_BROKER_LISTENER_NAME=PLAINTEXT \
+  -e KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1 \
+  confluentinc/cp-kafka:latest
 ```
 
 ## Installing Databases
