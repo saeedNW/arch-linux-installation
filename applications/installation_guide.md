@@ -1573,16 +1573,16 @@ xdg-mime default org.gnome.Nautilus.desktop inode/directory
 
 ### Recommended Plugins
 
-| Plugin Name              | Plugin Name                    | Plugin Name               | Plugin Name                  | Plugin Name          | Plugin Name                     |
-| ------------------------ | ------------------------------ | ------------------------- | ---------------------------- | -------------------- | ------------------------------- |
-| advanced-new-file        | Atom Material Icons            | Auto Rename Tag           | Auto-Open Markdown Preview   | Bash Beautify        | Bash IDE                        |
-| better comments          | Code Spell Checker             | CodeSnap                  | Custom CSS and JS Loader     | EJS language support | Error Lens                      |
-| ESLint                   | Explorer Exclude               | Git Graph                 | Git lens                     | GraphQL              | HTML CSS Support                |
-| Ignore files             | JavaScript (ES6) code snippets | lazygit                   | Live Server                  | Markdown All in One  | Markdown Preview Github Styling |
-| Markdown Table           | Import Cost                    | Markdown Table Prettifier | Markdownlint                 | Nested Comments      | node-snippets                   |
-| Nord Theme               | npm                            | Overtype                  | Persian - Code Spell Checker | Prettier             | Prettify Json                   |
-| Pretty TypeScript Errors | Rainbow Brackets               | Select Line Status Bar    | Todo Tree                    | VSCode Animations    | Toggle Quotes                   |
-| vscode-proto3            |                                |                           |                              |                      |                                 |
+| Plugin Name         | Plugin Name                     | Plugin Name                    | Plugin Name                | Plugin Name               | Plugin Name                  |
+| ------------------- | ------------------------------- | ------------------------------ | -------------------------- | ------------------------- | ---------------------------- |
+| advanced-new-file   | Atom Material Icons             | Auto Rename Tag                | Auto-Open Markdown Preview | Bash Beautify             | Bash IDE                     |
+| better comments     | Code Spell Checker              | CodeSnap                       | Custom CSS and JS Loader   | EJS language support      | Error Lens                   |
+| ESLint              | Even Better TOML                | Explorer Exclude               | Git Graph                  | Git lens                  | GraphQL                      |
+| HTML CSS Support    | Ignore files                    | JavaScript (ES6) code snippets | lazygit                    | Live Server               | lua                          |
+| Markdown All in One | Markdown Preview Github Styling | Markdown Table                 | Import Cost                | Markdown Table Prettifier | Markdownlint                 |
+| Nested Comments     | node-snippets                   | Nord Theme                     | npm                        | Overtype                  | Persian - Code Spell Checker |
+| Prettier            | Prettify Json                   | Pretty TypeScript Errors       | Proto Lint                 | Rainbow Brackets          | Select Line Status Bar       |
+| Todo Tree           | VSCode Animations               | Toggle Quotes                  | vscode-proto3              |                           |                              |
 
 ### Custom JS Snippets
 
@@ -1922,7 +1922,6 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 	"window.titleBarStyle": "custom",
 	"window.menuBarVisibility": "toggle",
 	"window.newWindowDimensions": "inherit",
-	"window.customTitleBarVisibility": "auto",
 	/*********** END: Window ****/
 
 	/**** START: Workbench ***********/
@@ -1933,7 +1932,6 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 	"workbench.productIconTheme": "a-file-icon-vscode-product-icon-theme",
 	"workbench.colorTheme": "Nord",
 	"workbench.startupEditor": "none",
-	"workbench.activityBar.location": "hidden",
 	// "workbench.editor.enablePreview": false,
 	/*********** END: Workbench ****/
 
@@ -1954,7 +1952,7 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 	"editor.glyphMargin": false,
 	"editor.lineHeight": 2,
 	"editor.tabSize": 4,
-	"editor.fontFamily": "'Fira Code', monospace",
+	"editor.fontFamily": "'JetBrainsMono Nerd Font', monospace",
 	"editor.indentSize": "tabSize",
 	"editor.wordBasedSuggestions": "matchingDocuments",
 	"editor.cursorSmoothCaretAnimation": "on",
@@ -2026,6 +2024,12 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 	"[shellscript]": {
 		"editor.defaultFormatter": "shakram02.bash-beautify"
 	},
+	"[lua]": {
+		"editor.defaultFormatter": "yinfei.luahelper"
+	},
+	"[toml]": {
+		"editor.defaultFormatter": "tamasfe.even-better-toml"
+	},
 	/*********** END: Formatter ****/
 
 	/**** START: Other ***********/
@@ -2033,12 +2037,13 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 	"chat.commandCenter.enabled": false,
 	"extensions.ignoreRecommendations": true,
 	"breadcrumbs.enabled": false,
-	"npm.keybindingsChangedWarningShown": false,
+	"npm.keybindingsChangedWarningShown": true,
 	"vscode_custom_css.imports": [
 		"file:///home/saeed/.overhaul/vscode/custom-vscode.css",
 		"file:///home/saeed/.overhaul/vscode/vscode-script.js",
 		"file:///home/saeed/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.4/dist/updateHandler.js"
-	]
+	],
+	"workbench.activityBar.location": "hidden"
 	/*********** END: Other ****/
 }
 ```
@@ -2103,7 +2108,6 @@ By following these steps, you can transform VS Code's appearance beyond standard
 ### Custom Shortcuts
 
 ```json
-// Place your key bindings in this file to override the defaultsauto[]
 // Place your key bindings in this file to override the defaultsauto[]
 [
 	//? ***** START: Copy line *****
@@ -2439,7 +2443,6 @@ By following these steps, you can transform VS Code's appearance beyond standard
 		"when": "!config.npm.oldKeybindings.enable && !terminalFocus"
 	}
 ]
-****
 ```
 
 ## Installing Postman
