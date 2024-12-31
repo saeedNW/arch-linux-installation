@@ -9,35 +9,35 @@ Due to significant changes in **Plasma 6**, some plugins, software, and modules 
 ## Table of Contents
 
 - [KDE Plasma Nordic Customization](#kde-plasma-nordic-customization)
-	- [Notice of Obsolescence for the Original Video](#notice-of-obsolescence-for-the-original-video)
-	- [Table of Contents](#table-of-contents)
-	- [Final Result](#final-result)
-	- [Enhance Desktop Experience with Additional Effects](#enhance-desktop-experience-with-additional-effects)
-	- [Customize Desktop Layout](#customize-desktop-layout)
-	- [Customize Window Behavior](#customize-window-behavior)
-	- [Customize Task Switcher](#customize-task-switcher)
-	- [Install Fonts](#install-fonts)
-		- [Install FiraCode fonts](#install-firacode-fonts)
-		- [JetBrainsMono Nerd Font](#jetbrainsmono-nerd-font)
-	- [Theme Configuration](#theme-configuration)
-		- [Downloading Necessary Files](#downloading-necessary-files)
-		- [Setting Up Directories and Moving Files](#setting-up-directories-and-moving-files)
-		- [Applying Themes](#applying-themes)
-		- [Kvantum Configuration](#kvantum-configuration)
-		- [Wallpaper](#wallpaper)
-		- [Logout and Login](#logout-and-login)
-	- [Desktop \& panels Configuration](#desktop--panels-configuration)
-		- [Installing and Configuring Widgets](#installing-and-configuring-widgets)
-		- [Bottom Panel](#bottom-panel)
-		- [Side Panel](#side-panel)
-		- [Top Panel](#top-panel)
-		- [Desktop](#desktop)
-	- [Konsole Customization](#konsole-customization)
-	- [Neofetch Custom Config](#neofetch-custom-config)
-	- [Bat Theme Configuration](#bat-theme-configuration)
-	- [Yakuake Customization](#yakuake-customization)
-	- [Dolphin Customization](#dolphin-customization)
-	- [Google chrome](#google-chrome)
+  - [Notice of Obsolescence for the Original Video](#notice-of-obsolescence-for-the-original-video)
+  - [Table of Contents](#table-of-contents)
+  - [Final Result](#final-result)
+  - [Enhance Desktop Experience with Additional Effects](#enhance-desktop-experience-with-additional-effects)
+  - [Customize Desktop Layout](#customize-desktop-layout)
+  - [Customize Window Behavior](#customize-window-behavior)
+  - [Customize Task Switcher](#customize-task-switcher)
+  - [Install Fonts](#install-fonts)
+    - [Install FiraCode fonts](#install-firacode-fonts)
+    - [JetBrainsMono Nerd Font](#jetbrainsmono-nerd-font)
+  - [Theme Configuration](#theme-configuration)
+    - [Downloading Necessary Files](#downloading-necessary-files)
+    - [Setting Up Directories and Moving Files](#setting-up-directories-and-moving-files)
+    - [Applying Themes](#applying-themes)
+    - [Kvantum Configuration](#kvantum-configuration)
+    - [Wallpaper](#wallpaper)
+    - [Logout and Login](#logout-and-login)
+  - [Desktop \& panels Configuration](#desktop--panels-configuration)
+    - [Installing and Configuring Widgets](#installing-and-configuring-widgets)
+    - [Bottom Panel](#bottom-panel)
+    - [Side Panel](#side-panel)
+    - [Top Panel](#top-panel)
+    - [Desktop](#desktop)
+  - [Konsole Customization](#konsole-customization)
+  - [Neofetch Custom Config](#neofetch-custom-config)
+  - [Bat Theme Configuration](#bat-theme-configuration)
+  - [Yakuake Customization](#yakuake-customization)
+  - [Dolphin Customization](#dolphin-customization)
+  - [Google chrome](#google-chrome)
 
 ## Final Result
 
@@ -413,7 +413,7 @@ Enhance your Konsole terminal with the following customizations:
 - Start editing the profile
 - Navigate to "Appearance"
 
-  - Change font to "JetBrainsMono Nerd Font 10pt".
+  - Change font to "JetBrainsMono Nerd Font 12pt".
   - Install and activate **Nordic konsole** theme
 
     - Start editing the theme
@@ -438,33 +438,30 @@ Enhance your Konsole terminal with the following customizations:
 
 - Close and reopen Konsole for the changes to take effect.
 
-**Step 2 - Install Powerlevel10k Theme**:
+**Step 2 - Install [Oh My Posh](https://ohmyposh.dev/) Prompt Theme**:
 
-    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+This section draws inspiration from the video **"[We may have killed p10k, ...](https://www.youtube.com/watch?v=9U8LCjuQzdc)"** by [Dreams of Autonomy](https://www.youtube.com/@dreamsofautonomy).
 
-Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`.
+    paru -S oh-my-posh
 
-**Step 3 - Reset Konsole and Configure Powerlevel10k Theme**:
+**Step 3 - Oh My Posh Configuration and setup**:
 
-Reset Konsole and configure the Powerlevel10k theme.
+- Create Oh My Posh config file:
 
-**Step 4 - Customize the OS Icon in the Prompt**:
+      mkdir ~/.config/ohmyposh
+      touch ~/.config/ohmyposh/zen.toml
 
-- Open the `~/.p10k.zsh` file in a text editor.
-- Search for `POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION`.
-- Set its value to `$'\uF303'` to always display the Arch Linux logo, regardless of your actual OS.
+- Initialize Oh My Posh:
 
-**Step 5 - Adjust Path Shortening Strategy**:
+  After creating the config file, you can add the Oh My Posh initializer to your `.zshrc` file by adding the following line at the end of the file:
 
-- Open the `~/.p10k.zsh` file in a text editor.
-- Search for `POWERLEVEL9K_SHORTEN_STRATEGY`.
-- Change its value to `truncate_to_last` to adjust the path shortening strategy.
+      eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
 
-**Step 6 - Adjust current directory color**:
+  It's important to note that after adding the Oh My Posh initializer to your `.zshrc` file, the next time you open your terminal, you may encounter a completely blank screen. This happens because the configuration file is currently empty, and Oh My Posh has no settings to render the prompt.
 
-- Open the `~/.p10k.zsh` file in a text editor.
-- Search for `POWERLEVEL9K_DIR_FOREGROUND`.
-- Change its value to `6` to adjust the color to match with the nordic color theme.
+- Add Oh My Posh Configuration:
+
+  To configure Oh My Posh, you can refer to its [documentation](https://ohmyposh.dev/docs) to create a fully personalized prompt. Alternatively, you can use [this configuration file](./files/ohmyposh/zen.toml) to implement a prompt that maintains consistency with the rest of the Nordic-themed customization.
 
 ## Neofetch Custom Config
 

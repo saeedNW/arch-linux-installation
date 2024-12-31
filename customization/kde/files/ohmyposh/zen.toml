@@ -1,0 +1,117 @@
+# Define the version and other global settings
+version = 3
+final_space = true  # Enable or disable the final space in the prompt
+console_title_template = '{{ .Shell }} in {{ .Folder }}'  # Customize the console title template
+
+# Define color palette for various components
+[palette]
+  	git = '#5e81ac'  # Git-related color
+	path = '#7484a2'  # Path color
+	bracket = '#81a1c1'  # Bracket color
+	white = '#d8dee9'  # White color for text
+	node = '#215732'  # Node-related color
+
+# Define settings for upgrading the prompt
+[upgrade]
+	source = 'cdn'  # Source for updates
+	interval = '168h'  # Interval for checking updates (168 hours = 1 week)
+	auto = false  # Whether to automatically update
+	notice = false  # Whether to show update notices
+
+# Define the first block of the prompt (main prompt block)
+[[blocks]]
+	type = 'prompt'  # Type of block (prompt block)
+	alignment = 'left'  # Align the prompt to the left
+	newline = true  # Add a newline after the prompt block
+
+	# Define the first segment within the prompt block (path segment)
+	[[blocks.segments]]
+		type = 'path'  # Type of segment (path)
+		style = 'plain'  # Style for the segment
+		foreground = 'p:path'  # Foreground color based on the palette
+		background = 'transparent'  # Transparent background
+		template = '{{ .Path }}'  # Display the current path
+
+	[blocks.segments.properties]
+		style = 'full'  # Use full style for path display
+
+# Define the second block (right prompt block)
+[[blocks]]
+	type = 'rprompt'  # Type of block (right prompt)
+	overflow = 'hidden'  # Hide overflow content
+
+	# Define the segment for execution time
+	[[blocks.segments]]
+		type = 'executiontime'  # Type of segment (execution time)
+		style = 'plain'  # Plain style for the segment
+		foreground = 'yellow'  # Yellow foreground color
+		background = 'transparent'  # Transparent background
+		template = '{{ .FormattedMs }} '  # Display formatted execution time
+
+		[blocks.segments.properties]
+			threshold = 5000  # Display execution time only if greater than 5000 ms
+			style = "round"  # Rounded style for execution time display
+
+	# Define the Git segment with custom styling
+	[[blocks.segments]]
+		leading_diamond = ''  # Leading diamond symbol
+   		trailing_diamond = ''  # Trailing diamond symbol
+		template = '{{ if .UpstreamURL }}{{ url .UpstreamIcon .UpstreamURL }}{{else}}{{ end }} {{ if .Detached }}{{ .HEAD | replace "detached at " "" }}{{ else }}{{ .HEAD }}{{ end }}{{ if .Working.Changed }} {{ .Working.String }}{{ end }}{{ if .Staging.Changed }} ✚ {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} * {{ .StashCount }}{{ end }} {{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}'  # Git branch info display
+   		type = 'git'  # Type of segment (git)
+		style = 'diamond'  # Diamond style for the segment
+		foreground = 'p:white'  # White foreground color
+    	background = 'p:git'  # Git-related background color
+
+	[blocks.segments.properties]
+		branch_max_length = 25  # Limit branch name length
+		branch_icon = ''  # No icon for the branch
+		commit_icon = '@'  # Commit icon
+		fetch_status = true  # Fetch the Git status
+		fetch_upstream_icon = true  # Fetch upstream icon
+		IsNode = '{{ if .FileExists "package.json" }}true{{ else }}false{{ end }}'  # Check if package.json exists (Node.js project check)
+
+	# Define the Node.js segment with powerline styling
+	[[blocks.segments]]
+   		powerline_symbol = ''  # Powerline symbol for the segment
+		template = " {{ .Full }}"  # Display full Node.js information
+		foreground = 'green'  # Green foreground color
+		background = 'p:node'  # Node-related background color
+		type = 'node'  # Type of segment (Node.js)
+    	style = 'powerline'  # Powerline style
+
+	[blocks.segments.properties]
+		display_mode = 'files'  # Display mode for files
+		fetch_package_manager = false  # Do not fetch the package manager info
+		home_enabled = false  # Do not enable home directory display
+
+# Define another prompt block (main prompt block)
+[[blocks]]
+	type = 'prompt'  # Type of block (prompt block)
+	alignment = 'left'  # Align the prompt to the left
+	newline = true  # Add a newline after the prompt block
+
+	# Define the segment for the text input (text segment)
+	[[blocks.segments]]
+		type = 'text'  # Type of segment (text)
+		style = 'plain'  # Plain style for the segment
+		foreground_templates = [
+			"{{if gt .Code 0}}red{{end}}",  # Red foreground if exit code is greater than 0
+			"{{if eq .Code 0}}p:bracket{{end}}",  # Bracket color if exit code is 0
+		]
+		background = 'transparent'  # Transparent background
+		template = '❯'  # Display prompt symbol
+
+	# Define transient prompt settings (for dynamic prompts)
+	[transient_prompt]
+		foreground_templates = [
+			"{{if gt .Code 0}}red{{end}}",  # Red foreground if exit code is greater than 0
+			"{{if eq .Code 0}}p:bracket{{end}}",  # Bracket color if exit code is 0
+		]
+		background = 'transparent'  # Transparent background
+		template = '❯ '  # Display transient prompt symbol
+
+	# Define secondary prompt settings
+	[secondary_prompt]
+  		foreground = 'p:bracket'  # Bracket foreground color
+  		background = 'transparent'  # Transparent background
+  		template = '❯❯ '  # Display secondary prompt symbol
