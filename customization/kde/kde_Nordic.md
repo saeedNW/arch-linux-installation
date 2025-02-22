@@ -77,9 +77,35 @@ Enhancing your desktop experience involves enabling additional effects that can 
 
 5. **Enable "Rounded Corners":**
 
+   - This effect is not included by default and needs to be installed separately.
+   - Install it from **KDE Store** or use your package manager if available.
    - Navigate to System Settings > Windows Management > Desktop Effects.
    - Search for "Rounded Corners" and enable it.
    - Open its configuration menu and disable primary and secondary outlines
+
+6. **Enable "Maximize":**
+
+   - Navigate to System Settings > Windows Management > Desktop Effects.
+   - Check the box next to "Maximize" to enable a smooth animation when maximizing and restoring windows, making transitions more visually appealing.
+
+7. **Enable "Mouse Mark":**
+
+   - Navigate to System Settings > Windows Management > Desktop Effects.
+   - Check the box next to "Mouse Mark" to enable drawing temporary marks on the screen using the mouse, useful for presentations or highlighting content.
+   - Configure shortcut keys if needed for quick activation.
+
+8. **Enable "Magic Lamp":**
+
+   - Navigate to System Settings > Windows Management > Desktop Effects.
+   - Check the box next to "Magic Lamp" to activate a genie-like animation when minimizing windows, adding a stylish visual effect.
+   - Click the settings icon next to it and set the animation duration to **400 ms** for an optimal balance between speed and smoothness.
+
+9. **Enable "Geometry Change by Ftpr":**
+
+   - This effect is not included by default and needs to be installed separately.
+   - Install it from **KDE Store** or use your package manager if available.
+   - Navigate to System Settings > Windows Management > Desktop Effects.
+   - Check the box next to "Geometry Change by Ftpr" to enable smooth animations when resizing or moving windows, improving the visual experience.
 
 ## Customize Desktop Layout
 
@@ -316,6 +342,7 @@ Follow these steps to apply the Nordic theme and its variants:
   - [KDE Modern Clock](https://store.kde.org/p/2135653)
   - [Desktop Indicator](https://store.kde.org/p/2131462)
   - [Spectrum audio Emulator](https://store.kde.org/p/2201084)
+  - [KDE Control Station](https://www.pling.com/p/2196105/)
 
 ### Bottom Panel
 
@@ -365,7 +392,7 @@ Follow these steps to apply the Nordic theme and its variants:
 
 - Right click on desktop and `Enter Edit mode`
 - Add an empty panel to the top of the screen
-  - Change panel's visibility to `Dodge windows`
+  - Change panel's visibility to `Auto Hide`
   - Change panel's hight to `32`
 - Click on the `Add widget` bottom
 - Add the following widgets to the panel (From right to left)
@@ -394,6 +421,13 @@ Follow these steps to apply the Nordic theme and its variants:
   - Panel Spacer
     - set the panel's size to `10`
   - keyboard layout
+  - Panel Spacer
+    - set the panel's size to `10`
+  - KDE Control Station
+    - Open its configuration menu and change Icon and Items to your preference
+    - Remove duplicated items that are in the control station from System Tray
+  - Panel Spacer
+    - set the panel's size to `10`
   - Notifications
 
 ### Desktop
