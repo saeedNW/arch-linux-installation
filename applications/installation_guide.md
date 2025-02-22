@@ -5,108 +5,108 @@ In this guide, I'll walk you through the installation process of essential appli
 ## Table of Contents
 
 - [Essential Applications Guide](#essential-applications-guide)
-  - [Table of Contents](#table-of-contents)
-  - [Installing bat](#installing-bat)
-  - [Installing eza](#installing-eza)
-  - [Installing duf](#installing-duf)
-  - [Installing gdu](#installing-gdu)
-  - [Installing yt-dlp](#installing-yt-dlp)
-  - [Installing python-spotdl](#installing-python-spotdl)
-  - [Installing Neovim](#installing-neovim)
-    - [Setting Up Neovim Configuration](#setting-up-neovim-configuration)
-    - [Add Neovim core configs](#add-neovim-core-configs)
-    - [Add Neovim Custom keybinding](#add-neovim-custom-keybinding)
-    - [Add Neovim Lazy Plugin Manager](#add-neovim-lazy-plugin-manager)
-    - [Install Neovim Plugins](#install-neovim-plugins)
-      - [nord.nvim Theme](#nordnvim-theme)
-      - [Neo-tree](#neo-tree)
-      - [bufferline](#bufferline)
-      - [lualine](#lualine)
-      - [treesitter](#treesitter)
-      - [telescope](#telescope)
-      - [lsp](#lsp)
-      - [autocompletion](#autocompletion)
-      - [alpha](#alpha)
-      - [indent-blankline](#indent-blankline)
-      - [gitsigns](#gitsigns)
-      - [misc](#misc)
-  - [Installing Zsh](#installing-zsh)
-    - [Installing Oh My Zsh](#installing-oh-my-zsh)
-      - [Installing Zsh Plugins](#installing-zsh-plugins)
-        - [zsh-autosuggestions](#zsh-autosuggestions)
-        - [zsh-syntax-highlighting](#zsh-syntax-highlighting)
-        - [zsh-completions](#zsh-completions)
-        - [Enabling Plugins](#enabling-plugins)
-    - [Custom Alias](#custom-alias)
-    - [ZSH History Configuration](#zsh-history-configuration)
-  - [Installing direnv](#installing-direnv)
-    - [Setup](#setup)
-    - [Quick demo](#quick-demo)
-    - [Key Notes](#key-notes)
-  - [Installing Git](#installing-git)
-    - [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
-  - [sshuttle VPN](#sshuttle-vpn)
-  - [Installing LibreOffice](#installing-libreoffice)
-  - [Installing GIMP](#installing-gimp)
-    - [Change Gimp's Look](#change-gimps-look)
-  - [Installing VLC Media Player](#installing-vlc-media-player)
-    - [Change VLC's Look](#change-vlcs-look)
-  - [Installing qBittorrent](#installing-qbittorrent)
-    - [Change qBittorrent's Look](#change-qbittorrents-look)
-  - [Installing OBS Studio](#installing-obs-studio)
-  - [Video Editor](#video-editor)
-    - [Installing Kdenlive](#installing-kdenlive)
-    - [Installing DaVinci Resolve](#installing-davinci-resolve)
-  - [Installing Discord](#installing-discord)
-  - [Installing Telegram Desktop](#installing-telegram-desktop)
-  - [Installing lazygit](#installing-lazygit)
-  - [Installing Docker](#installing-docker)
-    - [Installing Docker Compose](#installing-docker-compose)
-    - [Installing Portainer](#installing-portainer)
-  - [Installing RabbitMQ](#installing-rabbitmq)
-  - [Installing Zookeeper and Kafka](#installing-zookeeper-and-kafka)
-    - [Installing Zookeeper](#installing-zookeeper)
-    - [Installing Kafka](#installing-kafka)
-  - [Installing Databases](#installing-databases)
-    - [Installing Redis](#installing-redis)
-      - [Installing RedisInsight](#installing-redisinsight)
-    - [Installing MongoDB](#installing-mongodb)
-      - [Installing MongoDB Tools](#installing-mongodb-tools)
-      - [Installing MongoDB Compass](#installing-mongodb-compass)
-    - [MySQL and phpMyAdmin](#mysql-and-phpmyadmin)
-    - [Installing Elasticsearch and Kibana](#installing-elasticsearch-and-kibana)
-    - [installing Postgres and pgAdmin](#installing-postgres-and-pgadmin)
-  - [Installing CPUFetch](#installing-cpufetch)
-  - [Installing Neofetch](#installing-neofetch)
-  - [Installing Google Chrome](#installing-google-chrome)
-  - [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
-    - [Recommended Plugins](#recommended-plugins)
-    - [Custom JS Snippets](#custom-js-snippets)
-    - [Custom TS Snippets](#custom-ts-snippets)
-    - [Theme](#theme)
-    - [Custom Color Schema](#custom-color-schema)
-    - [Recommended Settings](#recommended-settings)
-    - [VSCode Custom CSS \& JS](#vscode-custom-css--js)
-      - [Steps to Enable Custom CSS \& JS in VS Code](#steps-to-enable-custom-css--js-in-vs-code)
-      - [Example Files](#example-files)
-    - [Custom Shortcuts](#custom-shortcuts)
-  - [Installing Postman](#installing-postman)
-  - [Installing Amberol Music Player](#installing-amberol-music-player)
-  - [Image Viewer](#image-viewer)
-    - [Installing qview (Recomended)](#installing-qview-recomended)
-    - [Installing Loupe](#installing-loupe)
-    - [Installing nomacs](#installing-nomacs)
-  - [Installing GNOME Boxes](#installing-gnome-boxes)
-  - [Installing Blanket](#installing-blanket)
-  - [Installing HandBrake](#installing-handbrake)
-  - [Installing Albert Application Launcher](#installing-albert-application-launcher)
-    - [Albert Recommended Configs](#albert-recommended-configs)
-  - [Installing Rclone \& Rclone Browser](#installing-rclone--rclone-browser)
-  - [Installing AnyDesk](#installing-anydesk)
-  - [Installing Droidcam](#installing-droidcam)
-  - [Install Spot Player](#install-spot-player)
-  - [Installing Flatpak](#installing-flatpak)
-  - [Setting Up Timeshift for System Snapshots](#setting-up-timeshift-for-system-snapshots)
+	- [Table of Contents](#table-of-contents)
+	- [Installing bat](#installing-bat)
+	- [Installing eza](#installing-eza)
+	- [Installing duf](#installing-duf)
+	- [Installing gdu](#installing-gdu)
+	- [Installing yt-dlp](#installing-yt-dlp)
+	- [Installing python-spotdl](#installing-python-spotdl)
+	- [Installing Neovim](#installing-neovim)
+		- [Setting Up Neovim Configuration](#setting-up-neovim-configuration)
+		- [Add Neovim core configs](#add-neovim-core-configs)
+		- [Add Neovim Custom keybinding](#add-neovim-custom-keybinding)
+		- [Add Neovim Lazy Plugin Manager](#add-neovim-lazy-plugin-manager)
+		- [Install Neovim Plugins](#install-neovim-plugins)
+			- [nord.nvim Theme](#nordnvim-theme)
+			- [Neo-tree](#neo-tree)
+			- [bufferline](#bufferline)
+			- [lualine](#lualine)
+			- [treesitter](#treesitter)
+			- [telescope](#telescope)
+			- [lsp](#lsp)
+			- [autocompletion](#autocompletion)
+			- [alpha](#alpha)
+			- [indent-blankline](#indent-blankline)
+			- [gitsigns](#gitsigns)
+			- [misc](#misc)
+	- [Installing Zsh](#installing-zsh)
+		- [Installing Oh My Zsh](#installing-oh-my-zsh)
+			- [Installing Zsh Plugins](#installing-zsh-plugins)
+				- [zsh-autosuggestions](#zsh-autosuggestions)
+				- [zsh-syntax-highlighting](#zsh-syntax-highlighting)
+				- [zsh-completions](#zsh-completions)
+				- [Enabling Plugins](#enabling-plugins)
+		- [Custom Alias](#custom-alias)
+		- [ZSH History Configuration](#zsh-history-configuration)
+	- [Installing direnv](#installing-direnv)
+		- [Setup](#setup)
+		- [Quick demo](#quick-demo)
+		- [Key Notes](#key-notes)
+	- [Installing Git](#installing-git)
+		- [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
+	- [sshuttle VPN](#sshuttle-vpn)
+	- [Installing LibreOffice](#installing-libreoffice)
+	- [Installing GIMP](#installing-gimp)
+		- [Change Gimp's Look](#change-gimps-look)
+	- [Installing VLC Media Player](#installing-vlc-media-player)
+		- [Change VLC's Look](#change-vlcs-look)
+	- [Installing qBittorrent](#installing-qbittorrent)
+		- [Change qBittorrent's Look](#change-qbittorrents-look)
+	- [Installing OBS Studio](#installing-obs-studio)
+	- [Video Editor](#video-editor)
+		- [Installing Kdenlive](#installing-kdenlive)
+		- [Installing DaVinci Resolve](#installing-davinci-resolve)
+	- [Installing Discord](#installing-discord)
+	- [Installing Telegram Desktop](#installing-telegram-desktop)
+	- [Installing lazygit](#installing-lazygit)
+	- [Installing Docker](#installing-docker)
+		- [Installing Docker Compose](#installing-docker-compose)
+		- [Installing Portainer](#installing-portainer)
+	- [Installing RabbitMQ](#installing-rabbitmq)
+	- [Installing Zookeeper and Kafka](#installing-zookeeper-and-kafka)
+		- [Installing Zookeeper](#installing-zookeeper)
+		- [Installing Kafka](#installing-kafka)
+	- [Installing Databases](#installing-databases)
+		- [Installing Redis](#installing-redis)
+			- [Installing RedisInsight](#installing-redisinsight)
+		- [Installing MongoDB](#installing-mongodb)
+			- [Installing MongoDB Tools](#installing-mongodb-tools)
+			- [Installing MongoDB Compass](#installing-mongodb-compass)
+		- [MySQL and phpMyAdmin](#mysql-and-phpmyadmin)
+		- [Installing Elasticsearch and Kibana](#installing-elasticsearch-and-kibana)
+		- [installing Postgres and pgAdmin](#installing-postgres-and-pgadmin)
+	- [Installing CPUFetch](#installing-cpufetch)
+	- [Installing Neofetch](#installing-neofetch)
+	- [Installing Google Chrome](#installing-google-chrome)
+	- [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
+		- [Recommended Plugins](#recommended-plugins)
+		- [Custom JS Snippets](#custom-js-snippets)
+		- [Custom TS Snippets](#custom-ts-snippets)
+		- [Theme](#theme)
+		- [Custom Color Schema](#custom-color-schema)
+		- [Recommended Settings](#recommended-settings)
+		- [VSCode Custom CSS \& JS](#vscode-custom-css--js)
+			- [Steps to Enable Custom CSS \& JS in VS Code](#steps-to-enable-custom-css--js-in-vs-code)
+			- [Example Files](#example-files)
+		- [Custom Shortcuts](#custom-shortcuts)
+	- [Installing Postman](#installing-postman)
+	- [Installing Amberol Music Player](#installing-amberol-music-player)
+	- [Image Viewer](#image-viewer)
+		- [Installing qview (Recomended)](#installing-qview-recomended)
+		- [Installing Loupe](#installing-loupe)
+		- [Installing nomacs](#installing-nomacs)
+	- [Installing GNOME Boxes](#installing-gnome-boxes)
+	- [Installing Blanket](#installing-blanket)
+	- [Installing HandBrake](#installing-handbrake)
+	- [Installing Albert Application Launcher](#installing-albert-application-launcher)
+		- [Albert Recommended Configs](#albert-recommended-configs)
+	- [Installing Rclone \& Rclone Browser](#installing-rclone--rclone-browser)
+	- [Installing AnyDesk](#installing-anydesk)
+	- [Installing Droidcam](#installing-droidcam)
+	- [Install Spot Player](#install-spot-player)
+	- [Installing Flatpak](#installing-flatpak)
+	- [Setting Up Timeshift for System Snapshots](#setting-up-timeshift-for-system-snapshots)
 
 ## Installing bat
 
@@ -829,7 +829,7 @@ For direnv to work properly it needs to be hooked into the shell. Once the hook 
 **ZSH :** Add the following line at the end of the ~/.zshrc file:
 
 ```bash
-eval "$(direnv hook zsh
+eval "$(direnv hook zsh)"
 ```
 
 **Oh my zsh :** Oh my zsh has a core plugin with direnv support. Add direnv to the plugins array in your zshrc file:
@@ -847,30 +847,36 @@ $ cd ~/my-project
 
 # Show that the FOO environment variable is not loaded.
 $ echo ${FOO-nope}
+# Output
 nope
 
 # Create a new .envrc. This file is bash code that is going to be loaded by
 # direnv.
 $ echo export FOO=foo > .envrc
+# Output
 .envrc is not allowed
 
 # The security mechanism didn't allow to load the .envrc. Since we trust it,
 # let's allow its execution.
 $ direnv allow .
+# Output
 direnv: reloading
 direnv: loading .envrc
 direnv export: +FOO
 
 # Show that the FOO environment variable is loaded.
 $ echo ${FOO-nope}
+# Output
 foo
 
 # Exit the project
 $ cd ..
+# Output
 direnv: unloading
 
 # And now FOO is unset again
 $ echo ${FOO-nope}
+# Output
 nope
 ```
 
