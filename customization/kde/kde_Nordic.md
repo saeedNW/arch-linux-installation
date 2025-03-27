@@ -9,35 +9,35 @@ Due to significant changes in **Plasma 6**, some plugins, software, and modules 
 ## Table of Contents
 
 - [KDE Plasma Nordic Customization](#kde-plasma-nordic-customization)
-  - [Notice of Obsolescence for the Original Video](#notice-of-obsolescence-for-the-original-video)
-  - [Table of Contents](#table-of-contents)
-  - [Final Result](#final-result)
-  - [Enhance Desktop Experience with Additional Effects](#enhance-desktop-experience-with-additional-effects)
-  - [Customize Desktop Layout](#customize-desktop-layout)
-  - [Customize Window Behavior](#customize-window-behavior)
-  - [Customize Task Switcher](#customize-task-switcher)
-  - [Install Fonts](#install-fonts)
-    - [Install FiraCode fonts](#install-firacode-fonts)
-    - [JetBrainsMono Nerd Font](#jetbrainsmono-nerd-font)
-  - [Theme Configuration](#theme-configuration)
-    - [Downloading Necessary Files](#downloading-necessary-files)
-    - [Setting Up Directories and Moving Files](#setting-up-directories-and-moving-files)
-    - [Applying Themes](#applying-themes)
-    - [Kvantum Configuration](#kvantum-configuration)
-    - [Wallpaper](#wallpaper)
-    - [Logout and Login](#logout-and-login)
-  - [Desktop \& panels Configuration](#desktop--panels-configuration)
-    - [Installing and Configuring Widgets](#installing-and-configuring-widgets)
-    - [Bottom Panel](#bottom-panel)
-    - [Side Panel](#side-panel)
-    - [Top Panel](#top-panel)
-    - [Desktop](#desktop)
-  - [Konsole Customization](#konsole-customization)
-  - [Neofetch Custom Config](#neofetch-custom-config)
-  - [Bat Theme Configuration](#bat-theme-configuration)
-  - [Yakuake Customization](#yakuake-customization)
-  - [Dolphin Customization](#dolphin-customization)
-  - [Google chrome](#google-chrome)
+	- [Notice of Obsolescence for the Original Video](#notice-of-obsolescence-for-the-original-video)
+	- [Table of Contents](#table-of-contents)
+	- [Final Result](#final-result)
+	- [Enhance Desktop Experience with Additional Effects](#enhance-desktop-experience-with-additional-effects)
+	- [Customize Desktop Layout](#customize-desktop-layout)
+	- [Customize Window Behavior](#customize-window-behavior)
+	- [Customize Task Switcher](#customize-task-switcher)
+	- [Install Fonts](#install-fonts)
+		- [Install FiraCode fonts](#install-firacode-fonts)
+		- [JetBrainsMono Nerd Font](#jetbrainsmono-nerd-font)
+	- [Theme Configuration](#theme-configuration)
+		- [Downloading Necessary Files](#downloading-necessary-files)
+		- [Setting Up Directories and Moving Files](#setting-up-directories-and-moving-files)
+		- [Applying Themes](#applying-themes)
+		- [Kvantum Configuration](#kvantum-configuration)
+		- [Wallpaper](#wallpaper)
+		- [Logout and Login](#logout-and-login)
+	- [Desktop \& panels Configuration](#desktop--panels-configuration)
+		- [Installing and Configuring Widgets](#installing-and-configuring-widgets)
+		- [Bottom Panel](#bottom-panel)
+		- [Side Panel](#side-panel)
+		- [Top Panel](#top-panel)
+		- [Desktop](#desktop)
+	- [Konsole Customization](#konsole-customization)
+	- [FastFetch Custom Config](#fastfetch-custom-config)
+	- [Bat Theme Configuration](#bat-theme-configuration)
+	- [Yakuake Customization](#yakuake-customization)
+	- [Dolphin Customization](#dolphin-customization)
+	- [Google chrome](#google-chrome)
 
 ## Final Result
 
@@ -497,12 +497,15 @@ This section draws inspiration from the video **"[We may have killed p10k, ...](
 
   To configure Oh My Posh, you can refer to its [documentation](https://ohmyposh.dev/docs) to create a fully personalized prompt. Alternatively, you can use [this configuration file](./files/ohmyposh/zen.toml) to implement a prompt that maintains consistency with the rest of the Nordic-themed customization.
 
-## Neofetch Custom Config
+## FastFetch Custom Config
 
-Download Neofetch [custom config](../general/neofetch_config.conf)
+Download FastFetch [custom config](../general/fastfetch-config.jsonc)
 
-    cp ~/.config/neofetch/config.conf ~/.config/neofetch/config.conf-backup
-    cp -f ~/Downloads/neofetch_config.conf ~/.config/neofetch/config.conf
+    fastfetch --gen-config
+
+    cp ~/.config/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc-backup
+
+    cp -f ~/Downloads/fastfetch-config.jsonc ~/.config/fastfetch/config.jsonc
 
 ## Bat Theme Configuration
 

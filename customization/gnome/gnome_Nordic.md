@@ -5,32 +5,32 @@ This section offers guidance on customizing Gnome desktop environments, inspired
 ## Table of Contents
 
 - [Gnome Nordic Customization](#gnome-nordic-customization)
-  - [Table of Contents](#table-of-contents)
-  - [Final Result](#final-result)
-  - [Requirements](#requirements)
-  - [Extensions](#extensions)
-  - [Theme Configuration](#theme-configuration)
-    - [Downloading Necessary Files](#downloading-necessary-files)
-    - [Install WhiteSur GTK Theme](#install-whitesur-gtk-theme)
-    - [Install Nordzy Icon Theme](#install-nordzy-icon-theme)
-    - [Install Sunity Cursors](#install-sunity-cursors)
-    - [Install Fonts](#install-fonts)
-    - [Move Backgrounds to their location](#move-backgrounds-to-their-location)
-    - [Apply Themes](#apply-themes)
-    - [Apply Fonts](#apply-fonts)
-    - [Config Windows Style](#config-windows-style)
-    - [Config Extensions](#config-extensions)
-    - [Set Desktop Background](#set-desktop-background)
-  - [Install Glava Audio Virtualizer](#install-glava-audio-virtualizer)
-  - [Config Conky](#config-conky)
-  - [Fix Dash to Dock Theme Issue](#fix-dash-to-dock-theme-issue)
-  - [Customize GDM Login Screen](#customize-gdm-login-screen)
-  - [Terminal Customization](#terminal-customization)
-  - [Neofetch Config](#neofetch-config)
-  - [DDterm Customization](#ddterm-customization)
-  - [Wiggle Extension](#wiggle-extension)
-  - [Keyboard Switching to Another Layout Hotkey](#keyboard-switching-to-another-layout-hotkey)
-  - [Google chrome](#google-chrome)
+	- [Table of Contents](#table-of-contents)
+	- [Final Result](#final-result)
+	- [Requirements](#requirements)
+	- [Extensions](#extensions)
+	- [Theme Configuration](#theme-configuration)
+		- [Downloading Necessary Files](#downloading-necessary-files)
+		- [Install WhiteSur GTK Theme](#install-whitesur-gtk-theme)
+		- [Install Nordzy Icon Theme](#install-nordzy-icon-theme)
+		- [Install Sunity Cursors](#install-sunity-cursors)
+		- [Install Fonts](#install-fonts)
+		- [Move Backgrounds to their location](#move-backgrounds-to-their-location)
+		- [Apply Themes](#apply-themes)
+		- [Apply Fonts](#apply-fonts)
+		- [Config Windows Style](#config-windows-style)
+		- [Config Extensions](#config-extensions)
+		- [Set Desktop Background](#set-desktop-background)
+	- [Install Glava Audio Virtualizer](#install-glava-audio-virtualizer)
+	- [Config Conky](#config-conky)
+	- [Fix Dash to Dock Theme Issue](#fix-dash-to-dock-theme-issue)
+	- [Customize GDM Login Screen](#customize-gdm-login-screen)
+	- [Terminal Customization](#terminal-customization)
+	- [FastFetch Config](#fastfetch-config)
+	- [DDterm Customization](#ddterm-customization)
+	- [Wiggle Extension](#wiggle-extension)
+	- [Keyboard Switching to Another Layout Hotkey](#keyboard-switching-to-another-layout-hotkey)
+	- [Google chrome](#google-chrome)
 
 ## Final Result
 
@@ -387,15 +387,16 @@ In order to fix the dash to dock them issue follow these steps
 8. Open **Scrolling** tab
    1. Uncheck **Show scrollbar**
 
-## Neofetch Config
+## FastFetch Config
 
-Replace the Neofetch config file with the following one:
-
-[Neofetch Custom Config](../general/neofetch_config.conf)
+Download FastFetch [custom config](../general/fastfetch-config.jsonc)
 
 ```shell
-cp ~/.config/neofetch/config.conf ~/.config/neofetch/config.conf-backup
-cp -f ~/Downloads/neofetch_config.conf ~/.config/neofetch/config.conf
+fastfetch --gen-config
+
+cp ~/.config/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc-backup
+
+cp -f ~/Downloads/fastfetch-config.jsonc ~/.config/fastfetch/config.jsonc
 ```
 
 ## DDterm Customization
