@@ -9,10 +9,11 @@ fastfetch --config hyde/*.jsonc
 {
 	"$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
 	"logo": {
-		"source": "arch"
-		// "color": {
-		// 	"1": "black"
-		// }
+		"source": "arch",
+		"color": {
+			"1": "black",
+			"2": "cyan"
+		}
 	},
 	"display": {
 		"separator": " : "
@@ -31,17 +32,20 @@ fastfetch --config hyde/*.jsonc
 		{
 			"type": "chassis",
 			"key": "  󰇺 Chassis",
-			"format": "{1} {2}"
+			"format": "{1} {2}",
+			"keyColor": "black"
 		},
 		{
 			"type": "os",
 			"key": "  󰣇 OS",
-			"format": "{2}"
+			"format": "{2}",
+			"keyColor": "black"
 		},
 		{
 			"type": "kernel",
 			"key": "   Kernel",
-			"format": "{2}"
+			"format": "{2}",
+			"keyColor": "black"
 		},
 		{
 			"type": "packages",
@@ -73,7 +77,12 @@ fastfetch --config hyde/*.jsonc
 		{
 			"type": "title",
 			"key": "  ",
-			"format": "{6} {7} {8}"
+			"format": "{6} {7} {8}",
+			"keyColor": "black",
+			"color": {
+				"host": "black",
+				"user": "black"
+			}
 		},
 		{
 			"type": "custom",

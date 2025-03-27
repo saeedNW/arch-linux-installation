@@ -462,10 +462,10 @@ Enhance your Konsole terminal with the following customizations:
       | Color1     | 3b4252 | 616e88        | 3b4252      |
       | Color2     | bf616a | bf616a        | bf616a      |
       | Color3     | a3be8c | a3be8c        | a3be8c      |
-      | Color4     | ebcb8b | 55eb28        | ebcb8b      |
+      | Color4     | ebcb8b | ebcb8b        | ebcb8b      |
       | Color5     | 5a667e | 81a1c1        | 81a1c1      |
       | Color6     | b48ead | b48ead        | b48ead      |
-      | Color7     | 7684a3 | 65718c        | 88c0d0      |
+      | Color7     | 7684a3 | 3e4556        | 88c0d0      |
       | Color8     | d8dee9 | d8dee9        | d8dee9      |
 
   - Apply and OK all changes
