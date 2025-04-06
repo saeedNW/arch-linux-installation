@@ -1915,153 +1915,285 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 ```json
 {
 	/**** START: General ***********/
+
+	// Disables the depreciation notice for the Rainbow Brackets extension.
 	"RainbowBrackets.depreciation-notice": false,
+
+	// Disables compact folders in the file explorer.
 	"explorer.compactFolders": false,
+
+	// Disables highlights for the "todo-tree" extension.
 	"todo-tree.highlights.enabled": false,
+
+	// Automatically opens untrusted files without a prompt.
 	"security.workspace.trust.untrustedFiles": "open",
+
+	// Enables error lens only for errors and warnings.
 	"errorLens.enabledDiagnosticLevels": ["error", "warning"],
-	// "explorer.autoReveal": false,
+
+	// Disables side-by-side view in the diff editor.
+	"diffEditor.renderSideBySide": false,
+
+	// Disables the Chat Command Center in VS Code.
+	"chat.commandCenter.enabled": false,
+
+	// Ignores VS Code extension recommendations.
+	"extensions.ignoreRecommendations": true,
+
+	// Disables breadcrumbs navigation in the editor.
+	"breadcrumbs.enabled": false,
+
 	/*********** END: General ****/
 
 	/**** START: Files ***********/
+
+	// Removes trailing whitespace from files on save.
 	"files.trimTrailingWhitespace": true,
+
+	// Ensures a final newline is added at the end of each file.
 	"files.insertFinalNewline": true,
+
+	// Removes extra newlines at the end of files.
 	"files.trimFinalNewlines": true,
+
+	// Automatically saves files after a short delay.
 	"files.autoSave": "afterDelay",
+
 	/*********** END: Files ****/
 
 	/**** START: Zen Mode ***********/
+
+	// Disables centering the editor layout in Zen mode.
 	"zenMode.centerLayout": false,
-	"zenMode.hideLineNumbers": false,
+
+	// hide line numbers visible in Zen mode.
+	"zenMode.hideLineNumbers": true,
+
 	/*********** END: Zen Mode ****/
 
 	/**** START: Window ***********/
+
+	// Uses a custom title bar style.
 	"window.titleBarStyle": "custom",
+
+	// Toggles the menu bar visibility when the Alt key is pressed.
 	"window.menuBarVisibility": "toggle",
+
+	// Opens new windows with the same dimensions as the previous window.
 	"window.newWindowDimensions": "inherit",
+
 	/*********** END: Window ****/
 
 	/**** START: Workbench ***********/
+
+	// Disables layout control in the workbench.
 	"workbench.layoutControl.enabled": false,
+
+	// Disables navigation control in the workbench.
 	"workbench.navigationControl.enabled": false,
+
+	// Disables VS Code tips.
 	"workbench.tips.enabled": false,
+
+	// Sets the icon theme to "a-file-icon-vscode".
 	"workbench.iconTheme": "a-file-icon-vscode",
+
+	// Sets the product icon theme.
 	"workbench.productIconTheme": "a-file-icon-vscode-product-icon-theme",
+
+	// Sets the color theme to "Nord".
 	"workbench.colorTheme": "Nord",
+
+	// Disables the startup editor (no welcome page or recently opened files).
 	"workbench.startupEditor": "none",
-	// "workbench.editor.enablePreview": false,
+
+	// Hides the activity bar in the UI.
+	"workbench.activityBar.location": "hidden",
+
 	/*********** END: Workbench ****/
 
-	/**** START: Git & Git lense***********/
+	/**** START: Git & GitLens ***********/
+
+	// Enables automatic fetching of Git repositories.
 	"git.autofetch": true,
+
+	// Displays the GitLens commit graph in the editor instead of a separate panel.
 	"gitlens.graph.layout": "editor",
-	/*********** END: Git & Git lense****/
+
+	/*********** END: Git & GitLens ****/
 
 	/**** START: Editor ***********/
+
+	// Enables font ligatures for better typography.
 	"editor.fontLigatures": true,
+
+	// Enables zooming in/out with the mouse wheel while holding Ctrl.
 	"editor.mouseWheelZoom": true,
+
+	// Automatically formats code while typing.
 	"editor.formatOnType": true,
+
+	// Automatically formats code when pasting.
 	"editor.formatOnPaste": true,
+
+	// Uses tab characters instead of spaces for indentation.
 	"editor.insertSpaces": false,
+
+	// Enables linked editing for HTML and XML tags.
 	"editor.linkedEditing": true,
+
+	// Disables syntax highlighting when copying code.
 	"editor.copyWithSyntaxHighlighting": false,
+
+	// Disables automatic indentation detection.
 	"editor.detectIndentation": false,
+
+	// Disables the glyph margin (extra space for debugging and code lenses).
 	"editor.glyphMargin": false,
+
+	// Sets the line height to 2.
 	"editor.lineHeight": 2,
+
+	// Sets the tab size to 4 spaces.
 	"editor.tabSize": 4,
+
+	// Sets the editor font to "JetBrainsMono Nerd Font".
 	"editor.fontFamily": "'JetBrainsMono Nerd Font', monospace",
+
+	// Uses the tab size value for indentation size.
 	"editor.indentSize": "tabSize",
+
+	// Enables word-based suggestions from matching documents.
 	"editor.wordBasedSuggestions": "matchingDocuments",
+
+	// Enables smooth caret animation when moving the cursor.
 	"editor.cursorSmoothCaretAnimation": "on",
+
+	// Disables the lightbulb suggestion feature.
 	"editor.lightbulb.enabled": "off",
+
+	// Highlights the entire line where the cursor is located.
 	"editor.renderLineHighlight": "all",
+
+	// Disables automatic bracket matching.
 	"editor.matchBrackets": "never",
+
+	// Customizes token colors in the editor.
 	"editor.tokenColorCustomizations": {
 		"textMateRules": [
 			{
 				"name": "string color",
 				"scope": ["string"],
 				"settings": {
-					"foreground": "#fdee00" // your desired color
+					"foreground": "#fdee00" // Custom string color
 				}
 			},
 			{
 				"name": "variable color",
 				"scope": ["variable"],
 				"settings": {
-					"foreground": "#ffffee" // your desired color
+					"foreground": "#ffffee" // Custom variable color
 				}
 			},
 			{
 				"name": "parameter color",
 				"scope": ["variable.parameter"],
 				"settings": {
-					"foreground": "#ffd390" // your desired color
+					"foreground": "#ffd390" // Custom parameter color
 				}
 			},
 			{
 				"name": "number color in env files",
 				"scope": ["source.ini"],
 				"settings": {
-					"foreground": "#76fd00" // your desired color
+					"foreground": "#76fd00" // Custom number color for .env files
 				}
 			}
 		]
 	},
+
 	/*********** END: Editor ****/
 
 	/**** START: Terminal ***********/
+
+	// Sets an empty environment configuration for the integrated terminal on Linux.
 	"terminal.integrated.env.linux": {},
+
+	// Sets the terminal font to "JetBrainsMono Nerd Font".
 	"terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+
+	// Disables terminal tabs.
 	"terminal.integrated.tabs.enabled": false,
+
 	/*********** END: Terminal ****/
 
 	/**** START: Prettier ***********/
+
+	// Uses tabs instead of spaces for formatting.
 	"prettier.useTabs": true,
+
+	// Automatically detects line endings based on the operating system.
 	"prettier.endOfLine": "auto",
+
 	/*********** END: Prettier ****/
 
 	/**** START: cSpell ***********/
-	"cSpell.userWords": ["fastify"],
+
+	// Adds "fastify" as a user-defined word to the spell checker.
+	"cSpell.userWords": ["fastify", "liara"],
+
+	// Enables spell checking for English and Persian.
 	"cSpell.language": "en,fa",
+
 	/*********** END: cSpell ****/
 
 	/**** START: Selected line ***********/
+
+	// Aligns the selected line highlight to the right.
 	"selectline.alignment": "right",
+
 	/*********** END: Selected line ****/
 
 	/**** START: Formatter ***********/
+
+	// Sets Prettier as the default code formatter.
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
+
+	// Uses Prettier as the default formatter for JavaScript.
 	"[javascript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"[proto3]": {
-		"editor.defaultFormatter": "zxh404.vscode-proto3"
-	},
-	"[shellscript]": {
-		"editor.defaultFormatter": "shakram02.bash-beautify"
-	},
+
+	// Uses Lua Helper as the default formatter for Lua.
 	"[lua]": {
 		"editor.defaultFormatter": "yinfei.luahelper"
 	},
+
+	// Uses Even Better TOML as the default formatter for TOML files.
 	"[toml]": {
 		"editor.defaultFormatter": "tamasfe.even-better-toml"
 	},
+
+	// Uses TypeScript Language Features as the default formatter for TypeScript.
+	"[typescript]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+
+	// Uses Docker extension formatter for Docker Compose files.
+	"[dockercompose]": {
+		"editor.defaultFormatter": "ms-azuretools.vscode-docker"
+	},
+
 	/*********** END: Formatter ****/
 
-	/**** START: Other ***********/
-	"diffEditor.renderSideBySide": false,
-	"chat.commandCenter.enabled": false,
-	"extensions.ignoreRecommendations": true,
-	"breadcrumbs.enabled": false,
-	"npm.keybindingsChangedWarningShown": true,
+	/**** START: Customization ***********/
+
+	// Imports custom CSS and scripts for VS Code.
 	"vscode_custom_css.imports": [
 		"file:///home/saeed/.overhaul/vscode/custom-vscode.css",
 		"file:///home/saeed/.overhaul/vscode/vscode-script.js",
-		"file:///home/saeed/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.4/dist/updateHandler.js"
-	],
-	"workbench.activityBar.location": "hidden"
-	/*********** END: Other ****/
+		"file:///home/saeed/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
+	]
 }
 ```
 
@@ -2438,27 +2570,6 @@ By following these steps, you can transform VS Code's appearance beyond standard
 		"key": "ctrl+numpad_multiply",
 		"command": "editor.action.fontZoomReset"
 	},
-
-	//? ***** START: VSCode keybindings reference *****
-	{
-		//* Remove keybinding for VSCode keybindings reference
-		"key": "ctrl+k ctrl+r",
-		"command": "-workbench.action.keybindingsReference"
-	},
-
-	//? ***** START: npm extension *****
-	{
-		//* Remove keybinding for npm extension run script
-		"key": "ctrl+k shift+r",
-		"command": "-npm-script.run",
-		"when": "!config.npm.oldKeybindings.enable && !terminalFocus"
-	},
-	{
-		//* Set new keybinding for npm extension run script
-		"key": "ctrl+k ctrl+r",
-		"command": "npm-script.run",
-		"when": "!config.npm.oldKeybindings.enable && !terminalFocus"
-	}
 ]
 ```
 
