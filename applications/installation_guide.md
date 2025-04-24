@@ -5,109 +5,107 @@ In this guide, I'll walk you through the installation process of essential appli
 ## Table of Contents
 
 - [Essential Applications Guide](#essential-applications-guide)
-	- [Table of Contents](#table-of-contents)
-	- [Installing bat](#installing-bat)
-	- [Installing eza](#installing-eza)
-	- [Installing duf](#installing-duf)
-	- [Installing gdu](#installing-gdu)
-	- [Installing yt-dlp](#installing-yt-dlp)
-	- [Installing python-spotdl](#installing-python-spotdl)
-	- [Installing Neovim](#installing-neovim)
-		- [Setting Up Neovim Configuration](#setting-up-neovim-configuration)
-		- [Add Neovim core configs](#add-neovim-core-configs)
-		- [Add Neovim Custom keybinding](#add-neovim-custom-keybinding)
-		- [Add Neovim Lazy Plugin Manager](#add-neovim-lazy-plugin-manager)
-		- [Install Neovim Plugins](#install-neovim-plugins)
-			- [nord.nvim Theme](#nordnvim-theme)
-			- [Neo-tree](#neo-tree)
-			- [bufferline](#bufferline)
-			- [lualine](#lualine)
-			- [treesitter](#treesitter)
-			- [telescope](#telescope)
-			- [lsp](#lsp)
-			- [autocompletion](#autocompletion)
-			- [alpha](#alpha)
-			- [indent-blankline](#indent-blankline)
-			- [gitsigns](#gitsigns)
-			- [misc](#misc)
-	- [Installing Zsh](#installing-zsh)
-		- [Installing Oh My Zsh](#installing-oh-my-zsh)
-			- [Installing Zsh Plugins](#installing-zsh-plugins)
-				- [zsh-autosuggestions](#zsh-autosuggestions)
-				- [zsh-syntax-highlighting](#zsh-syntax-highlighting)
-				- [zsh-completions](#zsh-completions)
-				- [Enabling Plugins](#enabling-plugins)
-		- [Custom Alias](#custom-alias)
-		- [ZSH History Configuration](#zsh-history-configuration)
-	- [Installing direnv](#installing-direnv)
-		- [Setup](#setup)
-		- [Quick demo](#quick-demo)
-		- [Key Notes](#key-notes)
-	- [Installing Git](#installing-git)
-		- [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
-	- [sshuttle VPN](#sshuttle-vpn)
-	- [Installing Mission Center](#installing-mission-center)
-	- [Installing LibreOffice](#installing-libreoffice)
-	- [Installing GIMP](#installing-gimp)
-		- [Change Gimp's Look](#change-gimps-look)
-	- [Installing VLC Media Player](#installing-vlc-media-player)
-		- [Change VLC's Look](#change-vlcs-look)
-	- [Installing qBittorrent](#installing-qbittorrent)
-		- [Change qBittorrent's Look](#change-qbittorrents-look)
-	- [Installing OBS Studio](#installing-obs-studio)
-	- [Video Editor](#video-editor)
-		- [Installing Kdenlive](#installing-kdenlive)
-		- [Installing DaVinci Resolve](#installing-davinci-resolve)
-	- [Installing Discord](#installing-discord)
-	- [Installing Telegram Desktop](#installing-telegram-desktop)
-	- [Installing lazygit](#installing-lazygit)
-	- [Installing Docker](#installing-docker)
-		- [Installing Docker Compose](#installing-docker-compose)
-		- [Installing Portainer](#installing-portainer)
-	- [Installing RabbitMQ](#installing-rabbitmq)
-	- [Installing Zookeeper and Kafka](#installing-zookeeper-and-kafka)
-		- [Installing Zookeeper](#installing-zookeeper)
-		- [Installing Kafka](#installing-kafka)
-	- [Installing Databases](#installing-databases)
-		- [Installing Redis](#installing-redis)
-			- [Installing RedisInsight](#installing-redisinsight)
-		- [Installing MongoDB](#installing-mongodb)
-			- [Installing MongoDB Tools](#installing-mongodb-tools)
-			- [Installing MongoDB Compass](#installing-mongodb-compass)
-		- [MySQL and phpMyAdmin](#mysql-and-phpmyadmin)
-		- [Installing Elasticsearch and Kibana](#installing-elasticsearch-and-kibana)
-		- [installing Postgres and pgAdmin](#installing-postgres-and-pgadmin)
-	- [Installing CPUFetch](#installing-cpufetch)
-	- [Installing FastFetch](#installing-fastfetch)
-	- [Installing Google Chrome](#installing-google-chrome)
-	- [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
-		- [Recommended Plugins](#recommended-plugins)
-		- [Custom JS Snippets](#custom-js-snippets)
-		- [Custom TS Snippets](#custom-ts-snippets)
-		- [Theme](#theme)
-		- [Custom Color Schema](#custom-color-schema)
-		- [Recommended Settings](#recommended-settings)
-		- [VSCode Custom CSS \& JS](#vscode-custom-css--js)
-			- [Steps to Enable Custom CSS \& JS in VS Code](#steps-to-enable-custom-css--js-in-vs-code)
-			- [Example Files](#example-files)
-		- [Custom Shortcuts](#custom-shortcuts)
-	- [Installing Postman](#installing-postman)
-	- [Installing Amberol Music Player](#installing-amberol-music-player)
-	- [Image Viewer](#image-viewer)
-		- [Installing qview (Recomended)](#installing-qview-recomended)
-		- [Installing Loupe](#installing-loupe)
-		- [Installing nomacs](#installing-nomacs)
-	- [Installing GNOME Boxes](#installing-gnome-boxes)
-	- [Installing Blanket](#installing-blanket)
-	- [Installing HandBrake](#installing-handbrake)
-	- [Installing Albert Application Launcher](#installing-albert-application-launcher)
-		- [Albert Recommended Configs](#albert-recommended-configs)
-	- [Installing Rclone \& Rclone Browser](#installing-rclone--rclone-browser)
-	- [Installing AnyDesk](#installing-anydesk)
-	- [Installing Droidcam](#installing-droidcam)
-	- [Install Spot Player](#install-spot-player)
-	- [Installing Flatpak](#installing-flatpak)
-	- [Setting Up Timeshift for System Snapshots](#setting-up-timeshift-for-system-snapshots)
+  - [Table of Contents](#table-of-contents)
+  - [Installing bat](#installing-bat)
+  - [Installing eza](#installing-eza)
+  - [Installing duf](#installing-duf)
+  - [Installing gdu](#installing-gdu)
+  - [Installing yt-dlp](#installing-yt-dlp)
+  - [Installing python-spotdl](#installing-python-spotdl)
+  - [Installing Neovim](#installing-neovim)
+    - [Setting Up Neovim Configuration](#setting-up-neovim-configuration)
+    - [Add Neovim core configs](#add-neovim-core-configs)
+    - [Add Neovim Custom keybinding](#add-neovim-custom-keybinding)
+    - [Add Neovim Lazy Plugin Manager](#add-neovim-lazy-plugin-manager)
+    - [Install Neovim Plugins](#install-neovim-plugins)
+      - [nord.nvim Theme](#nordnvim-theme)
+      - [Neo-tree](#neo-tree)
+      - [bufferline](#bufferline)
+      - [lualine](#lualine)
+      - [treesitter](#treesitter)
+      - [telescope](#telescope)
+      - [lsp](#lsp)
+      - [autocompletion](#autocompletion)
+      - [alpha](#alpha)
+      - [indent-blankline](#indent-blankline)
+      - [gitsigns](#gitsigns)
+      - [misc](#misc)
+  - [Installing Zsh](#installing-zsh)
+    - [Installing Oh My Zsh](#installing-oh-my-zsh)
+      - [Installing Zsh Plugins](#installing-zsh-plugins)
+        - [zsh-autosuggestions](#zsh-autosuggestions)
+        - [zsh-syntax-highlighting](#zsh-syntax-highlighting)
+        - [zsh-completions](#zsh-completions)
+        - [Enabling Plugins](#enabling-plugins)
+    - [Custom Alias](#custom-alias)
+    - [ZSH History Configuration](#zsh-history-configuration)
+  - [Installing direnv](#installing-direnv)
+    - [Setup](#setup)
+    - [Quick demo](#quick-demo)
+    - [Key Notes](#key-notes)
+  - [Installing Git](#installing-git)
+    - [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
+  - [sshuttle VPN](#sshuttle-vpn)
+  - [Installing Mission Center](#installing-mission-center)
+  - [Installing LibreOffice](#installing-libreoffice)
+  - [Installing GIMP](#installing-gimp)
+    - [Change Gimp's Look](#change-gimps-look)
+  - [Installing VLC Media Player](#installing-vlc-media-player)
+    - [Change VLC's Look](#change-vlcs-look)
+  - [Installing qBittorrent](#installing-qbittorrent)
+    - [Change qBittorrent's Look](#change-qbittorrents-look)
+  - [Installing OBS Studio](#installing-obs-studio)
+  - [Video Editor](#video-editor)
+    - [Installing Kdenlive](#installing-kdenlive)
+    - [Installing DaVinci Resolve](#installing-davinci-resolve)
+  - [Installing Discord](#installing-discord)
+  - [Installing Telegram Desktop](#installing-telegram-desktop)
+  - [Installing lazygit](#installing-lazygit)
+  - [Installing Docker](#installing-docker)
+    - [Installing Docker Compose](#installing-docker-compose)
+    - [Installing Portainer](#installing-portainer)
+  - [Installing RabbitMQ](#installing-rabbitmq)
+  - [Installing Zookeeper and Kafka](#installing-zookeeper-and-kafka)
+    - [Installing Zookeeper](#installing-zookeeper)
+    - [Installing Kafka](#installing-kafka)
+  - [Installing Databases](#installing-databases)
+    - [Installing Redis](#installing-redis)
+      - [Installing RedisInsight](#installing-redisinsight)
+    - [Installing MongoDB](#installing-mongodb)
+      - [Installing MongoDB Tools](#installing-mongodb-tools)
+      - [Installing MongoDB Compass](#installing-mongodb-compass)
+    - [MySQL and phpMyAdmin](#mysql-and-phpmyadmin)
+    - [Installing Elasticsearch and Kibana](#installing-elasticsearch-and-kibana)
+    - [installing Postgres and pgAdmin](#installing-postgres-and-pgadmin)
+  - [Installing CPUFetch](#installing-cpufetch)
+  - [Installing FastFetch](#installing-fastfetch)
+  - [Installing Google Chrome](#installing-google-chrome)
+  - [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
+    - [Recommended Plugins](#recommended-plugins)
+    - [Theme](#theme)
+    - [Custom Color Schema](#custom-color-schema)
+    - [Recommended Settings](#recommended-settings)
+    - [VSCode Custom CSS \& JS](#vscode-custom-css--js)
+      - [Steps to Enable Custom CSS \& JS in VS Code](#steps-to-enable-custom-css--js-in-vs-code)
+      - [Example Files](#example-files)
+    - [Custom Shortcuts](#custom-shortcuts)
+  - [Installing Postman](#installing-postman)
+  - [Installing Amberol Music Player](#installing-amberol-music-player)
+  - [Image Viewer](#image-viewer)
+    - [Installing qview (Recomended)](#installing-qview-recomended)
+    - [Installing Loupe](#installing-loupe)
+    - [Installing nomacs](#installing-nomacs)
+  - [Installing GNOME Boxes](#installing-gnome-boxes)
+  - [Installing Blanket](#installing-blanket)
+  - [Installing HandBrake](#installing-handbrake)
+  - [Installing Albert Application Launcher](#installing-albert-application-launcher)
+    - [Albert Recommended Configs](#albert-recommended-configs)
+  - [Installing Rclone \& Rclone Browser](#installing-rclone--rclone-browser)
+  - [Installing AnyDesk](#installing-anydesk)
+  - [Installing Droidcam](#installing-droidcam)
+  - [Install Spot Player](#install-spot-player)
+  - [Installing Flatpak](#installing-flatpak)
+  - [Setting Up Timeshift for System Snapshots](#setting-up-timeshift-for-system-snapshots)
 
 ## Installing bat
 
@@ -1601,272 +1599,6 @@ xdg-mime default org.gnome.Nautilus.desktop inode/directory
 | Prettier            | Prettify Json                   | Pretty TypeScript Errors       | Proto Lint                 | Rainbow Brackets          | Select Line Status Bar       |
 | Todo Tree           | VSCode Animations               | Toggle Quotes                  | vscode-proto3              |                           |                              |
 
-### Custom JS Snippets
-
-```json
-{
-	"node class method": {
-		"prefix": "ncm",
-		"body": [
-			"/**",
-			"* $1",
-			"* @param {Object} req express request",
-			"* @param {Object} res express response",
-			"* @param {function} next express next function",
-			"* @returns {Promise<void>}",
-			"*/",
-			"async $2(req, res, next) {",
-			"\ttry {",
-			"\t\t$3",
-			"\t} catch (err) {",
-			"\t\tnext(err);",
-			"\t}",
-			"}"
-		],
-		"description": "Node.js Controller Method"
-	}
-}
-```
-
-```json
-{
-	"simple try/catch block": {
-		"prefix": "tc",
-		"body": ["try {", "\t$2", "} catch (err) {", "\t$1", "}"],
-		"description": "Simple try/catch block"
-	}
-}
-```
-
-```json
-{
-	"simple try/catch/log block": {
-		"prefix": "tcl",
-		"body": ["try {", "\t$1", "} catch (err) {", "\tconsole.error(err);", "}"],
-		"description": "Simple try/catch/log block"
-	}
-}
-```
-
-```json
-{
-	"node try/catch/next block": {
-		"prefix": "tcn",
-		"body": ["try {", "\t$1", "} catch (err) {", "\tnext(err);", "}"],
-		"description": "Node try/catch/next block"
-	}
-}
-```
-
-```json
-{
-	"async function": {
-		"prefix": "asf",
-		"body": ["async function $1($2) {", "\t$3", "}"],
-		"description": "Async function"
-	}
-}
-```
-
-```json
-{
-	"test describe block": {
-		"prefix": "desc",
-		"body": ["/** $1 */", "describe('$2', function () {", "\t$3", "});"],
-		"description": "Inserts describe() block"
-	}
-}
-```
-
-```json
-{
-	"test it block": {
-		"prefix": "it",
-		"body": [
-			"/**",
-			"* $1",
-			"*/",
-			"it('$2', async function () {",
-			"\t$3",
-			"});"
-		],
-		"description": "Inserts it() block"
-	}
-}
-```
-
-```json
-{
-	"node class controller": {
-		"prefix": "nodeclass",
-		"body": [
-			"/** import main controller */",
-			"const Controller = require(\"$1\");",
-			"/** import http status codes module */",
-			"const httpStatus = require(\"http-status-codes\");\n",
-			"/**",
-			"* @class $2",
-			"*/",
-			"class $2 extends Controller {",
-			"\t$3",
-			"}\n",
-			"module.exports = {",
-			"\t$2: new $2()",
-			"}"
-		],
-		"description": "node js node js controller class"
-	}
-}
-```
-
-```json
-{
-	"express router": {
-		"prefix": "erouter",
-		"body": [
-			"/** import express module */",
-			"const express = require('express');",
-			"/** create express Router instance */",
-			"const $1 = express.Router();\n",
-			"$2\n",
-			"/** export router */",
-			"module.exports = {",
-			"\t$1",
-			"}"
-		],
-		"description": "generat express router"
-	},
-```
-
-```json
-	"custom module require":{
-		"prefix": "rec",
-		"body": [
-			"const { $2 } = require(\"$1\");"
-		],
-		"description": "custom module require"
-	}
-```
-
-```json
-{
-	"multi line comment": {
-		"prefix": "mcom",
-		"body": ["/**", " * $1", " */"],
-		"description": "create multi-line comment"
-	},
-	"single line comment": {
-		"prefix": "scom",
-		"body": ["/** $1 */"],
-		"description": "create single-line comment"
-	},
-	"single line comment with brake": {
-		"prefix": "scome",
-		"body": ["/** $1 */\n"],
-		"description": "create single-line comment with brake"
-	}
-}
-```
-
-### Custom TS Snippets
-
-```json
-"node class method": {
-	"prefix": "tncm",
-	"body": [
-		"/**",
-		"* $1",
-		"* @param {Request} req express request",
-		"* @param {Response} res express response",
-		"* @param {NextFunction} next express next function",
-		"* @returns {Promise<void>}",
-		"*/",
-		"async $2(req: Request, res: Response, next: NextFunction) {",
-		"\ttry {",
-		"\t\t$3",
-		"\t} catch (err) {",
-		"\t\tnext(err);",
-		"\t}",
-		"}"
-	],
-	"description": "Node.js Controller Method"
-}
-```
-
-```json
-"simple try/catch block": {
-	"prefix": "ttc",
-	"body": [
-		"try {",
-		"\t$2",
-		"} catch (err) {",
-		"\t$1",
-		"}",
-	],
-	"description": "Simple try/catch block"
-}
-```
-
-```json
-"simple try/catch/log block": {
-	"prefix": "ttcl",
-	"body": [
-		"try {",
-		"\t$1",
-		"} catch (err) {",
-		"\tconsole.error(err);",
-		"}",
-	],
-	"description": "Simple try/catch/log block"
-}
-```
-
-```json
-"try/catch/next block": {
-	"prefix": "ttcn",
-	"body": [
-		"try {",
-		"\t$1",
-		"} catch (err) {",
-		"\tnext(err);",
-		"}",
-	],
-	"description": "try/catch/next block"
-}
-```
-
-```json
-"multi line comment": {
-	"prefix": "mcom",
-	"body": [
-		"/**",
-		" * $1",
-		" */",
-	],
-	"description": "create multi-line comment"
-}
-```
-
-```json
-"single line comment": {
-	"prefix": "scom",
-	"body": [
-		"/** $1 */",
-	],
-	"description": "create single-line comment"
-}
-```
-
-```json
-"single line comment with brake": {
-	"prefix": "scome",
-	"body": [
-		"/** $1 */\n",
-	],
-	"description": "create single-line comment with brake"
-}
-```
-
 ### Theme
 
 - Nord Theme
@@ -1877,37 +1609,37 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 
 ```json
 "editor.tokenColorCustomizations": {
-		"textMateRules": [
-			{
-				"name": "string color",
-				"scope": ["string"],
-				"settings": {
-					"foreground": "#fdee00" // change this COLOR
-				}
-			},
-			{
-				"name": "variable color",
-				"scope": ["variable"],
-				"settings": {
-					"foreground": "#ffffee" // change this COLOR
-				}
-			},
-			{
-				"name": "parameter color",
-				"scope": ["variable.parameter"],
-				"settings": {
-					"foreground": "#ffd390" // change this COLOR
-				}
-			},
-			{
-				"name": "number color in env files",
-				"scope": ["source.ini"],
-				"settings": {
-					"foreground": "#76fd00" // your desired color
-				}
-			}
-		]
-	},
+    "textMateRules": [
+      {
+        "name": "string color",
+        "scope": ["string"],
+        "settings": {
+          "foreground": "#fdee00" // Custom string color
+        }
+      },
+      {
+        "name": "variable color",
+        "scope": ["variable"],
+        "settings": {
+          "foreground": "#ffffee" // Custom variable color
+        }
+      },
+      {
+        "name": "parameter color",
+        "scope": ["variable.parameter"],
+        "settings": {
+          "foreground": "#ffd390" // Custom parameter color
+        }
+      },
+      {
+        "name": "number color in env files",
+        "scope": ["source.ini"],
+        "settings": {
+          "foreground": "#76fd00" // Custom number color for .env files
+        }
+      }
+    ]
+  }
 ```
 
 ### Recommended Settings
@@ -2030,12 +1762,6 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 	// Enables zooming in/out with the mouse wheel while holding Ctrl.
 	"editor.mouseWheelZoom": true,
 
-	// Automatically formats code while typing.
-	"editor.formatOnType": true,
-
-	// Automatically formats code when pasting.
-	"editor.formatOnPaste": true,
-
 	// Uses tab characters instead of spaces for indentation.
 	"editor.insertSpaces": false,
 
@@ -2054,8 +1780,8 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 	// Sets the line height to 2.
 	"editor.lineHeight": 2,
 
-	// Sets the tab size to 4 spaces.
-	"editor.tabSize": 4,
+	// Sets the tab size to 2 spaces.
+	"editor.tabSize": 2,
 
 	// Sets the editor font to "JetBrainsMono Nerd Font".
 	"editor.fontFamily": "'JetBrainsMono Nerd Font', monospace",
@@ -2077,6 +1803,13 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 
 	// Disables automatic bracket matching.
 	"editor.matchBrackets": "never",
+
+	// Disable copilot inline suggestion
+	"editor.inlineSuggest.suppressSuggestions": true,
+
+	// VSCode should use single quotes for auto-imports in JavaScript/TypeScript
+	"javascript.preferences.quoteStyle": "single",
+	"typescript.preferences.quoteStyle": "single",
 
 	// Customizes token colors in the editor.
 	"editor.tokenColorCustomizations": {
@@ -2130,10 +1863,31 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 	/**** START: Prettier ***********/
 
 	// Uses tabs instead of spaces for formatting.
-	"prettier.useTabs": true,
+	"prettier.useTabs": false,
 
-	// Automatically detects line endings based on the operating system.
-	"prettier.endOfLine": "auto",
+	// Set the number of spaces per indentation level to 2
+	"prettier.tabWidth": 2,
+
+	// Use LF (Line Feed) as the line ending (good for cross-platform consistency, especially with Unix/Linux)
+	"prettier.endOfLine": "lf",
+
+	// Use single quotes instead of double quotes
+	"prettier.singleQuote": true,
+
+	// Add a trailing comma wherever possible (like in arrays, objects, etc.)
+	"prettier.trailingComma": "all",
+
+	// Print spaces between brackets in object literals (e.g., { foo: bar } instead of {foo: bar})
+	"prettier.bracketSpacing": true,
+
+	// Always add a semicolon at the end of statements
+	"prettier.semi": true,
+
+	// Always include parentheses around arrow function parameters (even if there's only one)
+	"prettier.arrowParens": "always",
+
+	// Wrap lines at 100 characters
+	"prettier.printWidth": 100,
 
 	/*********** END: Prettier ****/
 
@@ -2156,6 +1910,15 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 
 	/**** START: Formatter ***********/
 
+	// Enable the prettier format on save
+	"editor.formatOnSave": true,
+
+	// Automatically formats code while typing.
+	"editor.formatOnType": true,
+
+	// Automatically formats code when pasting.
+	"editor.formatOnPaste": true,
+
 	// Sets Prettier as the default code formatter.
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 
@@ -2176,7 +1939,7 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 
 	// Uses TypeScript Language Features as the default formatter for TypeScript.
 	"[typescript]": {
-		"editor.defaultFormatter": "vscode.typescript-language-features"
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 
 	// Uses Docker extension formatter for Docker Compose files.
@@ -2193,7 +1956,21 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 		"file:///home/saeed/.overhaul/vscode/custom-vscode.css",
 		"file:///home/saeed/.overhaul/vscode/vscode-script.js",
 		"file:///home/saeed/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
-	]
+	],
+
+	/**** END: Customization ***********/
+
+	/**** START: Github copilot ***********/
+
+	// Disable github copilot
+	"github.copilot.enable": {
+		"*": false,
+		"plaintext": false,
+		"markdown": false,
+		"scminput": false
+	}
+
+	/**** END: Github copilot ***********/
 }
 ```
 
@@ -2570,6 +2347,29 @@ By following these steps, you can transform VS Code's appearance beyond standard
 		"key": "ctrl+numpad_multiply",
 		"command": "editor.action.fontZoomReset"
 	},
+
+	//? ***** START: Cody chat and command *****
+	{
+		//* Set new keybinding for opening custom command menu
+		"key": "shift+alt+a",
+		"command": "cody.menu.custom-commands",
+		"when": "cody.activated && workspaceFolderCount > 0"
+	},
+	{
+		//* Remove keybinding for opening custom command menu
+		"key": "shift+alt+c",
+		"command": "-cody.menu.custom-commands",
+		"when": "cody.activated && workspaceFolderCount > 0"
+	},
+	{
+		//* Set new keybinding for opening Chat
+		"key": "shift+alt+c",
+		"command": "cody.chat.focus"
+	},
+	{
+		"key": "ctrl+alt+s",
+		"command": "workbench.action.tasks.runTask"
+	}
 ]
 ```
 
