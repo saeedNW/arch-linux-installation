@@ -5,107 +5,106 @@ In this guide, I'll walk you through the installation process of essential appli
 ## Table of Contents
 
 - [Essential Applications Guide](#essential-applications-guide)
-  - [Table of Contents](#table-of-contents)
-  - [Installing bat](#installing-bat)
-  - [Installing eza](#installing-eza)
-  - [Installing duf](#installing-duf)
-  - [Installing gdu](#installing-gdu)
-  - [Installing yt-dlp](#installing-yt-dlp)
-  - [Installing python-spotdl](#installing-python-spotdl)
-  - [Installing Neovim](#installing-neovim)
-    - [Setting Up Neovim Configuration](#setting-up-neovim-configuration)
-    - [Add Neovim core configs](#add-neovim-core-configs)
-    - [Add Neovim Custom keybinding](#add-neovim-custom-keybinding)
-    - [Add Neovim Lazy Plugin Manager](#add-neovim-lazy-plugin-manager)
-    - [Install Neovim Plugins](#install-neovim-plugins)
-      - [nord.nvim Theme](#nordnvim-theme)
-      - [Neo-tree](#neo-tree)
-      - [bufferline](#bufferline)
-      - [lualine](#lualine)
-      - [treesitter](#treesitter)
-      - [telescope](#telescope)
-      - [lsp](#lsp)
-      - [autocompletion](#autocompletion)
-      - [alpha](#alpha)
-      - [indent-blankline](#indent-blankline)
-      - [gitsigns](#gitsigns)
-      - [misc](#misc)
-  - [Installing Zsh](#installing-zsh)
-    - [Installing Oh My Zsh](#installing-oh-my-zsh)
-      - [Installing Zsh Plugins](#installing-zsh-plugins)
-        - [zsh-autosuggestions](#zsh-autosuggestions)
-        - [zsh-syntax-highlighting](#zsh-syntax-highlighting)
-        - [zsh-completions](#zsh-completions)
-        - [Enabling Plugins](#enabling-plugins)
-    - [Custom Alias](#custom-alias)
-    - [ZSH History Configuration](#zsh-history-configuration)
-  - [Installing direnv](#installing-direnv)
-    - [Setup](#setup)
-    - [Quick demo](#quick-demo)
-    - [Key Notes](#key-notes)
-  - [Installing Git](#installing-git)
-    - [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
-  - [sshuttle VPN](#sshuttle-vpn)
-  - [Installing Mission Center](#installing-mission-center)
-  - [Installing LibreOffice](#installing-libreoffice)
-  - [Installing GIMP](#installing-gimp)
-    - [Change Gimp's Look](#change-gimps-look)
-  - [Installing VLC Media Player](#installing-vlc-media-player)
-    - [Change VLC's Look](#change-vlcs-look)
-  - [Installing qBittorrent](#installing-qbittorrent)
-    - [Change qBittorrent's Look](#change-qbittorrents-look)
-  - [Installing OBS Studio](#installing-obs-studio)
-  - [Video Editor](#video-editor)
-    - [Installing Kdenlive](#installing-kdenlive)
-    - [Installing DaVinci Resolve](#installing-davinci-resolve)
-  - [Installing Discord](#installing-discord)
-  - [Installing Telegram Desktop](#installing-telegram-desktop)
-  - [Installing lazygit](#installing-lazygit)
-  - [Installing Docker](#installing-docker)
-    - [Installing Docker Compose](#installing-docker-compose)
-    - [Installing Portainer](#installing-portainer)
-  - [Installing RabbitMQ](#installing-rabbitmq)
-  - [Installing Zookeeper and Kafka](#installing-zookeeper-and-kafka)
-    - [Installing Zookeeper](#installing-zookeeper)
-    - [Installing Kafka](#installing-kafka)
-  - [Installing Databases](#installing-databases)
-    - [Installing Redis](#installing-redis)
-      - [Installing RedisInsight](#installing-redisinsight)
-    - [Installing MongoDB](#installing-mongodb)
-      - [Installing MongoDB Tools](#installing-mongodb-tools)
-      - [Installing MongoDB Compass](#installing-mongodb-compass)
-    - [MySQL and phpMyAdmin](#mysql-and-phpmyadmin)
-    - [Installing Elasticsearch and Kibana](#installing-elasticsearch-and-kibana)
-    - [installing Postgres and pgAdmin](#installing-postgres-and-pgadmin)
-  - [Installing CPUFetch](#installing-cpufetch)
-  - [Installing FastFetch](#installing-fastfetch)
-  - [Installing Google Chrome](#installing-google-chrome)
-  - [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
-    - [Recommended Plugins](#recommended-plugins)
-    - [Theme](#theme)
-    - [Custom Color Schema](#custom-color-schema)
-    - [Recommended Settings](#recommended-settings)
-    - [VSCode Custom CSS \& JS](#vscode-custom-css--js)
-      - [Steps to Enable Custom CSS \& JS in VS Code](#steps-to-enable-custom-css--js-in-vs-code)
-      - [Example Files](#example-files)
-    - [Custom Shortcuts](#custom-shortcuts)
-  - [Installing Postman](#installing-postman)
-  - [Installing Amberol Music Player](#installing-amberol-music-player)
-  - [Image Viewer](#image-viewer)
-    - [Installing qview (Recomended)](#installing-qview-recomended)
-    - [Installing Loupe](#installing-loupe)
-    - [Installing nomacs](#installing-nomacs)
-  - [Installing GNOME Boxes](#installing-gnome-boxes)
-  - [Installing Blanket](#installing-blanket)
-  - [Installing HandBrake](#installing-handbrake)
-  - [Installing Albert Application Launcher](#installing-albert-application-launcher)
-    - [Albert Recommended Configs](#albert-recommended-configs)
-  - [Installing Rclone \& Rclone Browser](#installing-rclone--rclone-browser)
-  - [Installing AnyDesk](#installing-anydesk)
-  - [Installing Droidcam](#installing-droidcam)
-  - [Install Spot Player](#install-spot-player)
-  - [Installing Flatpak](#installing-flatpak)
-  - [Setting Up Timeshift for System Snapshots](#setting-up-timeshift-for-system-snapshots)
+	- [Table of Contents](#table-of-contents)
+	- [Installing bat](#installing-bat)
+	- [Installing eza](#installing-eza)
+	- [Installing duf](#installing-duf)
+	- [Installing gdu](#installing-gdu)
+	- [Installing yt-dlp](#installing-yt-dlp)
+	- [Installing python-spotdl](#installing-python-spotdl)
+	- [Installing Neovim](#installing-neovim)
+		- [Setting Up Neovim Configuration](#setting-up-neovim-configuration)
+		- [Add Neovim core configs](#add-neovim-core-configs)
+		- [Add Neovim Custom keybinding](#add-neovim-custom-keybinding)
+		- [Add Neovim Lazy Plugin Manager](#add-neovim-lazy-plugin-manager)
+		- [Install Neovim Plugins](#install-neovim-plugins)
+			- [nord.nvim Theme](#nordnvim-theme)
+			- [Neo-tree](#neo-tree)
+			- [bufferline](#bufferline)
+			- [lualine](#lualine)
+			- [treesitter](#treesitter)
+			- [telescope](#telescope)
+			- [lsp](#lsp)
+			- [autocompletion](#autocompletion)
+			- [alpha](#alpha)
+			- [indent-blankline](#indent-blankline)
+			- [gitsigns](#gitsigns)
+			- [misc](#misc)
+	- [Installing Zsh](#installing-zsh)
+		- [Installing Oh My Zsh](#installing-oh-my-zsh)
+			- [Installing Zsh Plugins](#installing-zsh-plugins)
+				- [zsh-autosuggestions](#zsh-autosuggestions)
+				- [zsh-syntax-highlighting](#zsh-syntax-highlighting)
+				- [zsh-completions](#zsh-completions)
+				- [Enabling Plugins](#enabling-plugins)
+		- [Custom Alias](#custom-alias)
+		- [ZSH History Configuration](#zsh-history-configuration)
+	- [Installing direnv](#installing-direnv)
+		- [Setup](#setup)
+		- [Quick demo](#quick-demo)
+		- [Key Notes](#key-notes)
+	- [Installing Git](#installing-git)
+		- [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
+	- [sshuttle VPN](#sshuttle-vpn)
+	- [Installing Mission Center](#installing-mission-center)
+	- [Installing LibreOffice](#installing-libreoffice)
+	- [Installing GIMP](#installing-gimp)
+		- [Change Gimp's Look](#change-gimps-look)
+	- [Installing VLC Media Player](#installing-vlc-media-player)
+		- [Change VLC's Look](#change-vlcs-look)
+	- [Installing qBittorrent](#installing-qbittorrent)
+		- [Change qBittorrent's Look](#change-qbittorrents-look)
+	- [Installing OBS Studio](#installing-obs-studio)
+	- [Video Editor](#video-editor)
+		- [Installing Kdenlive](#installing-kdenlive)
+		- [Installing DaVinci Resolve](#installing-davinci-resolve)
+	- [Installing Discord](#installing-discord)
+	- [Installing Telegram Desktop](#installing-telegram-desktop)
+	- [Installing lazygit](#installing-lazygit)
+	- [Installing Docker](#installing-docker)
+		- [Installing Docker Compose](#installing-docker-compose)
+		- [Installing Portainer](#installing-portainer)
+	- [Installing RabbitMQ](#installing-rabbitmq)
+	- [Installing Zookeeper and Kafka](#installing-zookeeper-and-kafka)
+		- [Installing Zookeeper](#installing-zookeeper)
+		- [Installing Kafka](#installing-kafka)
+	- [Installing Databases](#installing-databases)
+		- [Installing Redis](#installing-redis)
+			- [Installing RedisInsight](#installing-redisinsight)
+		- [Installing MongoDB](#installing-mongodb)
+			- [Installing MongoDB Tools](#installing-mongodb-tools)
+			- [Installing MongoDB Compass](#installing-mongodb-compass)
+		- [MySQL and phpMyAdmin](#mysql-and-phpmyadmin)
+		- [Installing Elasticsearch and Kibana](#installing-elasticsearch-and-kibana)
+		- [installing Postgres and pgAdmin](#installing-postgres-and-pgadmin)
+	- [Installing CPUFetch](#installing-cpufetch)
+	- [Installing FastFetch](#installing-fastfetch)
+	- [Installing Google Chrome](#installing-google-chrome)
+	- [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
+		- [Recommended Plugins](#recommended-plugins)
+		- [Theme](#theme)
+		- [Recommended Settings](#recommended-settings)
+		- [VSCode Custom CSS \& JS](#vscode-custom-css--js)
+			- [Steps to Enable Custom CSS \& JS in VS Code](#steps-to-enable-custom-css--js-in-vs-code)
+			- [Example Files](#example-files)
+		- [Custom Shortcuts](#custom-shortcuts)
+	- [Installing Postman](#installing-postman)
+	- [Installing Amberol Music Player](#installing-amberol-music-player)
+	- [Image Viewer](#image-viewer)
+		- [Installing qview (Recomended)](#installing-qview-recomended)
+		- [Installing Loupe](#installing-loupe)
+		- [Installing nomacs](#installing-nomacs)
+	- [Installing GNOME Boxes](#installing-gnome-boxes)
+	- [Installing Blanket](#installing-blanket)
+	- [Installing HandBrake](#installing-handbrake)
+	- [Installing Albert Application Launcher](#installing-albert-application-launcher)
+		- [Albert Recommended Configs](#albert-recommended-configs)
+	- [Installing Rclone \& Rclone Browser](#installing-rclone--rclone-browser)
+	- [Installing AnyDesk](#installing-anydesk)
+	- [Installing Droidcam](#installing-droidcam)
+	- [Install Spot Player](#install-spot-player)
+	- [Installing Flatpak](#installing-flatpak)
+	- [Setting Up Timeshift for System Snapshots](#setting-up-timeshift-for-system-snapshots)
 
 ## Installing bat
 
@@ -1588,59 +1587,21 @@ xdg-mime default org.gnome.Nautilus.desktop inode/directory
 
 ### Recommended Plugins
 
-| Plugin Name         | Plugin Name                     | Plugin Name                    | Plugin Name                | Plugin Name               | Plugin Name                  |
-| ------------------- | ------------------------------- | ------------------------------ | -------------------------- | ------------------------- | ---------------------------- |
-| advanced-new-file   | Atom Material Icons             | Auto Rename Tag                | Auto-Open Markdown Preview | Bash Beautify             | Bash IDE                     |
-| better comments     | Code Spell Checker              | CodeSnap                       | Custom CSS and JS Loader   | EJS language support      | Error Lens                   |
-| ESLint              | Even Better TOML                | Explorer Exclude               | Git Graph                  | Git lens                  | GraphQL                      |
-| HTML CSS Support    | Ignore files                    | JavaScript (ES6) code snippets | lazygit                    | Live Server               | lua                          |
-| Markdown All in One | Markdown Preview Github Styling | Markdown Table                 | Import Cost                | Markdown Table Prettifier | Markdownlint                 |
-| Nested Comments     | node-snippets                   | Nord Theme                     | npm                        | Overtype                  | Persian - Code Spell Checker |
-| Prettier            | Prettify Json                   | Pretty TypeScript Errors       | Proto Lint                 | Rainbow Brackets          | Select Line Status Bar       |
-| Todo Tree           | VSCode Animations               | Toggle Quotes                  | vscode-proto3              |                           |                              |
+| Plugin Name         | Plugin Name                                            | Plugin Name                    | Plugin Name                | Plugin Name               | Plugin Name                  |
+| ------------------- | ------------------------------------------------------ | ------------------------------ | -------------------------- | ------------------------- | ---------------------------- |
+| advanced-new-file   | Atom Material Icons                                    | Auto Rename Tag                | Auto-Open Markdown Preview | Bash Beautify             | Bash IDE                     |
+| better comments     | Code Spell Checker                                     | CodeSnap                       | Custom CSS and JS Loader   | EJS language support      | Error Lens                   |
+| ESLint              | Even Better TOML                                       | Explorer Exclude               | Git Graph                  | Git lens                  | GraphQL                      |
+| HTML CSS Support    | Ignore files                                           | JavaScript (ES6) code snippets | lazygit                    | Live Server               | lua                          |
+| Markdown All in One | Markdown Preview Github Styling                        | Markdown Table                 | Import Cost                | Markdown Table Prettifier | Markdownlint                 |
+| Nested Comments     | node-snippets                                          | Nord Theme                     | Test Adapter Converter     | Overtype                  | Persian - Code Spell Checker |
+| Prettier            | Prettify Json                                          | Pretty TypeScript Errors       | Proto Lint                 | Rainbow Brackets          | Select Line Status Bar       |
+| Todo Tree           | VSCode Animations                                      | Toggle Quotes                  | vscode-proto3              | Cody: AI Code Assistant   | Docker                       |
+| Docker DX           | inifmt - formatter for .ini files, plain text and more |                                |                            |                           |                              |
 
 ### Theme
 
 - Nord Theme
-
-### Custom Color Schema
-
-You can find the usage of this color scheme in [VSCode Recommended Settings section](#recommended-settings)
-
-```json
-"editor.tokenColorCustomizations": {
-    "textMateRules": [
-      {
-        "name": "string color",
-        "scope": ["string"],
-        "settings": {
-          "foreground": "#fdee00" // Custom string color
-        }
-      },
-      {
-        "name": "variable color",
-        "scope": ["variable"],
-        "settings": {
-          "foreground": "#ffffee" // Custom variable color
-        }
-      },
-      {
-        "name": "parameter color",
-        "scope": ["variable.parameter"],
-        "settings": {
-          "foreground": "#ffd390" // Custom parameter color
-        }
-      },
-      {
-        "name": "number color in env files",
-        "scope": ["source.ini"],
-        "settings": {
-          "foreground": "#76fd00" // Custom number color for .env files
-        }
-      }
-    ]
-  }
-```
 
 ### Recommended Settings
 
@@ -1739,9 +1700,6 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 	// Disables the startup editor (no welcome page or recently opened files).
 	"workbench.startupEditor": "none",
 
-	// Hides the activity bar in the UI.
-	"workbench.activityBar.location": "hidden",
-
 	/*********** END: Workbench ****/
 
 	/**** START: Git & GitLens ***********/
@@ -1751,6 +1709,9 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 
 	// Displays the GitLens commit graph in the editor instead of a separate panel.
 	"gitlens.graph.layout": "editor",
+
+	// Displays source control repositories and changes in a tree view instead of a list.
+	"scm.defaultViewMode": "tree",
 
 	/*********** END: Git & GitLens ****/
 
@@ -1863,7 +1824,7 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 	/**** START: Prettier ***********/
 
 	// Uses tabs instead of spaces for formatting.
-	"prettier.useTabs": false,
+	"prettier.useTabs": true,
 
 	// Set the number of spaces per indentation level to 2
 	"prettier.tabWidth": 2,
@@ -1937,7 +1898,7 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 		"editor.defaultFormatter": "tamasfe.even-better-toml"
 	},
 
-	// Uses TypeScript Language Features as the default formatter for TypeScript.
+	// Uses Prettier as the default formatter for TypeScript.
 	"[typescript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
@@ -1945,6 +1906,11 @@ You can find the usage of this color scheme in [VSCode Recommended Settings sect
 	// Uses Docker extension formatter for Docker Compose files.
 	"[dockercompose]": {
 		"editor.defaultFormatter": "ms-azuretools.vscode-docker"
+	},
+
+	// Uses lkrms as the default formatter for TypeScript.
+	"[plaintext]": {
+		"editor.defaultFormatter": "lkrms.inifmt"
 	},
 
 	/*********** END: Formatter ****/
