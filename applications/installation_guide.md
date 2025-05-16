@@ -1328,7 +1328,7 @@ sudo systemctl restart redis
 
 You can then connect to the Redis instance using:
 
-```bash
+```shell
 redis-cli
 ```
 
@@ -1355,7 +1355,7 @@ This command:
 
 **Note:** If you don’t have `redis-cli` locally, you can run it inside the container:
 
-```bash
+```shell
 docker exec -it redis redis-cli -a root
 ```
 
@@ -1403,7 +1403,7 @@ Arch Linux no longer provides official MongoDB packages, but you can install the
 
 ### Option 2: Run MongoDB via Docker
 
-```bash
+```shell
 docker run -d \
   --name mongo \
   -p 27017:27017 \

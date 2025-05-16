@@ -53,7 +53,7 @@ You can check the internet connection status using one of the methods below. If 
 
 1. Use ping command:
 
-   ```bash
+   ```shell
    ping google.com
    ```
 
@@ -61,7 +61,7 @@ You can check the internet connection status using one of the methods below. If 
 
 2. Check internet adaptor status:
 
-   ```bash
+   ```shell
    ip addr show
    ```
 
@@ -69,13 +69,13 @@ You can check the internet connection status using one of the methods below. If 
 
    1. First, open the Internet wireless control utility using this command:
 
-      ```bash
+      ```shell
       iwctl
       ```
 
    2. Now you can list your Wi-Fi adapters:
 
-      ```bash
+      ```shell
       device list
       ```
 
@@ -85,23 +85,23 @@ You can check the internet connection status using one of the methods below. If 
 
       1. Use `journalctl` to check the systemd's logs to check the reason for the Wi-Fi adapter not working:
 
-         ```bash
+         ```shell
          journalctl | grep <adaptor name>
          ```
 
       2. If the output shows "Operation not possible due to RF-kill", then run this command to solve the problem:
 
-         ```bash
+         ```shell
          rfkill unblock all
          ```
 
       3. Now get back into the Internet wireless control utility and list the adapters:
 
-         ```bash
+         ```shell
          iwctl
          ```
 
-         ```bash
+         ```shell
          device list
          ```
 
@@ -119,19 +119,19 @@ You can check the internet connection status using one of the methods below. If 
 
       1. Scan for available Wi-Fi signals:
 
-         ```bash
+         ```shell
          station <adaptor name> scan
          ```
 
       2. List the available wireless connections:
 
-         ```bash
+         ```shell
          station <adaptor name> get-networks
          ```
 
       3. Start the connection process:
 
-         ```bash
+         ```shell
          station <adaptor name> connect <wireless connection name>
          ```
 
@@ -139,11 +139,11 @@ You can check the internet connection status using one of the methods below. If 
 
          Now if you run the adapter list command again, you can see that your Wi-Fi adapter is up and has an IP address. Alternatively, you can run a `ping` command to check your internet connection:
 
-         ```bash
+         ```shell
          ip addr show
          ```
 
-         ```bash
+         ```shell
          ping -c 5 google.com
          ```
 
@@ -153,7 +153,7 @@ To set the system time zone, follow these steps:
 
 1. Enable automatic time synchronization by running the following command:
 
-   ```bash
+   ```shell
    timedatectl set-ntp true
    ```
 
@@ -161,7 +161,7 @@ To set the system time zone, follow these steps:
 
 2. Set the desired time zone. For example, to set the time zone to Asia/Tehran, run:
 
-   ```bash
+   ```shell
    timedatectl set-timezone Asia/Tehran
    ```
 
@@ -173,7 +173,7 @@ To set the system time zone, follow these steps:
 
 First, identify the name of your main drive partition by running the following command:
 
-```bash
+```shell
 fdisk -l
 ```
 
@@ -181,7 +181,7 @@ Note down the name of the drive you want to use, for example, "/dev/sda".
 
 Now, open the disk manager for the chosen storage drive:
 
-```bash
+```shell
 fdisk /dev/sda
 ```
 
@@ -234,7 +234,7 @@ Before proceeding with the installation, it's crucial to format the partitions c
 
    Format the EFI boot partition (usually `/dev/sda1`) with the FAT32 file system to make it compatible with UEFI firmware:
 
-   ```bash
+   ```shell
    mkfs.fat -F32 /dev/sda1
    ```
 
@@ -244,7 +244,7 @@ Before proceeding with the installation, it's crucial to format the partitions c
 
    Configure the swap partition (usually `/dev/sda2`) to be used as swap space, which provides additional virtual memory when physical RAM is fully utilized:
 
-   ```bash
+   ```shell
    mkswap /dev/sda2
    swapon /dev/sda2
    ```
@@ -256,7 +256,7 @@ Before proceeding with the installation, it's crucial to format the partitions c
 
    Format the root partition (usually `/dev/sda3`) with the Btrfs file system, which offers features like snapshots, compression, and integrated RAID support:
 
-   ```bash
+   ```shell
    mkfs.btrfs -n 32k /dev/sda3
    ```
 
@@ -270,13 +270,13 @@ These commands prepare the partitions for installation and ensure proper utiliza
 
 Mount the root partition to the system:
 
-```bash
+```shell
 mount /dev/sda3 /mnt
 ```
 
 Now, create subvolumes for Btrfs:
 
-```bash
+```shell
 btrfs su cr /mnt/@
 btrfs su cr /mnt/@home
 btrfs su cr /mnt/@var
@@ -287,13 +287,13 @@ btrfs su cr /mnt/@.snapshots
 
 Unmount the root partition:
 
-```bash
+```shell
 umount /mnt
 ```
 
 Mount the subvolumes:
 
-```bash
+```shell
 mount -o noatime,commit=120,compress=zstd,subvol=@ /dev/sda3 /mnt
 mkdir /mnt/{boot,home,var,opt,tmp,.snapshots}
 mount -o noatime,commit=120,compress=zstd,subvol=@home /dev/sda3 /mnt/home
@@ -307,7 +307,7 @@ mount -o subvol=@var /dev/sda3 /mnt/var
 
 Mount the boot partition:
 
-```bash
+```shell
 mount /dev/sda1 /mnt/boot
 ```
 
@@ -315,7 +315,7 @@ mount /dev/sda1 /mnt/boot
 
 Before installing the base system, ensure your system keyring is up to date:
 
-```bash
+```shell
 pacman -Sy archlinux-keyring
 ```
 
@@ -323,13 +323,13 @@ Now, install the base system by choosing the appropriate command based on your C
 
 ### Intel CPUs
 
-```bash
+```shell
 pacstrap /mnt base linux linux-lts linux-firmware nano intel-ucode btrfs-progs
 ```
 
 ### AMD CPUs
 
-```bash
+```shell
 pacstrap /mnt base linux linux-lts linux-firmware nano amd-ucode btrfs-progs
 ```
 
@@ -337,7 +337,7 @@ pacstrap /mnt base linux linux-lts linux-firmware nano amd-ucode btrfs-progs
 
 For virtual machine CPUs, use the following command:
 
-```bash
+```shell
 pacstrap /mnt base linux linux-lts linux-firmware nano btrfs-progs
 ```
 
@@ -345,7 +345,7 @@ pacstrap /mnt base linux linux-lts linux-firmware nano btrfs-progs
 
 Now, we need to create an fstab file. This file tells our bootloader where to look for partitions.
 
-```bash
+```shell
  genfstab -U /mnt >> /mnt/etc/fstab
  cat /mnt/etc/fstab
 ```
@@ -356,7 +356,7 @@ The `genfstab` command generates an fstab file based on the currently mounted fi
 
 To begin installing Arch Linux, you need to enter the Arch install environment. Use the following command to connect to the Arch root installer:
 
-```bash
+```shell
 arch-chroot /mnt
 ```
 
@@ -364,7 +364,7 @@ arch-chroot /mnt
 
 Set the timezone by creating a symbolic link to the desired timezone file and synchronizing the hardware clock:
 
-```bash
+```shell
 ln -sf /usr/share/zoneinfo/Asia/Tehran /etc/localtime
 hwclock --systohc
 ```
@@ -375,7 +375,7 @@ You need to manually edit "locale.gen" file, and uncomment "" and any other loca
 
 Edit the `locale.gen` file to enable desired locales (Recommended: "en_US.UTF-8 UTF-8"), generate the locales, and set the system locale:
 
-```bash
+```shell
 nano /etc/locale.gen
 locale-gen
 echo LANG=en_US.UTF-8 >> /etc/locale.conf
@@ -385,7 +385,7 @@ echo LANG=en_US.UTF-8 >> /etc/locale.conf
 
 Set the hostname and edit the hosts file to configure network settings:
 
-```bash
+```shell
 echo archlinux >> /etc/hostname
 nano /etc/hosts
 ```
@@ -404,7 +404,7 @@ Add the following lines to the end of the hosts file:
 
 Set a password for the root user:
 
-```bash
+```shell
 passwd
 ```
 
@@ -412,7 +412,7 @@ passwd
 
 Install essential packages including the bootloader, network manager, development tools, and additional utilities:
 
-```bash
+```shell
 pacman -S grub grub-btrfs efibootmgr base-devel linux-headers linux-lts-headers networkmanager \
 network-manager-applet wpa_supplicant wireless_tools netctl networkmanager-openvpn dialog os-prober \
 mtools dosfstools reflector xdg-utils xdg-user-dirs modemmanager mobile-broadband-provider-info \
@@ -450,7 +450,7 @@ usb_modeswitch rp-pppoe nm-connection-editor
 
 Edit the `mkinitcpio.conf` file to include the btrfs module:
 
-```bash
+```shell
 nano /etc/mkinitcpio.conf
 ```
 
@@ -458,7 +458,7 @@ Add `btrfs` to the `MODULES` section. Then, regenerate the initramfs:
 
 ![Image Alt Text](./images/20221122144126.png)
 
-```bash
+```shell
 mkinitcpio -p linux
 mkinitcpio -p l
 ```
@@ -469,31 +469,31 @@ Install the GRUB bootloader and configure locales:
 
 1. Install the GRUB bootloader:
 
-   ```bash
+   ```shell
    grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Arch
    ```
 
 2. Check for the existence of locale directory:
 
-   ```bash
+   ```shell
    ls -l /boot/grub
    ```
 
 3. Create the locale directory if it doesn't exist:
 
-   ```bash
+   ```shell
    mkdir /boot/grub/locale
    ```
 
 4. Configure locales for GRUB:
 
-   ```bash
+   ```shell
    cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo
    ```
 
 5. Generate GRUB configuration file:
 
-   ```bash
+   ```shell
    grub-mkconfig -o /boot/grub/grub.cfg
    ```
 
@@ -501,7 +501,7 @@ Install the GRUB bootloader and configure locales:
 
 Create a standard user and assign a password:
 
-```bash
+```shell
 useradd -m -g users -G wheel <username>
 passwd <username>
 ```
@@ -514,19 +514,19 @@ Check if sudo package is installed and configure sudo permissions:
 
 1. Check if sudo is installed
 
-   ```bash
+   ```shell
    which sudo
    ```
 
 2. Install sudo if not installed
 
-   ```bash
+   ```shell
    pacman -S sudo
    ```
 
 3. Uncomment "%wheel ALL=(ALL:ALL) ALL" to grant sudo permissions
 
-   ```bash
+   ```shell
    EDITOR=nano visudo
    ```
 
@@ -534,14 +534,14 @@ Check if sudo package is installed and configure sudo permissions:
 
 Enable NetworkManager service and disable dhcpcd service to manage network connections:
 
-```bash
+```shell
 systemctl enable NetworkManager.service
 systemctl disable dhcpcd.service
 ```
 
 Enable wpa_supplicant for wireless connections. If needed
 
-```bash
+```shell
 systemctl enable wpa_supplicant.service
 ```
 
@@ -549,20 +549,20 @@ systemctl enable wpa_supplicant.service
 
 Exit from the Arch chroot environment and unmount all mounted devices:
 
-```bash
+```shell
 exit
 umount -l /mnt
 ```
 
 For VM installations, shutdown the system:
 
-```bash
+```shell
 shutdown now
 ```
 
 For device installations, reboot the system:
 
-```bash
+```shell
 reboot
 ```
 

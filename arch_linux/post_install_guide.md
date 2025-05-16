@@ -57,7 +57,7 @@ To establish an internet connection via Wi-Fi, you can use NetworkManager (nmcli
 
 First, list all nearby wireless networks:
 
-```bash
+```shell
 nmcli device wifi list
 ```
 
@@ -67,7 +67,7 @@ nmcli device wifi list
 
 You can directly connect to a specific wireless network by providing its SSID (network name) and password:
 
-```bash
+```shell
 nmcli device wifi connect <SSID> password <SSID_password>
 ```
 
@@ -77,7 +77,7 @@ nmcli device wifi connect <SSID> password <SSID_password>
 
 To view a list of all connected networks:
 
-```bash
+```shell
 nmcli connection show
 ```
 
@@ -87,7 +87,7 @@ nmcli connection show
 
 NetworkManager provides information about the status of all network devices:
 
-```bash
+```shell
 nmcli device
 ```
 
@@ -101,7 +101,7 @@ Paru is an AUR helper and pacman wrapper that allows you to install packages fro
 
    Before installing Paru, ensure your system repositories and packages are up to date:
 
-   ```bash
+   ```shell
    sudo pacman -Syu
    ```
 
@@ -109,7 +109,7 @@ Paru is an AUR helper and pacman wrapper that allows you to install packages fro
 
    Git is required to clone the Paru repository from the AUR. Install it using pacman:
 
-   ```bash
+   ```shell
    sudo pacman -S git
    ```
 
@@ -117,7 +117,7 @@ Paru is an AUR helper and pacman wrapper that allows you to install packages fro
 
    Navigate to the `/opt` directory and clone the Paru repository from the AUR:
 
-   ```bash
+   ```shell
    cd /opt
    sudo git clone https://aur.archlinux.org/paru.git
    ```
@@ -126,7 +126,7 @@ Paru is an AUR helper and pacman wrapper that allows you to install packages fro
 
    Set appropriate permissions for the Paru directory to allow building and installation:
 
-   ```bash
+   ```shell
    sudo chown -R <username>:wheel ./paru
    ```
 
@@ -134,7 +134,7 @@ Paru is an AUR helper and pacman wrapper that allows you to install packages fro
 
    Navigate into the Paru directory and build the package using makepkg:
 
-   ```bash
+   ```shell
    cd paru
    makepkg -si
    ```
@@ -149,7 +149,7 @@ Install and configure the desktop environment on your Arch Linux system.
 
 Ensure your system repositories and packages are up to date:
 
-```bash
+```shell
 sudo pacman -Syu
 ```
 
@@ -159,25 +159,25 @@ Select and install the appropriate GPU driver based on your hardware:
 
 - **AMD Video Cards:**
 
-  ```bash
+  ```shell
   sudo pacman -S xf86-video-amdgpu
   ```
 
 - **ATI Video Cards:**
 
-  ```bash
+  ```shell
   sudo pacman -S xf86-video-ati
   ```
 
 - **Intel Video Cards:**
 
-  ```bash
+  ```shell
   sudo pacman -S xf86-video-intel
   ```
 
 - **Nvidia Video Cards:**
 
-  ```bash
+  ```shell
   pacman -S nvidia nvidia-lts lib32-nvidia-utils
   ```
 
@@ -187,7 +187,7 @@ Select and install the appropriate GPU driver based on your hardware:
 
   For virtual machine installations, install the necessary packages:
 
-  ```bash
+  ```shell
   sudo pacman -S virtualbox-guest-utils xf86-video-vmware
   sudo systemctl enable vboxservice
   ```
@@ -196,7 +196,7 @@ Select and install the appropriate GPU driver based on your hardware:
 
 Install Xorg and the Xorg server for graphical user interface support:
 
-```bash
+```shell
 sudo pacman -S xorg xorg-server
 ```
 
@@ -206,7 +206,7 @@ You can choose to install any desktop environment according to your preference. 
 
 Install the KDE Plasma desktop environment and its additional packages:
 
-```bash
+```shell
 sudo pacman -S plasma-meta packagekit-qt5 ufw
 ```
 
@@ -214,7 +214,7 @@ sudo pacman -S plasma-meta packagekit-qt5 ufw
 
 Install additional KDE applications for enhanced functionality:
 
-```bash
+```shell
 sudo pacman -S ark unrar dolphin dolphin-plugins kcalc kalendar kde-dev-scripts kde-dev-utils kdeconnect \
 kolourpaint kdegraphics-mobipocket kdegraphics-thumbnailers knewstuff kdesdk-thumbnailers konsole partitionmanager \
 yakuake deepin-screenshot kaccounts-providers kio-gdrive firefox gnome-sound-recorder gedit gedit-plugins \
@@ -269,7 +269,7 @@ These applications provide various tools and utilities to enhance your KDE deskt
 
 Enable SDDM, the KDE display manager, for login management:
 
-```bash
+```shell
 sudo systemctl enable sddm
 ```
 
@@ -277,7 +277,7 @@ sudo systemctl enable sddm
 
 Install and configure Optimus Manager for Nvidia graphics:
 
-```bash
+```shell
 paru -S optimus-manager
 ```
 
@@ -285,7 +285,7 @@ Install Optimus Manager Qt for a graphical interface:
 
 If using KDE Plasma, use the following instructions to build and install Optimus Manager Qt. Otherwise go to next option:
 
-```bash
+```shell
 git clone https://aur.archlinux.org/optimus-manager-qt-git
 cd optimus-manager-qt-git
 nano PKGBUILD
@@ -296,19 +296,19 @@ nano PKGBUILD
 
 Then, build and install Optimus Manager Qt:
 
-```bash
+```shell
 makepkg -si
 ```
 
 Install Optimus Manager Qt for other DEs
 
-```bash
+```shell
 paru -S optimus-manager-qt
 ```
 
 Reboot your system to apply changes:
 
-```bash
+```shell
 sudo reboot
 ```
 
@@ -316,13 +316,13 @@ sudo reboot
 
 Check the status of the Optimus Manager service:
 
-```bash
+```shell
 systemctl status optimus-manager
 ```
 
 Start and enable the service if it's not running:
 
-```bash
+```shell
 sudo systemctl enable --now optimus-manager
 ```
 
@@ -340,7 +340,7 @@ This section is only related to those who have Nvidia GPUs.
 
 After installing the Nvidia driver, there is a patch available to address the FBC (Frame Buffer Capture) problem. Follow these steps to apply the patch:
 
-```bash
+```shell
 # Patch GitHub repository: https://github.com/keylase/nvidia-patch
 cd ~/Downloads
 git clone https://github.com/keylase/nvidia-patch.git
@@ -353,7 +353,7 @@ bash ./patch-fbc.sh
 
 Keep your system up-to-date by running the following command to update system packages:
 
-```bash
+```shell
 sudo pacman -Syu
 ```
 
@@ -361,13 +361,13 @@ Sometimes, you may encounter errors such as "invalid or corrupted package (PGP s
 
 #### Fix "Invalid or Corrupted Package (PGP Signature)" Error
 
-```bash
+```shell
 sudo pacman -S archlinux-keyring
 ```
 
 #### Fix "npm: 'some file' exists in filesystem" Error
 
-```bash
+```shell
 npm --global remove npm
 ```
 
@@ -375,7 +375,7 @@ npm --global remove npm
 
 To enable the multilib repository, uncomment the "multilib" header and repository in the /etc/pacman.conf file:
 
-```bash
+```shell
 sudo nano /etc/pacman.conf
 ```
 
@@ -385,7 +385,7 @@ sudo nano /etc/pacman.conf
 
 During the installation or update process of any packages, you might encounter a "exists on filesystem" error with Pacman. In such cases, use the "--overwrite" flag to install or update your packages:
 
-```bash
+```shell
 sudo pacman -S --overwrite "*" <package_name>
 ```
 
@@ -397,13 +397,13 @@ To enable Bluetooth functionality on your system, follow these steps:
 
 Install the essential packages for Bluetooth support:
 
-```bash
+```shell
 pacman -S bluez bluez-utils
 ```
 
 Next, check if the generic Bluetooth driver module, "btusb," is loaded. If it's not loaded, you'll need to load it manually. Run the following command to check:
 
-```bash
+```shell
 lsmod | grep btusb
 ```
 
@@ -413,14 +413,14 @@ lsmod | grep btusb
 
 Enable the Bluetooth service to start automatically on system boot:
 
-```bash
+```shell
 sudo systemctl enable bluetooth.service
 sudo systemctl start bluetooth.service
 ```
 
 Alternatively, you can enable and start the service in one command:
 
-```bash
+```shell
 sudo systemctl enable --now bluetooth.service
 sudo systemctl start --now bluetooth.service
 ```
@@ -429,7 +429,7 @@ sudo systemctl start --now bluetooth.service
 
 To enable a firewall and configure basic rules for incoming and outgoing traffic, follow these steps:
 
-```bash
+```shell
 sudo ufw limit 22/tcp       # Allow SSH (port 22) with rate limiting
 sudo ufw allow 80/tcp       # Allow HTTP (port 80)
 sudo ufw allow 443/tcp      # Allow HTTPS (port 443)
@@ -444,7 +444,7 @@ These commands configure the Uncomplicated Firewall (UFW) to restrict incoming t
 
 To harden your system's network configuration and improve security, you can adjust various parameters in the `/etc/sysctl.conf` file. Before making any changes, it's advisable to review the current system settings using the `sysctl` command.
 
-```bash
+```shell
 sudo sysctl -a             # Display all current kernel parameters
 sudo sysctl -A             # Display all current kernel parameters (alternative)
 sudo sysctl mib            # Display current MIB settings
@@ -460,19 +460,19 @@ WINE (Wine Is Not an Emulator) is a compatibility layer that allows you to run W
 
 ### Install WINE
 
-```bash
+```shell
 sudo pacman -S wine
 ```
 
 ### Install Dependencies (Optional)
 
-```bash
+```shell
 sudo pacman -S --asdeps --needed $(pacman -Si wine | sed -n '/^Opt/,/^Conf/p' | sed '$d' | sed 's/^Opt.*://g' | sed 's/^\s*//g' | tr '\n' ' ')
 ```
 
 ### Install Winetricks
 
-```bash
+```shell
 sudo pacman -S winetricks
 ```
 
@@ -480,7 +480,7 @@ sudo pacman -S winetricks
 
 After installing WINE, configure it by setting the Windows version to the latest version:
 
-```bash
+```shell
 winecfg
 ```
 
@@ -561,7 +561,7 @@ To enable terminal password feedback, follow these steps:
 
    Type the following command in the terminal and press Enter. This will open the sudoers file using the `visudo` command, which ensures safe editing of the sudoers file.
 
-   ```bash
+   ```shell
    sudo visudo
    ```
 
@@ -573,7 +573,7 @@ To enable terminal password feedback, follow these steps:
 
    Add the following line after the "Defaults" line to enable password feedback:
 
-   ```bash
+   ```shell
    Defaults         pwfeedback
    ```
 

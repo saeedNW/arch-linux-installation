@@ -118,7 +118,7 @@ To create installation media for EndeavourOS using Rufus, Balena Etcher, or the 
 4. Unmount the USB flash drive using the `umount` command (e.g., `sudo umount /dev/sdb`).
 5. Use the `dd` command to write the EndeavourOS ISO to the USB flash drive:
 
-   ```bash
+   ```shell
    sudo dd if=/path/to/endeavouros.iso of=/dev/sdX bs=4M status=progress
    ```
 
@@ -149,7 +149,7 @@ For detailed step-by-step guidance during the installation process, refer to the
 
 To enable the multilib repository, uncomment the "multilib" header and repository in the /etc/pacman.conf file:
 
-```bash
+```shell
 sudo nano /etc/pacman.conf
 ```
 
@@ -163,7 +163,7 @@ In this section, we will install essential core applications to ensure smooth fu
 
 Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine, and npm is the Node.js package manager. They are essential for developing and running JavaScript applications on your system.
 
-```bash
+```shell
 sudo pacman -S nodejs npm
 ```
 
@@ -173,7 +173,7 @@ TypeScript is a strongly typed programming language that builds on JavaScript, a
 
 To install TypeScript and NestJS CL globally, use the following command:
 
-```bash
+```shell
 sudo npm install -g typescript @nestjs/cli
 ```
 
@@ -185,7 +185,7 @@ In this step, we will uncomment a specific line in the sudoers file to grant mem
 
 We will use the `visudo` command with the `EDITOR` environment variable set to "nano" to open the sudoers file in the Nano text editor.
 
-```bash
+```shell
 sudo EDITOR=nano visudo
 ```
 
@@ -201,7 +201,7 @@ Paru is an AUR helper and pacman wrapper that allows you to install packages fro
 
    Before installing Paru, ensure your system repositories and packages are up to date:
 
-   ```bash
+   ```shell
    sudo pacman -Syu
    ```
 
@@ -209,7 +209,7 @@ Paru is an AUR helper and pacman wrapper that allows you to install packages fro
 
    Git is required to clone the Paru repository from the AUR. Install it using pacman:
 
-   ```bash
+   ```shell
    sudo pacman -S git
    ```
 
@@ -217,7 +217,7 @@ Paru is an AUR helper and pacman wrapper that allows you to install packages fro
 
    Navigate to the `/opt` directory and clone the Paru repository from the AUR:
 
-   ```bash
+   ```shell
    cd /opt
    sudo git clone https://aur.archlinux.org/paru.git
    ```
@@ -226,7 +226,7 @@ Paru is an AUR helper and pacman wrapper that allows you to install packages fro
 
    Set appropriate permissions for the Paru directory to allow building and installation:
 
-   ```bash
+   ```shell
    sudo chown -R <username>:wheel ./paru
    ```
 
@@ -234,7 +234,7 @@ Paru is an AUR helper and pacman wrapper that allows you to install packages fro
 
    Navigate into the Paru directory and build the package using makepkg:
 
-   ```bash
+   ```shell
    cd paru
    makepkg -si
    ```
@@ -245,7 +245,7 @@ After successfully building the package, Paru will be installed on your system.
 
 If you have one of the latest Nvidia graphics cards, the necessary drivers are installed automatically by EndeavourOS. You can verify the installed drivers by running the following command:
 
-```bash
+```shell
 nvidia-smi
 ```
 
@@ -255,7 +255,7 @@ However, if you do not have the latest Nvidia graphics cards, there are three op
 
 This option installs the `nvidia-470xx` driver. Please note that you should identify the appropriate driver version for your system before proceeding. To determine your required driver version, execute the following command:
 
-```bash
+```shell
 lspci -k | grep -A 2 -E "(VGA|3D)"
 ```
 
@@ -267,7 +267,7 @@ So, the overall command `lspci -k | grep -A 2 -E "(VGA|3D)"` lists the PCI devic
 
 **Installation Steps:**
 
-```bash
+```shell
 paru -S nvidia-470xx-dkms nvidia-470xx-utils lib32-nvidia-470xx-utils nvidia-470xx-settings \
 opencl-nvidia-470xx lib32-opencl-nvidia-470xx
 ```
@@ -276,19 +276,19 @@ This command installs the Nvidia drivers from the Arch User Repository (AUR). Th
 
 After installation, verify the installed drivers:
 
-```bash
+```shell
 nvidia-smi
 ```
 
 Check Vulkan installation:
 
-```bash
+```shell
 vulkaninfo
 ```
 
 **Option 2:** Use a Third-Party [GitHub](https://github.com/Frogging-Family/nvidia-all) Script
 
-```bash
+```shell
 cd /opt
 sudo git clone https://github.com/Frogging-Family/nvidia-all.git
 sudo chown -R <username>:wheel nvidia-all/
@@ -309,7 +309,7 @@ Note: This method is not recommended as it may lead to graphic driver issues aft
 
 2. **install nvidia basic drivers and utilities:**
 
-   ```bash
+   ```shell
    sudo pacman -S nvidia-dkms nvidia-utils lib32-nvidia-utils
    ```
 
@@ -322,7 +322,7 @@ Note: This method is not recommended as it may lead to graphic driver issues aft
 
    - Change directory to the location where the Nvidia driver was downloaded.
 
-     ```bash
+     ```shell
      cd ~/Downloads
      ```
 
@@ -330,7 +330,7 @@ Note: This method is not recommended as it may lead to graphic driver issues aft
 
    - Run the Nvidia driver installation script with elevated privileges.
 
-     ```bash
+     ```shell
      sudo sh NVIDIA-Linux-x86_64-470.141.03.run
      ```
 
@@ -347,7 +347,7 @@ To install AMD GPU drivers on EndeavourOS, you can follow these steps:
 
    - Before installing the drivers, identify the specific AMD GPU model in your system. You can use the following command to list the available GPUs:
 
-   ```bash
+   ```shell
     lspci -nn | grep -E 'VGA|Display'
    ```
 
@@ -357,7 +357,7 @@ To install AMD GPU drivers on EndeavourOS, you can follow these steps:
 
    - Edit the `/etc/pacman.conf` file:
 
-     ```bash
+     ```shell
      sudo nano /etc/pacman.conf
      ```
 
@@ -368,7 +368,7 @@ To install AMD GPU drivers on EndeavourOS, you can follow these steps:
 
    - Update the system repositories to ensure you have the latest package information:
 
-   ```bash
+   ```shell
     sudo pacman -Syu
    ```
 
@@ -376,7 +376,7 @@ To install AMD GPU drivers on EndeavourOS, you can follow these steps:
 
    - Install the necessary packages for AMD GPU support:
 
-   ```bash
+   ```shell
     sudo pacman -S mesa xf86-video-amdgpu vulkan-radeon lib32-mesa lib32-vulkan-radeon
    ```
 
@@ -390,7 +390,7 @@ To install AMD GPU drivers on EndeavourOS, you can follow these steps:
 
    - After installing the packages, reboot your system to apply the changes:
 
-   ```bash
+   ```shell
     sudo reboot
    ```
 
@@ -398,7 +398,7 @@ To install AMD GPU drivers on EndeavourOS, you can follow these steps:
 
    - After rebooting, verify that the AMD GPU drivers are correctly installed and recognized by the system:
 
-   ```bash
+   ```shell
     glxinfo | grep "OpenGL renderer"
    ```
 
@@ -420,14 +420,14 @@ To install AMD GPU drivers on EndeavourOS, you can follow these steps:
 1. **Install Optimus Manager:**
    Install Optimus Manager using the AUR helper (e.g., `paru`):
 
-   ```bash
+   ```shell
    paru -S optimus-manager
    ```
 
 2. **Clone Optimus Manager Qt Git Repository:**
    Navigate to the `/opt` directory and clone the Optimus Manager Qt Git repository:
 
-   ```bash
+   ```shell
    cd /opt
    sudo git clone https://aur.archlinux.org/optimus-manager-qt-git
    ```
@@ -435,14 +435,14 @@ To install AMD GPU drivers on EndeavourOS, you can follow these steps:
 3. **Adjust Permissions:**
    Change ownership of the cloned repository to your user:
 
-   ```bash
+   ```shell
    sudo chown -R <username>:wheel ./optimus-manager-qt-git
    ```
 
 4. **Modify PKGBUILD:**
    Open the `PKGBUILD` file within the `optimus-manager-qt-git` directory and modify the `_with_plasma` parameter from `false` to `true` using a text editor like nano:
 
-   ```bash
+   ```shell
    cd optimus-manager-qt-git
    nano PKGBUILD
    # _with_plasma=false => _with_plasma=true
@@ -451,28 +451,28 @@ To install AMD GPU drivers on EndeavourOS, you can follow these steps:
 5. **Build and Install Optimus Manager Qt:**
    Save the changes to the `PKGBUILD` file, exit the text editor, and proceed to build and install Optimus Manager Qt:
 
-   ```bash
+   ```shell
    makepkg -si
    ```
 
 6. **Reboot Your System:**
    Reboot your system to apply the changes:
 
-   ```bash
+   ```shell
    sudo reboot
    ```
 
 7. **Verify Optimus Manager Status:**
    After rebooting, check the status of Optimus Manager:
 
-   ```bash
+   ```shell
    sudo systemctl status optimus-manager
    ```
 
 8. **Enable Optimus Manager Service:**
    Enable the Optimus Manager service to ensure it starts automatically on boot:
 
-   ```bash
+   ```shell
    sudo systemctl enable --now optimus-manager
    ```
 
@@ -483,7 +483,7 @@ To install AMD GPU drivers on EndeavourOS, you can follow these steps:
 
 If you own an Asus ROG or TUF laptop, you can install specific utilities to enhance the functionality and control options for your device.
 
-```bash
+```shell
 paru -S asusctl supergfxctl rog-control-center
 ```
 
@@ -501,19 +501,19 @@ WINE (Wine Is Not an Emulator) is a compatibility layer that allows you to run W
 
 ### Install WINE
 
-```bash
+```shell
 sudo pacman -S wine
 ```
 
 ### Install Dependencies (Optional)
 
-```bash
+```shell
 sudo pacman -S --asdeps --needed $(pacman -Si wine | sed -n '/^Opt/,/^Conf/p' | sed '$d' | sed 's/^Opt.*://g' | sed 's/^\s*//g' | tr '\n' ' ')
 ```
 
 ### Install Winetricks
 
-```bash
+```shell
 sudo pacman -S winetricks
 ```
 
@@ -521,7 +521,7 @@ sudo pacman -S winetricks
 
 After installing WINE, configure it by setting the Windows version to the latest version:
 
-```bash
+```shell
 winecfg
 ```
 
@@ -535,7 +535,7 @@ This section is only related to those who have Nvidia GPUs.
 
 After installing the Nvidia driver, there is a patch available to address the FBC (Frame Buffer Capture) problem. Follow these steps to apply the patch:
 
-```bash
+```shell
 # Patch GitHub repository: https://github.com/keylase/nvidia-patch
 cd ~/Downloads
 git clone https://github.com/keylase/nvidia-patch.git
@@ -552,13 +552,13 @@ To enable Bluetooth functionality on your system, follow these steps:
 
 Install the essential packages for Bluetooth support:
 
-```bash
+```shell
 pacman -S bluez bluez-utils
 ```
 
 Next, check if the generic Bluetooth driver module, "btusb," is loaded. If it's not loaded, you'll need to load it manually. Run the following command to check:
 
-```bash
+```shell
 lsmod | grep btusb
 ```
 
@@ -568,14 +568,14 @@ lsmod | grep btusb
 
 Enable the Bluetooth service to start automatically on system boot:
 
-```bash
+```shell
 sudo systemctl enable bluetooth.service
 sudo systemctl start bluetooth.service
 ```
 
 Alternatively, you can enable and start the service in one command:
 
-```bash
+```shell
 sudo systemctl enable --now bluetooth.service
 sudo systemctl start --now bluetooth.service
 ```
@@ -584,7 +584,7 @@ sudo systemctl start --now bluetooth.service
 
 Install additional Gnome applications for enhanced functionality:
 
-```bash
+```shell
 sudo pacman -S gnome-sound-recorder android-tools vlc thunderbird
 ```
 
@@ -601,7 +601,7 @@ To enable multi-touch gestures on your touchpad, follow these steps:
 
 Install the necessary packages:
 
-```bash
+```shell
 sudo pacman -S libinput xf86-input-libinput
 ```
 
@@ -609,7 +609,7 @@ sudo pacman -S libinput xf86-input-libinput
 
 Reboot your system for the changes to take effect:
 
-```bash
+```shell
 sudo reboot
 ```
 
@@ -617,7 +617,7 @@ sudo reboot
 
 Use Paru to install Touchegg, a multi-touch gesture recognizer:
 
-```bash
+```shell
 paru -S touchegg
 ```
 
@@ -625,7 +625,7 @@ paru -S touchegg
 
 Enable and start the Touchegg service:
 
-```bash
+```shell
 sudo systemctl enable touchegg.service
 sudo systemctl start touchegg
 ```
@@ -634,7 +634,7 @@ sudo systemctl start touchegg
 
 Reboot your system again:
 
-```bash
+```shell
 sudo reboot
 ```
 
@@ -642,7 +642,7 @@ sudo reboot
 
 Finally, install Touché for configuring multi-touch gestures:
 
-```bash
+```shell
 paru -S touche
 ```
 

@@ -5,32 +5,32 @@ This section offers guidance on customizing Gnome desktop environments, inspired
 ## Table of Contents
 
 - [Gnome Nordic Customization](#gnome-nordic-customization)
-	- [Table of Contents](#table-of-contents)
-	- [Final Result](#final-result)
-	- [Requirements](#requirements)
-	- [Extensions](#extensions)
-	- [Theme Configuration](#theme-configuration)
-		- [Downloading Necessary Files](#downloading-necessary-files)
-		- [Install WhiteSur GTK Theme](#install-whitesur-gtk-theme)
-		- [Install Nordzy Icon Theme](#install-nordzy-icon-theme)
-		- [Install Sunity Cursors](#install-sunity-cursors)
-		- [Install Fonts](#install-fonts)
-		- [Move Backgrounds to their location](#move-backgrounds-to-their-location)
-		- [Apply Themes](#apply-themes)
-		- [Apply Fonts](#apply-fonts)
-		- [Config Windows Style](#config-windows-style)
-		- [Config Extensions](#config-extensions)
-		- [Set Desktop Background](#set-desktop-background)
-	- [Install Glava Audio Virtualizer](#install-glava-audio-virtualizer)
-	- [Config Conky](#config-conky)
-	- [Fix Dash to Dock Theme Issue](#fix-dash-to-dock-theme-issue)
-	- [Customize GDM Login Screen](#customize-gdm-login-screen)
-	- [Terminal Customization](#terminal-customization)
-	- [FastFetch Config](#fastfetch-config)
-	- [DDterm Customization](#ddterm-customization)
-	- [Wiggle Extension](#wiggle-extension)
-	- [Keyboard Switching to Another Layout Hotkey](#keyboard-switching-to-another-layout-hotkey)
-	- [Google chrome](#google-chrome)
+  - [Table of Contents](#table-of-contents)
+  - [Final Result](#final-result)
+  - [Requirements](#requirements)
+  - [Extensions](#extensions)
+  - [Theme Configuration](#theme-configuration)
+    - [Downloading Necessary Files](#downloading-necessary-files)
+    - [Install WhiteSur GTK Theme](#install-whitesur-gtk-theme)
+    - [Install Nordzy Icon Theme](#install-nordzy-icon-theme)
+    - [Install Sunity Cursors](#install-sunity-cursors)
+    - [Install Fonts](#install-fonts)
+    - [Move Backgrounds to their location](#move-backgrounds-to-their-location)
+    - [Apply Themes](#apply-themes)
+    - [Apply Fonts](#apply-fonts)
+    - [Config Windows Style](#config-windows-style)
+    - [Config Extensions](#config-extensions)
+    - [Set Desktop Background](#set-desktop-background)
+  - [Install Glava Audio Virtualizer](#install-glava-audio-virtualizer)
+  - [Config Conky](#config-conky)
+  - [Fix Dash to Dock Theme Issue](#fix-dash-to-dock-theme-issue)
+  - [Customize GDM Login Screen](#customize-gdm-login-screen)
+  - [Terminal Customization](#terminal-customization)
+  - [FastFetch Config](#fastfetch-config)
+  - [DDterm Customization](#ddterm-customization)
+  - [Wiggle Extension](#wiggle-extension)
+  - [Keyboard Switching to Another Layout Hotkey](#keyboard-switching-to-another-layout-hotkey)
+  - [Google chrome](#google-chrome)
 
 ## Final Result
 
@@ -58,13 +58,13 @@ Virtual Desktops Preview
 
 - Update your system
 
-  ```bash
+  ```shell
   sudo pacman -Syu
   ```
 
 - Make sure you have Gnome Tweaks installed
 
-  ```bash
+  ```shell
   sudo pacman -S gnome-tweaks
   ```
 
@@ -93,7 +93,7 @@ To kickstart your customization journey, you'll need to download the following f
 
    - Clone [WhiteSur GTK Theme](https://github.com/vinceliuice/WhiteSur-gtk-theme) from its github
 
-     ```bash
+     ```shell
      cd ~/Downloads
      git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
      ```
@@ -102,7 +102,7 @@ To kickstart your customization journey, you'll need to download the following f
 
    - Clone [Nordzy Icon Theme](https://github.com/alvatip/Nordzy-icon) from its github
 
-     ```bash
+     ```shell
      cd ~/Downloads
      git clone https://github.com/alvatip/Nordzy-icon.git
      ```
@@ -111,7 +111,7 @@ To kickstart your customization journey, you'll need to download the following f
 
    - Clone [Sunity Cursors](https://github.com/alvatip/Sunity-cursors) from its github
 
-     ```bash
+     ```shell
      cd ~/Downloads
      git clone https://github.com/alvatip/Sunity-cursors.git
      ```
@@ -120,7 +120,7 @@ To kickstart your customization journey, you'll need to download the following f
 
    - Clone [gnome terminal](https://github.com/nordtheme/gnome-terminal) from its github
 
-     ```bash
+     ```shell
      cd ~/Downloads
      git clone https://github.com/nordtheme/gnome-terminal.git
      ```
@@ -139,13 +139,13 @@ To kickstart your customization journey, you'll need to download the following f
 
 1. Open a terminal in WhiteSur GTK Theme directory
 
-   ```bash
+   ```shell
    cd ~/Downloads/WhiteSur-gtk-theme
    ```
 
 2. Install the theme
 
-   ```bash
+   ```shell
    ./install.sh --nord -l -c Dark -m -p 60 -P bigger --normal
    ```
 
@@ -153,13 +153,13 @@ To kickstart your customization journey, you'll need to download the following f
 
 1. Open a terminal in WhiteSur GTK Theme directory
 
-   ```bash
+   ```shell
    cd ~/Downloads/Nordzy-icon
    ```
 
 2. Install the theme
 
-   ```bash
+   ```shell
    ./install.sh -t default -c -p
    ```
 
@@ -167,13 +167,13 @@ To kickstart your customization journey, you'll need to download the following f
 
 1. Open a terminal in WhiteSur GTK Theme directory
 
-   ```bash
+   ```shell
    cd ~/Downloads/Sunity-cursors
    ```
 
 2. Install the theme
 
-   ```bash
+   ```shell
    ./install.sh
    ```
 
@@ -185,19 +185,19 @@ To kickstart your customization journey, you'll need to download the following f
 
    1. Create font directory if not exists
 
-      ```bash
+      ```shell
       mkdir -p ~/.fonts
       ```
 
    2. Move font files to the fonts directory
 
-      ```bash
+      ```shell
       mv ~/Downloads/fonts/* ~/.fonts
       ```
 
    3. Reload fonts cache
 
-      ```bash
+      ```shell
       fc-cache -vf
       ```
 
@@ -205,19 +205,19 @@ To kickstart your customization journey, you'll need to download the following f
 
 1. Move desktop background
 
-   ```bash
+   ```shell
    mv ~/Downloads/Desktop-BG.png ~/.local/share/backgrounds
    ```
 
 2. Create a hidden directory for the rest of the files
 
-   ```bash
+   ```shell
    mkdir ~/.custom-files
    ```
 
 3. Move the rest of the background images to the hidden directory
 
-   ```bash
+   ```shell
    mv ~/Downloads/Browser-BG.png ~/.custom-files
    mv ~/Downloads/dm3kzq8i2yaa1.png ~/.custom-files
    ```
@@ -266,7 +266,7 @@ To kickstart your customization journey, you'll need to download the following f
 
 1. Install glava package
 
-   ```bash
+   ```shell
    sudo pacman -S glava
    ```
 
@@ -275,7 +275,7 @@ To kickstart your customization journey, you'll need to download the following f
    1. extract **glava-config-for-screen**
    2. Run this command to create a copy from glava configs
 
-      ```bash
+      ```shell
       glava --copy-config
       ```
 
@@ -287,7 +287,7 @@ To kickstart your customization journey, you'll need to download the following f
 
 1. Install conky
 
-   ```bash
+   ```shell
    sudo pacman -S conky
    ```
 
@@ -303,7 +303,7 @@ To kickstart your customization journey, you'll need to download the following f
 
    If none of these files exist, you can create a default configuration file with the following command:
 
-   ```bash
+   ```shell
    mkdir -p ~/.config/conky && conky --print-config > ~/.config/conky/conky.conf
    ```
 
@@ -316,13 +316,13 @@ In order to fix the dash to dock them issue follow these steps
 
 1. open **WhiteSur-gtk-theme** directory in terminal
 
-   ```bash
+   ```shell
    cd ~/Downloads/WhiteSur-gtk-theme
    ```
 
 2. Run the following command to fix the issue
 
-   ```bash
+   ```shell
    ./tweaks.sh -d
    ```
 
@@ -330,13 +330,13 @@ In order to fix the dash to dock them issue follow these steps
 
 1. open **WhiteSur-gtk-theme** directory in terminal
 
-   ```bash
+   ```shell
    cd ~/Downloads/WhiteSur-gtk-theme
    ```
 
 2. Run the following command in order to config GDM login screen background
 
-   ```bash
+   ```shell
    sudo ./tweaks.sh -g -b ~/.custom-files/dm3kzq8i2yaa1.png
    ```
 
@@ -356,13 +356,13 @@ In order to fix the dash to dock them issue follow these steps
 
    1. Open a terminal in gnome terminal src directory
 
-      ```bash
+      ```shell
       cd ~/Downloads/gnome-terminal/src
       ```
 
    2. Install the theme
 
-      ```bash
+      ```shell
       ./nord.sh
       ```
 
