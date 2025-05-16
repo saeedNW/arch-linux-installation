@@ -63,21 +63,22 @@ In this guide, I'll walk you through the installation process of essential appli
 	- [Installing lazygit](#installing-lazygit)
 	- [Installing Docker](#installing-docker)
 		- [Installing Docker Compose](#installing-docker-compose)
-		- [Installing Portainer](#installing-portainer)
+	- [Installing Portainer](#installing-portainer)
 	- [Installing RabbitMQ](#installing-rabbitmq)
 	- [Installing Zookeeper and Kafka](#installing-zookeeper-and-kafka)
 		- [Installing Zookeeper](#installing-zookeeper)
 		- [Installing Kafka](#installing-kafka)
-	- [Installing Databases](#installing-databases)
-		- [Installing Redis](#installing-redis)
-			- [Installing RedisInsight](#installing-redisinsight)
-		- [Installing MongoDB](#installing-mongodb)
-			- [Installing MongoDB Tools](#installing-mongodb-tools)
-			- [Installing MongoDB Compass](#installing-mongodb-compass)
-		- [MySQL and phpMyAdmin](#mysql-and-phpmyadmin)
-		- [Installing Elasticsearch and Kibana](#installing-elasticsearch-and-kibana)
-		- [installing Postgres and pgAdmin](#installing-postgres-and-pgadmin)
-	- [Installing CPUFetch](#installing-cpufetch)
+	- [Installing Redis](#installing-redis)
+		- [Option 1: Install via Pacman](#option-1-install-via-pacman)
+		- [Option 2: Run via Docker](#option-2-run-via-docker)
+	- [Installing RedisInsight](#installing-redisinsight)
+	- [Installing MongoDB](#installing-mongodb)
+		- [Option 1: Install via AUR (`mongodb-bin`)](#option-1-install-via-aur-mongodb-bin)
+		- [Option 2: Run MongoDB via Docker](#option-2-run-mongodb-via-docker)
+	- [Installing MongoDB Compass](#installing-mongodb-compass)
+	- [MySQL and phpMyAdmin](#mysql-and-phpmyadmin)
+	- [Installing Elasticsearch and Kibana](#installing-elasticsearch-and-kibana)
+	- [installing PostgreSQL and pgAdmin](#installing-postgresql-and-pgadmin)
 	- [Installing FastFetch](#installing-fastfetch)
 	- [Installing Google Chrome](#installing-google-chrome)
 	- [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
@@ -114,7 +115,7 @@ In this guide, I'll walk you through the installation process of essential appli
 
    Ensure your system's package repositories are up-to-date by running the following command in the terminal:
 
-   ```bash
+   ```shell
    sudo pacman -Syu
    ```
 
@@ -122,7 +123,7 @@ In this guide, I'll walk you through the installation process of essential appli
 
    You can install `bat` directly from the Arch Linux repositories using the following command:
 
-   ```bash
+   ```shell
    sudo pacman -S bat
    ```
 
@@ -130,7 +131,7 @@ In this guide, I'll walk you through the installation process of essential appli
 
    Once the installation is complete, you can verify that `bat` is installed correctly by checking its version:
 
-   ```bash
+   ```shell
    bat --version
    ```
 
@@ -138,25 +139,25 @@ In this guide, I'll walk you through the installation process of essential appli
 
 `eza` is a modern replacement for the traditional `ls` command, providing more features and a more visually appealing output. Here's how to install it on your system:
 
-```bash
+```shell
 sudo pacman -S eza
 ```
 
 Once installed, you can use `eza` just like you would use `ls`, but with additional features and options. For example, to list files and directories in the current directory, simply type:
 
-```bash
+```shell
 eza
 ```
 
 But if you want to improce the visually appealing you can add `--icon` option to it:
 
-```bash
+```shell
 eza --icon
 ```
 
 You can also make it to show directories first:
 
-```bash
+```shell
 eza --icons --group-directories-first
 ```
 
@@ -166,19 +167,19 @@ eza --icons --group-directories-first
 
 `duf` is a modern replacement for the traditional `df` command, offering enhanced features and a more user-friendly interface for disk usage analysis. Here's how to install it on your system:
 
-```bash
+```shell
 sudo pacman -S duf
 ```
 
 Once installed, you can use `duf` to quickly and easily check disk usage information. For example, to display disk usage for all mounted filesystems, simply type:
 
-```bash
+```shell
 duf
 ```
 
 You can also specify a specific directory or filesystem to analyze. For instance, to check disk usage for the `/home` directory, use:
 
-```bash
+```shell
 duf /home
 ```
 
@@ -190,7 +191,7 @@ With `duf`, managing disk space and analyzing storage usage becomes more intuiti
 
 gdu (Go Disk Usage) is a command-line disk usage analyzer written in Go. It provides a fast and efficient way to visualize disk usage on your system. Here's how to install gdu:
 
-```bash
+```shell
 sudo pacman -S gdu
 ```
 
@@ -198,13 +199,13 @@ sudo pacman -S gdu
 
 `yt-dlp` is a command-line program to download videos from YouTube and other video platforms. It's an enhanced version of `youtube-dl` with additional features and improvements. Here's how to install it on your system:
 
-```bash
+```shell
 sudo pacman -S yt-dlp
 ```
 
 Once installed, you can use `yt-dlp` to download videos by providing the video URL as an argument. For example:
 
-```bash
+```shell
 yt-dlp https://www.youtube.com/watch?v=your_video_id
 ```
 
@@ -216,7 +217,7 @@ This command will download the video specified by the URL to your current direct
 
 python-spotdl is a command-line tool that allows you to download music from various streaming platforms such as Spotify. Here's how to install python-spotdl:
 
-```bash
+```shell
 paru -S python-spotdl
 ```
 
@@ -224,7 +225,7 @@ paru -S python-spotdl
 
 `Neovim` is a modern, extensible, and highly customizable text editor, serving as an enhanced version of Vim. It is perfect for developers and system administrators who seek efficiency and flexibility in text editing. Here's how to install it on your system:
 
-```bash
+```shell
 sudo pacman -S neovim
 ```
 
@@ -236,7 +237,7 @@ After installing Neovim, you'll want to customize it to suit your preferences. T
 
 **Step 1**: Create the `init.lua` File and directory
 
-```bash
+```shell
 mkdir -p ~/.config/nvim
 cd ~/.config/nvim
 touch init.lua
@@ -244,18 +245,18 @@ touch init.lua
 
 **Step 2**: Clone [**kickstart.nvim**](https://github.com/nvim-lua/kickstart.nvim) project.
 
-```bash
+```shell
 cd ~
 git clone https://github.com/nvim-lua/kickstart.nvim
 ```
 
 open kickstart's `init.lau` and you neovim `init.lau`. (Note: If you know how to use neovim hotkeys you can open the files in neovim otherwise it's better to use an editor that you art familiar with):
 
-```bash
+```shell
 nvim ~/.config/nvim/init.lua
 ```
 
-```bash
+```shell
 nvim ~/kickstart.nvim/init.lua
 ```
 
@@ -335,7 +336,7 @@ nord.nvim is a neovim theme based off of the [Nord Color Palette](https://www.no
 
 **Step 1**: Create a module file for the plugin configurations to be saved in:
 
-```bash
+```shell
 touch ~/.config/nvim/lua/plugins/colortheme.lua
 ```
 
@@ -376,7 +377,7 @@ Neo-tree is a Neovim plugin to browse the file system and other tree like struct
 
 **Step 1**: Create a module file for the plugin configurations to be saved in:
 
-```bash
+```shell
 touch ~/.config/nvim/lua/plugins/Neotree.lua
 ```
 
@@ -400,7 +401,7 @@ The Bufferline plugin enhances the default buffer management by providing a more
 
 **Step 1**: Create a module file for the plugin configurations to be saved in:
 
-```bash
+```shell
 touch ~/.config/nvim/lua/plugins/bufferline.lua
 ```
 
@@ -424,7 +425,7 @@ The Lualine plugin for Neovim provides a highly customizable and visually appeal
 
 **Step 1**: Create a module file for the plugin configurations to be saved in:
 
-```bash
+```shell
 touch ~/.config/nvim/lua/plugins/lualine.lua
 ```
 
@@ -448,7 +449,7 @@ The Treesitter plugin for Neovim provides advanced syntax highlighting and code 
 
 **Step 1**: Create a module file for the plugin configurations to be saved in:
 
-```bash
+```shell
 touch ~/.config/nvim/lua/plugins/treesitter.lua
 ```
 
@@ -472,7 +473,7 @@ The Telescope plugin for Neovim is a highly extendable fuzzy finder that allows 
 
 **Step 1**: Create a module file for the plugin configurations to be saved in:
 
-```bash
+```shell
 touch ~/.config/nvim/lua/plugins/telescope.lua
 ```
 
@@ -496,7 +497,7 @@ The LSP (Language Server Protocol) plugin for Neovim provides powerful language-
 
 **Step 1**: Create a module file for the plugin configurations to be saved in:
 
-```bash
+```shell
 touch ~/.config/nvim/lua/plugins/lsp.lua
 ```
 
@@ -520,7 +521,7 @@ The Autocompletion plugin for Neovim enhances the coding experience by providing
 
 **Step 1**: Create a module file for the plugin configurations to be saved in:
 
-```bash
+```shell
 touch ~/.config/nvim/lua/plugins/autocompletion.lua
 ```
 
@@ -544,7 +545,7 @@ The Alpha plugin for Neovim provides a customizable start screen for Neovim. To 
 
 **Step 1**: Create a module file for the plugin configurations to be saved in:
 
-```bash
+```shell
 touch ~/.config/nvim/lua/plugins/alpha.lua
 ```
 
@@ -568,7 +569,7 @@ The Indent-Blankline plugin for Neovim adds indentation guides to all lines. To 
 
 **Step 1**: Create a module file for the plugin configurations to be saved in:
 
-```bash
+```shell
 touch ~/.config/nvim/lua/plugins/indent-blankline.lua
 ```
 
@@ -592,7 +593,7 @@ The Gitsigns plugin for Neovim integrates Git functionalities directly into the 
 
 **Step 1**: Create a module file for the plugin configurations to be saved in:
 
-```bash
+```shell
 touch ~/.config/nvim/lua/plugins/gitsigns.lua
 ```
 
@@ -616,7 +617,7 @@ In addition to the core plugins, there are several miscellaneous plugins that ca
 
 **Step 1**: Create a module file for the plugin configurations to be saved in:
 
-```bash
+```shell
 touch ~/.config/nvim/lua/plugins/misc.lua
 ```
 
@@ -638,7 +639,7 @@ require('lazy').setup({
 
 Zsh, or Z Shell, is a powerful and highly customizable shell that can be used as an interactive login shell and as a command interpreter for shell scripting. Here's how to install Zsh on your system:
 
-```bash
+```shell
 sudo pacman -S zsh
 ```
 
@@ -648,13 +649,13 @@ Oh My Zsh is a delightful, open-source, community-driven framework for managing 
 
 You can install Oh My Zsh by running the following command in your terminal:
 
-```bash
+```shell
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 Alternatively, if you prefer using `wget`:
 
-```bash
+```shell
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 ```
 
@@ -668,13 +669,13 @@ During Installation process of Oh My Zsh you will be prompted to set `zsh` as yo
 
 1. Clone the zsh-autosuggestions repository into the Oh My Zsh plugins directory:
 
-   ```bash
+   ```shell
    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
    ```
 
 2. Activate the plugin by adding it to the list of plugins in your `~/.zshrc` configuration file:
 
-   ```bash
+   ```shell
    plugins=(... zsh-autosuggestions)
    ```
 
@@ -682,13 +683,13 @@ During Installation process of Oh My Zsh you will be prompted to set `zsh` as yo
 
 1. Clone the zsh-syntax-highlighting repository into the Oh My Zsh plugins directory:
 
-   ```bash
+   ```shell
    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
    ```
 
 2. Activate the plugin by adding it to the list of plugins in your `~/.zshrc` configuration file:
 
-   ```bash
+   ```shell
    plugins=(... zsh-syntax-highlighting)
    ```
 
@@ -696,13 +697,13 @@ During Installation process of Oh My Zsh you will be prompted to set `zsh` as yo
 
 1. Clone the zsh-completions repository into the Oh My Zsh custom plugins directory:
 
-   ```bash
+   ```shell
      git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
    ```
 
 2. Add it to FPATH in your `.zshrc` by adding the following line before `source $ZSH/oh-my-zsh.sh`:
 
-   ```bash
+   ```shell
    fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
    ```
 
@@ -712,7 +713,7 @@ During Installation process of Oh My Zsh you will be prompted to set `zsh` as yo
 
 After adding the plugins to your `~/.zshrc` file, reload the Zsh configuration:
 
-```bash
+```shell
 source ~/.zshrc
 ```
 
@@ -730,7 +731,7 @@ Here's a simple guide on how to create a `~/.zprofile` file, define some alias i
 
    - Inside the `~/.zprofile` file, you can define aliases using the following syntax:
 
-     ```bash
+     ```shell
      alias alias_name='command_to_execute'
      ```
 
@@ -740,7 +741,7 @@ Here's a simple guide on how to create a `~/.zprofile` file, define some alias i
 
      - Replace `ls` command with `exa` command:
 
-       ```bash
+       ```shell
        alias ls='eza --icons --group-directories-first -G --no-quotes'
        alias ll='eza --icons --group-directories-first -lG --no-quotes'
        alias lt='eza --icons --group-directories-first --no-quotes -RTL'
@@ -748,19 +749,19 @@ Here's a simple guide on how to create a `~/.zprofile` file, define some alias i
 
      - Replace `cat` command with `bat` command:
 
-       ```bash
+       ```shell
        alias cat='bat'
        ```
 
      - Create a new alias for `yt-dlp` command:
 
-       ```bash
+       ```shell
        alias ytdl='yt-dlp'
        ```
 
      - Create a new alias for `spotdl` command:
 
-       ```bash
+       ```shell
        alias spdl='spotdl'
        ```
 
@@ -773,7 +774,7 @@ Here's a simple guide on how to create a `~/.zprofile` file, define some alias i
    - Open your `~/.zshrc` file in a text editor. You can do this by typing: `nvim ~/.zshrc`.
    - Add the following line at the end of the file to ensure that your `~/.zprofile` file is sourced when you start a new shell session:
 
-     ```bash
+     ```shell
      source ~/.zprofile
      ```
 
@@ -783,7 +784,7 @@ Here's a simple guide on how to create a `~/.zprofile` file, define some alias i
 
    - After saving both `~/.zprofile` and `~/.zshrc` files, you can either restart your terminal or source your `~/.zshrc` file to apply the changes immediately:
 
-     ```bash
+     ```shell
      source ~/.zshrc
      ```
 
@@ -793,7 +794,7 @@ Now your alias defined in `~/.zprofile` will be available every time you start a
 
 To optimize Zsh history management, add the following configuration to your `~/.zshrc` file:
 
-```bash
+```shell
 # History
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
@@ -808,7 +809,7 @@ setopt hist_ignore_dups     # Ignore duplicates in the current session
 
 After saving the file, reload the Zsh configuration:
 
-```bash
+```shell
 source ~/.zshrc
 ```
 
@@ -816,7 +817,7 @@ source ~/.zshrc
 
 direnv is a shell extension that automatically loads and unloads environment variables based on your project's directory. It's particularly useful for managing environment-specific configurations in .envrc files. Here's how to install it on your system:
 
-```bash
+```shell
 sudo pacman -S direnv
 ```
 
@@ -826,19 +827,19 @@ For direnv to work properly it needs to be hooked into the shell. Once the hook 
 
 **ZSH :** Add the following line at the end of the ~/.zshrc file:
 
-```bash
+```shell
 eval "$(direnv hook zsh)"
 ```
 
 **Oh my zsh :** Oh my zsh has a core plugin with direnv support. Add direnv to the plugins array in your zshrc file:
 
-```bash
+```shell
 plugins=(... direnv)
 ```
 
 ### Quick demo
 
-```bash
+```shell
 # Create a new folder for demo purposes.
 $ mkdir ~/my-project
 $ cd ~/my-project
@@ -883,7 +884,7 @@ nope
 1. **Applying Changes to `.envrc`**
    After updating the `.envrc` file in your directory, you must run the following command to apply the changes:
 
-   ```bash
+   ```shell
    direnv allow .
    ```
 
@@ -894,7 +895,7 @@ nope
 
    - Inside the `~/.zprofile` file, you can define an alias to simplify the usage of `direnv allow .`
 
-     ```bash
+     ```shell
      alias dia='direnv allow .'
      ```
 
@@ -906,7 +907,7 @@ Git is a widely-used version control system that allows you to manage and track 
 
    Git is available in the Arch Linux repositories. You can install it using the following command:
 
-   ```bash
+   ```shell
    sudo pacman -S git
    ```
 
@@ -914,7 +915,7 @@ Git is a widely-used version control system that allows you to manage and track 
 
    Once the installation is complete, you can verify that Git is installed correctly by checking its version:
 
-   ```bash
+   ```shell
    git --version
    ```
 
@@ -922,49 +923,49 @@ Git is a widely-used version control system that allows you to manage and track 
 
    - Sets your name as the global user identity in Git.
 
-   ```bash
+   ```shell
    git config --global user.name "Your Name"
    ```
 
    - Sets your email address as the global user identity in Git.
 
-   ```bash
+   ```shell
    git config --global user.email "your.email@example.com"
    ```
 
    - Configures line endings to be converted to LF on input.
 
-   ```bash
+   ```shell
    git config --global core.autocrlf "input"
    ```
 
    - Configures Git to use 'bat' command as the default pager for displaying output.
 
-   ```bash
+   ```shell
    git config --global core.pager "bat"
    ```
 
    - Sets the default branch name to 'main' when initializing new repositories.
 
-   ```bash
+   ```shell
    git config --global init.defaultBranch "main"
    ```
 
    - Configures Git to always create a merge commit when merging, even if the merge could be resolved with a fast-forward.
 
-   ```bash
+   ```shell
    git config --global merg.ff "--no-ff"
    ```
 
    - Configures Git to perform a merge when pulling changes instead of rebasing.
 
-   ```bash
+   ```shell
    git config --global pull.rebase "false"
    ```
 
    - Sets Visual Studio Code as the default text editor for Git, allowing you to edit commit messages and other text files within Git using VS Code. The `--wait` flag ensures that Git waits for the editor to close before proceeding.
 
-   ```bash
+   ```shell
    git config --global core.editor "code --wait"
    ```
 
@@ -974,13 +975,13 @@ This step has been excerpted from the [GitHub documentation](https://docs.github
 
 1. Generating a new SSH key:
 
-   ```bash
+   ```shell
    ssh-keygen -t ed25519 -C "your_email@example.com"
    ```
 
    Note: If you are using a legacy system that doesn't support the Ed25519 algorithm, use:
 
-   ```bash
+   ```shell
     ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
    ```
 
@@ -990,20 +991,20 @@ This step has been excerpted from the [GitHub documentation](https://docs.github
 
    1. Start the ssh-agent in the background:
 
-      ```bash
+      ```shell
       eval "$(ssh-agent -s)"
       # output Ex. => Agent pid 59566
       ```
 
    2. Add your SSH private key to the ssh-agent:
 
-      ```bash
+      ```shell
       ssh-add ~/.ssh/id_ed25519
       ```
 
 3. Use the `cat` command to display your public key:
 
-```bash
+```shell
 cat path/to/ssh/public/key
 ```
 
@@ -1013,19 +1014,19 @@ After copying it, navigate to your GitHub account settings and add the new SSH k
 
 If you're looking to establish a VPN connection using an SSH tunnel, sshuttle is a handy tool for the job. Alternatively, you can configure an OpenVPN connection using your system's network manager.
 
-```bash
+```shell
 sudo pacman -S openssh
 ```
 
 Installs the OpenSSH package, which is required for SSH tunneling.
 
-```bash
+```shell
 sudo pacman -S sshuttle
 ```
 
 Installs sshuttle, a tool for creating VPN connections through SSH tunnels.
 
-```bash
+```shell
 sshuttle --dns -vr <user>@<server_ip>:<server ssh port> 0/0
 ```
 
@@ -1035,7 +1036,7 @@ Establishes an SSH tunnel VPN connection to the specified server, redirecting al
 
 Mission Center is a modern system monitoring application, similar to the Windows Task Manager. It allows you to track CPU, Memory, Disk, Network, and GPU usage in a user-friendly interface. To install Mission Center on your system, run the following command:
 
-```bash
+```shell
 sudo pacman -S mission-center
 ```
 
@@ -1045,7 +1046,7 @@ This command installs the `mission-center` package from the `extra` repository. 
 
 LibreOffice is a stable version of the popular open-source office suite. Follow these steps to install it on your system:
 
-```bash
+```shell
 sudo pacman -S libreoffice-still
 ```
 
@@ -1055,7 +1056,7 @@ This command installs the LibreOffice-Still package from the official Arch Linux
 
 GIMP (GNU Image Manipulation Program) is a powerful open-source image editing software. Follow these steps to install it on your system:
 
-```bash
+```shell
 sudo pacman -S gimp
 ```
 
@@ -1069,7 +1070,7 @@ By following the instructions outlined in the [Diolinux/PhotoGIMP](https://githu
 
 VLC Media Player is a versatile multimedia player that supports various audio and video formats, as well as streaming protocols. Here's how to install VLC on your Linux system:
 
-```bash
+```shell
 sudo pacman -S vlc
 ```
 
@@ -1087,7 +1088,7 @@ You have the option to either update the VLC interface according to your prefere
 
 qBittorrent is a popular open-source BitTorrent client. Follow these steps to install it on your system:
 
-```bash
+```shell
 sudo pacman -S qbittorrent
 ```
 
@@ -1101,7 +1102,7 @@ You have the option to either update the interface according to your preferences
 
 OBS Studio is a powerful and feature-rich software for video recording and live streaming. Here's how to install it on your system:
 
-```bash
+```shell
 sudo pacman -S obs-studio
 ```
 
@@ -1113,7 +1114,7 @@ This command installs the OBS Studio package from the official Arch Linux reposi
 
 Kdenlive is a popular open-source video editing software that provides a comprehensive set of features for editing videos. Here's how to install it on your system:
 
-```bash
+```shell
 sudo pacman -S kdenlive
 ```
 
@@ -1121,7 +1122,7 @@ sudo pacman -S kdenlive
 
 DaVinci Resolve is a professional video editing software with advanced features for color correction, visual effects, and audio post-production. Here's how to install DaVinci Resolve on Arch Linux:
 
-```bash
+```shell
 paru -S davinci-resolve
 ```
 
@@ -1131,7 +1132,7 @@ This command installs the Kdenlive package from the official Arch Linux reposito
 
 Discord is a popular communication platform that offers text, voice, and video chat services. Here's how to install Discord on your system:
 
-```bash
+```shell
 sudo pacman -S discord
 ```
 
@@ -1141,7 +1142,7 @@ This command installs the discord package from the official Arch Linux repositor
 
 Telegram Desktop is a popular messaging application that allows you to securely communicate with others via text, voice, and video calls. Here's how to install it on your system:
 
-```bash
+```shell
 sudo pacman -S telegram-desktop
 ```
 
@@ -1151,7 +1152,7 @@ This command installs the Telegram Desktop package from the official Arch Linux 
 
 `lazygit` is a simple terminal-based UI for Git commands, designed to make the process of interacting with Git repositories more intuitive and efficient. Here's how to install it on your system:
 
-```bash
+```shell
 sudo pacman -S lazygit
 ```
 
@@ -1165,7 +1166,7 @@ Docker is a platform for developing, shipping, and running applications inside c
 
 **Step 1 - Install Required Packages**:
 
-```bash
+```shell
 sudo pacman -S docker
 ```
 
@@ -1173,7 +1174,7 @@ This command installs the Docker package, which includes the Docker daemon and c
 
 **Step 2 - Enable and Start Docker Service**:
 
-```bash
+```shell
 sudo systemctl enable docker.service
 sudo systemctl start docker.service
 ```
@@ -1182,7 +1183,7 @@ Enabling and starting the Docker service ensures that Docker starts automaticall
 
 **Step 3 - Verify Docker Installation**:
 
-```bash
+```shell
 sudo docker --version
 ```
 
@@ -1192,14 +1193,14 @@ This command verifies that Docker has been successfully installed on your system
 
 To avoid using `sudo` every time you run a Docker command, you can add your user to the `docker` group:
 
-```bash
+```shell
 sudo usermod -aG docker $USER
 newgrp docker
 ```
 
 **Step 5 - Verify Docker Installation (Non-sudo)**:
 
-```bash
+```shell
 docker --version
 ```
 
@@ -1209,7 +1210,7 @@ After adding your user to the `docker` group, you can verify the Docker installa
 
 You can verify that Docker is working correctly by running a simple test container:
 
-```bash
+```shell
 docker run hello-world
 ```
 
@@ -1221,7 +1222,7 @@ Docker Compose is a tool for defining and running multi-container Docker applica
 
 **Step 1 - Download Docker Compose Binary**:
 
-```bash
+```shell
 sudo pacman -S docker-compose
 ```
 
@@ -1229,13 +1230,13 @@ This command installs the Docker Compose package from the official package repos
 
 **Step 2 - Verify Docker Compose Installation**:
 
-```bash
+```shell
 docker-compose --version
 ```
 
 This command verifies that Docker Compose has been successfully installed on your system by displaying the installed version.
 
-### Installing Portainer
+## Installing Portainer
 
 Portainer is a user-friendly container management platform designed to simplify the deployment, management, and monitoring of containerized applications. It provides an intuitive web-based interface, making it easier to work with Docker, Kubernetes, and other container orchestration systems.
 
@@ -1302,130 +1303,136 @@ docker run -d \
   confluentinc/cp-kafka:latest
 ```
 
-## Installing Databases
+## Installing Redis
 
-### Installing Redis
+Redis is an open-source, in-memory data structure store used as a database, cache, and message broker.
 
-Redis is an open-source, in-memory data structure store used as a database, cache, and message broker. Here's how to install it on your system:
+### Option 1: Install via Pacman
 
-```bash
+```shell
 sudo pacman -S redis
 ```
 
 This command installs the Redis package from the official Arch Linux repositories. Once installed, you can start and enable the Redis service using the following commands:
 
-```bash
+```shell
 sudo systemctl start redis
 sudo systemctl enable redis
 ```
 
 You can also configure Redis by editing its configuration file located at `/etc/redis.conf`. After making any changes, remember to restart the Redis service for the changes to take effect:
 
-```bash
+```shell
 sudo systemctl restart redis
 ```
 
-Redis is now installed and ready to use on your system. You can interact with Redis using its command-line interface `redis-cli` or by integrating it into your applications.
+You can then connect to the Redis instance using:
 
-#### Installing RedisInsight
+```bash
+redis-cli
+```
+
+### Option 2: Run via Docker
+
+Alternatively, you can run Redis using Docker. This is useful if you prefer isolated environments or want to avoid installing system-wide services.
+
+```shell
+docker run -d \
+  --name redis \
+  -p 6379:6379 \
+  -v redis-data:/data \
+  redis \
+  redis-server --save 60 1 --loglevel warning --appendonly yes --requirepass root
+```
+
+This command:
+
+- Runs Redis in a detached container named `redis`
+- Maps port `6379` from the container to your host
+- Mounts a Docker volume `redis-data` for persistent storage
+- Enables append-only file persistence
+- Sets a password (`root`) for accessing Redis
+
+**Note:** If you don’t have `redis-cli` locally, you can run it inside the container:
+
+```bash
+docker exec -it redis redis-cli -a root
+```
+
+Choose the method that best suits your workflow. If you prefer system packages and service management, use `pacman`. If you prefer containerized apps, Docker is a great choice.
+
+## Installing RedisInsight
 
 RedisInsight is a graphical user interface (GUI) for managing Redis databases. It provides a user-friendly interface to interact with your Redis instances. Here's how you can install RedisInsight:
 
-```bash
+```shell
 paru -S redisinsight-bin
 ```
 
-### Installing MongoDB
+## Installing MongoDB
 
-MongoDB-bin is the binary distribution of MongoDB, a popular NoSQL database management system. Here's how to install MongoDB-bin on your system:
+MongoDB is a popular NoSQL database management system that stores data in flexible, JSON-like documents.
+
+### Option 1: Install via AUR (`mongodb-bin`)
+
+Arch Linux no longer provides official MongoDB packages, but you can install the community-maintained binary package (`mongodb-bin`) via an AUR helper like `paru`.
 
 1. **Install MongoDB-bin Package**:
 
-   Open your terminal and use the following pacman command to install the MongoDB-bin package:
-
-   ```bash
+   ```shell
    paru -S mongodb-bin
    ```
 
 2. **Start MongoDB Service**:
 
-   After the installation is complete, start the MongoDB service using the following systemctl command:
-
-   ```bash
+   ```shell
    sudo systemctl start mongodb
    ```
 
 3. **Enable MongoDB Service**:
 
-   If you want MongoDB to start automatically at boot, enable the MongoDB service using the systemctl enable command:
-
-   ```bash
+   ```shell
    sudo systemctl enable mongodb
    ```
 
 4. **Verify Installation**:
 
-   To verify that MongoDB is running, you can check its status using the systemctl status command:
-
-   ```bash
+   ```shell
    sudo systemctl status mongodb
    ```
 
-#### Installing MongoDB Tools
+### Option 2: Run MongoDB via Docker
 
-MongoDB Tools is a set of command-line utilities for working with MongoDB instances. Here's how to install MongoDB Tools on your Arch Linux system:
+```bash
+docker run -d \
+  --name mongo \
+  -p 27017:27017 \
+  -v mongo-data:/data/db \
+  -e MONGO_INITDB_ROOT_USERNAME=mongo \
+  -e MONGO_INITDB_ROOT_PASSWORD=root \
+  mongo:latest
+```
 
-1. **Install MongoDB Tools Package**:
+This command:
 
-   Open your terminal and use the following paru command to install the MongoDB Tools package:
+- Starts a new MongoDB container named `mongo`
+- Maps port `27017` from the container to your host
+- Persists data using a Docker volume `mongo-data`
+- Sets up a root user with the username `mongo` and password `root`
 
-   ```bash
-   paru -S mongodb-tools
-   ```
-
-2. **Verify Installation**:
-
-   To verify that MongoDB Tools is installed correctly, you can check the version of the installed tools using the following command:
-
-   ```bash
-   mongodump --version
-   ```
-
-   This command should display the version information for mongodump, indicating that MongoDB Tools is installed.
-
-3. **Explore MongoDB Tools**:
-
-   MongoDB Tools includes various utilities such as mongodump, mongorestore, mongoexport, mongoimport, and mongotop. You can explore these tools and their usage by running them in your terminal with the --help option:
-
-   ```bash
-   mongodump --help
-   mongorestore --help
-   mongoexport --help
-   mongoimport --help
-   mongotop --help
-   ```
-
-   This will display usage information for each tool, allowing you to understand their functionality and options.
-
-#### Installing MongoDB Compass
+## Installing MongoDB Compass
 
 MongoDB Compass is a graphical user interface (GUI) for MongoDB. It allows you to visually explore your data, run ad hoc queries, and interact with your MongoDB databases. Here's how to install MongoDB Compass on your Linux system using the AUR (Arch User Repository):
 
-```bash
+```shell
 paru -S mongodb-compass
 ```
 
-### MySQL and phpMyAdmin
+## MySQL and phpMyAdmin
 
 MySQL and phpMyAdmin are available in the Arch Repositories (Official/AUR). However, I personally prefer using Docker to install and run these packages.
 
-**Step 1 - Create a Network Called "asgard"**:
-
-```shell
-docker network create asgard
-```
-
-**Step 2 - Create mySQL Data Volume direction**:
+**Step 1 - Create mySQL Data Volume direction**:
 
 ```shell
 sudo mkdir -p /opt/mysql
@@ -1436,23 +1443,19 @@ sudo chown <username>:wheel /opt/mysql
 
 ```shell
 docker run -d \
-    --name asgard-mysql \
-    --network asgard \
+    --name mysql \
     -e MYSQL_ROOT_PASSWORD="root" \
     -v /opt/mysql:/var/lib/mysql \
     -p 3306:3306 \
     mysql
 ```
 
-Keep in mind that this container needs to be started manually each time you restart your system. To have it start automatically, you can add the `--restart unless-stopped \` option when running the container. This ensures it starts automatically after a system reboot.
-
 **Step 4 -Pull and Run phpMyAdmin**:
 
 ```shell
 docker run -d \
-    --name asgard-phpmyadmin \
-    --network asgard \
-    -e PMA_HOST=asgard-mysql \
+    --name phpmyadmin \
+    -e PMA_HOST=mysql \
     -p 8080:80 \
     phpmyadmin/phpmyadmin
 
@@ -1461,9 +1464,7 @@ docker run -d \
 # cause the Docker network create the route as a DNS server.
 ```
 
-Keep in mind that this container needs to be started manually each time you restart your system. To have it start automatically, you can add the `--restart unless-stopped \` option when running the container. This ensures it starts automatically after a system reboot.
-
-### Installing Elasticsearch and Kibana
+## Installing Elasticsearch and Kibana
 
 Elasticsearch and Kibana are available in the Arch Repositories (Official/AUR). However, I personally prefer using Docker to install and run these packages.
 
@@ -1489,14 +1490,12 @@ sudo sysctl -w vm.max_map_count=262144
 
 ```shell
 docker run -d \
-    --name es01 \
+    --name elastic \
     --net elastic \
     -p 9200:9200 \
     -it -m 1GB \
     docker.elastic.co/elasticsearch/elasticsearch:8.16.0
 ```
-
-Keep in mind that this container needs to be started manually each time you restart your system. To have it start automatically, you can add the `--restart unless-stopped \` option when running the container. This ensures it starts automatically after a system reboot.
 
 **Step 5 - Pull Kibana Docker Image**:
 
@@ -1508,32 +1507,36 @@ docker pull docker.elastic.co/kibana/kibana:8.16.0 # Current latest
 
 ```shell
 docker run -d \
-    --name kib01 \
+    --name kibana \
     --net elastic \
     -p 5601:5601 \
     docker.elastic.co/kibana/kibana:8.16.0
 ```
 
-Keep in mind that this container needs to be started manually each time you restart your system. To have it start automatically, you can add the `--restart unless-stopped \` option when running the container. This ensures it starts automatically after a system reboot.
+## installing PostgreSQL and pgAdmin
 
-### installing Postgres and pgAdmin
+PostgreSQL and pgAdmin are available in the Arch Repositories (Official/AUR). However, I personally prefer using Docker to install and run these packages.
 
-Postgres and pgAdmin are available in the Arch Repositories (Official/AUR). However, I personally prefer using Docker to install and run these packages.
+**Step 1 - Create PostgreSQL Data Volume direction**:
 
-**Step 1 - Pull and Run Postgres**:
+```shell
+sudo mkdir -p /opt/postgresql
+sudo chown <username>:wheel /opt/postgresql
+```
+
+**Step 2 - Pull and Run PostgreSQL**:
 
 ```shell
 docker run -d \
-  --name postgres_container \
+  --name postgres \
   -e POSTGRES_USER=postgres \
   -e POSTGRES_PASSWORD=root \
+  -v /opt/postgresql:/var/lib/postgresql/data \
   -p 5432:5432 \
   postgis/postgis
 ```
 
-Keep in mind that this container needs to be started manually each time you restart your system. To have it start automatically, you can add the `--restart unless-stopped \` option when running the container. This ensures it starts automatically after a system reboot.
-
-**Step 2 - Pull and Run PgAdmin**:
+**Step 3 - Pull and Run PgAdmin**:
 
 ```shell
 docker run -d \
@@ -1541,33 +1544,22 @@ docker run -d \
   -e PGADMIN_DEFAULT_EMAIL=admin@example.com \
   -e PGADMIN_DEFAULT_PASSWORD=admin \
   -p 8081:80 \
-  --link postgres_container:postgres \
   dpage/pgadmin4
-```
-
-Keep in mind that this container needs to be started manually each time you restart your system. To have it start automatically, you can add the `--restart unless-stopped \` option when running the container. This ensures it starts automatically after a system reboot.
-
-## Installing CPUFetch
-
-CPUFetch is a simple yet effective command-line tool that displays detailed information about your CPU. It provides a quick overview of your CPU's architecture, model, and various other details. Here's how you can install CPUFetch on your system:
-
-```bash
-paru -S cpufetch
 ```
 
 ## Installing FastFetch
 
 FastFetch is a command-line tool that displays system information in a visually appealing way. It shows details such as your operating system, kernel version, CPU, GPU, memory usage, and more. Here's how to install Neofetch on your system:
 
-```bash
-sudo pacman -S fastFetch
+```shell
+sudo pacman -S fastfetch
 ```
 
 ## Installing Google Chrome
 
 Google Chrome is a popular web browser developed by Google. You can install Google Chrome on Arch Linux using the Arch User Repository (AUR). Here's how:
 
-```bash
+```shell
 paru -S google-chrome
 ```
 
@@ -1575,13 +1567,13 @@ paru -S google-chrome
 
 Visual Studio Code is a popular source-code editor developed by Microsoft. The `visual-studio-code-bin` package available on the Arch User Repository (AUR). Here's how to do it:
 
-```bash
+```shell
 paru -S visual-studio-code-bin
 ```
 
 **Note**: After installing VSCode on Gnome, your system's default file manager may change to VSCode. To revert the default file manager back to Nautilus, run the following command:
 
-```bash
+```shell
 xdg-mime default org.gnome.Nautilus.desktop inode/directory
 ```
 
@@ -2343,7 +2335,7 @@ By following these steps, you can transform VS Code's appearance beyond standard
 
 Postman is a popular collaboration platform for API development, used by developers worldwide. The `postman-bin` package available on the Arch User Repository (AUR). Here's how to do it:
 
-```bash
+```shell
 paru -S postman-bin
 ```
 
@@ -2351,7 +2343,7 @@ paru -S postman-bin
 
 Amberol Music Player is a lightweight and customizable music player designed for simplicity and ease of use. You can install Amberol Music Player using the Arch User Repository (AUR). Here's how:
 
-```bash
+```shell
 paru -S amberol
 ```
 
@@ -2361,7 +2353,7 @@ paru -S amberol
 
 QView is a lightweight and fast image viewer for Linux, designed for simplicity and ease of use. It supports a wide range of image formats. With its minimal interface, QView provides a clean and distraction-free environment for viewing images.
 
-```bash
+```shell
 paru -S qview
 ```
 
@@ -2369,7 +2361,7 @@ paru -S qview
 
 Loupe is the default image viewer for GNOME, providing a modern, lightweight, and user-friendly interface for viewing images. Loupe is included in the official Arch Linux repositories, . Here's how to install it:
 
-```bash
+```shell
 sudo pacman -S loupe
 ```
 
@@ -2377,7 +2369,7 @@ sudo pacman -S loupe
 
 nomacs is a free, open-source image viewer that supports multiple platforms, including Linux. You can install nomacs using the Arch User Repository (AUR). Here's how:
 
-```bash
+```shell
 paru -S nomacs
 ```
 
@@ -2387,7 +2379,7 @@ Note: You don't need to install this applicatin in Gnome desctop environment
 
 GNOME Boxes is a simple and user-friendly virtualization application designed for GNOME desktops. It allows users to easily create, manage, and run virtual machines, remote desktop sessions, and local virtual systems.
 
-```bash
+```shell
 sudo pacman -S gnome-boxes
 ```
 
@@ -2395,7 +2387,7 @@ sudo pacman -S gnome-boxes
 
 Blanket is a simple and minimalist GNOME app designed to help users focus, relax, or sleep better by providing a variety of ambient sounds.
 
-```bash
+```shell
 sudo pacman -S blanket
 ```
 
@@ -2403,7 +2395,7 @@ sudo pacman -S blanket
 
 HandBrake is an open-source video transcoder that allows you to convert video files into various formats. Here's how to install HandBrake on Arch Linux using the official repositories:
 
-```bash
+```shell
 sudo pacman -S handbrake
 ```
 
@@ -2411,7 +2403,7 @@ sudo pacman -S handbrake
 
 Albert is a fast and flexible application launcher for Linux systems. It allows you to quickly search and launch applications, files, and perform web searches right from your desktop. Here's how to install Albert on your Linux system:
 
-```bash
+```shell
 paru -S albert
 ```
 
@@ -2435,7 +2427,7 @@ Rclone is a command-line program to manage files on cloud storage services and r
 
    Rclone is available in the Arch Linux repositories. You can install it using the following command:
 
-   ```bash
+   ```shell
    sudo pacman -S rclone
    ```
 
@@ -2443,7 +2435,7 @@ Rclone is a command-line program to manage files on cloud storage services and r
 
    Simple cross platform GUI for rclone command line tool. You can install Rclone Browser using the Arch User Repository (AUR). Here's how:
 
-   ```bash
+   ```shell
    paru -S rclone-browser
    ```
 
@@ -2468,7 +2460,7 @@ Rclone is a command-line program to manage files on cloud storage services and r
 
 AnyDesk is a remote desktop application that allows users to access and control computers remotely. It is available in the Arch Linux User Repository (AUR). Here's how to install AnyDesk on your Linux system:
 
-```bash
+```shell
 paru -S anydesk-bin
 ```
 
@@ -2476,7 +2468,7 @@ paru -S anydesk-bin
 
 Droidcam is a tool that allows you to use your Android device as a webcam for your computer. Here's how to install it from the Arch User Repository (AUR):
 
-```bash
+```shell
 paru -S droidcam
 ```
 
@@ -2486,13 +2478,13 @@ Spot Player is a versatile multimedia player designed to enhance security measur
 
 1. **Navigate to the `~/Downloads` directory:**
 
-   ```bash
+   ```shell
    cd ~/Downloads
    ```
 
 2. **Download Spot Player installer:**
 
-   ```bash
+   ```shell
    wget https://app.spotplayer.ir/assets/bin/spotplayer/setup.exe
    ```
 
@@ -2506,7 +2498,7 @@ Flatpak is a universal packaging format that allows developers to distribute app
 
    Flatpak is available in the Arch Linux repositories. You can install it using the package manager, `pacman`:
 
-   ```bash
+   ```shell
    sudo pacman -S flatpak
    ```
 
@@ -2514,7 +2506,7 @@ Flatpak is a universal packaging format that allows developers to distribute app
 
    Flathub is the official repository for Flatpak applications. You need to add it to your system to install Flatpak applications from Flathub. Run the following command to add the Flathub repository:
 
-   ```bash
+   ```shell
    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
    ```
 
@@ -2522,7 +2514,7 @@ Flatpak is a universal packaging format that allows developers to distribute app
 
    After installing Flatpak and adding the Flathub repository, it's a good idea to restart your system to ensure that the changes take effect.
 
-   ```bash
+   ```shell
    sudo reboot
    ```
 
@@ -2534,7 +2526,7 @@ Timeshift is a powerful tool for creating system snapshots on Linux, allowing yo
 
    First, install Timeshift from the AUR repository:
 
-   ```bash
+   ```shell
    paru -S timeshift
    ```
 
@@ -2542,7 +2534,7 @@ Timeshift is a powerful tool for creating system snapshots on Linux, allowing yo
 
    Timeshift uses cron jobs to schedule automatic snapshots. Enable and start the `cronie` service:
 
-   ```bash
+   ```shell
    sudo systemctl enable --now cronie.service
    ```
 
@@ -2554,7 +2546,7 @@ Timeshift is a powerful tool for creating system snapshots on Linux, allowing yo
 
    Install `timeshift-autosnap` to automatically create snapshots before system updates:
 
-   ```bash
+   ```shell
    paru -S timeshift-autosnap
    ```
 
@@ -2562,7 +2554,7 @@ Timeshift is a powerful tool for creating system snapshots on Linux, allowing yo
 
    To boot from a BTRFS snapshot, install `grub-btrfs` and regenerate the GRUB configuration:
 
-   ```bash
+   ```shell
    sudo pacman -S grub-btrfs
    sudo grub-mkconfig -o /boot/grub/grub.cfg
    ```
@@ -2571,7 +2563,7 @@ Timeshift is a powerful tool for creating system snapshots on Linux, allowing yo
 
    Enable and start the `grub-btrfsd` daemon:
 
-   ```bash
+   ```shell
    sudo systemctl enable --now grub-btrfsd
    ```
 
