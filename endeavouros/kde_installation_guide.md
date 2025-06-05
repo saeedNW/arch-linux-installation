@@ -9,43 +9,43 @@ Let's dive into the installation process and unleash the power of EndeavourOS on
 ## Table of Contents
 
 - [EndeavourOS Installation Guide](#endeavouros-installation-guide)
-  - [Table of Contents](#table-of-contents)
-  - [Downloading EndeavourOS](#downloading-endeavouros)
-  - [Creating Installation Media](#creating-installation-media)
-    - [Using Rufus](#using-rufus)
-    - [Using Balena Etcher](#using-balena-etcher)
-    - [Using Linux `dd` Command](#using-linux-dd-command)
-  - [Installation Process](#installation-process)
-  - [Enable Multilib Repository](#enable-multilib-repository)
-  - [Install Core Applications (Skip Reinstallation)](#install-core-applications-skip-reinstallation)
-    - [Install Node.js and npm](#install-nodejs-and-npm)
-    - [Install TypeScript and NestJS](#install-typescript-and-nestjs)
-  - [Grant "wheel" Group Members "sudo" Privileges](#grant-wheel-group-members-sudo-privileges)
-    - [Edit sudoers File](#edit-sudoers-file)
-  - [Install Paru Package Manager](#install-paru-package-manager)
-  - [Install Nvidia Drivers (if needed)](#install-nvidia-drivers-if-needed)
-  - [Install AMD Drivers (if needed)](#install-amd-drivers-if-needed)
-  - [Install Optimus Manager for Nvidia GPUs](#install-optimus-manager-for-nvidia-gpus)
-  - [Asus Laptop Configuration](#asus-laptop-configuration)
-  - [KDE-Rounded-Corners](#kde-rounded-corners)
-  - [WINE Installation](#wine-installation)
-    - [Install WINE](#install-wine)
-    - [Install Dependencies (Optional)](#install-dependencies-optional)
-    - [Install Winetricks](#install-winetricks)
-    - [Configure WINE](#configure-wine)
-  - [Apply NVENC and NvFBC Patches for Nvidia Drivers](#apply-nvenc-and-nvfbc-patches-for-nvidia-drivers)
-  - [Enable Bluetooth](#enable-bluetooth)
-    - [Install Basic Needed Packages](#install-basic-needed-packages)
-    - [Enable Bluetooth Service](#enable-bluetooth-service)
-    - [Install Additional Applications (Skip Reinstallation)](#install-additional-applications-skip-reinstallation)
-  - [Configure Touchpad Multi-Touch Gestures](#configure-touchpad-multi-touch-gestures)
-    - [Install Touchpad Required Packages](#install-touchpad-required-packages)
-    - [Reboot System](#reboot-system)
-    - [Install Touchegg](#install-touchegg)
-    - [Enable and Start Touchegg Service](#enable-and-start-touchegg-service)
-    - [Again Reboot System](#again-reboot-system)
-    - [Configure Touché](#configure-touché)
-  - [Conclusion](#conclusion)
+	- [Table of Contents](#table-of-contents)
+	- [Downloading EndeavourOS](#downloading-endeavouros)
+	- [Creating Installation Media](#creating-installation-media)
+		- [Using Rufus](#using-rufus)
+		- [Using Balena Etcher](#using-balena-etcher)
+		- [Using Linux `dd` Command](#using-linux-dd-command)
+	- [Installation Process](#installation-process)
+	- [Enable Multilib Repository](#enable-multilib-repository)
+	- [Install Core Applications (Skip Reinstallation)](#install-core-applications-skip-reinstallation)
+		- [Install Node.js and npm](#install-nodejs-and-npm)
+		- [Install TypeScript and NestJS](#install-typescript-and-nestjs)
+	- [Grant "wheel" Group Members "sudo" Privileges](#grant-wheel-group-members-sudo-privileges)
+		- [Edit sudoers File](#edit-sudoers-file)
+	- [Install Paru Package Manager](#install-paru-package-manager)
+	- [Install Nvidia Drivers (if needed)](#install-nvidia-drivers-if-needed)
+	- [Install AMD Drivers (if needed)](#install-amd-drivers-if-needed)
+	- [Install Optimus Manager for Nvidia GPUs](#install-optimus-manager-for-nvidia-gpus)
+	- [Asus Laptop Configuration](#asus-laptop-configuration)
+	- [KDE-Rounded-Corners](#kde-rounded-corners)
+	- [WINE Installation](#wine-installation)
+		- [Install WINE](#install-wine)
+		- [Install Dependencies (Optional)](#install-dependencies-optional)
+		- [Install Winetricks](#install-winetricks)
+		- [Configure WINE](#configure-wine)
+	- [Apply NVENC and NvFBC Patches for Nvidia Drivers](#apply-nvenc-and-nvfbc-patches-for-nvidia-drivers)
+	- [Enable Bluetooth](#enable-bluetooth)
+		- [Install Basic Needed Packages](#install-basic-needed-packages)
+		- [Enable Bluetooth Service](#enable-bluetooth-service)
+		- [Install Additional Applications (Skip Reinstallation)](#install-additional-applications-skip-reinstallation)
+	- [Configure Touchpad Multi-Touch Gestures](#configure-touchpad-multi-touch-gestures)
+		- [Install Touchpad Required Packages](#install-touchpad-required-packages)
+		- [Reboot System](#reboot-system)
+		- [Install Touchegg](#install-touchegg)
+		- [Enable and Start Touchegg Service](#enable-and-start-touchegg-service)
+		- [Again Reboot System](#again-reboot-system)
+		- [Configure Touché](#configure-touché)
+	- [Conclusion](#conclusion)
 
 ## Downloading EndeavourOS
 
@@ -566,7 +566,8 @@ Install additional KDE applications for enhanced functionality:
 
 ```shell
 sudo pacman -S partitionmanager kolourpaint yakuake kaccounts-providers \
-android-tools thunderbird kio-gdrive kdesdk-thumbnailers kwalletmanager
+android-tools thunderbird kio-gdrive kdesdk-thumbnailers kwalletmanager \
+networkmanager-l2tp strongswan
 ```
 
 - **partitionmanager:** A graphical utility for managing disk partitions.
@@ -578,6 +579,7 @@ android-tools thunderbird kio-gdrive kdesdk-thumbnailers kwalletmanager
 - **kio-gdrive:** A KIO slave for accessing Google Drive files in KDE applications.
 - **kdesdk-thumbnailers:** Thumbnail generators for source code files in KDE applications.
 - **kwalletmanager:** KDE kwallet manager.
+- **networkmanager-l2tp & strongswan:** VPN support for L2TP/IPsec connections.
 
 **Note:** Add yakuake to your system startup applications
 
