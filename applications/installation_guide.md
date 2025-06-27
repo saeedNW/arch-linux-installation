@@ -37,8 +37,12 @@ In this guide, I'll walk you through the installation process of essential appli
 				- [zsh-syntax-highlighting](#zsh-syntax-highlighting)
 				- [zsh-completions](#zsh-completions)
 				- [Enabling Plugins](#enabling-plugins)
-		- [Custom Alias](#custom-alias)
+		- [ZSH profile file](#zsh-profile-file)
 		- [ZSH History Configuration](#zsh-history-configuration)
+		- [Default Editors](#default-editors)
+		- [Custom Aliases](#custom-aliases)
+			- [Recommended Aliases](#recommended-aliases)
+			- [Apply changes](#apply-changes)
 	- [Installing direnv](#installing-direnv)
 		- [Setup](#setup)
 		- [Quick demo](#quick-demo)
@@ -80,6 +84,7 @@ In this guide, I'll walk you through the installation process of essential appli
 	- [Installing Elasticsearch and Kibana](#installing-elasticsearch-and-kibana)
 	- [installing PostgreSQL and pgAdmin](#installing-postgresql-and-pgadmin)
 	- [Installing FastFetch](#installing-fastfetch)
+		- [Running FastFetch on Terminal Startup](#running-fastfetch-on-terminal-startup)
 	- [Installing Google Chrome](#installing-google-chrome)
 	- [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
 		- [Recommended Plugins](#recommended-plugins)
@@ -717,89 +722,40 @@ After adding the plugins to your `~/.zshrc` file, reload the Zsh configuration:
 source ~/.zshrc
 ```
 
-### Custom Alias
+### ZSH profile file
 
-Here's a simple guide on how to create a `~/.zprofile` file, define some alias in it, and then add it to your `~/.zshrc` file:
+A profile file is a configuration file that is sourced by the shell when it starts. It is used to set environment variables, define aliases, and perform other customizations that are specific to the user's needs.
 
-1. **Create `~/.zprofile` file:**
+In order to create a profile file, you can use a text editor such as `vim` or `nano`. Here's an example of how to create a profile file called `.zprofile` in the `Home` directory using `nvim`:
 
-   - Open your terminal.
-   - Navigate to your home directory by typing: `cd ~`.
-   - Use a text editor of your choice to create the `~/.zprofile` file. For example, you can use neovim by typing: `nvim ~/.zprofile`.
+1. Create a new file called `.zprofile` in your home directory:
 
-2. **Define alias in `~/.zprofile`:**
+   ```shell
+   touch ~/.zprofile
+   ```
 
-   - Inside the `~/.zprofile` file, you can define aliases using the following syntax:
+2. Add the profile file as source in your `~/.zshrc` file by adding the following line to the end of the file:
 
-     ```shell
-     alias alias_name='command_to_execute'
-     ```
+   ```shell
+   source ~/.zprofile
+   ```
 
-     Replace `alias_name` with the name you want to give to your alias, and `command_to_execute` with the command you want the alias to execute.
+3. Now you can open your file in `nvim` editor and start adding features or personal customizations to your ZSH (You can find some recommended options bellow)
 
-   - For example, you can add the following aliases to the `~/.zprofile`:
-
-     - Replace `ls` command with `exa` command:
-
-       ```shell
-       alias ls='eza --icons --group-directories-first -G --no-quotes'
-       alias ll='eza --icons --group-directories-first -lG --no-quotes'
-       alias lt='eza --icons --group-directories-first --no-quotes -RTL'
-       ```
-
-     - Replace `cat` command with `bat` command:
-
-       ```shell
-       alias cat='bat'
-       ```
-
-     - Create a new alias for `yt-dlp` command:
-
-       ```shell
-       alias ytdl='yt-dlp'
-       ```
-
-     - Create a new alias for `spotdl` command:
-
-       ```shell
-       alias spdl='spotdl'
-       ```
-
-3. **Save and exit the `~/.zprofile` file:**
-
-   - If you're using nvim, you can save and exit the file by pressing `Esc`, then type `:wq` and press `Enter` to confirm saving and exit.
-
-4. **Add `~/.zprofile` to `~/.zshrc`:**
-
-   - Open your `~/.zshrc` file in a text editor. You can do this by typing: `nvim ~/.zshrc`.
-   - Add the following line at the end of the file to ensure that your `~/.zprofile` file is sourced when you start a new shell session:
-
-     ```shell
-     source ~/.zprofile
-     ```
-
-   - Save and exit the `~/.zshrc` file.
-
-5. **Apply changes:**
-
-   - After saving both `~/.zprofile` and `~/.zshrc` files, you can either restart your terminal or source your `~/.zshrc` file to apply the changes immediately:
-
-     ```shell
-     source ~/.zshrc
-     ```
-
-Now your alias defined in `~/.zprofile` will be available every time you start a new shell session, and it will be automatically loaded from your `~/.zshrc` file.
+   ```shell
+   nvim ~/.zprofile
+   ```
 
 ### ZSH History Configuration
 
-To optimize Zsh history management, add the following configuration to your `~/.zshrc` file:
+To optimize Zsh history management, add the following configuration to your `~/.zprofile` file:
 
 ```shell
 # History
-HISTSIZE=5000
-HISTFILE=~/.zsh_history
-SAVEHIST=$HISTSIZE
-HISTDUP=erase
+export HISTSIZE=5000
+export HISTFILE=~/.zsh_history
+export SAVEHIST=$HISTSIZE
+export HISTDUP=erase
 setopt appendhistory        # Append commands to history file, not overwrite
 setopt hist_ignore_space    # Ignore commands starting with a space
 setopt hist_ignore_all_dups # Remove all duplicates in history
@@ -807,7 +763,93 @@ setopt hist_save_no_dups    # Avoid saving duplicate entries
 setopt hist_ignore_dups     # Ignore duplicates in the current session
 ```
 
-After saving the file, reload the Zsh configuration:
+### Default Editors
+
+In order to set the default editor for your ZSH you can add the folowing lines to your `~/.zprofile` file:
+
+```shell
+# Default Editors
+export EDITOR=nvim
+export VISUAL=nvim
+```
+
+### Custom Aliases
+
+Custom aliases will help you to save time and increase your productivity when using the command line.
+
+Here is the syntax for defining an alias in Zsh:
+
+```shell
+alias alias_name='command_to_execute'
+```
+
+#### Recommended Aliases
+
+Here are some examples of custom aliases you can define in your `~/.zprofile` file:
+
+- Replace `ls` command with `eza` command:
+
+  ```shell
+  alias ls='eza --icons --group-directories-first -G --no-quotes'
+  alias ll='eza --icons --group-directories-first -lG --no-quotes'
+  alias lt='eza --icons --group-directories-first --no-quotes -RTL'
+  ```
+
+- Replace `cat` command with `bat` command:
+
+  ```shell
+  alias cat='bat'
+  ```
+
+- Replace `vim` command with `nvim` command:
+
+  ```shell
+  alias vim='nvim'
+  ```
+
+- Replace `cp` command with interactive version:
+
+  ```shell
+  alias cp='cp -i'
+  ```
+
+- Peplace `mv` command with interactive version:
+
+  ```shell
+  alias mv='mv -i'
+  ```
+
+- Replace `mkdir` command with `mkdir -p` command:
+
+  ```shell
+  alias mkdir='mkdir -p'
+  ```
+
+- Create a new alias for `yt-dlp` command:
+
+  ```shell
+  alias ytdl='yt-dlp'
+  ```
+
+- Create a new alias for `spotdl` command:
+
+  ```shell
+  alias spdl='spotdl'
+  ```
+
+- Create a new alias for `clear` command:
+
+  ```shell
+  alias cls='clear'
+  ```
+
+Save and exit the `~/.zprofile` file:
+
+If you're using nvim, you can save and exit the file by pressing `Esc`, then type `:wq` and press `Enter` to confirm saving and exit.
+
+#### Apply changes
+
+After saving `~/.zprofile`, you can either restart your terminal or source your `~/.zshrc` file to apply the changes immediately:
 
 ```shell
 source ~/.zshrc
@@ -1553,6 +1595,14 @@ FastFetch is a command-line tool that displays system information in a visually 
 
 ```shell
 sudo pacman -S fastfetch
+```
+
+### Running FastFetch on Terminal Startup
+
+To run FastFetch automatically when openng new terminal, add the following line to your `~/.bashrc` or `~/.zshrc` file:
+
+```shell
+if [ -f /usr/bin/fastfetch ]; then fastfetch; fi
 ```
 
 ## Installing Google Chrome
