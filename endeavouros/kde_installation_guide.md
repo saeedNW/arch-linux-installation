@@ -23,6 +23,7 @@ Let's dive into the installation process and unleash the power of EndeavourOS on
 	- [Grant "wheel" Group Members "sudo" Privileges](#grant-wheel-group-members-sudo-privileges)
 		- [Edit sudoers File](#edit-sudoers-file)
 	- [Install Paru Package Manager](#install-paru-package-manager)
+	- [Install Paruz – A Lightweight Wrapper and Enhancer for Paru](#install-paruz--a-lightweight-wrapper-and-enhancer-for-paru)
 	- [Install Nvidia Drivers (if needed)](#install-nvidia-drivers-if-needed)
 	- [Install AMD Drivers (if needed)](#install-amd-drivers-if-needed)
 	- [Install Optimus Manager for Nvidia GPUs](#install-optimus-manager-for-nvidia-gpus)
@@ -212,6 +213,16 @@ Paru is an AUR helper and pacman wrapper that allows you to install packages fro
    ```
 
 After successfully building the package, Paru will be installed on your system.
+
+## Install Paruz – A Lightweight Wrapper and Enhancer for Paru
+
+Paruz is a TUI (Text User Interface) wrapper for the Paru AUR helper. It provides a more user-friendly interface for managing AUR and system packages using Paru under the hood.
+
+Once Paru is installed, you can install Paruz directly from the AUR:
+
+```shell
+paru -S paruz
+```
 
 ## Install Nvidia Drivers (if needed)
 
