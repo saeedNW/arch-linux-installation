@@ -12,7 +12,7 @@ fastfetch --config hyde/*.jsonc
 		"source": "arch",
 		"color": {
 			"1": "black",
-			"2": "cyan"
+			"2": "black"
 		}
 	},
 	"display": {

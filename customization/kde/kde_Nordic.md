@@ -55,27 +55,35 @@ Enhancing your desktop experience involves enabling additional effects that can 
 
 **Steps to Enable Additional Desktop Effects:**
 
-1. **Enable "Sheet":**
+1. **Enable "Blur":**
+
+   - Navigate to System Settings > Windows Management > Desktop Effects.
+   - Check the box next to "Blur" to activate the effect, adding a subtle blur effect to enhance visual clarity.
+   - Adjust the "Blur Radius" to customize the intensity of the blur effect.
+     - Set the "Blur strength" to level 4
+     - Set the "Noise strength" to level 0
+
+2. **Enable "Sheet":**
 
    - Navigate to System Settings > Windows Management > Desktop Effects.
    - Check the box next to "Sheet" to activate the effect, enhancing window animations for a smooth and elegant appearance.
 
-2. **Enable "Dim Inactive":**
+3. **Enable "Dim Inactive":**
 
    - Navigate to System Settings > Windows Management > Desktop Effects.
    - Check the box next to "Dim Inactive" to visually distinguish between active and inactive windows, improving focus and productivity.
 
-3. **Enable "Dim Screen for Administrator Mode":**
+4. **Enable "Dim Screen for Administrator Mode":**
 
    - Navigate to System Settings > Windows Management > Desktop Effects.
    - Check the box next to "Dim Screen for Administrator Mode" to dim the screen when entering administrator mode, signaling a change in system permissions.
 
-4. **Enable "Slide Back":**
+5. **Enable "Slide Back":**
 
    - Navigate to System Settings > Windows Management > Desktop Effects.
    - Check the box next to "Slide Back" to add a smooth sliding animation when switching between desktops or virtual workspaces, enhancing navigation fluidity.
 
-5. **Enable "Rounded Corners":**
+6. **Enable "Rounded Corners":**
 
    - This effect is not included by default and needs to be installed separately.
    - Install it from **KDE Store** or use your package manager if available.
@@ -83,29 +91,29 @@ Enhancing your desktop experience involves enabling additional effects that can 
    - Search for "Rounded Corners" and enable it.
    - Open its configuration menu and disable primary and secondary outlines
 
-6. **Enable "Maximize":**
+7. **Enable "Maximize":**
 
    - Navigate to System Settings > Windows Management > Desktop Effects.
    - Check the box next to "Maximize" to enable a smooth animation when maximizing and restoring windows, making transitions more visually appealing.
 
-7. **Enable "Mouse Mark":**
+8. **Enable "Mouse Mark":**
 
    - Navigate to System Settings > Windows Management > Desktop Effects.
    - Check the box next to "Mouse Mark" to enable drawing temporary marks on the screen using the mouse, useful for presentations or highlighting content.
    - Configure shortcut keys if needed for quick activation.
 
-8. **Enable "Magic Lamp":**
+9. **Enable "Magic Lamp":**
 
    - Navigate to System Settings > Windows Management > Desktop Effects.
    - Check the box next to "Magic Lamp" to activate a genie-like animation when minimizing windows, adding a stylish visual effect.
    - Click the settings icon next to it and set the animation duration to **400 ms** for an optimal balance between speed and smoothness.
 
-9. **Enable "Geometry Change by Ftpr":**
+10. **Enable "Geometry Change by Ftpr":**
 
-   - This effect is not included by default and needs to be installed separately.
-   - Install it from **KDE Store** or use your package manager if available.
-   - Navigate to System Settings > Windows Management > Desktop Effects.
-   - Check the box next to "Geometry Change by Ftpr" to enable smooth animations when resizing or moving windows, improving the visual experience.
+    - This effect is not included by default and needs to be installed separately.
+    - Install it from **KDE Store** or use your package manager if available.
+    - Navigate to System Settings > Windows Management > Desktop Effects.
+    - Check the box next to "Geometry Change by Ftpr" to enable smooth animations when resizing or moving windows, improving the visual experience.
 
 ## Customize Desktop Layout
 
