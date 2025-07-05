@@ -1,10 +1,15 @@
 # KDE Plasma Nordic Customization
 
-This section provides guidance on customizing KDE Plasma desktop environments, drawing inspiration from a tutorial on the [LinuxScoop](https://www.youtube.com/@linuxscoop) YouTube channel. The original video can be found [here](https://www.youtube.com/watch?list=PLKopOf5__2tj0aVUX68Kyr9rNltrLTWDq&v=2GYT7BK41zk&feature=youtu.be).
+This section offers step-by-step guidance for customizing the KDE Plasma desktop environment, inspired by tutorials featured on the [LinuxScoop YouTube channel](https://www.youtube.com/@linuxscoop). The customization techniques are based on two key videos:
+
+- [KDE Plasma Desktop Nord Color Palette](https://www.youtube.com/watch?list=PLKopOf5__2tj0aVUX68Kyr9rNltrLTWDq&v=2GYT7BK41zk&feature=youtu.be)
+- [How to Make KDE Plasma 6 Elegant and Professional](https://www.youtube.com/watch?v=N-Hvrlxn1aU)
+
+These resources demonstrate how to create a visually appealing and professional-looking KDE setup using themes, widgets, and layout adjustments.
 
 ## Notice of Obsolescence for the Original Video
 
-Due to significant changes in **Plasma 6**, some plugins, software, and modules featured in the original video are no longer compatible or installable. As a result, I have made several adjustments to this guide to achieve a sleek and visually appealing Nordic look for KDE Plasma 6.
+Due to significant changes in **Plasma 6**, some plugins, software, and modules featured in the **KDE Plasma Desktop Nord Color Palette** video are no longer compatible or installable. As a result, I have made several adjustments to this guide to achieve a sleek and visually appealing Nordic look for KDE Plasma 6.
 
 ## Table of Contents
 
@@ -28,9 +33,9 @@ Due to significant changes in **Plasma 6**, some plugins, software, and modules 
 		- [Logout and Login](#logout-and-login)
 	- [Desktop \& panels Configuration](#desktop--panels-configuration)
 		- [Installing and Configuring Widgets](#installing-and-configuring-widgets)
-		- [Bottom Panel](#bottom-panel)
-		- [Side Panel](#side-panel)
-		- [Top Panel](#top-panel)
+		- [Bottom Center Panel](#bottom-center-panel)
+		- [Bottom Right Panel](#bottom-right-panel)
+		- [Bottom Left Panel](#bottom-left-panel)
 		- [Desktop](#desktop)
 	- [Konsole Customization](#konsole-customization)
 	- [FastFetch Custom Config](#fastfetch-custom-config)
@@ -41,9 +46,11 @@ Due to significant changes in **Plasma 6**, some plugins, software, and modules 
 
 ## Final Result
 
-![Neo fetch](./Images/20240210174610.png)
+![Desktop](./Images/20240210174609.png)
 
-![Desktop](./Images/20240210175138.png)
+![Fast Fetch](./Images/20240210174610.png)
+
+![Control Panel](./Images/20240210175138.png)
 
 ![Albert Application Launcher](./Images/20240210180001.png)
 
@@ -193,25 +200,11 @@ To set up the Nordic theme, navigate to the **Global Theme** settings in your sy
 
 One of the essential files we need is the `Kvantum` application style from **eliverlara's Nordic Darker theme**. Unfortunately, this application style is not included with the theme's installation. To obtain it, we need to download the theme's source code from **[eliverlara's GitHub](https://github.com/EliverLara/Nordic)**, which contains the Kvantum application style files.
 
-Since we’ll be using a custom icon set instead of the icons included with the Nordic theme, remove all Nordic icon packs from **System Settings > Colors & Themes > Icons**.
+**2 - Nordic Icons Theme**:
 
-**2 - Nordic Folders Theme**:
+Download the **Colloid icon theme** from its [Github Repo](https://github.com/vinceliuice/Colloid-icon-theme) and install the nordic gray them using the following command:
 
-Recent updates to the original source of this theme have introduced changes that make it incompatible with our configuration. To address this, we have provided the latest compatible version of the theme that works seamlessly with this setup.
-
-[Download](./files/Nordic-Folders.tar.xz)
-
-**3 - Nordic Folders Icon Pack**:
-
-This icon pack is no longer maintained, and its GitHub repository has either been removed or made private. To ensure compatibility, we have provided the latest available version of the icon pack for use.
-
-[Download](./files/Nordic-Folders-icon-pack.tar.gz)
-
-**4 - Zafiro Icons Dark Black Icon Pack**:
-
-Recent updates to the original source of this theme have introduced changes that make it incompatible with our configuration. To address this, we have provided the latest compatible version of the theme that works seamlessly with this setup.
-
-[Download](./files/Zafiro-Icons-Dark-Black-f.tar.xz)
+    ./install.sh -s nord -t grey
 
 ### Setting Up Directories and Moving Files
 
@@ -224,27 +217,6 @@ Open a terminal window in the same directory as the extracted files.
 **2. Install kvantum**:
 
     sudo pacman -S kvantum
-
-**3 - Move Zafiro Icons Dark Black to the icons directory**:
-
-    cp -r ./Zafiro-Icons-Dark-Black-f ~/.local/share/icons
-
-**4 - Move Nordic Darker to the icons directory**:
-
-    cp -r ./Nordic-Darker ~/.local/share/icons
-
-**5 - Move Nordic Darker to the icons directory and rename it to Nordic**:
-
-    cp -r Nordic-Folders/Nordic-Darker ~/.local/share/icons/Nordic
-
-**6 - Edit the index.theme file for the Nordic icon theme**:
-
-    code ~/.local/share/icons/Nordic/index.theme
-
-- In the `index.theme` file, make the following changes:
-  - Change the `Name` to `Nordic`.
-  - Change `Inherits`, `Papirus-Dark` option to the folder name of the copied `Nordic-Darker` theme.
-  - Change `Inherits`, `zafiro` option to the folder name of the copied `Zafiro-Icons-Dark-Black-f` theme.
 
 By following these steps, you'll successfully organize and move the necessary files to their respective locations for theme configuration.
 
@@ -299,7 +271,7 @@ Follow these steps to apply the Nordic theme and its variants:
 **Step 8 - Icons**:
 
 - Navigate to System Settings > Colors & Themes > Icons.
-- Activate the `Nordic` icon theme for uniform icon styling.
+- Activate the `Colloid-Grey-Nord_Dark` icon theme for uniform icon styling.
 
 **Step 9 - Cursors**:
 
@@ -346,97 +318,70 @@ Follow these steps to apply the Nordic theme and its variants:
 - Right click on desktop and `Enter Edit mode`
 - Click on `Add or Manage Widgets ...`
 - Search and install the widgets linked bellow
-  - [Window Title Applet 6](https://store.kde.org/p/2129423)
+  - [Andromeda Launcher](https://store.kde.org/p/2144212)
   - [KDE Modern Clock](https://store.kde.org/p/2135653)
-  - [Desktop Indicator](https://store.kde.org/p/2131462)
+  - [Ginti - Gnome Style Desktop Indicator](https://www.pling.com/p/2146553)
   - [Spectrum audio Emulator](https://store.kde.org/p/2201084)
-  - [KDE Control Station](https://www.pling.com/p/2196105/)
+  - [KDE Control Station](https://www.pling.com/p/2196105)
+  - [plasmusic toolbar](https://store.kde.org/p/2088872)
 
-### Bottom Panel
+### Bottom Center Panel
 
 - Right click on desktop and `Enter Edit mode`
 - Click on the bottom panel and remove all widgets except `Icons-Only Task Manager`
 - Change panel's width to `Fit content`
 - Change panel's visibility to `Dodge windows`
-- Change panel's Alignment to `Right`
-- Change panel's hight to `50`
-- Add `Desktop Indicator` widget to the right side of the panel
-- Add `Folder View` widget next to the Desktop Indicator
-- Use `Separator` widget to separate panel parts from each other
+- Change panel's Alignment to `Center`
+- Change panel's hight to `49`
+- Add `Andromeda Launcher` widget To the far left side of the panel
+  - Change the icon to the Icon of your choice
+  - Set the `Launcher Positioning` to `Horizontal Center`
+  - Enable `Floating`
+  - Enable `Use system font setting`
+- Pin your most used apps to the panel
 
-### Side Panel
+### Bottom Right Panel
 
 - Right click on desktop and `Enter Edit mode`
-- Add an empty panel to the right side of the screen
+- Add an empty panel to the bottom right side of the screen
   - Change panel's width to `Fit content`
-  - Change panel's visibility to `Auto hide`
-  - Change panel's hight to `300`
+  - Change panel's visibility to `Dodge windows`
+  - Change panel's hight to `49`
 - Click on the `Add widget` bottom
-- Add the following widgets to the panel (From top to bottom)
-  - Panel Spacer
-    - click on panel to start the panel edit process
-    - hover over Spacer and uncheck `Flexible size`
-    - set the panel's size to `20`
-  - Disk Usage
-  - Panel Spacer
-    - set the panel's size to `20`
-  - Total CPU Use
-    - Change display style to `Line Chart`
-    - Change Opacity of the area below line to `50`
-  - Panel Spacer
-    - set the panel's size to `20`
-  - Memory Usage
-    - Change display style to `Line Chart`
-    - Change Opacity of the area below line to `50`
-  - Panel Spacer
-    - set the panel's size to `20`
-  - Network Speed
-    - Change display style to `Line Chart`
-    - Change Opacity of the area below line to `50`
-  - Panel Spacer
-    - set the panel's size to `20`
+- Add the following widgets to the panel (From Right to left)
+  - Notifications
+  - Modern Clock
+    - Disable Date
+    - Disable Day
+    - Empty `Style Character`
+  - keyboard layout
+  - System Tray
 
-### Top Panel
+### Bottom Left Panel
 
 - Right click on desktop and `Enter Edit mode`
-- Add an empty panel to the top of the screen
-  - Change panel's visibility to `Auto Hide`
-  - Change panel's hight to `32`
+- Add an empty panel to the bottom left side of the screen
+  - Change panel's width to `Fit content`
+  - Change panel's visibility to `Dodge windows`
+  - Change panel's hight to `49`
 - Click on the `Add widget` bottom
-- Add the following widgets to the panel (From right to left)
-  - Application luncher
-    - Right click on the widget and chose `Show Alternatives...`
-      - Choose `Application Dashboard`
-    - Right click on the widget and chose `Configure Application Dashboard...`
-      - Uncheck all options in general tab and apply
-      - Change the icon to `circle` ond click `OK`
-  - Window Title
-    - Right click on the widget and chose `Configure Window Title...`
-    - In Appearance tab
-      - change the text for when the title is available to `%a`
-      - Uncheck icon's visibility
-      - Change the space before icon to `10`
-    - In Behavior tab uncheck all select boxes and apply and OK
-  - Panel Spacer
-    - click on panel to start the panel edit process
-    - hover over Spacer and uncheck `Flexible size`
-    - set the panel's size to `10`
-  - Global Menu
-  - Panel Spacer
-  - Digital clock
-  - Panel Spacer
-  - System Tray
-  - Panel Spacer
-    - set the panel's size to `10`
-  - keyboard layout
-  - Panel Spacer
-    - set the panel's size to `10`
+- Add the following widgets to the panel (From left to right)
   - KDE Control Station
-    - Open its configuration menu and change Icon and Items to your preference
-    - Remove duplicated items that are in the control station from System Tray
-  - Panel Spacer
-    - set the panel's size to `10`
-  - Notifications
+    - Change the layout to `Control Center`
+    - Enable `Animations`
+    - Enable `Show boarders around components`
+    - In the `Show quick toggle buttons` section enable
+      - Color Scheme Switcher
+      - Screenshot Button
+    - Disable `Brightness Control`
+    - Change `Volume Control` to `Thin slider`
+  - plasmusic toolbar
+    - In the `Panel View` section disable
+      - Show skip backward control
+      - Show play/pause control
+      - Show skip forward control
+  - Ginti - Gnome Style Desktop Indicator
+    - Change the `Spacing radius` to the desired value
 
 ### Desktop
 
