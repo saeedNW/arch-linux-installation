@@ -5,112 +5,116 @@ In this guide, I'll walk you through the installation process of essential appli
 ## Table of Contents
 
 - [Essential Applications Guide](#essential-applications-guide)
-	- [Table of Contents](#table-of-contents)
-	- [Installing bat](#installing-bat)
-	- [Installing eza](#installing-eza)
-	- [Installing duf](#installing-duf)
-	- [Installing gdu](#installing-gdu)
-	- [Installing yt-dlp](#installing-yt-dlp)
-	- [Installing python-spotdl](#installing-python-spotdl)
-	- [Installing Neovim](#installing-neovim)
-		- [Setting Up Neovim Configuration](#setting-up-neovim-configuration)
-		- [Add Neovim core configs](#add-neovim-core-configs)
-		- [Add Neovim Custom keybinding](#add-neovim-custom-keybinding)
-		- [Add Neovim Lazy Plugin Manager](#add-neovim-lazy-plugin-manager)
-		- [Install Neovim Plugins](#install-neovim-plugins)
-			- [nord.nvim Theme](#nordnvim-theme)
-			- [Neo-tree](#neo-tree)
-			- [bufferline](#bufferline)
-			- [lualine](#lualine)
-			- [treesitter](#treesitter)
-			- [telescope](#telescope)
-			- [lsp](#lsp)
-			- [autocompletion](#autocompletion)
-			- [alpha](#alpha)
-			- [indent-blankline](#indent-blankline)
-			- [gitsigns](#gitsigns)
-			- [misc](#misc)
-	- [Installing Zsh](#installing-zsh)
-		- [Installing Oh My Zsh](#installing-oh-my-zsh)
-			- [Installing Zsh Plugins](#installing-zsh-plugins)
-				- [zsh-autosuggestions](#zsh-autosuggestions)
-				- [zsh-syntax-highlighting](#zsh-syntax-highlighting)
-				- [zsh-completions](#zsh-completions)
-				- [Enabling Plugins](#enabling-plugins)
-		- [ZSH profile file](#zsh-profile-file)
-		- [ZSH History Configuration](#zsh-history-configuration)
-		- [Default Editors](#default-editors)
-		- [Custom Aliases](#custom-aliases)
-			- [Recommended Aliases](#recommended-aliases)
-			- [Apply changes](#apply-changes)
-	- [Installing direnv](#installing-direnv)
-		- [Setup](#setup)
-		- [Quick demo](#quick-demo)
-		- [Key Notes](#key-notes)
-	- [Installing Git](#installing-git)
-		- [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
-	- [sshuttle VPN](#sshuttle-vpn)
-	- [Installing Mission Center](#installing-mission-center)
-	- [Installing LibreOffice](#installing-libreoffice)
-	- [Installing GIMP](#installing-gimp)
-		- [Change Gimp's Look](#change-gimps-look)
-	- [Installing VLC Media Player](#installing-vlc-media-player)
-		- [Change VLC's Look](#change-vlcs-look)
-	- [Installing qBittorrent](#installing-qbittorrent)
-		- [Change qBittorrent's Look](#change-qbittorrents-look)
-	- [Installing OBS Studio](#installing-obs-studio)
-	- [Video Editor](#video-editor)
-		- [Installing Kdenlive](#installing-kdenlive)
-		- [Installing DaVinci Resolve](#installing-davinci-resolve)
-	- [Installing Discord](#installing-discord)
-	- [Installing Telegram Desktop](#installing-telegram-desktop)
-	- [Installing lazygit](#installing-lazygit)
-	- [Installing Docker](#installing-docker)
-		- [Installing Docker Compose](#installing-docker-compose)
-	- [Installing Portainer](#installing-portainer)
-	- [Installing RabbitMQ](#installing-rabbitmq)
-	- [Installing Zookeeper and Kafka](#installing-zookeeper-and-kafka)
-		- [Installing Zookeeper](#installing-zookeeper)
-		- [Installing Kafka](#installing-kafka)
-	- [Installing Redis](#installing-redis)
-		- [Option 1: Install via Pacman](#option-1-install-via-pacman)
-		- [Option 2: Run via Docker](#option-2-run-via-docker)
-	- [Installing RedisInsight](#installing-redisinsight)
-	- [Installing MongoDB](#installing-mongodb)
-		- [Option 1: Install via AUR (`mongodb-bin`)](#option-1-install-via-aur-mongodb-bin)
-		- [Option 2: Run MongoDB via Docker](#option-2-run-mongodb-via-docker)
-	- [Installing MongoDB Compass](#installing-mongodb-compass)
-	- [MySQL and phpMyAdmin](#mysql-and-phpmyadmin)
-	- [Installing Elasticsearch and Kibana](#installing-elasticsearch-and-kibana)
-	- [installing PostgreSQL and pgAdmin](#installing-postgresql-and-pgadmin)
-	- [Installing FastFetch](#installing-fastfetch)
-		- [Running FastFetch on Terminal Startup](#running-fastfetch-on-terminal-startup)
-	- [Installing Google Chrome](#installing-google-chrome)
-	- [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
-		- [Recommended Plugins](#recommended-plugins)
-		- [Theme](#theme)
-		- [Recommended Settings](#recommended-settings)
-		- [VSCode Custom CSS \& JS](#vscode-custom-css--js)
-			- [Steps to Enable Custom CSS \& JS in VS Code](#steps-to-enable-custom-css--js-in-vs-code)
-			- [Example Files](#example-files)
-		- [Custom Shortcuts](#custom-shortcuts)
-	- [Installing Postman](#installing-postman)
-	- [Installing Amberol Music Player](#installing-amberol-music-player)
-	- [Image Viewer](#image-viewer)
-		- [Installing qview (Recomended)](#installing-qview-recomended)
-		- [Installing Loupe](#installing-loupe)
-		- [Installing nomacs](#installing-nomacs)
-	- [Installing GNOME Boxes](#installing-gnome-boxes)
-	- [Installing Blanket](#installing-blanket)
-	- [Installing HandBrake](#installing-handbrake)
-	- [Installing Albert Application Launcher](#installing-albert-application-launcher)
-		- [Albert Recommended Configs](#albert-recommended-configs)
-	- [Installing Rclone \& Rclone Browser](#installing-rclone--rclone-browser)
-	- [Installing AnyDesk](#installing-anydesk)
-	- [Installing Droidcam](#installing-droidcam)
-	- [Install Spot Player](#install-spot-player)
-	- [Installing Flatpak](#installing-flatpak)
-	- [Setting Up Timeshift for System Snapshots](#setting-up-timeshift-for-system-snapshots)
+  - [Table of Contents](#table-of-contents)
+  - [Installing bat](#installing-bat)
+  - [Installing eza](#installing-eza)
+  - [Installing duf](#installing-duf)
+  - [Installing gdu](#installing-gdu)
+  - [Installing yt-dlp](#installing-yt-dlp)
+  - [Installing python-spotdl](#installing-python-spotdl)
+  - [Installing Neovim](#installing-neovim)
+    - [Setting Up Neovim Configuration](#setting-up-neovim-configuration)
+    - [Add Neovim core configs](#add-neovim-core-configs)
+    - [Add Neovim Custom keybinding](#add-neovim-custom-keybinding)
+    - [Add Neovim Lazy Plugin Manager](#add-neovim-lazy-plugin-manager)
+    - [Install Neovim Plugins](#install-neovim-plugins)
+      - [nord.nvim Theme](#nordnvim-theme)
+      - [Neo-tree](#neo-tree)
+      - [bufferline](#bufferline)
+      - [lualine](#lualine)
+      - [treesitter](#treesitter)
+      - [telescope](#telescope)
+      - [lsp](#lsp)
+      - [autocompletion](#autocompletion)
+      - [alpha](#alpha)
+      - [indent-blankline](#indent-blankline)
+      - [gitsigns](#gitsigns)
+      - [misc](#misc)
+  - [Installing Zsh](#installing-zsh)
+    - [Installing Oh My Zsh](#installing-oh-my-zsh)
+      - [Installing Zsh Plugins](#installing-zsh-plugins)
+        - [zsh-autosuggestions](#zsh-autosuggestions)
+        - [zsh-syntax-highlighting](#zsh-syntax-highlighting)
+        - [zsh-completions](#zsh-completions)
+        - [Enabling Plugins](#enabling-plugins)
+    - [ZSH profile file](#zsh-profile-file)
+    - [ZSH History Configuration](#zsh-history-configuration)
+    - [Default Editors](#default-editors)
+    - [Custom Aliases](#custom-aliases)
+      - [Recommended Aliases](#recommended-aliases)
+      - [Apply changes](#apply-changes)
+  - [Installing direnv](#installing-direnv)
+    - [Setup](#setup)
+    - [Quick demo](#quick-demo)
+    - [Key Notes](#key-notes)
+  - [Installing Git](#installing-git)
+    - [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
+  - [sshuttle VPN](#sshuttle-vpn)
+  - [Installing Mission Center](#installing-mission-center)
+  - [Installing LibreOffice](#installing-libreoffice)
+  - [Installing GIMP](#installing-gimp)
+    - [Change Gimp's Look](#change-gimps-look)
+  - [Installing VLC Media Player](#installing-vlc-media-player)
+    - [Change VLC's Look](#change-vlcs-look)
+  - [Installing qBittorrent](#installing-qbittorrent)
+    - [Change qBittorrent's Look](#change-qbittorrents-look)
+  - [Installing OBS Studio](#installing-obs-studio)
+  - [Video Editor](#video-editor)
+    - [Installing Kdenlive](#installing-kdenlive)
+    - [Installing DaVinci Resolve](#installing-davinci-resolve)
+  - [Installing Discord](#installing-discord)
+  - [Installing Telegram Desktop](#installing-telegram-desktop)
+  - [Installing lazygit](#installing-lazygit)
+  - [Installing Docker](#installing-docker)
+    - [Installing Docker Compose](#installing-docker-compose)
+  - [Installing Portainer](#installing-portainer)
+  - [Installing RabbitMQ](#installing-rabbitmq)
+  - [Installing Zookeeper and Kafka](#installing-zookeeper-and-kafka)
+    - [Installing Zookeeper](#installing-zookeeper)
+    - [Installing Kafka](#installing-kafka)
+  - [Installing Redis](#installing-redis)
+    - [Option 1: Install via Pacman](#option-1-install-via-pacman)
+    - [Option 2: Run via Docker](#option-2-run-via-docker)
+  - [Installing RedisInsight](#installing-redisinsight)
+  - [Installing MongoDB](#installing-mongodb)
+    - [Option 1: Install via AUR (`mongodb-bin`)](#option-1-install-via-aur-mongodb-bin)
+    - [Option 2: Run MongoDB via Docker](#option-2-run-mongodb-via-docker)
+  - [Installing MongoDB Compass](#installing-mongodb-compass)
+  - [MySQL and phpMyAdmin](#mysql-and-phpmyadmin)
+  - [Installing Elasticsearch and Kibana](#installing-elasticsearch-and-kibana)
+  - [Installing PostgreSQL and pgAdmin](#installing-postgresql-and-pgadmin)
+  - [Install and Config Nginx](#install-and-config-nginx)
+    - [1. Create the Nginx Configuration File](#1-create-the-nginx-configuration-file)
+    - [2. Add docker.net to /etc/hosts](#2-add-dockernet-to-etchosts)
+    - [3. Run Nginx with Docker](#3-run-nginx-with-docker)
+  - [Installing FastFetch](#installing-fastfetch)
+    - [Running FastFetch on Terminal Startup](#running-fastfetch-on-terminal-startup)
+  - [Installing Google Chrome](#installing-google-chrome)
+  - [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
+    - [Recommended Plugins](#recommended-plugins)
+    - [Theme](#theme)
+    - [Recommended Settings](#recommended-settings)
+    - [VSCode Custom CSS \& JS](#vscode-custom-css--js)
+      - [Steps to Enable Custom CSS \& JS in VS Code](#steps-to-enable-custom-css--js-in-vs-code)
+      - [Example Files](#example-files)
+    - [Custom Shortcuts](#custom-shortcuts)
+  - [Installing Postman](#installing-postman)
+  - [Installing Amberol Music Player](#installing-amberol-music-player)
+  - [Image Viewer](#image-viewer)
+    - [Installing qview (Recomended)](#installing-qview-recomended)
+    - [Installing Loupe](#installing-loupe)
+    - [Installing nomacs](#installing-nomacs)
+  - [Installing GNOME Boxes](#installing-gnome-boxes)
+  - [Installing Blanket](#installing-blanket)
+  - [Installing HandBrake](#installing-handbrake)
+  - [Installing Albert Application Launcher](#installing-albert-application-launcher)
+    - [Albert Recommended Configs](#albert-recommended-configs)
+  - [Installing Rclone \& Rclone Browser](#installing-rclone--rclone-browser)
+  - [Installing AnyDesk](#installing-anydesk)
+  - [Installing Droidcam](#installing-droidcam)
+  - [Install Spot Player](#install-spot-player)
+  - [Installing Flatpak](#installing-flatpak)
+  - [Setting Up Timeshift for System Snapshots](#setting-up-timeshift-for-system-snapshots)
 
 ## Installing bat
 
@@ -1395,7 +1399,7 @@ This command:
 - Enables append-only file persistence
 - Sets a password (`root`) for accessing Redis
 
-**Note:** If you don’t have `redis-cli` locally, you can run it inside the container:
+**Note:** If you don't have `redis-cli` locally, you can run it inside the container:
 
 ```shell
 docker exec -it redis redis-cli -a root
@@ -1555,7 +1559,7 @@ docker run -d \
     docker.elastic.co/kibana/kibana:8.16.0
 ```
 
-## installing PostgreSQL and pgAdmin
+## Installing PostgreSQL and pgAdmin
 
 PostgreSQL and pgAdmin are available in the Arch Repositories (Official/AUR). However, I personally prefer using Docker to install and run these packages.
 
@@ -1588,6 +1592,70 @@ docker run -d \
   -p 8081:80 \
   dpage/pgadmin4
 ```
+
+## Install and Config Nginx
+
+This section describes how to install and configure Nginx using Docker on Arch Linux. We will set up Nginx as a reverse proxy for Portainer, using a custom `nginx.conf` file, and ensure the necessary host configuration.
+
+### 1. Create the Nginx Configuration File
+
+Create the directory for the Nginx configuration if it does not already exist:
+
+```shell
+sudo mkdir -p /etc/nginx
+```
+
+Create the `nginx.conf` file at `/etc/nginx/nginx.conf` with the following content:
+
+```nginx
+# /etc/nginx/nginx.conf
+
+events {}
+
+http {
+    server {
+        listen 80;
+        server_name docker.net www.docker.net;
+
+        location / {
+            proxy_pass https://host.docker.internal:9443;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+        }
+    }
+}
+```
+
+### 2. Add docker.net to /etc/hosts
+
+Edit your `/etc/hosts` file to add the following line, so that `docker.net` resolves locally:
+
+```shell
+echo "127.0.0.1 docker.net www.docker.net" | sudo tee -a /etc/hosts
+```
+
+### 3. Run Nginx with Docker
+
+Run the following command to start Nginx in a Docker container, mounting your custom configuration:
+
+```shell
+docker run -d \
+  --name nginx \
+  --restart unless-stopped \
+  -p 80:80 \
+  -p 443:443 \
+  -v /etc/nginx/nginx.conf:/etc/nginx/nginx.conf \
+  --add-host host.docker.internal:host-gateway \
+  nginx:latest
+```
+
+- This command will run Nginx in detached mode, restart it unless stopped, and map ports 80 and 443 from the container to the host.
+- The `--add-host host.docker.internal:host-gateway` option allows the container to access services running on the host using the `host.docker.internal` hostname.
+- The custom `nginx.conf` is mounted into the container.
+
+---
 
 ## Installing FastFetch
 
