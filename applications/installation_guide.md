@@ -5,116 +5,121 @@ In this guide, I'll walk you through the installation process of essential appli
 ## Table of Contents
 
 - [Essential Applications Guide](#essential-applications-guide)
-  - [Table of Contents](#table-of-contents)
-  - [Installing bat](#installing-bat)
-  - [Installing eza](#installing-eza)
-  - [Installing duf](#installing-duf)
-  - [Installing gdu](#installing-gdu)
-  - [Installing yt-dlp](#installing-yt-dlp)
-  - [Installing python-spotdl](#installing-python-spotdl)
-  - [Installing Neovim](#installing-neovim)
-    - [Setting Up Neovim Configuration](#setting-up-neovim-configuration)
-    - [Add Neovim core configs](#add-neovim-core-configs)
-    - [Add Neovim Custom keybinding](#add-neovim-custom-keybinding)
-    - [Add Neovim Lazy Plugin Manager](#add-neovim-lazy-plugin-manager)
-    - [Install Neovim Plugins](#install-neovim-plugins)
-      - [nord.nvim Theme](#nordnvim-theme)
-      - [Neo-tree](#neo-tree)
-      - [bufferline](#bufferline)
-      - [lualine](#lualine)
-      - [treesitter](#treesitter)
-      - [telescope](#telescope)
-      - [lsp](#lsp)
-      - [autocompletion](#autocompletion)
-      - [alpha](#alpha)
-      - [indent-blankline](#indent-blankline)
-      - [gitsigns](#gitsigns)
-      - [misc](#misc)
-  - [Installing Zsh](#installing-zsh)
-    - [Installing Oh My Zsh](#installing-oh-my-zsh)
-      - [Installing Zsh Plugins](#installing-zsh-plugins)
-        - [zsh-autosuggestions](#zsh-autosuggestions)
-        - [zsh-syntax-highlighting](#zsh-syntax-highlighting)
-        - [zsh-completions](#zsh-completions)
-        - [Enabling Plugins](#enabling-plugins)
-    - [ZSH profile file](#zsh-profile-file)
-    - [ZSH History Configuration](#zsh-history-configuration)
-    - [Default Editors](#default-editors)
-    - [Custom Aliases](#custom-aliases)
-      - [Recommended Aliases](#recommended-aliases)
-      - [Apply changes](#apply-changes)
-  - [Installing direnv](#installing-direnv)
-    - [Setup](#setup)
-    - [Quick demo](#quick-demo)
-    - [Key Notes](#key-notes)
-  - [Installing Git](#installing-git)
-    - [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
-  - [sshuttle VPN](#sshuttle-vpn)
-  - [Installing Mission Center](#installing-mission-center)
-  - [Installing LibreOffice](#installing-libreoffice)
-  - [Installing GIMP](#installing-gimp)
-    - [Change Gimp's Look](#change-gimps-look)
-  - [Installing VLC Media Player](#installing-vlc-media-player)
-    - [Change VLC's Look](#change-vlcs-look)
-  - [Installing qBittorrent](#installing-qbittorrent)
-    - [Change qBittorrent's Look](#change-qbittorrents-look)
-  - [Installing OBS Studio](#installing-obs-studio)
-  - [Video Editor](#video-editor)
-    - [Installing Kdenlive](#installing-kdenlive)
-    - [Installing DaVinci Resolve](#installing-davinci-resolve)
-  - [Installing Discord](#installing-discord)
-  - [Installing Telegram Desktop](#installing-telegram-desktop)
-  - [Installing lazygit](#installing-lazygit)
-  - [Installing Docker](#installing-docker)
-    - [Installing Docker Compose](#installing-docker-compose)
-  - [Installing Portainer](#installing-portainer)
-  - [Installing RabbitMQ](#installing-rabbitmq)
-  - [Installing Zookeeper and Kafka](#installing-zookeeper-and-kafka)
-    - [Installing Zookeeper](#installing-zookeeper)
-    - [Installing Kafka](#installing-kafka)
-  - [Installing Redis](#installing-redis)
-    - [Option 1: Install via Pacman](#option-1-install-via-pacman)
-    - [Option 2: Run via Docker](#option-2-run-via-docker)
-  - [Installing RedisInsight](#installing-redisinsight)
-  - [Installing MongoDB](#installing-mongodb)
-    - [Option 1: Install via AUR (`mongodb-bin`)](#option-1-install-via-aur-mongodb-bin)
-    - [Option 2: Run MongoDB via Docker](#option-2-run-mongodb-via-docker)
-  - [Installing MongoDB Compass](#installing-mongodb-compass)
-  - [MySQL and phpMyAdmin](#mysql-and-phpmyadmin)
-  - [Installing Elasticsearch and Kibana](#installing-elasticsearch-and-kibana)
-  - [Installing PostgreSQL and pgAdmin](#installing-postgresql-and-pgadmin)
-  - [Install and Config Nginx](#install-and-config-nginx)
-    - [1. Create the Nginx Configuration File](#1-create-the-nginx-configuration-file)
-    - [2. Add docker.net to /etc/hosts](#2-add-dockernet-to-etchosts)
-    - [3. Run Nginx with Docker](#3-run-nginx-with-docker)
-  - [Installing FastFetch](#installing-fastfetch)
-    - [Running FastFetch on Terminal Startup](#running-fastfetch-on-terminal-startup)
-  - [Installing Google Chrome](#installing-google-chrome)
-  - [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
-    - [Recommended Plugins](#recommended-plugins)
-    - [Theme](#theme)
-    - [Recommended Settings](#recommended-settings)
-    - [VSCode Custom CSS \& JS](#vscode-custom-css--js)
-      - [Steps to Enable Custom CSS \& JS in VS Code](#steps-to-enable-custom-css--js-in-vs-code)
-      - [Example Files](#example-files)
-    - [Custom Shortcuts](#custom-shortcuts)
-  - [Installing Postman](#installing-postman)
-  - [Installing Amberol Music Player](#installing-amberol-music-player)
-  - [Image Viewer](#image-viewer)
-    - [Installing qview (Recomended)](#installing-qview-recomended)
-    - [Installing Loupe](#installing-loupe)
-    - [Installing nomacs](#installing-nomacs)
-  - [Installing GNOME Boxes](#installing-gnome-boxes)
-  - [Installing Blanket](#installing-blanket)
-  - [Installing HandBrake](#installing-handbrake)
-  - [Installing Albert Application Launcher](#installing-albert-application-launcher)
-    - [Albert Recommended Configs](#albert-recommended-configs)
-  - [Installing Rclone \& Rclone Browser](#installing-rclone--rclone-browser)
-  - [Installing AnyDesk](#installing-anydesk)
-  - [Installing Droidcam](#installing-droidcam)
-  - [Install Spot Player](#install-spot-player)
-  - [Installing Flatpak](#installing-flatpak)
-  - [Setting Up Timeshift for System Snapshots](#setting-up-timeshift-for-system-snapshots)
+	- [Table of Contents](#table-of-contents)
+	- [Installing bat](#installing-bat)
+	- [Installing eza](#installing-eza)
+	- [Installing duf](#installing-duf)
+	- [Installing gdu](#installing-gdu)
+	- [Installing yt-dlp](#installing-yt-dlp)
+	- [Installing python-spotdl](#installing-python-spotdl)
+	- [Installing Neovim](#installing-neovim)
+		- [Setting Up Neovim Configuration](#setting-up-neovim-configuration)
+		- [Add Neovim core configs](#add-neovim-core-configs)
+		- [Add Neovim Custom keybinding](#add-neovim-custom-keybinding)
+		- [Add Neovim Lazy Plugin Manager](#add-neovim-lazy-plugin-manager)
+		- [Install Neovim Plugins](#install-neovim-plugins)
+			- [nord.nvim Theme](#nordnvim-theme)
+			- [Neo-tree](#neo-tree)
+			- [bufferline](#bufferline)
+			- [lualine](#lualine)
+			- [treesitter](#treesitter)
+			- [telescope](#telescope)
+			- [lsp](#lsp)
+			- [autocompletion](#autocompletion)
+			- [alpha](#alpha)
+			- [indent-blankline](#indent-blankline)
+			- [gitsigns](#gitsigns)
+			- [misc](#misc)
+	- [Installing Zsh](#installing-zsh)
+		- [Installing Oh My Zsh](#installing-oh-my-zsh)
+			- [Installing Zsh Plugins](#installing-zsh-plugins)
+				- [zsh-autosuggestions](#zsh-autosuggestions)
+				- [zsh-syntax-highlighting](#zsh-syntax-highlighting)
+				- [zsh-completions](#zsh-completions)
+				- [Enabling Plugins](#enabling-plugins)
+		- [ZSH profile file](#zsh-profile-file)
+		- [ZSH History Configuration](#zsh-history-configuration)
+		- [Default Editors](#default-editors)
+		- [Custom Aliases](#custom-aliases)
+			- [Recommended Aliases](#recommended-aliases)
+			- [Apply changes](#apply-changes)
+	- [Installing direnv](#installing-direnv)
+		- [Setup](#setup)
+		- [Quick demo](#quick-demo)
+		- [Key Notes](#key-notes)
+	- [Installing Git](#installing-git)
+		- [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
+	- [sshuttle VPN](#sshuttle-vpn)
+	- [Installing Mission Center](#installing-mission-center)
+	- [Installing LibreOffice](#installing-libreoffice)
+	- [Installing GIMP](#installing-gimp)
+		- [Change Gimp's Look](#change-gimps-look)
+	- [Installing VLC Media Player](#installing-vlc-media-player)
+		- [Change VLC's Look](#change-vlcs-look)
+	- [Installing qBittorrent](#installing-qbittorrent)
+		- [Change qBittorrent's Look](#change-qbittorrents-look)
+	- [Installing OBS Studio](#installing-obs-studio)
+	- [Video Editor](#video-editor)
+		- [Installing Kdenlive](#installing-kdenlive)
+		- [Installing DaVinci Resolve](#installing-davinci-resolve)
+	- [Installing Discord](#installing-discord)
+	- [Installing Telegram Desktop](#installing-telegram-desktop)
+	- [Installing lazygit](#installing-lazygit)
+	- [Installing Docker](#installing-docker)
+		- [Installing Docker Compose](#installing-docker-compose)
+	- [Installing Portainer](#installing-portainer)
+	- [Installing RabbitMQ](#installing-rabbitmq)
+	- [Installing Zookeeper and Kafka](#installing-zookeeper-and-kafka)
+		- [Installing Zookeeper](#installing-zookeeper)
+		- [Installing Kafka](#installing-kafka)
+	- [Installing Redis](#installing-redis)
+		- [Option 1: Install via Pacman](#option-1-install-via-pacman)
+		- [Option 2: Run via Docker](#option-2-run-via-docker)
+	- [Installing RedisInsight](#installing-redisinsight)
+	- [Installing MongoDB](#installing-mongodb)
+		- [Option 1: Install via AUR (`mongodb-bin`)](#option-1-install-via-aur-mongodb-bin)
+		- [Option 2: Run MongoDB via Docker](#option-2-run-mongodb-via-docker)
+	- [Installing MongoDB Compass](#installing-mongodb-compass)
+	- [MySQL and phpMyAdmin](#mysql-and-phpmyadmin)
+	- [Installing Elasticsearch and Kibana](#installing-elasticsearch-and-kibana)
+	- [Installing PostgreSQL and pgAdmin](#installing-postgresql-and-pgadmin)
+	- [Install and Config Nginx](#install-and-config-nginx)
+		- [1. Create the Nginx Configuration File](#1-create-the-nginx-configuration-file)
+		- [2. Add docker.net to /etc/hosts](#2-add-dockernet-to-etchosts)
+		- [3. Run Nginx with Docker](#3-run-nginx-with-docker)
+	- [Installing FastFetch](#installing-fastfetch)
+		- [Running FastFetch on Terminal Startup](#running-fastfetch-on-terminal-startup)
+	- [Installing Google Chrome](#installing-google-chrome)
+	- [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
+		- [Recommended Plugins (VSCode)](#recommended-plugins-vscode)
+		- [Theme (VSCode)](#theme-vscode)
+		- [Recommended Settings (VSCode)](#recommended-settings-vscode)
+		- [VSCode Custom CSS \& JS](#vscode-custom-css--js)
+			- [Steps to Enable Custom CSS \& JS in VS Code](#steps-to-enable-custom-css--js-in-vs-code)
+			- [Example Files](#example-files)
+		- [Custom Shortcuts (VSCode)](#custom-shortcuts-vscode)
+	- [Installing Cursor AI Editor](#installing-cursor-ai-editor)
+		- [Recommended Plugins (Cursor AI Editor)](#recommended-plugins-cursor-ai-editor)
+		- [Theme (Cursor AI Editor)](#theme-cursor-ai-editor)
+		- [Recommended Settings (Cursor AI Editor)](#recommended-settings-cursor-ai-editor)
+		- [Custom Shortcuts (Cursor AI Editor)](#custom-shortcuts-cursor-ai-editor)
+	- [Installing Postman](#installing-postman)
+	- [Installing Amberol Music Player](#installing-amberol-music-player)
+	- [Image Viewer](#image-viewer)
+		- [Installing qview (Recomended)](#installing-qview-recomended)
+		- [Installing Loupe](#installing-loupe)
+		- [Installing nomacs](#installing-nomacs)
+	- [Installing GNOME Boxes](#installing-gnome-boxes)
+	- [Installing Blanket](#installing-blanket)
+	- [Installing HandBrake](#installing-handbrake)
+	- [Installing Albert Application Launcher](#installing-albert-application-launcher)
+		- [Albert Recommended Configs](#albert-recommended-configs)
+	- [Installing Rclone \& Rclone Browser](#installing-rclone--rclone-browser)
+	- [Installing AnyDesk](#installing-anydesk)
+	- [Installing Droidcam](#installing-droidcam)
+	- [Install Spot Player](#install-spot-player)
+	- [Installing Flatpak](#installing-flatpak)
+	- [Setting Up Timeshift for System Snapshots](#setting-up-timeshift-for-system-snapshots)
 
 ## Installing bat
 
@@ -1683,6 +1688,8 @@ paru -S google-chrome
 
 ## Installing Visual Studio Code (VS Code)
 
+For installing the Cursor AI editor, see the [Cursor section](#installing-cursor-ai-editor).
+
 Visual Studio Code is a popular source-code editor developed by Microsoft. The `visual-studio-code-bin` package available on the Arch User Repository (AUR). Here's how to do it:
 
 ```shell
@@ -1695,25 +1702,23 @@ paru -S visual-studio-code-bin
 xdg-mime default org.gnome.Nautilus.desktop inode/directory
 ```
 
-### Recommended Plugins
+### Recommended Plugins (VSCode)
 
-| Plugin Name         | Plugin Name                                            | Plugin Name                    | Plugin Name                | Plugin Name               | Plugin Name                  |
-| ------------------- | ------------------------------------------------------ | ------------------------------ | -------------------------- | ------------------------- | ---------------------------- |
-| advanced-new-file   | Atom Material Icons                                    | Auto Rename Tag                | Auto-Open Markdown Preview | Bash Beautify             | Bash IDE                     |
-| better comments     | Code Spell Checker                                     | CodeSnap                       | Custom CSS and JS Loader   | EJS language support      | Error Lens                   |
-| ESLint              | Even Better TOML                                       | Explorer Exclude               | Git Graph                  | Git lens                  | GraphQL                      |
-| HTML CSS Support    | Ignore files                                           | JavaScript (ES6) code snippets | lazygit                    | Live Server               | lua                          |
-| Markdown All in One | Markdown Preview Github Styling                        | Markdown Table                 | Import Cost                | Markdown Table Prettifier | Markdownlint                 |
-| Nested Comments     | node-snippets                                          | Nord Theme                     | Test Adapter Converter     | Overtype                  | Persian - Code Spell Checker |
-| Prettier            | Prettify Json                                          | Pretty TypeScript Errors       | Proto Lint                 | Rainbow Brackets          | Select Line Status Bar       |
-| Todo Tree           | VSCode Animations                                      | Toggle Quotes                  | vscode-proto3              | Cody: AI Code Assistant   | Docker                       |
-| Docker DX           | inifmt - formatter for .ini files, plain text and more |                                |                            |                           |                              |
+| Plugin Name       | Plugin Name              | Plugin Name                     | Plugin Name                    | Plugin Name                  | Plugin Name                                            |
+| ----------------- | ------------------------ | ------------------------------- | ------------------------------ | ---------------------------- | ------------------------------------------------------ |
+| advanced-new-file | Atom Material Icons      | better comments                 | Code Spell Checker             | CodeSnap                     | Custom CSS and JS Loader                               |
+| Error Lens        | ESLint                   | Even Better TOML                | Explorer Exclude               | Git Graph                    | Git lens                                               |
+| GraphQL           | HTML CSS Support         | Ignore files                    | JavaScript (ES6) code snippets | lazygit                      | Live Server                                            |
+| lua               | Markdown All in One      | Markdown Preview Github Styling | Markdown Table                 | Import Cost                  | Markdown Table Prettifier                              |
+| Markdownlint      | Nested Comments          | node-snippets                   | Nord Theme                     | Persian - Code Spell Checker | Prettier                                               |
+| Prettify Json     | Pretty TypeScript Errors | Proto Lint                      | Rainbow Brackets               | Select Line Status Bar       | inifmt - formatter for .ini files, plain text and more |
+| Todo Tree         | VSCode Animations        | Toggle Quotes                   | vscode-proto3                  | Docker                       | Docker DX                                              |
 
-### Theme
+### Theme (VSCode)
 
 - Nord Theme
 
-### Recommended Settings
+### Recommended Settings (VSCode)
 
 ```json
 {
@@ -2107,7 +2112,7 @@ Here are example files inspired by Glenn Raya's video:
 
 By following these steps, you can transform VS Code's appearance beyond standard themes, giving it a unique and personalized look.
 
-### Custom Shortcuts
+### Custom Shortcuts (VSCode)
 
 ```json
 // Place your key bindings in this file to override the defaultsauto[]
@@ -2445,6 +2450,728 @@ By following these steps, you can transform VS Code's appearance beyond standard
 	{
 		"key": "ctrl+alt+s",
 		"command": "workbench.action.tasks.runTask"
+	}
+]
+```
+
+## Installing Cursor AI Editor
+
+Cursor AI Editor is an advanced, AI-powered code editor designed to boost productivity with intelligent code suggestions and modern development features. To install Cursor AI on Arch Linux from the Arch User Repository (AUR), use the following command:
+
+```shell
+paru -S cursor-bin
+```
+
+This command will install the latest version of Cursor AI Editor on your system. Once installed, you can launch Cursor from your application menu or by running `cursor` in the terminal.
+
+### Recommended Plugins (Cursor AI Editor)
+
+| Plugin Name       | Plugin Name              | Plugin Name                     | Plugin Name                    | Plugin Name                                                             | Plugin Name                                            |
+| ----------------- | ------------------------ | ------------------------------- | ------------------------------ | ----------------------------------------------------------------------- | ------------------------------------------------------ |
+| advanced-new-file | Atom Material Icons      | better comments                 | Code Spell Checker             | CodeSnap                                                                | inifmt - formatter for .ini files, plain text and more |
+| Error Lens        | ESLint                   | Even Better TOML                | Explorer Exclude               | Git Graph                                                               | Git lens                                               |
+| GraphQL           | HTML CSS Support         | Ignore files                    | JavaScript (ES6) code snippets | lazygit                                                                 | Live Server                                            |
+| lua               | Markdown All in One      | Markdown Preview Github Styling | Markdown Table                 | Import Cost                                                             | Markdown Table Prettifier                              |
+| Markdownlint      | Nested Comments          | node-snippets                   | Nord Theme                     | Persian - Code Spell Checker                                            | Prettier                                               |
+| Prettify Json     | Pretty TypeScript Errors | Proto Lint                      | Rainbow Brackets               | Select Line Status Bar                                                  | Todo Tree                                              |
+| Toggle Quotes     | vscode-proto3            | Docker                          | Docker DX                      | [Settings Sync](https://open-vsx.org/extension/Shan/code-settings-sync) |                                                        |
+
+### Theme (Cursor AI Editor)
+
+- Nord Theme
+
+### Recommended Settings (Cursor AI Editor)
+
+```json
+{
+	/**** START: General ***********/
+
+	// Disables the depreciation notice for the Rainbow Brackets extension.
+	"RainbowBrackets.depreciation-notice": false,
+
+	// Disables compact folders in the file explorer.
+	"explorer.compactFolders": false,
+
+	// Disables highlights for the "todo-tree" extension.
+	"todo-tree.highlights.enabled": false,
+
+	// Automatically opens untrusted files without a prompt.
+	"security.workspace.trust.untrustedFiles": "open",
+
+	// Enables error lens only for errors and warnings.
+	"errorLens.enabledDiagnosticLevels": ["error", "warning"],
+
+	// Ignores VS Code extension recommendations.
+	"extensions.ignoreRecommendations": true,
+
+	// Disables breadcrumbs navigation in the editor.
+	"breadcrumbs.enabled": false,
+
+	// Disable docker compose language server
+	"docker.extension.enableComposeLanguageServer": false,
+
+	// Disable cpp language server
+	// This allows the cursor tab to work with md and txt files
+	"cursor.cpp.disabledLanguages": [],
+
+	/*********** END: General ****/
+
+	/**** START: Files ***********/
+
+	// Removes trailing whitespace from files on save.
+	"files.trimTrailingWhitespace": true,
+
+	// Ensures a final newline is added at the end of each file.
+	"files.insertFinalNewline": true,
+
+	// Removes extra newlines at the end of files.
+	"files.trimFinalNewlines": true,
+
+	// Automatically saves files after a short delay.
+	"files.autoSave": "afterDelay",
+
+	// This setting controls which update channel Cursor uses.
+	// 'prerelease' means you will get early access to new features before they are released to everyone.
+	"update.releaseTrack": "prerelease",
+
+	/*********** END: Files ****/
+
+	/**** START: Zen Mode ***********/
+
+	// Disables centering the editor layout in Zen mode.
+	"zenMode.centerLayout": false,
+
+	// hide line numbers visible in Zen mode.
+	"zenMode.hideLineNumbers": false,
+
+	/*********** END: Zen Mode ****/
+
+	/**** START: Window ***********/
+
+	//
+	"window.commandCenter": true,
+
+	// Uses a custom title bar style.
+	"window.titleBarStyle": "custom",
+
+	// Toggles the menu bar visibility when the Alt key is pressed.
+	"window.menuBarVisibility": "toggle",
+
+	// Opens new windows with the same dimensions as the previous window.
+	"window.newWindowDimensions": "inherit",
+
+	/*********** END: Window ****/
+
+	/**** START: Workbench ***********/
+
+	// Disables layout control in the workbench.
+	"workbench.layoutControl.enabled": false,
+
+	// Disables navigation control in the workbench.
+	"workbench.navigationControl.enabled": false,
+
+	// Disables VS Code tips.
+	"workbench.tips.enabled": false,
+
+	// Sets the icon theme to "a-file-icon-vscode".
+	"workbench.iconTheme": "a-file-icon-vscode",
+
+	// Sets the product icon theme.
+	"workbench.productIconTheme": "a-file-icon-vscode-product-icon-theme",
+
+	// Sets the color theme to "Nord".
+	"workbench.colorTheme": "Nord",
+
+	// Disables the startup editor (no welcome page or recently opened files).
+	"workbench.startupEditor": "none",
+
+	/*********** END: Workbench ****/
+
+	/**** START: Git & GitLens ***********/
+
+	// Enables automatic fetching of Git repositories.
+	"git.autofetch": true,
+
+	// Displays the GitLens commit graph in the editor instead of a separate panel.
+	"gitlens.graph.layout": "editor",
+
+	// Displays source control repositories and changes in a tree view instead of a list.
+	"scm.defaultViewMode": "tree",
+
+	//
+	"diffEditor.ignoreTrimWhitespace": false,
+
+	/*********** END: Git & GitLens ****/
+
+	/**** START: Editor ***********/
+
+	// Enable minimap functionality
+	"editor.minimap.enabled": true,
+
+	// Enables font ligatures for better typography.
+	"editor.fontLigatures": true,
+
+	// Enables zooming in/out with the mouse wheel while holding Ctrl.
+	"editor.mouseWheelZoom": true,
+
+	// Uses tab characters instead of spaces for indentation.
+	"editor.insertSpaces": false,
+
+	// Enables linked editing for HTML and XML tags.
+	"editor.linkedEditing": true,
+
+	// Disables syntax highlighting when copying code.
+	"editor.copyWithSyntaxHighlighting": false,
+
+	// Disables automatic indentation detection.
+	"editor.detectIndentation": false,
+
+	// Disables the glyph margin (extra space for debugging and code lenses).
+	"editor.glyphMargin": false,
+
+	// Sets the line height to 2.
+	"editor.lineHeight": 2,
+
+	// Sets the tab size to 2 spaces.
+	"editor.tabSize": 2,
+
+	// Sets the editor font to "JetBrainsMono Nerd Font".
+	"editor.fontFamily": "Fira Code, JetBrainsMono Nerd Font, Consolas, monospace",
+
+	// Uses the tab size value for indentation size.
+	"editor.indentSize": "tabSize",
+
+	// Enables word-based suggestions from matching documents.
+	"editor.wordBasedSuggestions": "matchingDocuments",
+
+	// Enables smooth caret animation when moving the cursor.
+	"editor.cursorSmoothCaretAnimation": "on",
+
+	// Disables the lightbulb suggestion feature.
+	"editor.lightbulb.enabled": "off",
+
+	// Highlights the entire line where the cursor is located.
+	"editor.renderLineHighlight": "all",
+
+	// Disables automatic bracket matching.
+	"editor.matchBrackets": "never",
+
+	// Disable copilot inline suggestion
+	"editor.inlineSuggest.suppressSuggestions": true,
+
+	// VSCode should use single quotes for auto-imports in JavaScript/TypeScript
+	"javascript.preferences.quoteStyle": "single",
+	"typescript.preferences.quoteStyle": "single",
+
+	// Customizes token colors in the editor.
+	"editor.tokenColorCustomizations": {
+		"textMateRules": [
+			{
+				"name": "string color",
+				"scope": ["string"],
+				"settings": {
+					"foreground": "#fdee00" // Custom string color
+				}
+			},
+			{
+				"name": "variable color",
+				"scope": ["variable"],
+				"settings": {
+					"foreground": "#ffffee" // Custom variable color
+				}
+			},
+			{
+				"name": "parameter color",
+				"scope": ["variable.parameter"],
+				"settings": {
+					"foreground": "#ffd390" // Custom parameter color
+				}
+			},
+			{
+				"name": "number color in env files",
+				"scope": ["source.ini"],
+				"settings": {
+					"foreground": "#76fd00" // Custom number color for .env files
+				}
+			}
+		]
+	},
+
+	/*********** END: Editor ****/
+
+	/**** START: Terminal ***********/
+
+	// Sets an empty environment configuration for the integrated terminal on Linux.
+	"terminal.integrated.env.linux": {},
+
+	// Sets the terminal font to "JetBrainsMono Nerd Font".
+	"terminal.integrated.fontFamily": "Fira Code, JetBrainsMono Nerd Font, monospace",
+
+	// Disables terminal tabs.
+	"terminal.integrated.tabs.enabled": false,
+
+	/*********** END: Terminal ****/
+
+	/**** START: Prettier ***********/
+
+	// Uses tabs instead of spaces for formatting.
+	"prettier.useTabs": true,
+
+	// Set the number of spaces per indentation level to 2
+	"prettier.tabWidth": 2,
+
+	// Use LF (Line Feed) as the line ending (good for cross-platform consistency, especially with Unix/Linux)
+	"prettier.endOfLine": "lf",
+
+	// Use single quotes instead of double quotes
+	"prettier.singleQuote": true,
+
+	// Add a trailing comma wherever possible (like in arrays, objects, etc.)
+	"prettier.trailingComma": "all",
+
+	// Print spaces between brackets in object literals (e.g., { foo: bar } instead of {foo: bar})
+	"prettier.bracketSpacing": true,
+
+	// Always add a semicolon at the end of statements
+	"prettier.semi": true,
+
+	// Always include parentheses around arrow function parameters (even if there's only one)
+	"prettier.arrowParens": "always",
+
+	// Wrap lines at 100 characters
+	"prettier.printWidth": 100,
+
+	/*********** END: Prettier ****/
+
+	/**** START: cSpell ***********/
+
+	// Adds "fastify" as a user-defined word to the spell checker.
+	"cSpell.userWords": ["fastify", "liara"],
+
+	// Enables spell checking for English and Persian.
+	"cSpell.language": "en,fa",
+
+	/*********** END: cSpell ****/
+
+	/**** START: Selected line ***********/
+
+	// Aligns the selected line highlight to the right.
+	"selectline.alignment": "right",
+
+	/*********** END: Selected line ****/
+
+	/**** START: Formatter ***********/
+
+	// Enable the prettier format on save
+	"editor.formatOnSave": true,
+
+	// Automatically formats code while typing.
+	"editor.formatOnType": true,
+
+	// Automatically formats code when pasting.
+	"editor.formatOnPaste": true,
+
+	// Sets Prettier as the default code formatter.
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+
+	// Uses Prettier as the default formatter for JavaScript.
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+
+	// Uses Lua Helper as the default formatter for Lua.
+	"[lua]": {
+		"editor.defaultFormatter": "yinfei.luahelper"
+	},
+
+	// Uses Even Better TOML as the default formatter for TOML files.
+	"[toml]": {
+		"editor.defaultFormatter": "tamasfe.even-better-toml"
+	},
+
+	// Uses Prettier as the default formatter for TypeScript.
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+
+	// Uses Docker extension formatter for Docker Compose files.
+	"[dockercompose]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+
+	// Uses lkrms as the default formatter for TypeScript.
+	"[plaintext]": {
+		"editor.defaultFormatter": "lkrms.inifmt"
+	},
+
+	// Uses proto3 ension formatter for proto files.
+	"[proto3]": {
+		"editor.defaultFormatter": "zxh404.vscode-proto3"
+	},
+
+	"[NGINX]": {
+		"editor.defaultFormatter": "hangxingliu.vscode-nginx-conf-hint"
+	},
+
+	/*********** END: Formatter ****/
+
+	/**** START: Sync ***********/
+
+	"sync.autoUpload": true,
+	"sync.autoDownload": true,
+	"sync.quietSync": true
+
+	/*********** END: Sync ****/
+}
+```
+
+### Custom Shortcuts (Cursor AI Editor)
+
+```json
+// Place your key bindings in this file to override the defaultsauto[]
+[
+	//? ***** START: Copy line *****
+	{
+		//* Remove old keybinding for copy lines down
+		"key": "ctrl+shift+alt+down",
+		"command": "-editor.action.copyLinesDownAction",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		//* Set new keybinding for copy lines down
+		"key": "ctrl+d",
+		"command": "editor.action.copyLinesDownAction",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+
+	{
+		//* Remove keybinding for ctrl + d old functionality
+		"key": "ctrl+d",
+		"command": "-editor.action.addSelectionToNextFindMatch",
+		"when": "editorFocus"
+	},
+	{
+		//* Set a new key binding for ctrl + d old functionality
+		"key": "alt+d",
+		"command": "editor.action.addSelectionToNextFindMatch",
+		"when": "editorFocus"
+	},
+
+	//? ***** START: Delete line *****
+	{
+		//* Remove old keybinding for delete lines
+		"key": "ctrl+shift+k",
+		"command": "-editor.action.deleteLines",
+		"when": "textInputFocus && !editorReadonly"
+	},
+	{
+		//* Set new keybinding for delete lines
+		"key": "ctrl+y",
+		"command": "editor.action.deleteLines",
+		"when": "textInputFocus && !editorReadonly"
+	},
+
+	{
+		//* Remove keybinding for ctrl+y old functionality
+		"key": "ctrl+y",
+		"command": "-redo"
+	},
+
+	//? ***** START: Comments management *****
+	{
+		//* Remove old keybinding for nested comments
+		"key": "ctrl+alt+/",
+		"command": "-extension.nestComments",
+		"when": "editorHasSelection && editorTextFocus"
+	},
+	{
+		//* Set new keybinding for nested comments
+		"key": "ctrl+shift+/",
+		"command": "extension.nestComments",
+		"when": "editorHasSelection && editorTextFocus"
+	},
+
+	{
+		//* Remove old keybinding for block comments
+		"key": "ctrl+shift+a",
+		"command": "-editor.action.blockComment",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		//* Set new keybinding for block comments
+		"key": "ctrl+alt+/",
+		"command": "editor.action.blockComment",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+
+	//? ***** START: Fold/Unfold code block *****
+	{
+		//* Remove old keybinding for fold all blocks
+		"key": "ctrl+k ctrl+0",
+		"command": "-editor.foldAll",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		//* Set new keybinding for fold all blocks
+		"key": "ctrl+shift+numpad_subtract",
+		"command": "editor.foldAll",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+
+	{
+		//* Remove old keybinding for unfold all blocks
+		"key": "ctrl+k ctrl+j",
+		"command": "-editor.unfoldAll",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		//* Set new keybinding for unfold all blocks
+		"key": "ctrl+shift+numpad_add",
+		"command": "editor.unfoldAll",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+
+	//? ***** START: Terminal *****
+	{
+		//* Remove old keybinding for toggle terminal
+		"key": "ctrl+`",
+		"command": "-workbench.action.terminal.toggleTerminal",
+		"when": "terminal.active"
+	},
+	{
+		//* Set new keybinding for toggle terminal
+		"key": "ctrl+alt+`",
+		"command": "workbench.action.terminal.toggleTerminal",
+		"when": "terminal.active"
+	},
+
+	//? ***** START: Folder management *****
+	{
+		//* Remove old keybinding for close folder
+		"key": "ctrl+k f",
+		"command": "-workbench.action.closeFolder",
+		"when": "emptyWorkspaceSupport && workbenchState != 'empty'"
+	},
+	{
+		//* Set new keybinding for close folder
+		"key": "ctrl+meta+w",
+		"command": "workbench.action.closeFolder",
+		"when": "emptyWorkspaceSupport && workbenchState != 'empty'"
+	},
+
+	//? ***** START: Git management *****
+	{
+		//* Set new keybinding for git graph view
+		"key": "ctrl+alt+g",
+		"command": "git-graph.view"
+	},
+
+	{
+		"key": "ctrl+alt+x",
+		"command": "gitlens.showGraphPage"
+	},
+
+	{
+		//* Remove old keybinding for open lazy git
+		"key": "ctrl+g g",
+		"command": "-lazygit.openLazygit"
+	},
+	{
+		//* Set new keybinding for open lazy git
+		"key": "ctrl+g ctrl+g",
+		"command": "lazygit.openLazygit"
+	},
+
+	{
+		//* Set new keybinding for fetch
+		"key": "ctrl+g ctrl+f",
+		"command": "git.fetch",
+		"when": "!operationInProgress"
+	},
+
+	{
+		//* Set new keybinding for checkout to branch
+		"key": "ctrl+g ctrl+c",
+		"command": "git.checkout",
+		"when": "!operationInProgress"
+	},
+
+	//? ***** START: prettier selected format *****
+	{
+		//* Remove old keybinding for formatting selection
+		"key": "ctrl+k ctrl+f",
+		"command": "-editor.action.formatSelection",
+		"when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
+	},
+	{
+		//* Set new keybinding for formatting selection
+		"key": "ctrl+alt+f",
+		"command": "editor.action.formatSelection",
+		"when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
+	},
+
+	//? ***** START: Go to line *****
+	{
+		//* Remove old keybinding for Go to line
+		"key": "alt+g",
+		"command": "workbench.action.gotoLine"
+	},
+	{
+		//* Set new keybinding for Go to line
+		"key": "ctrl+g",
+		"command": "-workbench.action.gotoLine"
+	},
+
+	//? ***** START: Collapse explorer *****
+	{
+		//* Set new keybinding for Collapse explorer
+		"key": "shift+alt+e",
+		"command": "workbench.files.action.collapseExplorerFolders"
+	},
+
+	//? ***** START: Sidebar Explorer Focus *****
+	{
+		//* Remove old keybinding for Sidebar Explorer Focus
+		"key": "ctrl+shift+e",
+		"command": "-workbench.view.explorer",
+		"when": "viewContainer.workbench.view.explorer.enabled"
+	},
+	{
+		//* Set new keybinding for Sidebar Explorer Focus
+		"key": "alt+e",
+		"command": "workbench.view.explorer",
+		"when": "viewContainer.workbench.view.explorer.enabled"
+	},
+
+	//? ***** START: Focus management *****
+	{
+		//* Remove old keybinding for above group Focus
+		"key": "ctrl+k ctrl+up",
+		"command": "-workbench.action.focusAboveGroup"
+	},
+	{
+		//* Set new keybinding for above group Focus
+		"key": "ctrl+shift+c ctrl+shift+up",
+		"command": "workbench.action.focusAboveGroup"
+	},
+
+	{
+		//* Remove old keybinding for below group Focus
+		"key": "ctrl+k ctrl+down",
+		"command": "-workbench.action.focusBelowGroup"
+	},
+	{
+		//* Set new keybinding for below group Focus
+		"key": "ctrl+shift+c ctrl+shift+down",
+		"command": "workbench.action.focusBelowGroup"
+	},
+
+	{
+		//* Remove old keybinding for left group Focus
+		"key": "ctrl+k ctrl+left",
+		"command": "-workbench.action.focusLeftGroup"
+	},
+	{
+		//* Set new keybinding for left group Focus
+		"key": "ctrl+shift+c ctrl+shift+left",
+		"command": "workbench.action.focusLeftGroup"
+	},
+
+	{
+		//* Remove old keybinding for right group Focus
+		"key": "ctrl+k ctrl+right",
+		"command": "-workbench.action.focusRightGroup"
+	},
+	{
+		//* Set new keybinding for right group Focus
+		"key": "ctrl+shift+c ctrl+shift+right",
+		"command": "workbench.action.focusRightGroup"
+	},
+
+	//? ***** START: ZenMode management *****
+	{
+		//* Remove old keybinding for zen mode activation
+		"key": "ctrl+alt+z",
+		"command": "workbench.action.toggleZenMode",
+		"when": "!isAuxiliaryWindowFocusedContext"
+	},
+	{
+		//* Set new keybinding for zen mode activation
+		"key": "ctrl+k z",
+		"command": "-workbench.action.toggleZenMode",
+		"when": "!isAuxiliaryWindowFocusedContext"
+	},
+
+	//? ***** START: Todo tree extension toggle *****
+	{
+		//* Set new keybinding for Todo tree toggle
+		"key": "shift+alt+t",
+		"command": "workbench.view.extension.todo-tree-container"
+	},
+
+	//? ***** START: Editor window zoom *****
+	{
+		//* Remove keybinding for window's zoom in
+		"key": "ctrl+numpad_add",
+		"command": "-workbench.action.zoomIn"
+	},
+	{
+		//* Set new keybinding for window's zoom in
+		"key": "shift+alt+numpad_add",
+		"command": "workbench.action.zoomIn"
+	},
+	{
+		//* Remove keybinding for window's zoom out
+		"key": "ctrl+numpad_subtract",
+		"command": "-workbench.action.zoomOut"
+	},
+	{
+		//* Set new keybinding for window's zoom out
+		"key": "shift+alt+numpad_subtract",
+		"command": "workbench.action.zoomOut"
+	},
+
+	//? ***** START: Font size manager *****
+	{
+		//* Set new keybinding for increasing font size
+		"key": "ctrl+numpad_add",
+		"command": "editor.action.fontZoomIn"
+	},
+	{
+		//* Set new keybinding for decreasing font size
+		"key": "ctrl+numpad_subtract",
+		"command": "editor.action.fontZoomOut"
+	},
+	{
+		//* Set new keybinding for resetting font size
+		"key": "ctrl+numpad_multiply",
+		"command": "editor.action.fontZoomReset"
+	},
+
+	//? ***** START: Chat window mager *****
+	{
+		//* Remove keybinding for copilet chat
+		"key": "ctrl+alt+i",
+		"command": "-workbench.panel.chat",
+		"when": "workbench.panel.chat.view.copilot.active"
+	},
+	{
+		//* Remove keybinding for cursor chat
+		"key": "ctrl+shift+i",
+		"command": "-composer.newAgentChat"
+	},
+	{
+		//* Set new keybinding for cursor chat
+		"key": "ctrl+alt+i",
+		"command": "composer.newAgentChat"
+	},
+	{
+		"key": "ctrl+alt+l",
+		"command": "aichat.insertselectionintochat"
+	},
+	{
+		"key": "ctrl+shift+l",
+		"command": "-aichat.insertselectionintochat"
 	}
 ]
 ```
