@@ -2512,7 +2512,7 @@ This command will install the latest version of Cursor AI Editor on your system.
 
 	// Disable cpp language server
 	// This allows the cursor tab to work with md and txt files
-	"cursor.cpp.disabledLanguages": [],
+	"cursor.cpp.disabledLanguages": ["plaintext"],
 
 	/*********** END: General ****/
 
@@ -2620,6 +2620,9 @@ This command will install the latest version of Cursor AI Editor on your system.
 	// Enables linked editing for HTML and XML tags.
 	"editor.linkedEditing": true,
 
+	// Enable imports organization
+	"editor.codeActionsOnSave": { "source.organizeImports": "always" },
+
 	// Disables syntax highlighting when copying code.
 	"editor.copyWithSyntaxHighlighting": false,
 
@@ -2706,9 +2709,6 @@ This command will install the latest version of Cursor AI Editor on your system.
 
 	// Sets the terminal font to "JetBrainsMono Nerd Font".
 	"terminal.integrated.fontFamily": "Fira Code, JetBrainsMono Nerd Font, monospace",
-
-	// Disables terminal tabs.
-	"terminal.integrated.tabs.enabled": false,
 
 	/*********** END: Terminal ****/
 
@@ -2940,9 +2940,21 @@ This command will install the latest version of Cursor AI Editor on your system.
 	},
 	{
 		//* Set new keybinding for toggle terminal
-		"key": "ctrl+alt+`",
+		"key": "shift+`",
 		"command": "workbench.action.terminal.toggleTerminal",
 		"when": "terminal.active"
+	},
+	{
+		//* Remove old keybinding for new terminal
+		"key": "ctrl+shift+`",
+		"command": "-workbench.action.terminal.new",
+		"when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+	},
+	{
+		//* Set new keybinding for new terminal
+		"key": "ctrl+shift+`",
+		"command": "workbench.action.terminal.new",
+		"when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
 	},
 
 	//? ***** START: Folder management *****
@@ -3148,6 +3160,18 @@ This command will install the latest version of Cursor AI Editor on your system.
 		"command": "editor.action.fontZoomReset"
 	},
 
+	//? ***** START: Move editor to next group *****
+	{
+		//* Set new keybinding for moving editor to next group
+		"key": "ctrl+alt+right",
+		"command": "workbench.action.moveEditorToNextGroup"
+	},
+	{
+		//* Set new keybinding for moving editor to previous group
+		"key": "ctrl+alt+left",
+		"command": "workbench.action.moveEditorToPreviousGroup"
+	},
+
 	//? ***** START: Chat window mager *****
 	{
 		//* Remove keybinding for copilet chat
@@ -3166,12 +3190,19 @@ This command will install the latest version of Cursor AI Editor on your system.
 		"command": "composer.newAgentChat"
 	},
 	{
+		//* Remove keybinding for add selected code to chat
+		"key": "ctrl+shift+l",
+		"command": "-aichat.insertselectionintochat"
+	},
+	{
+		//* Set new keybinding for add selected code to chat
 		"key": "ctrl+alt+l",
 		"command": "aichat.insertselectionintochat"
 	},
 	{
-		"key": "ctrl+shift+l",
-		"command": "-aichat.insertselectionintochat"
+		//* Set new keybinding for background chat
+		"key": "ctrl+e",
+		"command": "composerMode.background"
 	}
 ]
 ```
