@@ -5,121 +5,121 @@ In this guide, I'll walk you through the installation process of essential appli
 ## Table of Contents
 
 - [Essential Applications Guide](#essential-applications-guide)
-	- [Table of Contents](#table-of-contents)
-	- [Installing bat](#installing-bat)
-	- [Installing eza](#installing-eza)
-	- [Installing duf](#installing-duf)
-	- [Installing gdu](#installing-gdu)
-	- [Installing yt-dlp](#installing-yt-dlp)
-	- [Installing python-spotdl](#installing-python-spotdl)
-	- [Installing Neovim](#installing-neovim)
-		- [Setting Up Neovim Configuration](#setting-up-neovim-configuration)
-		- [Add Neovim core configs](#add-neovim-core-configs)
-		- [Add Neovim Custom keybinding](#add-neovim-custom-keybinding)
-		- [Add Neovim Lazy Plugin Manager](#add-neovim-lazy-plugin-manager)
-		- [Install Neovim Plugins](#install-neovim-plugins)
-			- [nord.nvim Theme](#nordnvim-theme)
-			- [Neo-tree](#neo-tree)
-			- [bufferline](#bufferline)
-			- [lualine](#lualine)
-			- [treesitter](#treesitter)
-			- [telescope](#telescope)
-			- [lsp](#lsp)
-			- [autocompletion](#autocompletion)
-			- [alpha](#alpha)
-			- [indent-blankline](#indent-blankline)
-			- [gitsigns](#gitsigns)
-			- [misc](#misc)
-	- [Installing Zsh](#installing-zsh)
-		- [Installing Oh My Zsh](#installing-oh-my-zsh)
-			- [Installing Zsh Plugins](#installing-zsh-plugins)
-				- [zsh-autosuggestions](#zsh-autosuggestions)
-				- [zsh-syntax-highlighting](#zsh-syntax-highlighting)
-				- [zsh-completions](#zsh-completions)
-				- [Enabling Plugins](#enabling-plugins)
-		- [ZSH profile file](#zsh-profile-file)
-		- [ZSH History Configuration](#zsh-history-configuration)
-		- [Default Editors](#default-editors)
-		- [Custom Aliases](#custom-aliases)
-			- [Recommended Aliases](#recommended-aliases)
-			- [Apply changes](#apply-changes)
-	- [Installing direnv](#installing-direnv)
-		- [Setup](#setup)
-		- [Quick demo](#quick-demo)
-		- [Key Notes](#key-notes)
-	- [Installing Git](#installing-git)
-		- [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
-	- [sshuttle VPN](#sshuttle-vpn)
-	- [Installing Mission Center](#installing-mission-center)
-	- [Installing LibreOffice](#installing-libreoffice)
-	- [Installing GIMP](#installing-gimp)
-		- [Change Gimp's Look](#change-gimps-look)
-	- [Installing VLC Media Player](#installing-vlc-media-player)
-		- [Change VLC's Look](#change-vlcs-look)
-	- [Installing qBittorrent](#installing-qbittorrent)
-		- [Change qBittorrent's Look](#change-qbittorrents-look)
-	- [Installing OBS Studio](#installing-obs-studio)
-	- [Video Editor](#video-editor)
-		- [Installing Kdenlive](#installing-kdenlive)
-		- [Installing DaVinci Resolve](#installing-davinci-resolve)
-	- [Installing Discord](#installing-discord)
-	- [Installing Telegram Desktop](#installing-telegram-desktop)
-	- [Installing lazygit](#installing-lazygit)
-	- [Installing Docker](#installing-docker)
-		- [Installing Docker Compose](#installing-docker-compose)
-	- [Installing Portainer](#installing-portainer)
-	- [Installing RabbitMQ](#installing-rabbitmq)
-	- [Installing Zookeeper and Kafka](#installing-zookeeper-and-kafka)
-		- [Installing Zookeeper](#installing-zookeeper)
-		- [Installing Kafka](#installing-kafka)
-	- [Installing Redis](#installing-redis)
-		- [Option 1: Install via Pacman](#option-1-install-via-pacman)
-		- [Option 2: Run via Docker](#option-2-run-via-docker)
-	- [Installing RedisInsight](#installing-redisinsight)
-	- [Installing MongoDB](#installing-mongodb)
-		- [Option 1: Install via AUR (`mongodb-bin`)](#option-1-install-via-aur-mongodb-bin)
-		- [Option 2: Run MongoDB via Docker](#option-2-run-mongodb-via-docker)
-	- [Installing MongoDB Compass](#installing-mongodb-compass)
-	- [MySQL and phpMyAdmin](#mysql-and-phpmyadmin)
-	- [Installing Elasticsearch and Kibana](#installing-elasticsearch-and-kibana)
-	- [Installing PostgreSQL and pgAdmin](#installing-postgresql-and-pgadmin)
-	- [Install and Config Nginx](#install-and-config-nginx)
-		- [1. Create the Nginx Configuration File](#1-create-the-nginx-configuration-file)
-		- [2. Add docker.net to /etc/hosts](#2-add-dockernet-to-etchosts)
-		- [3. Run Nginx with Docker](#3-run-nginx-with-docker)
-	- [Installing FastFetch](#installing-fastfetch)
-		- [Running FastFetch on Terminal Startup](#running-fastfetch-on-terminal-startup)
-	- [Installing Google Chrome](#installing-google-chrome)
-	- [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
-		- [Recommended Plugins (VSCode)](#recommended-plugins-vscode)
-		- [Theme (VSCode)](#theme-vscode)
-		- [Recommended Settings (VSCode)](#recommended-settings-vscode)
-		- [VSCode Custom CSS \& JS](#vscode-custom-css--js)
-			- [Steps to Enable Custom CSS \& JS in VS Code](#steps-to-enable-custom-css--js-in-vs-code)
-			- [Example Files](#example-files)
-		- [Custom Shortcuts (VSCode)](#custom-shortcuts-vscode)
-	- [Installing Cursor AI Editor](#installing-cursor-ai-editor)
-		- [Recommended Plugins (Cursor AI Editor)](#recommended-plugins-cursor-ai-editor)
-		- [Theme (Cursor AI Editor)](#theme-cursor-ai-editor)
-		- [Recommended Settings (Cursor AI Editor)](#recommended-settings-cursor-ai-editor)
-		- [Custom Shortcuts (Cursor AI Editor)](#custom-shortcuts-cursor-ai-editor)
-	- [Installing Postman](#installing-postman)
-	- [Installing Amberol Music Player](#installing-amberol-music-player)
-	- [Image Viewer](#image-viewer)
-		- [Installing qview (Recomended)](#installing-qview-recomended)
-		- [Installing Loupe](#installing-loupe)
-		- [Installing nomacs](#installing-nomacs)
-	- [Installing GNOME Boxes](#installing-gnome-boxes)
-	- [Installing Blanket](#installing-blanket)
-	- [Installing HandBrake](#installing-handbrake)
-	- [Installing Albert Application Launcher](#installing-albert-application-launcher)
-		- [Albert Recommended Configs](#albert-recommended-configs)
-	- [Installing Rclone \& Rclone Browser](#installing-rclone--rclone-browser)
-	- [Installing AnyDesk](#installing-anydesk)
-	- [Installing Droidcam](#installing-droidcam)
-	- [Install Spot Player](#install-spot-player)
-	- [Installing Flatpak](#installing-flatpak)
-	- [Setting Up Timeshift for System Snapshots](#setting-up-timeshift-for-system-snapshots)
+  - [Table of Contents](#table-of-contents)
+  - [Installing bat](#installing-bat)
+  - [Installing eza](#installing-eza)
+  - [Installing duf](#installing-duf)
+  - [Installing gdu](#installing-gdu)
+  - [Installing yt-dlp](#installing-yt-dlp)
+  - [Installing python-spotdl](#installing-python-spotdl)
+  - [Installing Neovim](#installing-neovim)
+    - [Setting Up Neovim Configuration](#setting-up-neovim-configuration)
+    - [Add Neovim core configs](#add-neovim-core-configs)
+    - [Add Neovim Custom keybinding](#add-neovim-custom-keybinding)
+    - [Add Neovim Lazy Plugin Manager](#add-neovim-lazy-plugin-manager)
+    - [Install Neovim Plugins](#install-neovim-plugins)
+      - [nord.nvim Theme](#nordnvim-theme)
+      - [Neo-tree](#neo-tree)
+      - [bufferline](#bufferline)
+      - [lualine](#lualine)
+      - [treesitter](#treesitter)
+      - [telescope](#telescope)
+      - [lsp](#lsp)
+      - [autocompletion](#autocompletion)
+      - [alpha](#alpha)
+      - [indent-blankline](#indent-blankline)
+      - [gitsigns](#gitsigns)
+      - [misc](#misc)
+  - [Installing Zsh](#installing-zsh)
+    - [Installing Oh My Zsh](#installing-oh-my-zsh)
+      - [Installing Zsh Plugins](#installing-zsh-plugins)
+        - [zsh-autosuggestions](#zsh-autosuggestions)
+        - [zsh-syntax-highlighting](#zsh-syntax-highlighting)
+        - [zsh-completions](#zsh-completions)
+        - [Enabling Plugins](#enabling-plugins)
+    - [ZSH profile file](#zsh-profile-file)
+    - [ZSH History Configuration](#zsh-history-configuration)
+    - [Default Editors](#default-editors)
+    - [Custom Aliases](#custom-aliases)
+      - [Recommended Aliases](#recommended-aliases)
+      - [Apply changes](#apply-changes)
+  - [Installing direnv](#installing-direnv)
+    - [Setup](#setup)
+    - [Quick demo](#quick-demo)
+    - [Key Notes](#key-notes)
+  - [Installing Git](#installing-git)
+    - [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
+  - [sshuttle VPN](#sshuttle-vpn)
+  - [Installing Mission Center](#installing-mission-center)
+  - [Installing LibreOffice](#installing-libreoffice)
+  - [Installing GIMP](#installing-gimp)
+    - [Change Gimp's Look](#change-gimps-look)
+  - [Installing VLC Media Player](#installing-vlc-media-player)
+    - [Change VLC's Look](#change-vlcs-look)
+  - [Installing qBittorrent](#installing-qbittorrent)
+    - [Change qBittorrent's Look](#change-qbittorrents-look)
+  - [Installing OBS Studio](#installing-obs-studio)
+  - [Video Editor](#video-editor)
+    - [Installing Kdenlive](#installing-kdenlive)
+    - [Installing DaVinci Resolve](#installing-davinci-resolve)
+  - [Installing Discord](#installing-discord)
+  - [Installing Telegram Desktop](#installing-telegram-desktop)
+  - [Installing lazygit](#installing-lazygit)
+  - [Installing Docker](#installing-docker)
+    - [Installing Docker Compose](#installing-docker-compose)
+  - [Installing Portainer](#installing-portainer)
+  - [Installing RabbitMQ](#installing-rabbitmq)
+  - [Installing Zookeeper and Kafka](#installing-zookeeper-and-kafka)
+    - [Installing Zookeeper](#installing-zookeeper)
+    - [Installing Kafka](#installing-kafka)
+  - [Installing Redis](#installing-redis)
+    - [Option 1: Install via Pacman](#option-1-install-via-pacman)
+    - [Option 2: Run via Docker](#option-2-run-via-docker)
+  - [Installing RedisInsight](#installing-redisinsight)
+  - [Installing MongoDB](#installing-mongodb)
+    - [Option 1: Install via AUR (`mongodb-bin`)](#option-1-install-via-aur-mongodb-bin)
+    - [Option 2: Run MongoDB via Docker](#option-2-run-mongodb-via-docker)
+  - [Installing MongoDB Compass](#installing-mongodb-compass)
+  - [MySQL and phpMyAdmin](#mysql-and-phpmyadmin)
+  - [Installing Elasticsearch and Kibana](#installing-elasticsearch-and-kibana)
+  - [Installing PostgreSQL and pgAdmin](#installing-postgresql-and-pgadmin)
+  - [Install and Config Nginx](#install-and-config-nginx)
+    - [1. Create the Nginx Configuration File](#1-create-the-nginx-configuration-file)
+    - [2. Add docker.net to /etc/hosts](#2-add-dockernet-to-etchosts)
+    - [3. Run Nginx with Docker](#3-run-nginx-with-docker)
+  - [Installing FastFetch](#installing-fastfetch)
+    - [Running FastFetch on Terminal Startup](#running-fastfetch-on-terminal-startup)
+  - [Installing Google Chrome](#installing-google-chrome)
+  - [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
+    - [Recommended Plugins (VSCode)](#recommended-plugins-vscode)
+    - [Theme (VSCode)](#theme-vscode)
+    - [Recommended Settings (VSCode)](#recommended-settings-vscode)
+    - [VSCode Custom CSS \& JS](#vscode-custom-css--js)
+      - [Steps to Enable Custom CSS \& JS in VS Code](#steps-to-enable-custom-css--js-in-vs-code)
+      - [Example Files](#example-files)
+    - [Custom Shortcuts (VSCode)](#custom-shortcuts-vscode)
+  - [Installing Cursor AI Editor](#installing-cursor-ai-editor)
+    - [Recommended Plugins (Cursor AI Editor)](#recommended-plugins-cursor-ai-editor)
+    - [Theme (Cursor AI Editor)](#theme-cursor-ai-editor)
+    - [Recommended Settings (Cursor AI Editor)](#recommended-settings-cursor-ai-editor)
+    - [Custom Shortcuts (Cursor AI Editor)](#custom-shortcuts-cursor-ai-editor)
+  - [Installing Postman](#installing-postman)
+  - [Installing Amberol Music Player](#installing-amberol-music-player)
+  - [Image Viewer](#image-viewer)
+    - [Installing qview (Recomended)](#installing-qview-recomended)
+    - [Installing Loupe](#installing-loupe)
+    - [Installing nomacs](#installing-nomacs)
+  - [Installing GNOME Boxes](#installing-gnome-boxes)
+  - [Installing Blanket](#installing-blanket)
+  - [Installing HandBrake](#installing-handbrake)
+  - [Installing Albert Application Launcher](#installing-albert-application-launcher)
+    - [Albert Recommended Configs](#albert-recommended-configs)
+  - [Installing Rclone \& Rclone Browser](#installing-rclone--rclone-browser)
+  - [Installing AnyDesk](#installing-anydesk)
+  - [Installing Droidcam](#installing-droidcam)
+  - [Install Spot Player](#install-spot-player)
+  - [Installing Flatpak](#installing-flatpak)
+  - [Setting Up Timeshift for System Snapshots](#setting-up-timeshift-for-system-snapshots)
 
 ## Installing bat
 
@@ -2514,6 +2514,8 @@ This command will install the latest version of Cursor AI Editor on your system.
 	// This allows the cursor tab to work with md and txt files
 	"cursor.cpp.disabledLanguages": ["plaintext"],
 
+	"cursor.composer.shouldChimeAfterChatFinishes": true,
+
 	/*********** END: General ****/
 
 	/**** START: Files ***********/
@@ -2945,12 +2947,6 @@ This command will install the latest version of Cursor AI Editor on your system.
 		"when": "terminal.active"
 	},
 	{
-		//* Remove old keybinding for new terminal
-		"key": "ctrl+shift+`",
-		"command": "-workbench.action.terminal.new",
-		"when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
-	},
-	{
 		//* Set new keybinding for new terminal
 		"key": "ctrl+shift+`",
 		"command": "workbench.action.terminal.new",
@@ -3185,24 +3181,26 @@ This command will install the latest version of Cursor AI Editor on your system.
 		"command": "-composer.newAgentChat"
 	},
 	{
+		//* Remove keybinding for cursor chat
+		"key": "ctrl+shift+l",
+		"command": "-composer.newAgentChat"
+	},
+	{
 		//* Set new keybinding for cursor chat
-		"key": "ctrl+alt+i",
+		"key": "ctrl+alt+l",
 		"command": "composer.newAgentChat"
 	},
 	{
 		//* Remove keybinding for add selected code to chat
 		"key": "ctrl+shift+l",
-		"command": "-aichat.insertselectionintochat"
+		"command": "-addCursorsAtSearchResults",
+		"when": "fileMatchOrMatchFocus && searchViewletVisible"
 	},
 	{
 		//* Set new keybinding for add selected code to chat
-		"key": "ctrl+alt+l",
-		"command": "aichat.insertselectionintochat"
-	},
-	{
-		//* Set new keybinding for background chat
-		"key": "ctrl+e",
-		"command": "composerMode.background"
+		"key": "shift+alt+l",
+		"command": "addCursorsAtSearchResults",
+		"when": "fileMatchOrMatchFocus && searchViewletVisible"
 	}
 ]
 ```
