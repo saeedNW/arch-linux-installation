@@ -5,214 +5,106 @@ In this guide, I'll walk you through the installation process of essential appli
 ## Table of Contents
 
 - [Essential Applications Guide](#essential-applications-guide)
-	- [Table of Contents](#table-of-contents)
-	- [Installing bat](#installing-bat)
-	- [Installing eza](#installing-eza)
-	- [Installing duf](#installing-duf)
-	- [Installing gdu](#installing-gdu)
-	- [Installing yt-dlp](#installing-yt-dlp)
-	- [Installing python-spotdl](#installing-python-spotdl)
-	- [Installing Neovim](#installing-neovim)
-		- [Setting Up Neovim Configuration](#setting-up-neovim-configuration)
-		- [Add Neovim core configs](#add-neovim-core-configs)
-		- [Add Neovim Custom keybinding](#add-neovim-custom-keybinding)
-		- [Add Neovim Lazy Plugin Manager](#add-neovim-lazy-plugin-manager)
-		- [Install Neovim Plugins](#install-neovim-plugins)
-			- [nord.nvim Theme](#nordnvim-theme)
-			- [Neo-tree](#neo-tree)
-			- [bufferline](#bufferline)
-			- [lualine](#lualine)
-			- [treesitter](#treesitter)
-			- [telescope](#telescope)
-			- [lsp](#lsp)
-			- [autocompletion](#autocompletion)
-			- [alpha](#alpha)
-			- [indent-blankline](#indent-blankline)
-			- [gitsigns](#gitsigns)
-			- [misc](#misc)
-	- [Installing Zsh](#installing-zsh)
-		- [Installing Oh My Zsh](#installing-oh-my-zsh)
-			- [Installing Zsh Plugins](#installing-zsh-plugins)
-				- [zsh-autosuggestions](#zsh-autosuggestions)
-				- [zsh-syntax-highlighting](#zsh-syntax-highlighting)
-				- [zsh-completions](#zsh-completions)
-				- [Enabling Plugins](#enabling-plugins)
-		- [ZSH profile file](#zsh-profile-file)
-		- [ZSH History Configuration](#zsh-history-configuration)
-		- [Default Editors](#default-editors)
-		- [Custom Aliases](#custom-aliases)
-			- [Recommended Aliases](#recommended-aliases)
-			- [Apply changes](#apply-changes)
-	- [Installing direnv](#installing-direnv)
-		- [Setup](#setup)
-		- [Quick demo](#quick-demo)
-		- [Key Notes](#key-notes)
-	- [Installing Git](#installing-git)
-		- [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
-	- [sshuttle VPN](#sshuttle-vpn)
-	- [Installing Mission Center](#installing-mission-center)
-	- [Installing LibreOffice](#installing-libreoffice)
-	- [Installing GIMP](#installing-gimp)
-		- [Change Gimp's Look](#change-gimps-look)
-	- [Installing VLC Media Player](#installing-vlc-media-player)
-		- [Change VLC's Look](#change-vlcs-look)
-	- [Installing qBittorrent](#installing-qbittorrent)
-		- [Change qBittorrent's Look](#change-qbittorrents-look)
-	- [Installing OBS Studio](#installing-obs-studio)
-	- [Video Editor](#video-editor)
-		- [Installing Kdenlive](#installing-kdenlive)
-		- [Installing DaVinci Resolve](#installing-davinci-resolve)
-	- [Installing Discord](#installing-discord)
-	- [Installing Telegram Desktop](#installing-telegram-desktop)
-	- [Installing lazygit](#installing-lazygit)
-	- [Installing Docker](#installing-docker)
-		- [Installing Docker Compose](#installing-docker-compose)
-	- [Installing Portainer](#installing-portainer)
-	- [Installing RabbitMQ](#installing-rabbitmq)
-	- [Installing Zookeeper and Kafka](#installing-zookeeper-and-kafka)
-		- [Installing Zookeeper](#installing-zookeeper)
-		- [Installing Kafka](#installing-kafka)
-	- [Installing Redis](#installing-redis)
-		- [Option 1: Install via Pacman](#option-1-install-via-pacman)
-		- [Option 2: Run via Docker](#option-2-run-via-docker)
-	- [Installing RedisInsight](#installing-redisinsight)
-	- [Installing MongoDB](#installing-mongodb)
-		- [Option 1: Install via AUR (`mongodb-bin`)](#option-1-install-via-aur-mongodb-bin)
-		- [Option 2: Run MongoDB via Docker](#option-2-run-mongodb-via-docker)
-	- [Installing MongoDB Compass](#installing-mongodb-compass)
-	- [MySQL and phpMyAdmin](#mysql-and-phpmyadmin)
-	- [Installing Elasticsearch and Kibana](#installing-elasticsearch-and-kibana)
-	- [Installing PostgreSQL and pgAdmin](#installing-postgresql-and-pgadmin)
-	- [Install and Config Nginx](#install-and-config-nginx)
-		- [1. Create the Nginx Configuration File](#1-create-the-nginx-configuration-file)
-		- [2. Add docker.net to /etc/hosts](#2-add-dockernet-to-etchosts)
-		- [3. Run Nginx with Docker](#3-run-nginx-with-docker)
-	- [Installing FastFetch](#installing-fastfetch)
-		- [Running FastFetch on Terminal Startup](#running-fastfetch-on-terminal-startup)
-	- [Installing Google Chrome](#installing-google-chrome)
-	- [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
-		- [Recommended Plugins (VSCode)](#recommended-plugins-vscode)
-		- [Theme (VSCode)](#theme-vscode)
-		- [Recommended Settings (VSCode)](#recommended-settings-vscode)
-		- [VSCode Custom CSS \& JS](#vscode-custom-css--js)
-			- [Steps to Enable Custom CSS \& JS in VS Code](#steps-to-enable-custom-css--js-in-vs-code)
-			- [Example Files](#example-files)
-		- [Custom Shortcuts (VSCode)](#custom-shortcuts-vscode)
-	- [Install Kiro](#install-kiro)
-		- [Recommended Plugins (Kiro)](#recommended-plugins-kiro)
-		- [Theme (Kiro)](#theme-kiro)
-		- [Recommended Settings (Kiro)](#recommended-settings-kiro)
-		- [Custom Shortcuts (Kiro)](#custom-shortcuts-kiro)
-	- [Installing Cursor AI Editor](#installing-cursor-ai-editor)
-		- [Recommended Plugins (Cursor AI Editor)](#recommended-plugins-cursor-ai-editor)
-		- [Theme (Cursor AI Editor)](#theme-cursor-ai-editor)
-		- [Recommended Settings (Cursor AI Editor)](#recommended-settings-cursor-ai-editor)
-		- [Custom Shortcuts (Cursor AI Editor)](#custom-shortcuts-cursor-ai-editor)
-	- [Installing Postman](#installing-postman)
-	- [Installing Amberol Music Player](#installing-amberol-music-player)
-	- [Image Viewer](#image-viewer)
-		- [Installing qview (Recomended)](#installing-qview-recomended)
-		- [Installing Loupe](#installing-loupe)
-		- [Installing nomacs](#installing-nomacs)
-	- [Installing GNOME Boxes](#installing-gnome-boxes)
-	- [Installing Blanket](#installing-blanket)
-	- [Installing HandBrake](#installing-handbrake)
-	- [Installing Albert Application Launcher](#installing-albert-application-launcher)
-		- [Albert Recommended Configs](#albert-recommended-configs)
-	- [Installing Rclone \& Rclone Browser](#installing-rclone--rclone-browser)
-	- [Installing AnyDesk](#installing-anydesk)
-	- [Installing Droidcam](#installing-droidcam)
-	- [Install Spot Player](#install-spot-player)
-	- [Installing Flatpak](#installing-flatpak)
-	- [Setting Up Timeshift for System Snapshots](#setting-up-timeshift-for-system-snapshots)
-
-## Installing bat
-
-`bat` is a modern alternative to the classic `cat` command, with syntax highlighting and Git integration. Here's how to install it on your Linux system:
-
-1. **Update System Repositories**:
-
-   Ensure your system's package repositories are up-to-date by running the following command in the terminal:
-
-   ```shell
-   sudo pacman -Syu
-   ```
-
-2. **Install bat**:
-
-   You can install `bat` directly from the Arch Linux repositories using the following command:
-
-   ```shell
-   sudo pacman -S bat
-   ```
-
-3. **Verify Installation**:
-
-   Once the installation is complete, you can verify that `bat` is installed correctly by checking its version:
-
-   ```shell
-   bat --version
-   ```
-
-## Installing eza
-
-`eza` is a modern replacement for the traditional `ls` command, providing more features and a more visually appealing output. Here's how to install it on your system:
-
-```shell
-sudo pacman -S eza
-```
-
-Once installed, you can use `eza` just like you would use `ls`, but with additional features and options. For example, to list files and directories in the current directory, simply type:
-
-```shell
-eza
-```
-
-But if you want to improce the visually appealing you can add `--icon` option to it:
-
-```shell
-eza --icon
-```
-
-You can also make it to show directories first:
-
-```shell
-eza --icons --group-directories-first
-```
-
-`eza` provides many more options and features. You can explore them further by checking out the official documentation or by running `eza --help` in your terminal.
-
-## Installing duf
-
-`duf` is a modern replacement for the traditional `df` command, offering enhanced features and a more user-friendly interface for disk usage analysis. Here's how to install it on your system:
-
-```shell
-sudo pacman -S duf
-```
-
-Once installed, you can use `duf` to quickly and easily check disk usage information. For example, to display disk usage for all mounted filesystems, simply type:
-
-```shell
-duf
-```
-
-You can also specify a specific directory or filesystem to analyze. For instance, to check disk usage for the `/home` directory, use:
-
-```shell
-duf /home
-```
-
-Additionally, `duf` provides various options and flags for customizing its output. To explore these options, you can run `duf --help` in your terminal.
-
-With `duf`, managing disk space and analyzing storage usage becomes more intuitive and efficient.
-
-## Installing gdu
-
-gdu (Go Disk Usage) is a command-line disk usage analyzer written in Go. It provides a fast and efficient way to visualize disk usage on your system. Here's how to install gdu:
-
-```shell
-sudo pacman -S gdu
-```
+  - [Table of Contents](#table-of-contents)
+  - [Installing yt-dlp](#installing-yt-dlp)
+  - [Installing python-spotdl](#installing-python-spotdl)
+  - [Installing Neovim](#installing-neovim)
+    - [Setting Up Neovim Configuration](#setting-up-neovim-configuration)
+    - [Add Neovim core configs](#add-neovim-core-configs)
+    - [Add Neovim Custom keybinding](#add-neovim-custom-keybinding)
+    - [Add Neovim Lazy Plugin Manager](#add-neovim-lazy-plugin-manager)
+    - [Install Neovim Plugins](#install-neovim-plugins)
+      - [nord.nvim Theme](#nordnvim-theme)
+      - [Neo-tree](#neo-tree)
+      - [bufferline](#bufferline)
+      - [lualine](#lualine)
+      - [treesitter](#treesitter)
+      - [telescope](#telescope)
+      - [lsp](#lsp)
+      - [autocompletion](#autocompletion)
+      - [alpha](#alpha)
+      - [indent-blankline](#indent-blankline)
+      - [gitsigns](#gitsigns)
+      - [misc](#misc)
+  - [Installing direnv](#installing-direnv)
+    - [Setup](#setup)
+    - [Quick demo](#quick-demo)
+    - [Key Notes](#key-notes)
+  - [Installing Git](#installing-git)
+    - [Create SSH Key and Add it to GitHub](#create-ssh-key-and-add-it-to-github)
+  - [sshuttle VPN](#sshuttle-vpn)
+  - [Installing Mission Center](#installing-mission-center)
+  - [Installing LibreOffice](#installing-libreoffice)
+  - [Installing GIMP](#installing-gimp)
+    - [Change Gimp's Look](#change-gimps-look)
+  - [Installing VLC Media Player](#installing-vlc-media-player)
+    - [Change VLC's Look](#change-vlcs-look)
+  - [Installing qBittorrent](#installing-qbittorrent)
+    - [Change qBittorrent's Look](#change-qbittorrents-look)
+  - [Installing OBS Studio](#installing-obs-studio)
+  - [Video Editor](#video-editor)
+    - [Installing Kdenlive](#installing-kdenlive)
+    - [Installing DaVinci Resolve](#installing-davinci-resolve)
+  - [Installing Discord](#installing-discord)
+  - [Installing Telegram Desktop](#installing-telegram-desktop)
+  - [Installing Docker](#installing-docker)
+    - [Installing Docker Compose](#installing-docker-compose)
+  - [Installing Portainer](#installing-portainer)
+  - [Installing RabbitMQ](#installing-rabbitmq)
+  - [Installing Zookeeper and Kafka](#installing-zookeeper-and-kafka)
+    - [Installing Zookeeper](#installing-zookeeper)
+    - [Installing Kafka](#installing-kafka)
+  - [Installing Redis](#installing-redis)
+    - [Option 1: Install via Pacman](#option-1-install-via-pacman)
+    - [Option 2: Run via Docker](#option-2-run-via-docker)
+  - [Installing RedisInsight](#installing-redisinsight)
+  - [Installing MongoDB](#installing-mongodb)
+    - [Option 1: Install via AUR (`mongodb-bin`)](#option-1-install-via-aur-mongodb-bin)
+    - [Option 2: Run MongoDB via Docker](#option-2-run-mongodb-via-docker)
+  - [Installing MongoDB Compass](#installing-mongodb-compass)
+  - [MySQL and phpMyAdmin](#mysql-and-phpmyadmin)
+  - [Installing Elasticsearch and Kibana](#installing-elasticsearch-and-kibana)
+  - [Installing PostgreSQL and pgAdmin](#installing-postgresql-and-pgadmin)
+  - [Install and Config Nginx](#install-and-config-nginx)
+    - [1. Create the Nginx Configuration File](#1-create-the-nginx-configuration-file)
+    - [2. Add docker.net to /etc/hosts](#2-add-dockernet-to-etchosts)
+    - [3. Run Nginx with Docker](#3-run-nginx-with-docker)
+  - [Installing Google Chrome](#installing-google-chrome)
+  - [Installing Visual Studio Code (VS Code)](#installing-visual-studio-code-vs-code)
+    - [Recommended Plugins (VSCode)](#recommended-plugins-vscode)
+    - [Theme (VSCode)](#theme-vscode)
+    - [Recommended Settings (VSCode)](#recommended-settings-vscode)
+    - [VSCode Custom CSS \& JS](#vscode-custom-css--js)
+      - [Steps to Enable Custom CSS \& JS in VS Code](#steps-to-enable-custom-css--js-in-vs-code)
+      - [Example Files](#example-files)
+    - [Custom Shortcuts (VSCode)](#custom-shortcuts-vscode)
+  - [Install Kiro](#install-kiro)
+    - [Recommended Plugins (Kiro)](#recommended-plugins-kiro)
+    - [Theme (Kiro)](#theme-kiro)
+    - [Recommended Settings (Kiro)](#recommended-settings-kiro)
+    - [Custom Shortcuts (Kiro)](#custom-shortcuts-kiro)
+  - [Installing Cursor AI Editor](#installing-cursor-ai-editor)
+    - [Recommended Plugins (Cursor AI Editor)](#recommended-plugins-cursor-ai-editor)
+    - [Theme (Cursor AI Editor)](#theme-cursor-ai-editor)
+    - [Recommended Settings (Cursor AI Editor)](#recommended-settings-cursor-ai-editor)
+    - [Custom Shortcuts (Cursor AI Editor)](#custom-shortcuts-cursor-ai-editor)
+  - [Installing Postman](#installing-postman)
+  - [Installing Amberol Music Player](#installing-amberol-music-player)
+  - [Image Viewer](#image-viewer)
+    - [Installing qview (Recomended)](#installing-qview-recomended)
+    - [Installing Loupe](#installing-loupe)
+    - [Installing nomacs](#installing-nomacs)
+  - [Installing GNOME Boxes](#installing-gnome-boxes)
+  - [Installing Blanket](#installing-blanket)
+  - [Installing HandBrake](#installing-handbrake)
+  - [Installing Albert Application Launcher](#installing-albert-application-launcher)
+    - [Albert Recommended Configs](#albert-recommended-configs)
+  - [Installing Rclone \& Rclone Browser](#installing-rclone--rclone-browser)
+  - [Installing AnyDesk](#installing-anydesk)
+  - [Installing Droidcam](#installing-droidcam)
+  - [Install Spot Player](#install-spot-player)
+  - [Installing Flatpak](#installing-flatpak)
+  - [Setting Up Timeshift for System Snapshots](#setting-up-timeshift-for-system-snapshots)
 
 ## Installing yt-dlp
 
@@ -228,6 +120,12 @@ Once installed, you can use `yt-dlp` to download videos by providing the video U
 yt-dlp https://www.youtube.com/watch?v=your_video_id
 ```
 
+Create a new alias for `yt-dlp` command:
+
+```shell
+alias ytdl='yt-dlp --verbose --js node'
+```
+
 This command will download the video specified by the URL to your current directory.
 
 `yt-dlp` offers many options and features for customizing your downloads. You can explore these options further by running `yt-dlp --help` in your terminal or by checking out the official documentation.
@@ -238,6 +136,12 @@ python-spotdl is a command-line tool that allows you to download music from vari
 
 ```shell
 paru -S python-spotdl
+```
+
+Create a new alias for `spotdl` command:
+
+```shell
+alias spdl='spotdl'
 ```
 
 ## Installing Neovim
@@ -654,219 +558,10 @@ require('lazy').setup({
 })
 ```
 
-## Installing Zsh
-
-Zsh, or Z Shell, is a powerful and highly customizable shell that can be used as an interactive login shell and as a command interpreter for shell scripting. Here's how to install Zsh on your system:
+Replace `vim` command with `nvim` command:
 
 ```shell
-sudo pacman -S zsh
-```
-
-### Installing Oh My Zsh
-
-Oh My Zsh is a delightful, open-source, community-driven framework for managing your Zsh configuration. It comes bundled with a vast number of helpful functions, plugins, and themes to enhance your command-line experience. Here's how to install Oh My Zsh on your system:
-
-You can install Oh My Zsh by running the following command in your terminal:
-
-```shell
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-Alternatively, if you prefer using `wget`:
-
-```shell
-sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-```
-
-During Installation process of Oh My Zsh you will be prompted to set `zsh` as your main shell choose yes.
-
-#### Installing Zsh Plugins
-
-[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions), [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) and [zsh-completions](https://github.com/zsh-users/zsh-completions) are popular plugins for Zsh that enhance your command-line experience by providing autosuggestions as you type, syntax highlighting for commands and extending Zsh's command completion capabilities. Here's how to install them:
-
-##### zsh-autosuggestions
-
-1. Clone the zsh-autosuggestions repository into the Oh My Zsh plugins directory:
-
-   ```shell
-   git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-   ```
-
-2. Activate the plugin by adding it to the list of plugins in your `~/.zshrc` configuration file:
-
-   ```shell
-   plugins=(... zsh-autosuggestions)
-   ```
-
-##### zsh-syntax-highlighting
-
-1. Clone the zsh-syntax-highlighting repository into the Oh My Zsh plugins directory:
-
-   ```shell
-   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-   ```
-
-2. Activate the plugin by adding it to the list of plugins in your `~/.zshrc` configuration file:
-
-   ```shell
-   plugins=(... zsh-syntax-highlighting)
-   ```
-
-##### zsh-completions
-
-1. Clone the zsh-completions repository into the Oh My Zsh custom plugins directory:
-
-   ```shell
-     git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
-   ```
-
-2. Add it to FPATH in your `.zshrc` by adding the following line before `source $ZSH/oh-my-zsh.sh`:
-
-   ```shell
-   fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
-   ```
-
-   **Note:** adding it as a regular Oh My ZSH! plugin will not work properly
-
-##### Enabling Plugins
-
-After adding the plugins to your `~/.zshrc` file, reload the Zsh configuration:
-
-```shell
-source ~/.zshrc
-```
-
-### ZSH profile file
-
-A profile file is a configuration file that is sourced by the shell when it starts. It is used to set environment variables, define aliases, and perform other customizations that are specific to the user's needs.
-
-In order to create a profile file, you can use a text editor such as `vim` or `nano`. Here's an example of how to create a profile file called `.zprofile` in the `Home` directory using `nvim`:
-
-1. Create a new file called `.zprofile` in your home directory:
-
-   ```shell
-   touch ~/.zprofile
-   ```
-
-2. Add the profile file as source in your `~/.zshrc` file by adding the following line to the end of the file:
-
-   ```shell
-   source ~/.zprofile
-   ```
-
-3. Now you can open your file in `nvim` editor and start adding features or personal customizations to your ZSH (You can find some recommended options bellow)
-
-   ```shell
-   nvim ~/.zprofile
-   ```
-
-### ZSH History Configuration
-
-To optimize Zsh history management, add the following configuration to your `~/.zprofile` file:
-
-```shell
-# History
-export HISTSIZE=5000
-export HISTFILE=~/.zsh_history
-export SAVEHIST=$HISTSIZE
-export HISTDUP=erase
-setopt appendhistory        # Append commands to history file, not overwrite
-setopt hist_ignore_space    # Ignore commands starting with a space
-setopt hist_ignore_all_dups # Remove all duplicates in history
-setopt hist_save_no_dups    # Avoid saving duplicate entries
-setopt hist_ignore_dups     # Ignore duplicates in the current session
-```
-
-### Default Editors
-
-In order to set the default editor for your ZSH you can add the folowing lines to your `~/.zprofile` file:
-
-```shell
-# Default Editors
-export EDITOR=nvim
-export VISUAL=nvim
-```
-
-### Custom Aliases
-
-Custom aliases will help you to save time and increase your productivity when using the command line.
-
-Here is the syntax for defining an alias in Zsh:
-
-```shell
-alias alias_name='command_to_execute'
-```
-
-#### Recommended Aliases
-
-Here are some examples of custom aliases you can define in your `~/.zprofile` file:
-
-- Replace `ls` command with `eza` command:
-
-  ```shell
-  alias ls='eza --icons --group-directories-first -G --no-quotes'
-  alias ll='eza --icons --group-directories-first -lG --no-quotes'
-  alias lt='eza --icons --group-directories-first --no-quotes -RTL'
-  ```
-
-- Replace `cat` command with `bat` command:
-
-  ```shell
-  alias cat='bat'
-  ```
-
-- Replace `vim` command with `nvim` command:
-
-  ```shell
-  alias vim='nvim'
-  ```
-
-- Replace `cp` command with interactive version:
-
-  ```shell
-  alias cp='cp -i'
-  ```
-
-- Peplace `mv` command with interactive version:
-
-  ```shell
-  alias mv='mv -i'
-  ```
-
-- Replace `mkdir` command with `mkdir -p` command:
-
-  ```shell
-  alias mkdir='mkdir -p'
-  ```
-
-- Create a new alias for `yt-dlp` command:
-
-  ```shell
-  alias ytdl='yt-dlp --verbose --js node'
-  ```
-
-- Create a new alias for `spotdl` command:
-
-  ```shell
-  alias spdl='spotdl'
-  ```
-
-- Create a new alias for `clear` command:
-
-  ```shell
-  alias cls='clear'
-  ```
-
-Save and exit the `~/.zprofile` file:
-
-If you're using nvim, you can save and exit the file by pressing `Esc`, then type `:wq` and press `Enter` to confirm saving and exit.
-
-#### Apply changes
-
-After saving `~/.zprofile`, you can either restart your terminal or source your `~/.zshrc` file to apply the changes immediately:
-
-```shell
-source ~/.zshrc
+alias vim='nvim'
 ```
 
 ## Installing direnv
@@ -1200,18 +895,6 @@ sudo pacman -S telegram-desktop
 ```
 
 This command installs the Telegram Desktop package from the official Arch Linux repositories. Once installed, you can launch Telegram Desktop from your system's application menu and start using it to connect with your contacts and groups on the Telegram platform.
-
-## Installing lazygit
-
-`lazygit` is a simple terminal-based UI for Git commands, designed to make the process of interacting with Git repositories more intuitive and efficient. Here's how to install it on your system:
-
-```shell
-sudo pacman -S lazygit
-```
-
-Once installed, you can launch `lazygit` by simply typing `lazygit` in your terminal. This will open up the terminal UI where you can navigate through your Git repositories, view changes, stage files, commit changes, and perform other Git operations with ease.
-
-`lazygit` offers a variety of keyboard shortcuts and features to streamline your Git workflow. You can explore these features further within the `lazygit` interface or by referring to the official documentation.
 
 ## Installing Docker
 
@@ -1671,22 +1354,6 @@ docker run -d \
 
 ---
 
-## Installing FastFetch
-
-FastFetch is a command-line tool that displays system information in a visually appealing way. It shows details such as your operating system, kernel version, CPU, GPU, memory usage, and more. Here's how to install Neofetch on your system:
-
-```shell
-sudo pacman -S fastfetch
-```
-
-### Running FastFetch on Terminal Startup
-
-To run FastFetch automatically when openng new terminal, add the following line to your `~/.bashrc` or `~/.zshrc` file:
-
-```shell
-if [ -f /usr/bin/fastfetch ]; then fastfetch; fi
-```
-
 ## Installing Google Chrome
 
 Google Chrome is a popular web browser developed by Google. You can install Google Chrome on Arch Linux using the Arch User Repository (AUR). Here's how:
@@ -1717,7 +1384,7 @@ xdg-mime default org.gnome.Nautilus.desktop inode/directory
 | ----------------- | ------------------------ | ------------------------------- | ------------------------------ | ---------------------------- | ------------------------------------------------------ |
 | advanced-new-file | Atom Material Icons      | better comments                 | Code Spell Checker             | CodeSnap                     | Custom CSS and JS Loader                               |
 | Error Lens        | ESLint                   | Even Better TOML                | Explorer Exclude               | Git Graph                    | Git lens                                               |
-| GraphQL           | HTML CSS Support         | Ignore files                    | JavaScript (ES6) code snippets | lazygit                      | Live Server                                            |
+| GraphQL           | HTML CSS Support         | Ignore files                    | JavaScript (ES6) code snippets |                              | Live Server                                            |
 | lua               | Markdown All in One      | Markdown Preview Github Styling | Markdown Table                 | Import Cost                  | Markdown Table Prettifier                              |
 | Markdownlint      | Nested Comments          | node-snippets                   | Nord Theme                     | Persian - Code Spell Checker | Prettier                                               |
 | Prettify Json     | Pretty TypeScript Errors | Proto Lint                      | Rainbow Brackets               | Select Line Status Bar       | inifmt - formatter for .ini files, plain text and more |
@@ -2264,17 +1931,6 @@ By following these steps, you can transform VS Code's appearance beyond standard
 	{
 		"key": "ctrl+alt+x",
 		"command": "gitlens.showGraphPage"
-	},
-
-	{
-		//* Remove old keybinding for open lazy git
-		"key": "ctrl+g g",
-		"command": "-lazygit.openLazygit"
-	},
-	{
-		//* Set new keybinding for open lazy git
-		"key": "ctrl+g ctrl+g",
-		"command": "lazygit.openLazygit"
 	},
 
 	//? ***** START: prettier selected format *****
@@ -3114,7 +2770,7 @@ This command will install the latest version of Cursor AI Editor on your system.
 | ----------------- | ------------------------ | ------------------------------- | ------------------------------ | ----------------------------------------------------------------------- | ------------------------------------------------------ |
 | advanced-new-file | Atom Material Icons      | better comments                 | Code Spell Checker             | CodeSnap                                                                | inifmt - formatter for .ini files, plain text and more |
 | Error Lens        | ESLint                   | Even Better TOML                | Explorer Exclude               | Git Graph                                                               | Git lens                                               |
-| GraphQL           | HTML CSS Support         | Ignore files                    | JavaScript (ES6) code snippets | lazygit                                                                 | Live Server                                            |
+| GraphQL           | HTML CSS Support         | Ignore files                    | JavaScript (ES6) code snippets |                                                                         | Live Server                                            |
 | lua               | Markdown All in One      | Markdown Preview Github Styling | Markdown Table                 | Import Cost                                                             | Markdown Table Prettifier                              |
 | Markdownlint      | Nested Comments          | node-snippets                   | Nord Theme                     | Persian - Code Spell Checker                                            | Prettier                                               |
 | Prettify Json     | Pretty TypeScript Errors | Proto Lint                      | Rainbow Brackets               | Select Line Status Bar                                                  | Todo Tree                                              |
@@ -3621,17 +3277,6 @@ This command will install the latest version of Cursor AI Editor on your system.
 	{
 		"key": "ctrl+alt+x",
 		"command": "gitlens.showGraphPage"
-	},
-
-	{
-		//* Remove old keybinding for open lazy git
-		"key": "ctrl+g g",
-		"command": "-lazygit.openLazygit"
-	},
-	{
-		//* Set new keybinding for open lazy git
-		"key": "ctrl+g ctrl+g",
-		"command": "lazygit.openLazygit"
 	},
 
 	{
