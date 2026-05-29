@@ -64,11 +64,14 @@ EndeavourOS provides a **rolling-release model**, giving you access to the lates
     - [Step 6: Test with a Multilib Package (Optional)](#step-6-test-with-a-multilib-package-optional)
   - [Install Core Applications](#install-core-applications)
     - [Step 1: Install Git](#step-1-install-git)
-    - [Step 2: Install Node.js and npm](#step-2-install-nodejs-and-npm)
+    - [Step 2: Install Node.js and npm (Using NVM)](#step-2-install-nodejs-and-npm-using-nvm)
+      - [Why Not Use pacman for Node.js?](#why-not-use-pacman-for-nodejs)
+      - [Install NVM](#install-nvm)
+      - [Install Node.js (LTS Recommended)](#install-nodejs-lts-recommended)
+      - [Switching Node Versions](#switching-node-versions)
+      - [Uninstall or Reinstall Node Versions](#uninstall-or-reinstall-node-versions)
     - [Step 3: Install TypeScript and NestJS (Optional)](#step-3-install-typescript-and-nestjs-optional)
-      - [Method A: Global Installation (Using npm)](#method-a-global-installation-using-npm)
-      - [Method B: Use Local Project Installation (Recommended)](#method-b-use-local-project-installation-recommended)
-      - [Method C: Use nvm (Node Version Manager)](#method-c-use-nvm-node-version-manager)
+      - [Global Installation (Using npm)](#global-installation-using-npm)
     - [Step 4: Install Fonts](#step-4-install-fonts)
       - [Install essential system fonts](#install-essential-system-fonts)
       - [Install FiraCode fonts](#install-firacode-fonts)
@@ -731,22 +734,115 @@ Expected output: `git version x.x.x`
 
 ---
 
-### Step 2: Install Node.js and npm
+### Step 2: Install Node.js and npm (Using NVM)
 
 Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine, and npm is the Node.js package manager.
 
+This guide explains how to install Node.js, npm, and manage global packages on Arch Linux **without using pacman**.
+Instead, we use **NVM (Node Version Manager)**, which is the recommended method for development.
+
+nvm is a version manager for node.js, designed to be installed per-user, and invoked per-shell. nvm works on any POSIX-compliant shell (sh, dash, ksh, zsh, bash), in particular on these platforms: unix, macOS, and Windows WSL.
+
+#### Why Not Use pacman for Node.js?
+
+- pacman installs Node.js system-wide (in `/usr/bin`)
+- global npm installs require `sudo`
+- global packages mix with system files
+- major Node.js updates can break local projects
+- NVM supports multiple Node versions per project
+
+Using NVM ensures:
+
+- isolated environments per project
+- no sudo usage
+- clean global package installs
+- easy Node version switching
+
+#### Install NVM
+
+Use the official installer:
+
 ```bash
-sudo pacman -S nodejs npm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
 ```
 
-**Verify installation:**
+**Note: There is also an update command**
 
 ```bash
-node --version
-npm --version
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
 ```
 
-Expected output: `v22.x.x` (Node) and `10.x.x` (npm)
+Reload your shell:
+
+```bash
+source ~/.bashrc   # or ~/.zshrc
+```
+
+Verify:
+
+```bash
+nvm --version
+```
+
+#### Install Node.js (LTS Recommended)
+
+```bash
+nvm install --lts
+```
+
+Or install the latest "current" release:
+
+```bash
+nvm install node
+```
+
+Set it as default:
+
+```bash
+nvm alias default node
+```
+
+Check:
+
+```bash
+node -v
+npm -v
+```
+
+#### Switching Node Versions
+
+Install multiple versions:
+
+```bash
+nvm install 20
+nvm install 22
+```
+
+Switch anytime:
+
+```bash
+nvm use 22
+```
+
+Per-project default using `.nvmrc`:
+
+```bash
+echo "22" > .nvmrc
+```
+
+Then:
+
+```bash
+nvm use
+```
+
+#### Uninstall or Reinstall Node Versions
+
+Remove a specific version:
+
+```bash
+nvm uninstall 20
+```
 
 ---
 
@@ -754,12 +850,12 @@ Expected output: `v22.x.x` (Node) and `10.x.x` (npm)
 
 TypeScript is a strongly typed programming language that builds on JavaScript. NestJS is a progressive Node.js framework for building efficient and scalable server-side applications.
 
-> **⚠️ Warning – Global npm Installation:** Using `sudo npm install -g` can cause conflicts with pacman-managed packages.
+> **⚠️ Warning – Global npm Installation:** Using `sudo npm install -g` can cause conflicts with pacman-managed packages (as covered in the [Arch Linux post-install guide](./arch-post-install.md#error-3-npmnodejs-file-exists-conflict-specific-fix)). If you encounter "file exists" errors, you may need to remove conflicting files or use the [NVM Installation](#step-2-install-nodejs-and-npm-using-nvm).
 
-#### Method A: Global Installation (Using npm)
+#### Global Installation (Using npm)
 
 ```bash
-sudo npm install -g typescript @nestjs/cli
+npm install -g typescript @nestjs/cli
 ```
 
 **Verify installation:**
@@ -768,38 +864,6 @@ sudo npm install -g typescript @nestjs/cli
 tsc --version
 nest --version
 ```
-
-#### Method B: Use Local Project Installation (Recommended)
-
-Instead of installing globally, add TypeScript and NestJS as dev dependencies in your project:
-
-```bash
-npm install --save-dev typescript @nestjs/cli
-```
-
-Then run via `npx`:
-
-```bash
-npx tsc --version
-npx nest --version
-```
-
-#### Method C: Use nvm (Node Version Manager)
-
-If you plan to do heavy Node.js development, consider using `nvm` to manage Node.js versions without `sudo`:
-
-```bash
-# Install nvm from AUR
-yay -S nvm
-
-# Load nvm
-source /usr/share/nvm/init-nvm.sh
-
-# Install latest Node.js (without sudo)
-nvm install node
-```
-
-> **💡 Recommendation:** For most users, **Method B (local project installation)** is safest.
 
 ---
 
