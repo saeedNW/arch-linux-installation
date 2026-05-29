@@ -24,22 +24,9 @@ docker run -d
 -v /var/run/docker.sock:/var/run/docker.sock \
 -v dockhand_data:/app/data \
 docker.arvancloud.ir/fnsys/dockhand:latest
-
-docker run -d --name=netdata \
--p 19999:19999 \
--v netdataconfig:/etc/netdata \
--v netdatalib:/var/lib/netdata \
--v netdatacache:/var/cache/netdata \
--v /etc/passwd:/etc/passwd:ro \
--v /etc/group:/etc/group:ro \
--v /proc:/proc:ro \
--v /sys:/sys:ro \
--v /etc/os-release:/etc/os-release:ro \
--v /var/run/docker.sock:/var/run/docker.sock:ro \
---cap-add SYS_PTRACE \
---security-opt apparmor=unconfined \
-docker.chabokan.net/netdata/netdata:latest
 ```
+
+NVM
 
 super-productivity
 
@@ -74,9 +61,3 @@ nodejs
 npm
 typescript
 nestjs
-
-## Terminal
-
-bpytop
-
-zoxide

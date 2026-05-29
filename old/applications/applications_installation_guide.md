@@ -123,7 +123,7 @@ yt-dlp https://www.youtube.com/watch?v=your_video_id
 Create a new alias for `yt-dlp` command:
 
 ```shell
-alias ytdl='yt-dlp --verbose --js node'
+alias ytdl='yt-dlp --js node -f "bestvideo+bestaudio/best" --merge-output-format mkv'
 ```
 
 This command will download the video specified by the URL to your current directory.
@@ -582,12 +582,6 @@ For direnv to work properly it needs to be hooked into the shell. Once the hook 
 eval "$(direnv hook zsh)"
 ```
 
-**Oh my zsh :** Oh my zsh has a core plugin with direnv support. Add direnv to the plugins array in your zshrc file:
-
-```shell
-plugins=(... direnv)
-```
-
 ### Quick demo
 
 ```shell
@@ -641,13 +635,6 @@ nope
 
 2. **Priority of Environment Variables**
    Environment variables defined in the `.envrc` file have higher precedence over those in the project's `.env` file. If the same variable exists in both files, the value from `.envrc` will be used. This allows you to override configurations when needed.
-
-3. **Define alias in `~/.zprofile`:**
-   - Inside the `~/.zprofile` file, you can define an alias to simplify the usage of `direnv allow .`
-
-     ```shell
-     alias dia='direnv allow .'
-     ```
 
 ## Installing Git
 
