@@ -38,7 +38,8 @@ fastfetch --config hyde/*.jsonc
 		{
 			"type": "os",
 			"key": "  󰣇 OS",
-			"format": "{2}",
+			// "format": "{2}",
+			"format": "Arch Linux x86_64",
 			"keyColor": "black"
 		},
 		{

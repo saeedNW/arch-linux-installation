@@ -1275,7 +1275,7 @@ sudo pacman -Rns $(pacman -Qtdq)
 
 #### Error 3: npm/nodejs "file exists" conflict (Specific Fix)
 
-The specific error with `npm` or `nodejs` usually occurs when you installed `npm` globally using the `npm` command itself before installing the `nodejs` or `npm` package via pacman.
+The specific error with `npm` or `nodejs` usually occurs when you installed `npm` globally using the `npm` command itself before installing the `nodejs` or `npm` package via pacman (Not Recommended - Use NVM).
 
 **Correct fix – Do NOT run `npm --global remove npm`**
 
@@ -1328,7 +1328,7 @@ done < ~/npm-global-packages.txt
 >
 > - Use `pacman -S` for node packages when possible
 > - Or install global packages to your user directory: `npm install -g --prefix ~/.local`
-> - Or use `nvm` (Node Version Manager) to manage node/npm without system conflicts
+> - Or use `nvm` (Node Version Manager) to manage node/npm without system conflicts (Recomended)
 
 ---
 
