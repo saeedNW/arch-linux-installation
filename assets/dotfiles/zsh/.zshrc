@@ -117,16 +117,24 @@ alias mkdir='mkdir -p'
 if [ -f /usr/bin/fastfetch ]; then fastfetch; fi
 
 # ============================================================================
-# Sets Up Jetbrains products runtime
+# Setup Jetbrains products runtime
 # ============================================================================
 
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 
 # ============================================================================
-# Sets Up Shell Integration for Kiro-CLI
+# Setup Shell Integration for Kiro-CLI
 # ============================================================================
 
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+# ============================================================================
+# Setup Shell Integration for NVM
+# ============================================================================
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # ============================================================================
 # Shell Integrations (fzf & zoxide)
