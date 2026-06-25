@@ -75,8 +75,13 @@ EndeavourOS provides a **rolling-release model**, giving you access to the lates
       - [Global Installation (Using npm)](#global-installation-using-npm)
     - [Step 4: Install Fonts](#step-4-install-fonts)
       - [Install essential system fonts](#install-essential-system-fonts)
-      - [Install FiraCode fonts](#install-firacode-fonts)
-      - [JetBrainsMono Nerd Font](#jetbrainsmono-nerd-font)
+      - [Install Fira Code (Programming Font with Ligatures)](#install-fira-code-programming-font-with-ligatures)
+        - [Recommended (Arch Linux)](#recommended-arch-linux)
+        - [Optional: Nerd Font Variant](#optional-nerd-font-variant)
+      - [Install JetBrains Mono Nerd Font (Recommended)](#install-jetbrains-mono-nerd-font-recommended)
+        - [Recommended (Arch Linux)](#recommended-arch-linux-1)
+        - [Manual Installation (if not using package manager)](#manual-installation-if-not-using-package-manager)
+    - [Verify Installation](#verify-installation)
     - [Optional: Install Yarn (Alternative to npm)](#optional-install-yarn-alternative-to-npm)
   - [Grant "wheel" Group Members "sudo" Privileges](#grant-wheel-group-members-sudo-privileges)
     - [Step 1: Ensure Your User is in the "wheel" Group](#step-1-ensure-your-user-is-in-the-wheel-group)
@@ -924,23 +929,80 @@ nest --version
 
 #### Install essential system fonts
 
-This command installs a set of widely used fonts that ensure good coverage for most languages, emojis, and general text rendering.
+These fonts ensure broad language support, proper emoji rendering, and good default text coverage across the system.
 
 ```bash
 sudo pacman -S noto-fonts noto-fonts-emoji ttf-dejavu ttf-liberation
 ```
 
-#### Install FiraCode fonts
+---
 
-Fira Code is a free monospaced font containing ligatures for common programming multi-character combinations
+#### Install Fira Code (Programming Font with Ligatures)
 
-[Download](https://github.com/tonsky/FiraCode)
+Fira Code is a monospaced font designed for developers. It includes ligatures for common programming symbols such as `->`, `=>`, and `!=`, improving readability.
 
-#### JetBrainsMono Nerd Font
+##### Recommended (Arch Linux)
 
-Nerd Fonts are specialized fonts that include a wide range of icons and glyphs, making them ideal for developers and enthusiasts who require additional symbols in their terminal or code editor
+```bash
+sudo pacman -S ttf-fira-code
+```
 
-[Download](https://www.nerdfonts.com/)
+##### Optional: Nerd Font Variant
+
+If you also need terminal icons (for tools like Neovim, Starship, or TUI apps), install the patched Nerd Font version:
+
+```bash
+sudo pacman -S ttf-firacode-nerd
+```
+
+More info:
+[https://github.com/tonsky/FiraCode](https://github.com/tonsky/FiraCode)
+
+---
+
+#### Install JetBrains Mono Nerd Font (Recommended)
+
+JetBrains Mono Nerd Font is a developer-focused typeface that combines excellent readability with Nerd Font icons (used in modern terminal tools and plugins).
+
+##### Recommended (Arch Linux)
+
+```bash
+sudo pacman -S ttf-jetbrains-mono-nerd
+```
+
+##### Manual Installation (if not using package manager)
+
+Download from Nerd Fonts:
+[https://www.nerdfonts.com/](https://www.nerdfonts.com/)
+
+Then install the font files manually into:
+
+```bash
+~/.local/share/fonts
+```
+
+and refresh the font cache:
+
+```bash
+fc-cache -fv
+```
+
+---
+
+### Verify Installation
+
+Check installed fonts:
+
+```bash
+fc-list | grep -i "Fira"
+fc-list | grep -i "JetBrains"
+```
+
+List Nerd Fonts specifically:
+
+```bash
+fc-list | grep -i nerd
+```
 
 ---
 
