@@ -48,15 +48,15 @@ The CLI tool `kiro-cli` will also be available.
 
 Kiro is based on VS Code and supports all VS Code extensions from the Open VSX Registry. The following extensions are recommended for a productive workflow.
 
-| Category                 | Extensions                                                                                                                                                                                                                                                                                                                              |
-| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Core**                 | `advanced-new-file`, `better comments`, `Bracket Pair Colorizer`, `Code Spell Checker`, `CodeSnap`, `Error Lens`, `Todo Tree`, `Toggle Quotes`                                                                                                                                                                                          |
-| **Git**                  | `Git Graph`, `GitLens`                                                                                                                                                                                                                                                                                                                  |
-| **Linting & Formatting** | `ESLint`, `Prettier - Code formatter`, `Even Better TOML`, `inifmt`, `Black Formatter`                                                                                                                                                                                                                                                  |
-| **Markdown**             | `Markdown All in One`, `Markdown Table`, `Markdown Table Prettifier`, `Markdownlint`                                                                                                                                                                                                                                                    |
-| **Language Support**     | `JavaScript (ES6) code snippets`, `Nextjs snippets`, `React - Javascript snippets`, `GraphQL: Syntax Highlighting`, `HTML CSS Support`, `lua`, `vscode-proto3`, `TooltitudePb`, `Docker`, `Docker DX`, `Container Tools`, `Python`, `Python Debugger`, `Python Environments`, `Nextjs App Directory Commands`, `Nginx Config Formatter` |
-| **Theming**              | `Material Icon Theme`                                                                                                                                                                                                                                                                                                                   |
-| **Utilities**            | `Import Cost`, `Pretty TypeScript Errors`, `Selection Stats & Line Counter`, `Live Server`, `Persian - Code Spell Checker`                                                                                                                                                                                                              |
+| Category                 | Extensions                                                                                                                                                                                                                                                |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Core**                 | `advanced-new-file-plus`, `Better Comments Next`, `Bracket Pair Colorizer 2`, `Code Spell Checker`, `CodeSnap`, `Error Lens`, `Todo Tree` , `Toggle Quotes`                                                                                               |
+| **Git**                  | `Git Graph`, `GitLens`                                                                                                                                                                                                                                    |
+| **Linting & Formatting** | `ESLint`, `Prettier - Code formatter`, `Even Better TOML`, `inifmt`, `Black Formatter`                                                                                                                                                                    |
+| **Markdown**             | `Markdown All in One`, `Markdown Table`, `Markdown Table Prettifier`, `Markdownlint`, `Markdown Preview Mermaid Support`                                                                                                                                  |
+| **Language Support**     | `JavaScript (ES6) code snippets`, `Nextjs snippets`, `ES7+ React/Redux/React-Native snippets`, `HTML CSS Support`, `lua`, `Protobuf VSC`, `Docker`, `Docker DX`, `Container Tools`, `Python`, `Python Debugger`, `Python Environments`, `nginx.conf hint` |
+| **Theming**              | `Material Icon Theme`                                                                                                                                                                                                                                     |
+| **Utilities**            | `Import Cost`, `Pretty TypeScript Errors`, `Selection Stats & Line Counter`, `Live Server`, `Persian - Code Spell Checker`, `Open Remote - SSH`                                                                                                           |
 
 > **💡 Tip:** Install them via the Extensions view (`Ctrl+Shift+X`).
 
@@ -76,107 +76,261 @@ Create or edit your `settings.json` in Kiro (`Ctrl+Shift+P` → `Preferences: Op
 
 ```jsonc
 {
-	/**** START: General ***********/
-	"bracketPairColorizer.depreciation-notice": false,
-	"explorer.compactFolders": false,
+	// ? ===== General =====
+
+	// * Open files from untrusted workspaces without prompting
 	"security.workspace.trust.untrustedFiles": "open",
-	"errorLens.enabledDiagnosticLevels": ["error", "warning"],
+
+	// * Disable compact folder nesting in Explorer
+	"explorer.compactFolders": false,
+
+	// * Hide editor breadcrumbs navigation
 	"breadcrumbs.enabled": false,
+
+	// * Show Error Lens annotations only for warnings and errors
+	"errorLens.enabledDiagnosticLevels": ["error", "warning"],
+
+	// * Enable Kiro tab completion
 	"kiroAgent.enableTabAutocomplete": true,
+
+	// * Disable MCP configuration prompts
 	"kiroAgent.configureMCP": "Disabled",
-	/*********** END: General ****/
 
-	/**** START: Files ***********/
-	"files.trimTrailingWhitespace": true,
-	"files.insertFinalNewline": true,
-	"files.trimFinalNewlines": true,
+	// ? ===== Files =====
+
+	// * Automatically save files after a short delay
 	"files.autoSave": "afterDelay",
-	/*********** END: Files ****/
 
-	/**** START: Zen Mode ***********/
+	// * Remove trailing whitespace on save
+	"files.trimTrailingWhitespace": true,
+
+	// * Ensure files end with a newline
+	"files.insertFinalNewline": true,
+
+	// * Remove extra blank lines at the end of files
+	"files.trimFinalNewlines": true,
+
+	// ? ===== Zen Mode =====
+
+	// * Keep editor layout aligned normally in Zen Mode
 	"zenMode.centerLayout": false,
+
+	// * Keep line numbers visible in Zen Mode
 	"zenMode.hideLineNumbers": false,
-	/*********** END: Zen Mode ****/
 
-	/**** START: Window ***********/
+	// ? ===== Window =====
+
+	// * Use the custom window title bar
 	"window.titleBarStyle": "custom",
+
+	// * Show menu bar when Alt is pressed
 	"window.menuBarVisibility": "toggle",
+
+	// * Reuse previous window dimensions for new windows
 	"window.newWindowDimensions": "inherit",
-	/*********** END: Window ****/
 
-	/**** START: Workbench ***********/
+	// ? ===== Workbench =====
+
+	// * Disable navigation controls in the workbench header
 	"workbench.navigationControl.enabled": false,
+
+	// * Use Material Icon Theme
 	"workbench.iconTheme": "material-icon-theme",
+
+	// * Skip the welcome/startup screen
 	"workbench.startupEditor": "none",
-	/*********** END: Workbench ****/
 
-	/**** START: Git & GitLens ***********/
+	// ? ===== Git & Source Control =====
+
+	// * Automatically fetch remote changes
 	"git.autofetch": true,
+
+	// * Display the GitLens graph inside an editor tab
 	"gitlens.graph.layout": "editor",
+
+	// * Show repositories and changes in tree view
 	"scm.defaultViewMode": "tree",
+
+	// * Ignore whitespace-only changes in diffs
 	"diffEditor.ignoreTrimWhitespace": true,
-	/*********** END: Git & GitLens ****/
 
-	/**** START: Editor ***********/
+	// ? ===== Editor =====
+
+	// * Typography
+
+	// * Preferred editor font stack
 	"editor.fontFamily": "Fira Code, JetBrainsMono Nerd Font, Consolas, monospace",
-	"editor.bracketPairColorization.enabled": true,
-	"editor.minimap.enabled": true,
+
+	// * Enable font ligatures
 	"editor.fontLigatures": true,
-	"editor.mouseWheelZoom": true,
-	"editor.insertSpaces": false,
-	"editor.linkedEditing": true,
-	"editor.codeActionsOnSave": { "source.organizeImports": "always" },
-	"editor.copyWithSyntaxHighlighting": false,
-	"editor.detectIndentation": false,
+
+	// * Increase line spacing for readability
 	"editor.lineHeight": 1.6,
+
+	// * Editing Experience
+
+	// * Use tabs instead of spaces
+	"editor.insertSpaces": false,
+
+	// * Set tab width to 2
 	"editor.tabSize": 2,
+
+	// * Use tabSize as indentation size
 	"editor.indentSize": "tabSize",
-	"editor.wordBasedSuggestions": "matchingDocuments",
+
+	// * Disable automatic indentation detection
+	"editor.detectIndentation": false,
+
+	// * Enable linked editing for matching tags
+	"editor.linkedEditing": true,
+
+	// * Enable Ctrl + Mouse Wheel zoom
+	"editor.mouseWheelZoom": true,
+
+	// * Enable smooth caret animation
 	"editor.cursorSmoothCaretAnimation": "on",
-	"editor.lightbulb.enabled": "off",
+
+	// * Highlight the active line
 	"editor.renderLineHighlight": "all",
+
+	// * Disable bracket matching highlights
 	"editor.matchBrackets": "never",
+
+	// * Hide code action lightbulb indicators
+	"editor.lightbulb.enabled": "off",
+
+	// * Suggestions & Assistance
+
+	// * Enable bracket pair colorization
+	"editor.bracketPairColorization.enabled": true,
+
+	// * Enable minimap
+	"editor.minimap.enabled": true,
+
+	// * Suggest words from other open documents
+	"editor.wordBasedSuggestions": "matchingDocuments",
+
+	// * Disable syntax highlighting when copying code
+	"editor.copyWithSyntaxHighlighting": false,
+
+	// * Organize imports automatically on save
+	"editor.codeActionsOnSave": {
+		"source.organizeImports": "always",
+	},
+
+	// * JavaScript & TypeScript Imports
+
+	// * Prefer single quotes in JavaScript auto-imports
 	"javascript.preferences.quoteStyle": "single",
+
+	// * Prefer single quotes in TypeScript auto-imports
 	"typescript.preferences.quoteStyle": "single",
-	/*********** END: Editor ****/
 
-	/**** START: Terminal ***********/
-	"terminal.integrated.env.linux": {},
+	// ? ===== Terminal =====
+
+	// * Preferred terminal font stack
 	"terminal.integrated.fontFamily": "Fira Code, JetBrainsMono Nerd Font, monospace",
-	/*********** END: Terminal ****/
 
-	/**** START: Prettier ***********/
+	// * Linux terminal environment overrides
+	"terminal.integrated.env.linux": {},
+
+	// ? ===== Prettier =====
+
+	// * Use tabs for indentation
 	"prettier.useTabs": true,
+
+	// * Set tab width to 2
 	"prettier.tabWidth": 2,
+
+	// * Use LF line endings
 	"prettier.endOfLine": "lf",
+
+	// * Prefer single quotes
 	"prettier.singleQuote": true,
-	"prettier.trailingComma": "all",
-	"prettier.bracketSpacing": true,
+
+	// * Always include semicolons
 	"prettier.semi": true,
+
+	// * Always include trailing commas where valid
+	"prettier.trailingComma": "all",
+
+	// * Add spaces inside object braces
+	"prettier.bracketSpacing": true,
+
+	// * Always wrap arrow function parameters in parentheses
 	"prettier.arrowParens": "always",
+
+	// * Wrap lines at 100 characters
 	"prettier.printWidth": 100,
-	/*********** END: Prettier ****/
 
-	/**** START: cSpell ***********/
+	// ? ===== Spell Checker =====
+
+	// * Additional dictionary words
 	"cSpell.userWords": ["fastify", "liara"],
-	"cSpell.language": "en,fa",
-	/*********** END: cSpell ****/
 
-	/**** START: Formatter ***********/
+	// * Enable English and Persian spell checking
+	"cSpell.language": "en,fa",
+
+	// ? ===== Formatting =====
+
+	// * Format files automatically on save
 	"editor.formatOnSave": true,
+
+	// * Format while typing
 	"editor.formatOnType": true,
+
+	// * Format pasted content
 	"editor.formatOnPaste": true,
+
+	// * Use Prettier as the global formatter
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-	"[lua]": { "editor.defaultFormatter": "sumneko.lua" },
-	"[toml]": { "editor.defaultFormatter": "tamasfe.even-better-toml" },
-	"[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-	"[dockercompose]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-	"[plaintext]": { "editor.defaultFormatter": "lkrms.inifmt" },
-	"[proto3]": { "editor.defaultFormatter": "zxh404.vscode-proto3" },
-	"[nginx]": { "editor.defaultFormatter": "AaaaronZhou.nginx-config-formatter-vscode-extension" },
-	"[python]": { "editor.defaultFormatter": "ms-python.black-formatter" },
-	/*********** END: Formatter ****/
+
+	// * Language-Specific Formatters
+
+	// * JavaScript
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+	},
+
+	// * TypeScript
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+	},
+
+	// * Lua
+	"[lua]": {
+		"editor.defaultFormatter": "sumneko.lua",
+	},
+
+	// * TOML
+	"[toml]": {
+		"editor.defaultFormatter": "tamasfe.even-better-toml",
+	},
+
+	// * Docker Compose
+	"[dockercompose]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+	},
+
+	// * Plain Text
+	"[plaintext]": {
+		"editor.defaultFormatter": "lkrms.inifmt",
+	},
+
+	// * Protocol Buffers
+	"[proto3]": {
+		"editor.defaultFormatter": "DrBlury.protobuf-vsc",
+	},
+
+	// * NGINX Configuration
+	"[NGINX]": {
+		"editor.defaultFormatter": "hangxingliu.vscode-nginx-conf-hint",
+	},
+
+	// * Python
+	"[python]": {
+		"editor.defaultFormatter": "ms-python.black-formatter",
+	},
 }
 ```
 
@@ -187,201 +341,398 @@ Create or edit your `settings.json` in Kiro (`Ctrl+Shift+P` → `Preferences: Op
 Create or edit `keybindings.json` in Kiro (`Ctrl+Shift+P` → `Preferences: Open Keyboard Shortcuts (JSON)`) and add the following overrides.
 
 ```jsonc
+// Place your key bindings in this file to override the defaults
 [
-	// Copy line down (Ctrl+D)
+	// ? ===== Selection & Editing =====
+
+	// * Copy Line Down
 	{
-		"key": "ctrl+d",
-		"command": "editor.action.copyLinesDownAction",
-		"when": "editorTextFocus && !editorReadonly",
-	},
-	{
+		// * Unbind default "Copy Line Down" shortcut
 		"key": "ctrl+shift+alt+down",
 		"command": "-editor.action.copyLinesDownAction",
 		"when": "editorTextFocus && !editorReadonly",
 	},
-	// Add selection to next find match moved to Alt+D
-	{ "key": "alt+d", "command": "editor.action.addSelectionToNextFindMatch", "when": "editorFocus" },
 	{
+		// * Rebind "Copy Line Down" to Ctrl+D
+		"key": "ctrl+d",
+		"command": "editor.action.copyLinesDownAction",
+		"when": "editorTextFocus && !editorReadonly",
+	},
+
+	// * Multi-Cursor: Select Next Match
+	{
+		// * Unbind default multi-cursor selection shortcut from Ctrl+D
 		"key": "ctrl+d",
 		"command": "-editor.action.addSelectionToNextFindMatch",
 		"when": "editorFocus",
 	},
-
-	// Delete line (Ctrl+Y)
 	{
+		// * Rebind multi-cursor selection to Alt+D
+		"key": "alt+d",
+		"command": "editor.action.addSelectionToNextFindMatch",
+		"when": "editorFocus",
+	},
+
+	// * Delete Line
+	{
+		// * Unbind default "Delete Line" shortcut
+		"key": "ctrl+shift+k",
+		"command": "-editor.action.deleteLines",
+		"when": "textInputFocus && !editorReadonly",
+	},
+	{
+		// * Rebind "Delete Line" to Ctrl+Y
 		"key": "ctrl+y",
 		"command": "editor.action.deleteLines",
 		"when": "textInputFocus && !editorReadonly",
 	},
 	{
-		"key": "ctrl+shift+k",
-		"command": "-editor.action.deleteLines",
-		"when": "textInputFocus && !editorReadonly",
+		// * Free Ctrl+Y by unbinding Redo
+		"key": "ctrl+y",
+		"command": "-redo",
 	},
-	{ "key": "ctrl+y", "command": "-redo" },
 
-	// Block comment (Ctrl+Shift+/)
+	// * Block Comments
 	{
-		"key": "ctrl+shift+/",
-		"command": "editor.action.blockComment",
-		"when": "editorTextFocus && !editorReadonly",
-	},
-	{
+		// * Unbind default block comment shortcut
 		"key": "ctrl+shift+a",
 		"command": "-editor.action.blockComment",
 		"when": "editorTextFocus && !editorReadonly",
 	},
+	{
+		// * Rebind block comment toggle to Ctrl+Shift+/
+		"key": "ctrl+shift+/",
+		"command": "editor.action.blockComment",
+		"when": "editorTextFocus && !editorReadonly",
+	},
 
-	// Fold / unfold all
+	// * Format Selection
 	{
-		"key": "ctrl+shift+numpad_subtract",
-		"command": "editor.foldAll",
-		"when": "editorTextFocus && foldingEnabled",
+		// * Unbind default "Format Selection" shortcut
+		"key": "ctrl+k ctrl+f",
+		"command": "-editor.action.formatSelection",
+		"when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly",
 	},
 	{
-		"key": "ctrl+shift+numpad_add",
-		"command": "editor.unfoldAll",
-		"when": "editorTextFocus && foldingEnabled",
+		// * Rebind "Format Selection" to Ctrl+Alt+F
+		"key": "ctrl+alt+f",
+		"command": "editor.action.formatSelection",
+		"when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly",
+	},
+
+	// ? ===== Navigation =====
+
+	// * Go To Line
+	{
+		// * Rebind "Go to Line" to Alt+G
+		"key": "alt+g",
+		"command": "workbench.action.gotoLine",
 	},
 	{
+		// * Unbind default Ctrl+G "Go to Line" shortcut
+		"key": "ctrl+g",
+		"command": "-workbench.action.gotoLine",
+	},
+
+	// * Explorer
+	{
+		// * Collapse all folders in Explorer
+		"key": "shift+alt+e",
+		"command": "workbench.files.action.collapseExplorerFolders",
+	},
+	{
+		// * Unbind default Explorer focus shortcut
+		"key": "ctrl+shift+e",
+		"command": "-workbench.view.explorer",
+		"when": "viewContainer.workbench.view.explorer.enabled",
+	},
+	{
+		// * Rebind Explorer focus to Alt+E
+		"key": "alt+e",
+		"command": "workbench.view.explorer",
+		"when": "viewContainer.workbench.view.explorer.enabled",
+	},
+
+	// ? ===== Code Folding =====
+
+	// * Fold All
+	{
+		// * Unbind default "Fold All" shortcut
 		"key": "ctrl+k ctrl+0",
 		"command": "-editor.foldAll",
 		"when": "editorTextFocus && foldingEnabled",
 	},
 	{
+		// * Rebind "Fold All" to Ctrl+Shift+NumpadSubtract
+		"key": "ctrl+shift+numpad_subtract",
+		"command": "editor.foldAll",
+		"when": "editorTextFocus && foldingEnabled",
+	},
+
+	// * Unfold All
+	{
+		// * Unbind default "Unfold All" shortcut
 		"key": "ctrl+k ctrl+j",
 		"command": "-editor.unfoldAll",
 		"when": "editorTextFocus && foldingEnabled",
 	},
-
-	// Terminal toggle (Ctrl+Escape)
 	{
+		// * Rebind "Unfold All" to Ctrl+Shift+NumpadAdd
+		"key": "ctrl+shift+numpad_add",
+		"command": "editor.unfoldAll",
+		"when": "editorTextFocus && foldingEnabled",
+	},
+
+	// ? ===== Terminal =====
+
+	// * Toggle Terminal
+	{
+		// * Unbind default terminal toggle shortcut
+		"key": "ctrl+`",
+		"command": "-workbench.action.terminal.toggleTerminal",
+		"when": "terminal.active",
+	},
+	{
+		// * Free Ctrl+Escape by unbinding Quick Input hide
+		"key": "ctrl+escape",
+		"command": "-quickInput.hide",
+		"when": "inQuickInput",
+	},
+	{
+		// * Rebind terminal toggle to Ctrl+Escape
 		"key": "ctrl+escape",
 		"command": "workbench.action.terminal.toggleTerminal",
 		"when": "terminal.active",
 	},
 	{
-		"key": "ctrl+`",
-		"command": "-workbench.action.terminal.toggleTerminal",
-		"when": "terminal.active",
+		// * Create a new terminal instance
+		"key": "ctrl+shift+`",
+		"command": "workbench.action.terminal.new",
+		"when": "terminalProcessSupported || terminalWebExtensionContributedProfile",
 	},
-	{ "key": "ctrl+escape", "command": "-quickInput.hide", "when": "inQuickInput" },
-	{ "key": "ctrl+shift+`", "command": "workbench.action.terminal.new" },
 
-	// Close folder (Ctrl+Meta+W)
+	// ? ===== Workspace =====
+
+	// * Close Folder
 	{
-		"key": "ctrl+meta+w",
-		"command": "workbench.action.closeFolder",
-		"when": "emptyWorkspaceSupport && workbenchState != 'empty'",
-	},
-	{
+		// * Unbind default "Close Folder" shortcut
 		"key": "ctrl+k f",
 		"command": "-workbench.action.closeFolder",
 		"when": "emptyWorkspaceSupport && workbenchState != 'empty'",
 	},
-
-	// Git graph
-	{ "key": "ctrl+alt+g", "command": "git-graph.view" },
-	{ "key": "ctrl+alt+x", "command": "gitlens.showGraphPage" },
-	{ "key": "ctrl+g ctrl+f", "command": "git.fetch", "when": "!operationInProgress" },
-	{ "key": "ctrl+g ctrl+c", "command": "git.checkout", "when": "!operationInProgress" },
-
-	// Format selection (Ctrl+Alt+F)
 	{
-		"key": "ctrl+alt+f",
-		"command": "editor.action.formatSelection",
-		"when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly",
-	},
-	{
-		"key": "ctrl+k ctrl+f",
-		"command": "-editor.action.formatSelection",
-		"when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly",
+		// * Rebind "Close Folder" to Ctrl+Meta+W
+		"key": "ctrl+meta+w",
+		"command": "workbench.action.closeFolder",
+		"when": "emptyWorkspaceSupport && workbenchState != 'empty'",
 	},
 
-	// Go to line (Ctrl+G)
-	{ "key": "ctrl+g", "command": "-workbench.action.gotoLine" },
-	{ "key": "alt+g", "command": "workbench.action.gotoLine" },
-
-	// Collapse explorer (Shift+Alt+E)
-	{ "key": "shift+alt+e", "command": "workbench.files.action.collapseExplorerFolders" },
-
-	// Sidebar explorer focus (Alt+E)
+	// * Zen Mode
 	{
-		"key": "alt+e",
-		"command": "workbench.view.explorer",
-		"when": "viewContainer.workbench.view.explorer.enabled",
-	},
-	{
-		"key": "ctrl+shift+e",
-		"command": "-workbench.view.explorer",
-		"when": "viewContainer.workbench.view.explorer.enabled",
-	},
-
-	// Focus groups (Ctrl+Shift+C prefix)
-	{ "key": "ctrl+shift+c ctrl+shift+up", "command": "workbench.action.focusAboveGroup" },
-	{ "key": "ctrl+shift+c ctrl+shift+down", "command": "workbench.action.focusBelowGroup" },
-	{ "key": "ctrl+shift+c ctrl+shift+left", "command": "workbench.action.focusLeftGroup" },
-	{ "key": "ctrl+shift+c ctrl+shift+right", "command": "workbench.action.focusRightGroup" },
-	{ "key": "ctrl+k ctrl+up", "command": "-workbench.action.focusAboveGroup" },
-	{ "key": "ctrl+k ctrl+down", "command": "-workbench.action.focusBelowGroup" },
-	{ "key": "ctrl+k ctrl+left", "command": "-workbench.action.focusLeftGroup" },
-	{ "key": "ctrl+k ctrl+right", "command": "-workbench.action.focusRightGroup" },
-
-	// Zen mode (Ctrl+Alt+Z)
-	{
+		// * Rebind Zen Mode toggle to Ctrl+Alt+Z
 		"key": "ctrl+alt+z",
 		"command": "workbench.action.toggleZenMode",
 		"when": "!isAuxiliaryWindowFocusedContext",
 	},
 	{
+		// * Unbind default Zen Mode shortcut
 		"key": "ctrl+k z",
 		"command": "-workbench.action.toggleZenMode",
 		"when": "!isAuxiliaryWindowFocusedContext",
 	},
 
-	// Todo tree (Shift+Alt+T)
-	{ "key": "shift+alt+t", "command": "workbench.view.extension.todo-tree-container" },
+	// ? ===== Git =====
 
-	// Zoom
-	{ "key": "ctrl+numpad_add", "command": "editor.action.fontZoomIn" },
-	{ "key": "ctrl+numpad_subtract", "command": "editor.action.fontZoomOut" },
-	{ "key": "ctrl+numpad_multiply", "command": "editor.action.fontZoomReset" },
-	{ "key": "shift+alt+numpad_add", "command": "workbench.action.zoomIn" },
-	{ "key": "shift+alt+numpad_subtract", "command": "workbench.action.zoomOut" },
-	{ "key": "ctrl+numpad_add", "command": "-workbench.action.zoomIn" },
-	{ "key": "ctrl+numpad_subtract", "command": "-workbench.action.zoomOut" },
-
-	// Move editor between groups
-	{ "key": "ctrl+alt+right", "command": "workbench.action.moveEditorToNextGroup" },
-	{ "key": "ctrl+alt+left", "command": "workbench.action.moveEditorToPreviousGroup" },
-
-	// Kiro AI chat
-	{ "key": "ctrl+alt+l", "command": "kiroAgent.focusContinueInputWithoutClear" },
-	{ "key": "ctrl+shift+l", "command": "-kiroAgent.focusContinueInputWithoutClear" },
 	{
-		"key": "ctrl+alt+k",
-		"command": "kiroAgent.focusContinueInput",
-		"when": "!kiroAgent.experiments.acpChat",
+		// * Open Git Graph extension view
+		"key": "ctrl+alt+g",
+		"command": "git-graph.view",
+	},
+
+	{
+		// * Open GitLens Commit Graph
+		"key": "ctrl+alt+x",
+		"command": "gitlens.showGraphPage",
+	},
+
+	{
+		// * Fetch updates from remote repositories
+		"key": "ctrl+g ctrl+f",
+		"command": "git.fetch",
+		"when": "!operationInProgress",
+	},
+
+	{
+		// * Checkout another branch
+		"key": "ctrl+g ctrl+c",
+		"command": "git.checkout",
+		"when": "!operationInProgress",
+	},
+
+	// ? ===== Editor Groups & Layout =====
+
+	// * Focus Adjacent Editor Groups
+	{
+		// * Unbind default focus-above shortcut
+		"key": "ctrl+k ctrl+up",
+		"command": "-workbench.action.focusAboveGroup",
 	},
 	{
+		// * Focus editor group above
+		"key": "ctrl+shift+c ctrl+shift+up",
+		"command": "workbench.action.focusAboveGroup",
+	},
+
+	{
+		// * Unbind default focus-below shortcut
+		"key": "ctrl+k ctrl+down",
+		"command": "-workbench.action.focusBelowGroup",
+	},
+	{
+		// * Focus editor group below
+		"key": "ctrl+shift+c ctrl+shift+down",
+		"command": "workbench.action.focusBelowGroup",
+	},
+
+	{
+		// * Unbind default focus-left shortcut
+		"key": "ctrl+k ctrl+left",
+		"command": "-workbench.action.focusLeftGroup",
+	},
+	{
+		// * Focus editor group on the left
+		"key": "ctrl+shift+c ctrl+shift+left",
+		"command": "workbench.action.focusLeftGroup",
+	},
+
+	{
+		// * Unbind default focus-right shortcut
+		"key": "ctrl+k ctrl+right",
+		"command": "-workbench.action.focusRightGroup",
+	},
+	{
+		// * Focus editor group on the right
+		"key": "ctrl+shift+c ctrl+shift+right",
+		"command": "workbench.action.focusRightGroup",
+	},
+
+	// * Move Editor Between Groups
+	{
+		// * Move active editor to the next group
+		"key": "ctrl+alt+right",
+		"command": "workbench.action.moveEditorToNextGroup",
+	},
+	{
+		// * Move active editor to the previous group
+		"key": "ctrl+alt+left",
+		"command": "workbench.action.moveEditorToPreviousGroup",
+	},
+
+	// ? ===== Views & Extensions =====
+
+	{
+		// * Toggle Todo Tree view
+		"key": "shift+alt+t",
+		"command": "workbench.view.extension.todo-tree-container",
+	},
+
+	// ? ===== Zoom & Font Size =====
+
+	// * Window Zoom
+	{
+		// * Unbind default window zoom-in shortcut
+		"key": "ctrl+numpad_add",
+		"command": "-workbench.action.zoomIn",
+	},
+	{
+		// * Rebind window zoom-in to Shift+Alt+NumpadAdd
+		"key": "shift+alt+numpad_add",
+		"command": "workbench.action.zoomIn",
+	},
+	{
+		// * Unbind default window zoom-out shortcut
+		"key": "ctrl+numpad_subtract",
+		"command": "-workbench.action.zoomOut",
+	},
+	{
+		// * Rebind window zoom-out to Shift+Alt+NumpadSubtract
+		"key": "shift+alt+numpad_subtract",
+		"command": "workbench.action.zoomOut",
+	},
+
+	// * Editor Font Zoom
+	{
+		// * Increase editor font size
+		"key": "ctrl+numpad_add",
+		"command": "editor.action.fontZoomIn",
+	},
+	{
+		// * Decrease editor font size
+		"key": "ctrl+numpad_subtract",
+		"command": "editor.action.fontZoomOut",
+	},
+	{
+		// * Reset editor font size
+		"key": "ctrl+numpad_multiply",
+		"command": "editor.action.fontZoomReset",
+	},
+
+	// ? ===== Kiro Chat =====
+
+	{
+		// * Unbind default "Continue Chat" shortcut
+		"key": "ctrl+shift+l",
+		"command": "-kiroAgent.focusContinueInputWithoutClear",
+	},
+	{
+		// * Focus Kiro continue-chat input without clearing history
+		"key": "ctrl+alt+l",
+		"command": "kiroAgent.focusContinueInputWithoutClear",
+	},
+
+	{
+		// * Unbind legacy Kiro continue-input shortcut
 		"key": "ctrl+shift+l",
 		"command": "-kiroAgent.focusContinueInput",
 		"when": "!kiroAgent.experiments.acpChat",
 	},
 	{
+		// * Focus Kiro continue-input panel
 		"key": "ctrl+alt+k",
-		"command": "kiroAgent.focusChatInput",
-		"when": "kiroAgent.experiments.acpChat",
+		"command": "kiroAgent.focusContinueInput",
+		"when": "!kiroAgent.experiments.acpChat",
 	},
+
 	{
+		// * Unbind ACP chat input shortcut
 		"key": "ctrl+shift+l",
 		"command": "-kiroAgent.focusChatInput",
 		"when": "kiroAgent.experiments.acpChat",
 	},
+	{
+		// * Focus ACP chat input
+		"key": "ctrl+alt+k",
+		"command": "kiroAgent.focusChatInput",
+		"when": "kiroAgent.experiments.acpChat",
+	},
 
-	// Accept Kiro diffs
-	{ "key": "ctrl+shift+alt+enter", "command": "kiroAgent.acceptDiff" },
-	{ "key": "ctrl+shift+enter", "command": "-kiroAgent.acceptDiff" },
+	{
+		// * Remove fallback Kiro chat shortcut
+		"key": "ctrl+shift+l",
+		"command": "-kiroAgent.focusChatInput",
+	},
+
+	// * Accept AI Changes
+	{
+		// * Unbind default "Accept Diff" shortcut
+		"key": "ctrl+shift+enter",
+		"command": "-kiroAgent.acceptDiff",
+	},
+	{
+		// * Rebind "Accept Diff" to Ctrl+Shift+Alt+Enter
+		"key": "ctrl+shift+alt+enter",
+		"command": "kiroAgent.acceptDiff",
+	},
 ]
 ```
 
