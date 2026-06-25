@@ -165,7 +165,7 @@ Create or edit your `settings.json` in Kiro (`Ctrl+Shift+P` → `Preferences: Op
 	"editor.fontLigatures": true,
 
 	// * Increase line spacing for readability
-	"editor.lineHeight": 1.6,
+	"editor.lineHeight": 1.4,
 
 	// * Editing Experience
 
@@ -201,11 +201,8 @@ Create or edit your `settings.json` in Kiro (`Ctrl+Shift+P` → `Preferences: Op
 
 	// * Suggestions & Assistance
 
-	// * Enable bracket pair colorization
-	"editor.bracketPairColorization.enabled": true,
-
-	// * Enable minimap
-	"editor.minimap.enabled": true,
+	// * Suppress regular suggestions when inline suggestions are shown
+	"editor.inlineSuggest.suppressSuggestions": true,
 
 	// * Suggest words from other open documents
 	"editor.wordBasedSuggestions": "matchingDocuments",
@@ -493,22 +490,10 @@ Create or edit `keybindings.json` in Kiro (`Ctrl+Shift+P` → `Preferences: Open
 		"when": "terminal.active",
 	},
 	{
-		// * Free Ctrl+Escape by unbinding Quick Input hide
-		"key": "ctrl+escape",
-		"command": "-quickInput.hide",
-		"when": "inQuickInput",
-	},
-	{
 		// * Rebind terminal toggle to Ctrl+Escape
 		"key": "ctrl+escape",
 		"command": "workbench.action.terminal.toggleTerminal",
 		"when": "terminal.active",
-	},
-	{
-		// * Create a new terminal instance
-		"key": "ctrl+shift+`",
-		"command": "workbench.action.terminal.new",
-		"when": "terminalProcessSupported || terminalWebExtensionContributedProfile",
 	},
 
 	// ? ===== Workspace =====
@@ -736,7 +721,7 @@ Create or edit `keybindings.json` in Kiro (`Ctrl+Shift+P` → `Preferences: Open
 ]
 ```
 
-> **⚠️ Note:** Some keybindings reference extensions like `Git Graph`, `GitLens`, or `Todo Tree`. If you do not use those extensions, remove the corresponding lines.
+> **⚠️ Note:** Some keybindings assume you have certain extensions installed (e.g., `Git Graph`, `GitLens`, or `Todo Tree`). If you don’t use those extensions, you can safely remove the corresponding lines.
 
 ---
 

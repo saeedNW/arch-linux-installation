@@ -76,140 +76,258 @@ Create or edit your `settings.json` (`Ctrl+Shift+P` → `Preferences: Open Setti
 
 > **⚠️ Note:** The code below uses **JSON with comments** (JSONC). VS Code fully supports comments in settings files.
 
-```jsonc
+```json
 {
-	/**** START: General ***********/
-	"RainbowBrackets.depreciation-notice": false,
-	"explorer.compactFolders": false,
-	"todo-tree.highlights.enabled": false,
+	// ? ===== General =====
+
+	// * Open files from untrusted workspaces without prompting
 	"security.workspace.trust.untrustedFiles": "open",
-	"errorLens.enabledDiagnosticLevels": ["error", "warning"],
-	"diffEditor.renderSideBySide": false,
-	"chat.commandCenter.enabled": false,
-	"extensions.ignoreRecommendations": true,
+
+	// * Disable compact folder nesting in Explorer
+	"explorer.compactFolders": false,
+
+	// * Hide editor breadcrumbs navigation
 	"breadcrumbs.enabled": false,
-	/*********** END: General ****/
 
-	/**** START: Files ***********/
-	"files.trimTrailingWhitespace": true,
-	"files.insertFinalNewline": true,
-	"files.trimFinalNewlines": true,
+	// * Show Error Lens annotations for errors, warnings, and hints
+	"errorLens.enabledDiagnosticLevels": ["error", "warning", "hint"],
+
+	// ? ===== Files =====
+
+	// * Automatically save files after a short delay
 	"files.autoSave": "afterDelay",
-	/*********** END: Files ****/
 
-	/**** START: Zen Mode ***********/
+	// * Remove trailing whitespace on save
+	"files.trimTrailingWhitespace": true,
+
+	// * Ensure files end with a newline
+	"files.insertFinalNewline": true,
+
+	// * Remove extra blank lines at the end of files
+	"files.trimFinalNewlines": true,
+
+	// ? ===== Zen Mode =====
+
+	// * Keep editor layout aligned normally in Zen Mode
 	"zenMode.centerLayout": false,
-	"zenMode.hideLineNumbers": true,
-	/*********** END: Zen Mode ****/
 
-	/**** START: Window ***********/
+	// * Keep line numbers visible in Zen Mode
+	"zenMode.hideLineNumbers": false,
+
+	// ? ===== Window =====
+
+	// * Use the custom window title bar
 	"window.titleBarStyle": "custom",
+
+	// * Show menu bar when Alt is pressed
 	"window.menuBarVisibility": "toggle",
+
+	// * Reuse previous window dimensions for new windows
 	"window.newWindowDimensions": "inherit",
-	/*********** END: Window ****/
 
-	/**** START: Workbench ***********/
-	"workbench.layoutControl.enabled": false,
-	"workbench.navigationControl.enabled": false,
+	// ? ===== Workbench =====
+
+	// * Use Neo Kiro Dark theme
+	"workbench.colorTheme": "Neo Kiro Dark",
+
+	// * Disable workbench tips and onboarding hints
 	"workbench.tips.enabled": false,
-	"workbench.iconTheme": "a-file-icon-vscode",
-	"workbench.productIconTheme": "a-file-icon-vscode-product-icon-theme",
-	"workbench.colorTheme": "Nord",
+
+	// * Disable navigation controls in the workbench header
+	"workbench.navigationControl.enabled": false,
+
+	// * Use Material Icon Theme
+	"workbench.iconTheme": "material-icon-theme",
+
+	// * Skip the welcome/startup screen
 	"workbench.startupEditor": "none",
-	/*********** END: Workbench ****/
 
-	/**** START: Git & GitLens ***********/
+	// ? ===== Git & Source Control =====
+
+	// * Automatically fetch remote changes
 	"git.autofetch": true,
+
+	// * AI model used by GitLens
+	"gitlens.ai.model": "vscode",
+
+	// * VS Code AI provider/model used by GitLens
+	"gitlens.ai.vscode.model": "copilot:gpt-4o-mini",
+
+	// * Display the GitLens graph inside an editor tab
 	"gitlens.graph.layout": "editor",
+
+	// * Show repositories and changes in tree view
 	"scm.defaultViewMode": "tree",
-	/*********** END: Git & GitLens ****/
 
-	/**** START: Editor ***********/
+	// * Ignore whitespace-only changes in diffs
+	"diffEditor.ignoreTrimWhitespace": true,
+
+	// ? ===== Editor =====
+
+	// * Typography
+
+	// * Preferred editor font stack
+	"editor.fontFamily": "Fira Code, JetBrainsMono Nerd Font, Consolas, monospace",
+
+	// * Enable font ligatures
 	"editor.fontLigatures": true,
-	"editor.mouseWheelZoom": true,
+
+	// * Increase line spacing for readability
+	"editor.lineHeight": 1.4,
+
+	// * Editing Experience
+
+	// * Use tabs instead of spaces
 	"editor.insertSpaces": false,
-	"editor.linkedEditing": true,
-	"editor.copyWithSyntaxHighlighting": false,
-	"editor.detectIndentation": false,
-	"editor.glyphMargin": false,
-	"editor.lineHeight": 2,
+
+	// * Set tab width to 2
 	"editor.tabSize": 2,
-	"editor.fontFamily": "'JetBrainsMono Nerd Font', monospace",
+
+	// * Use tabSize as indentation size
 	"editor.indentSize": "tabSize",
-	"editor.wordBasedSuggestions": "matchingDocuments",
+
+	// * Disable automatic indentation detection
+	"editor.detectIndentation": false,
+
+	// * Enable linked editing for matching tags
+	"editor.linkedEditing": true,
+
+	// * Enable Ctrl + Mouse Wheel zoom
+	"editor.mouseWheelZoom": true,
+
+	// * Enable smooth caret animation
 	"editor.cursorSmoothCaretAnimation": "on",
-	"editor.lightbulb.enabled": "off",
+
+	// * Highlight the active line
 	"editor.renderLineHighlight": "all",
+
+	// * Disable bracket matching highlights
 	"editor.matchBrackets": "never",
+
+	// * Hide code action lightbulb indicators
+	"editor.lightbulb.enabled": "off",
+
+	// * Suggestions & Assistance
+
+	// * Suppress regular suggestions when inline suggestions are shown
 	"editor.inlineSuggest.suppressSuggestions": true,
-	"javascript.preferences.quoteStyle": "single",
-	"typescript.preferences.quoteStyle": "single",
-	"editor.tokenColorCustomizations": {
-		"textMateRules": [
-			{ "name": "string color", "scope": ["string"], "settings": { "foreground": "#fdee00" } },
-			{ "name": "variable color", "scope": ["variable"], "settings": { "foreground": "#ffffee" } },
-			{
-				"name": "parameter color",
-				"scope": ["variable.parameter"],
-				"settings": { "foreground": "#ffd390" },
-			},
-			{
-				"name": "number color in env files",
-				"scope": ["source.ini"],
-				"settings": { "foreground": "#76fd00" },
-			},
-		],
-	},
-	/*********** END: Editor ****/
 
-	/**** START: Terminal ***********/
+	// * Suggest words from other open documents
+	"editor.wordBasedSuggestions": "matchingDocuments",
+
+	// * Disable syntax highlighting when copying code
+	"editor.copyWithSyntaxHighlighting": false,
+
+	// * Organize imports automatically on save
+	"editor.codeActionsOnSave": {
+		"source.organizeImports": "always"
+	},
+
+	// * Prefer single quotes in JavaScript & TypeScript auto-imports
+	"js/ts.preferences.quoteStyle": "single",
+
+	// ? ===== Terminal =====
+
+	// * Preferred terminal font stack
+	"terminal.integrated.fontFamily": "Fira Code, JetBrainsMono Nerd Font, monospace",
+
+	// * Linux terminal environment overrides
 	"terminal.integrated.env.linux": {},
-	"terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
-	"terminal.integrated.tabs.enabled": false,
-	/*********** END: Terminal ****/
 
-	/**** START: Prettier ***********/
+	// ? ===== Prettier =====
+
+	// * Use tabs for indentation
 	"prettier.useTabs": true,
+
+	// * Set tab width to 2
 	"prettier.tabWidth": 2,
+
+	// * Use LF line endings
 	"prettier.endOfLine": "lf",
+
+	// * Prefer single quotes
 	"prettier.singleQuote": true,
-	"prettier.trailingComma": "all",
-	"prettier.bracketSpacing": true,
+
+	// * Always include semicolons
 	"prettier.semi": true,
+
+	// * Always include trailing commas where valid
+	"prettier.trailingComma": "all",
+
+	// * Add spaces inside object braces
+	"prettier.bracketSpacing": true,
+
+	// * Always wrap arrow function parameters in parentheses
 	"prettier.arrowParens": "always",
+
+	// * Wrap lines at 100 characters
 	"prettier.printWidth": 100,
-	/*********** END: Prettier ****/
 
-	/**** START: cSpell ***********/
-	"cSpell.userWords": ["fastify", "liara"],
+	// ? ===== Spell Checker =====
+
+	// * Enable English and Persian spell checking
 	"cSpell.language": "en,fa",
-	/*********** END: cSpell ****/
 
-	/**** START: Selected line ***********/
-	"selectline.alignment": "right",
-	/*********** END: Selected line ****/
+	// ? ===== Formatting =====
 
-	/**** START: Formatter ***********/
+	// * Format files automatically on save
 	"editor.formatOnSave": true,
-	"editor.formatOnType": true,
-	"editor.formatOnPaste": true,
-	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-	"[lua]": { "editor.defaultFormatter": "yinfei.luahelper" },
-	"[toml]": { "editor.defaultFormatter": "tamasfe.even-better-toml" },
-	"[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-	"[dockercompose]": { "editor.defaultFormatter": "ms-azuretools.vscode-docker" },
-	"[plaintext]": { "editor.defaultFormatter": "lkrms.inifmt" },
-	/*********** END: Formatter ****/
 
-	/**** START: Github copilot ***********/
-	"github.copilot.enable": {
-		"*": false,
-		"plaintext": false,
-		"markdown": false,
-		"scminput": false,
+	// * Format while typing
+	"editor.formatOnType": true,
+
+	// * Format pasted content
+	"editor.formatOnPaste": true,
+
+	// * Use Prettier as the global formatter
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+
+	// * Language-Specific Formatters
+
+	// * Docker Compose
+	"[dockercompose]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	/**** END: Github copilot ***********/
+
+	// * JavaScript
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+
+	// * Lua
+	"[lua]": {
+		"editor.defaultFormatter": "sumneko.lua"
+	},
+
+	// * NGINX Configuration
+	"[NGINX]": {
+		"editor.defaultFormatter": "hangxingliu.vscode-nginx-conf-hint"
+	},
+
+	// * Plain Text
+	"[plaintext]": {
+		"editor.defaultFormatter": "lkrms.inifmt"
+	},
+
+	// * Protocol Buffers
+	"[proto3]": {
+		"editor.defaultFormatter": "DrBlury.protobuf-vsc"
+	},
+
+	// * Python
+	"[python]": {
+		"editor.defaultFormatter": "ms-python.black-formatter"
+	},
+
+	// * TOML
+	"[toml]": {
+		"editor.defaultFormatter": "tamasfe.even-better-toml"
+	},
+
+	// * TypeScript
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
 }
 ```
 
@@ -222,196 +340,333 @@ Create or edit your `settings.json` (`Ctrl+Shift+P` → `Preferences: Open Setti
 Create or edit your `keybindings.json` (`Ctrl+Shift+P` → `Preferences: Open Keyboard Shortcuts (JSON)`) and add the following overrides. These remap many common actions to more convenient shortcuts.
 
 ```jsonc
+// Place your key bindings in this file to override the defaults
 [
-	// Copy line down
+	// ? ===== Selection & Editing =====
+
+	// * Copy Line Down
 	{
-		"key": "ctrl+d",
-		"command": "editor.action.copyLinesDownAction",
-		"when": "editorTextFocus && !editorReadonly",
-	},
-	{
+		// * Unbind default "Copy Line Down" shortcut
 		"key": "ctrl+shift+alt+down",
 		"command": "-editor.action.copyLinesDownAction",
 		"when": "editorTextFocus && !editorReadonly",
 	},
-	// Add selection to next find match (old Ctrl+D) moved to Alt+D
-	{ "key": "alt+d", "command": "editor.action.addSelectionToNextFindMatch", "when": "editorFocus" },
 	{
+		// * Rebind "Copy Line Down" to Ctrl+D
+		"key": "ctrl+d",
+		"command": "editor.action.copyLinesDownAction",
+		"when": "editorTextFocus && !editorReadonly",
+	},
+
+	// * Multi-Cursor: Select Next Match
+	{
+		// * Unbind default multi-cursor selection shortcut from Ctrl+D
 		"key": "ctrl+d",
 		"command": "-editor.action.addSelectionToNextFindMatch",
 		"when": "editorFocus",
 	},
-
-	// Delete line
 	{
+		// * Rebind multi-cursor selection to Alt+D
+		"key": "alt+d",
+		"command": "editor.action.addSelectionToNextFindMatch",
+		"when": "editorFocus",
+	},
+
+	// * Delete Line
+	{
+		// * Unbind default "Delete Line" shortcut
+		"key": "ctrl+shift+k",
+		"command": "-editor.action.deleteLines",
+		"when": "textInputFocus && !editorReadonly",
+	},
+	{
+		// * Rebind "Delete Line" to Ctrl+Y
 		"key": "ctrl+y",
 		"command": "editor.action.deleteLines",
 		"when": "textInputFocus && !editorReadonly",
 	},
 	{
-		"key": "ctrl+shift+k",
-		"command": "-editor.action.deleteLines",
-		"when": "textInputFocus && !editorReadonly",
-	},
-	{ "key": "ctrl+y", "command": "-redo" }, // remove original redo binding
-
-	// Nested comments
-	{
-		"key": "ctrl+shift+/",
-		"command": "extension.nestComments",
-		"when": "editorHasSelection && editorTextFocus",
-	},
-	{
-		"key": "ctrl+alt+/",
-		"command": "-extension.nestComments",
-		"when": "editorHasSelection && editorTextFocus",
+		// * Free Ctrl+Y by unbinding Redo
+		"key": "ctrl+y",
+		"command": "-redo",
 	},
 
-	// Block comment
+	// * Block Comments
 	{
-		"key": "ctrl+alt+/",
-		"command": "editor.action.blockComment",
-		"when": "editorTextFocus && !editorReadonly",
-	},
-	{
+		// * Unbind default block comment shortcut
 		"key": "ctrl+shift+a",
 		"command": "-editor.action.blockComment",
 		"when": "editorTextFocus && !editorReadonly",
 	},
+	{
+		// * Rebind block comment toggle to Ctrl+Shift+/
+		"key": "ctrl+shift+/",
+		"command": "editor.action.blockComment",
+		"when": "editorTextFocus && !editorReadonly",
+	},
 
-	// Fold / unfold all
+	// * Format Selection
 	{
-		"key": "ctrl+shift+numpad_subtract",
-		"command": "editor.foldAll",
-		"when": "editorTextFocus && foldingEnabled",
+		// * Unbind default "Format Selection" shortcut
+		"key": "ctrl+k ctrl+f",
+		"command": "-editor.action.formatSelection",
+		"when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly",
 	},
 	{
-		"key": "ctrl+shift+numpad_add",
-		"command": "editor.unfoldAll",
-		"when": "editorTextFocus && foldingEnabled",
+		// * Rebind "Format Selection" to Ctrl+Alt+F
+		"key": "ctrl+alt+f",
+		"command": "editor.action.formatSelection",
+		"when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly",
+	},
+
+	// ? ===== Navigation =====
+
+	// * Go To Line
+	{
+		// * Rebind "Go to Line" to Alt+G
+		"key": "alt+g",
+		"command": "workbench.action.gotoLine",
 	},
 	{
+		// * Unbind default Ctrl+G "Go to Line" shortcut
+		"key": "ctrl+g",
+		"command": "-workbench.action.gotoLine",
+	},
+
+	// * Explorer
+	{
+		// * Collapse all folders in Explorer
+		"key": "shift+alt+e",
+		"command": "workbench.files.action.collapseExplorerFolders",
+	},
+	{
+		// * Unbind default Explorer focus shortcut
+		"key": "ctrl+shift+e",
+		"command": "-workbench.view.explorer",
+		"when": "viewContainer.workbench.view.explorer.enabled",
+	},
+	{
+		// * Rebind Explorer focus to Alt+E
+		"key": "alt+e",
+		"command": "workbench.view.explorer",
+		"when": "viewContainer.workbench.view.explorer.enabled",
+	},
+
+	// ? ===== Code Folding =====
+
+	// * Fold All
+	{
+		// * Unbind default "Fold All" shortcut
 		"key": "ctrl+k ctrl+0",
 		"command": "-editor.foldAll",
 		"when": "editorTextFocus && foldingEnabled",
 	},
 	{
+		// * Rebind "Fold All" to Ctrl+Shift+NumpadSubtract
+		"key": "ctrl+shift+numpad_subtract",
+		"command": "editor.foldAll",
+		"when": "editorTextFocus && foldingEnabled",
+	},
+
+	// * Unfold All
+	{
+		// * Unbind default "Unfold All" shortcut
 		"key": "ctrl+k ctrl+j",
 		"command": "-editor.unfoldAll",
 		"when": "editorTextFocus && foldingEnabled",
 	},
-
-	// Terminal toggle
-	{ "key": "ctrl+alt+`", "command": "workbench.action.terminal.toggleTerminal" },
 	{
+		// * Rebind "Unfold All" to Ctrl+Shift+NumpadAdd
+		"key": "ctrl+shift+numpad_add",
+		"command": "editor.unfoldAll",
+		"when": "editorTextFocus && foldingEnabled",
+	},
+
+	// ? ===== Terminal =====
+
+	// * Toggle Terminal
+	{
+		// * Unbind default terminal toggle shortcut
 		"key": "ctrl+`",
 		"command": "-workbench.action.terminal.toggleTerminal",
 		"when": "terminal.active",
 	},
-
-	// Close folder
 	{
-		"key": "ctrl+meta+w",
-		"command": "workbench.action.closeFolder",
-		"when": "emptyWorkspaceSupport && workbenchState != 'empty'",
+		// * Rebind terminal toggle to Ctrl+Escape
+		"key": "ctrl+escape",
+		"command": "workbench.action.terminal.toggleTerminal",
+		"when": "terminal.active",
 	},
+
+	// ? ===== Workspace =====
+
+	// * Close Folder
 	{
+		// * Unbind default "Close Folder" shortcut
 		"key": "ctrl+k f",
 		"command": "-workbench.action.closeFolder",
 		"when": "emptyWorkspaceSupport && workbenchState != 'empty'",
 	},
-
-	// Git graph
-	{ "key": "ctrl+alt+g", "command": "git-graph.view" },
-	{ "key": "ctrl+alt+x", "command": "gitlens.showGraphPage" },
-
-	// Format selection
 	{
-		"key": "ctrl+alt+f",
-		"command": "editor.action.formatSelection",
-		"when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly",
-	},
-	{
-		"key": "ctrl+k ctrl+f",
-		"command": "-editor.action.formatSelection",
-		"when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly",
+		// * Rebind "Close Folder" to Ctrl+Meta+W
+		"key": "ctrl+meta+w",
+		"command": "workbench.action.closeFolder",
+		"when": "emptyWorkspaceSupport && workbenchState != 'empty'",
 	},
 
-	// Go to line
-	{ "key": "ctrl+g", "command": "-workbench.action.gotoLine" },
-	{ "key": "alt+g", "command": "workbench.action.gotoLine" },
-
-	// Collapse explorer
-	{ "key": "shift+alt+e", "command": "workbench.files.action.collapseExplorerFolders" },
-
-	// Sidebar explorer focus
+	// * Zen Mode
 	{
-		"key": "alt+e",
-		"command": "workbench.view.explorer",
-		"when": "viewContainer.workbench.view.explorer.enabled",
-	},
-	{
-		"key": "ctrl+shift+e",
-		"command": "-workbench.view.explorer",
-		"when": "viewContainer.workbench.view.explorer.enabled",
-	},
-
-	// Focus groups (use with Ctrl+Shift+C prefix)
-	{ "key": "ctrl+shift+c ctrl+shift+up", "command": "workbench.action.focusAboveGroup" },
-	{ "key": "ctrl+shift+c ctrl+shift+down", "command": "workbench.action.focusBelowGroup" },
-	{ "key": "ctrl+shift+c ctrl+shift+left", "command": "workbench.action.focusLeftGroup" },
-	{ "key": "ctrl+shift+c ctrl+shift+right", "command": "workbench.action.focusRightGroup" },
-	{ "key": "ctrl+k ctrl+up", "command": "-workbench.action.focusAboveGroup" },
-	{ "key": "ctrl+k ctrl+down", "command": "-workbench.action.focusBelowGroup" },
-	{ "key": "ctrl+k ctrl+left", "command": "-workbench.action.focusLeftGroup" },
-	{ "key": "ctrl+k ctrl+right", "command": "-workbench.action.focusRightGroup" },
-
-	// Zen mode toggle
-	{
-		"key": "ctrl+k z",
-		"command": "-workbench.action.toggleZenMode",
-		"when": "!isAuxiliaryWindowFocusedContext",
-	},
-	{
+		// * Rebind Zen Mode toggle to Ctrl+Alt+Z
 		"key": "ctrl+alt+z",
 		"command": "workbench.action.toggleZenMode",
 		"when": "!isAuxiliaryWindowFocusedContext",
 	},
-
-	// Remove overtype toggle conflict
-	{ "key": "ctrl+shift+i", "command": "-overtype.toggle", "when": "editorFocus" },
-
-	// Todo tree
-	{ "key": "shift+alt+t", "command": "workbench.view.extension.todo-tree-container" },
-
-	// Window zoom (editor + window)
-	{ "key": "ctrl+numpad_add", "command": "editor.action.fontZoomIn" },
-	{ "key": "ctrl+numpad_subtract", "command": "editor.action.fontZoomOut" },
-	{ "key": "ctrl+numpad_multiply", "command": "editor.action.fontZoomReset" },
-	{ "key": "shift+alt+numpad_add", "command": "workbench.action.zoomIn" },
-	{ "key": "shift+alt+numpad_subtract", "command": "workbench.action.zoomOut" },
-	{ "key": "ctrl+numpad_add", "command": "-workbench.action.zoomIn" },
-	{ "key": "ctrl+numpad_subtract", "command": "-workbench.action.zoomOut" },
-
-	// Cody AI (if installed)
 	{
-		"key": "shift+alt+a",
-		"command": "cody.menu.custom-commands",
-		"when": "cody.activated && workspaceFolderCount > 0",
+		// * Unbind default Zen Mode shortcut
+		"key": "ctrl+k z",
+		"command": "-workbench.action.toggleZenMode",
+		"when": "!isAuxiliaryWindowFocusedContext",
+	},
+
+	// ? ===== Git =====
+
+	{
+		// * Open Git Graph extension view
+		"key": "ctrl+alt+g",
+		"command": "git-graph.view",
+	},
+
+	{
+		// * Open GitLens Commit Graph
+		"key": "ctrl+alt+x",
+		"command": "gitlens.showGraphPage",
+	},
+
+	{
+		// * Fetch updates from remote repositories
+		"key": "ctrl+g ctrl+f",
+		"command": "git.fetch",
+		"when": "!operationInProgress",
+	},
+
+	{
+		// * Checkout another branch
+		"key": "ctrl+g ctrl+c",
+		"command": "git.checkout",
+		"when": "!operationInProgress",
+	},
+
+	// ? ===== Editor Groups & Layout =====
+
+	// * Focus Adjacent Editor Groups
+	{
+		// * Unbind default focus-above shortcut
+		"key": "ctrl+k ctrl+up",
+		"command": "-workbench.action.focusAboveGroup",
 	},
 	{
-		"key": "shift+alt+c",
-		"command": "-cody.menu.custom-commands",
-		"when": "cody.activated && workspaceFolderCount > 0",
+		// * Focus editor group above
+		"key": "ctrl+shift+c ctrl+shift+up",
+		"command": "workbench.action.focusAboveGroup",
 	},
-	{ "key": "shift+alt+c", "command": "cody.chat.focus" },
 
-	// Run tasks
-	{ "key": "ctrl+alt+s", "command": "workbench.action.tasks.runTask" },
+	{
+		// * Unbind default focus-below shortcut
+		"key": "ctrl+k ctrl+down",
+		"command": "-workbench.action.focusBelowGroup",
+	},
+	{
+		// * Focus editor group below
+		"key": "ctrl+shift+c ctrl+shift+down",
+		"command": "workbench.action.focusBelowGroup",
+	},
+
+	{
+		// * Unbind default focus-left shortcut
+		"key": "ctrl+k ctrl+left",
+		"command": "-workbench.action.focusLeftGroup",
+	},
+	{
+		// * Focus editor group on the left
+		"key": "ctrl+shift+c ctrl+shift+left",
+		"command": "workbench.action.focusLeftGroup",
+	},
+
+	{
+		// * Unbind default focus-right shortcut
+		"key": "ctrl+k ctrl+right",
+		"command": "-workbench.action.focusRightGroup",
+	},
+	{
+		// * Focus editor group on the right
+		"key": "ctrl+shift+c ctrl+shift+right",
+		"command": "workbench.action.focusRightGroup",
+	},
+
+	// * Move Editor Between Groups
+	{
+		// * Move active editor to the next group
+		"key": "ctrl+alt+right",
+		"command": "workbench.action.moveEditorToNextGroup",
+	},
+	{
+		// * Move active editor to the previous group
+		"key": "ctrl+alt+left",
+		"command": "workbench.action.moveEditorToPreviousGroup",
+	},
+
+	// ? ===== Views & Extensions =====
+
+	{
+		// * Toggle Todo Tree view
+		"key": "shift+alt+t",
+		"command": "workbench.view.extension.todo-tree-container",
+	},
+
+	// ? ===== Zoom & Font Size =====
+
+	// * Window Zoom
+	{
+		// * Unbind default window zoom-in shortcut
+		"key": "ctrl+numpad_add",
+		"command": "-workbench.action.zoomIn",
+	},
+	{
+		// * Rebind window zoom-in to Shift+Alt+NumpadAdd
+		"key": "shift+alt+numpad_add",
+		"command": "workbench.action.zoomIn",
+	},
+	{
+		// * Unbind default window zoom-out shortcut
+		"key": "ctrl+numpad_subtract",
+		"command": "-workbench.action.zoomOut",
+	},
+	{
+		// * Rebind window zoom-out to Shift+Alt+NumpadSubtract
+		"key": "shift+alt+numpad_subtract",
+		"command": "workbench.action.zoomOut",
+	},
+
+	// * Editor Font Zoom
+	{
+		// * Increase editor font size
+		"key": "ctrl+numpad_add",
+		"command": "editor.action.fontZoomIn",
+	},
+	{
+		// * Decrease editor font size
+		"key": "ctrl+numpad_subtract",
+		"command": "editor.action.fontZoomOut",
+	},
+	{
+		// * Reset editor font size
+		"key": "ctrl+numpad_multiply",
+		"command": "editor.action.fontZoomReset",
+	},
 ]
 ```
 
-> **⚠️ Note:** Some keybindings assume you have certain extensions installed (e.g., `git-graph`, `cody`). If you don’t use those extensions, you can safely remove the corresponding lines.
+> **⚠️ Note:** Some keybindings assume you have certain extensions installed (e.g., `Git Graph`, `GitLens`, or `Todo Tree`). If you don’t use those extensions, you can safely remove the corresponding lines.
 
 ---
 
