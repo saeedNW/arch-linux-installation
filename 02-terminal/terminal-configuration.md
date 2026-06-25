@@ -26,11 +26,18 @@ A well-configured terminal can dramatically improve your workflow. This guide wi
     - [fastfetch – System Information Tool](#fastfetch--system-information-tool)
   - [Fonts Installation](#fonts-installation)
     - [Fira Code – Ligatures for Coding](#fira-code--ligatures-for-coding)
-    - [Nerd Fonts – Icons \& Glyphs](#nerd-fonts--icons--glyphs)
+      - [Install via Arch Linux Package Manager (Recommended)](#install-via-arch-linux-package-manager-recommended)
+      - [Manual Installation](#manual-installation)
+    - [JetBrains Mono Nerd Font – Coding Font with Icons](#jetbrains-mono-nerd-font--coding-font-with-icons)
+      - [Install via Arch Linux Package Manager (Recommended)](#install-via-arch-linux-package-manager-recommended-1)
+      - [Manual Installation](#manual-installation-1)
+    - [Optional: Fira Code Nerd Font](#optional-fira-code-nerd-font)
+    - [Refresh Font Cache](#refresh-font-cache)
+    - [Verify Installation](#verify-installation)
   - [Zsh Installation \& Setup](#zsh-installation--setup)
     - [Installing Zsh](#installing-zsh)
     - [Making Zsh the Default Shell](#making-zsh-the-default-shell)
-      - [Verify Installation](#verify-installation)
+      - [Verify Installation](#verify-installation-1)
     - [Backing Up Existing Configurations](#backing-up-existing-configurations)
   - [Oh My Posh Prompt Configuration](#oh-my-posh-prompt-configuration)
     - [Installing Oh My Posh](#installing-oh-my-posh)
@@ -269,15 +276,80 @@ Custom fonts greatly improve your terminal and coding experience.
 
 Fira Code is a free monospaced font containing ligatures for common programming multi-character combinations (e.g., `->`, `=>`, `!=` are displayed as single glyphs).
 
-**Installation:** [Download Fira Code from GitHub](https://github.com/tonsky/FiraCode) and install the font files on your system.
+#### Install via Arch Linux Package Manager (Recommended)
 
-### Nerd Fonts – Icons & Glyphs
+```bash
+sudo pacman -S ttf-fira-code
+```
 
-Nerd Fonts are specialized fonts that include a wide range of icons and glyphs, making them ideal for developers and enthusiasts who require additional symbols in their terminal or code editor. Popular choices include **JetBrainsMono Nerd Font**.
+#### Manual Installation
 
-**Installation:** [Download from Nerd Fonts website](https://www.nerdfonts.com/) and install the font files.
+Download Fira Code from GitHub and install the font files manually:
 
-> **⚠️ Note:** After installing fonts, you need to set them as your terminal's font. This is done within your terminal emulator's settings (Konsole, GNOME Terminal, Kitty, etc.), not via command line.
+[https://github.com/tonsky/FiraCode](https://github.com/tonsky/FiraCode)
+
+---
+
+### JetBrains Mono Nerd Font – Coding Font with Icons
+
+JetBrains Mono Nerd Font combines the popular JetBrains Mono typeface with Nerd Font patches, providing thousands of additional icons and glyphs used by modern terminal tools such as Neovim, Starship, LazyVim, Oh My Posh, and many others.
+
+#### Install via Arch Linux Package Manager (Recommended)
+
+```bash
+sudo pacman -S ttf-jetbrains-mono-nerd
+```
+
+#### Manual Installation
+
+Download a Nerd Font (such as JetBrainsMono Nerd Font) from:
+
+[https://www.nerdfonts.com/](https://www.nerdfonts.com/)
+
+and install the font files manually.
+
+---
+
+### Optional: Fira Code Nerd Font
+
+If you prefer Fira Code and also want Nerd Font icons included, install the Nerd Font patched version:
+
+```bash
+sudo pacman -S ttf-firacode-nerd
+```
+
+---
+
+### Refresh Font Cache
+
+Normally Arch updates the cache automatically, but you can force a refresh:
+
+```bash
+fc-cache -fv
+```
+
+---
+
+### Verify Installation
+
+Check that the fonts are installed correctly:
+
+```bash
+fc-list | grep -i "Fira"
+fc-list | grep -i "JetBrains"
+```
+
+To see all available Nerd Fonts:
+
+```bash
+fc-list | grep -i nerd
+```
+
+---
+
+> **⚠️ Note:** After installing fonts, you need to set them as your terminal's font. This is done within your terminal emulator's settings (Konsole, GNOME Terminal, Kitty, WezTerm, Ghostty, etc.), not via command line.
+>
+> For most modern developer setups on Arch Linux, **JetBrains Mono Nerd Font** is recommended because it provides both an excellent programming font and all required Nerd Font icons in a single package.
 
 ---
 
