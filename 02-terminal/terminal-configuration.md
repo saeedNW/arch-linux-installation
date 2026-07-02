@@ -14,52 +14,67 @@ A well-configured terminal can dramatically improve your workflow. This guide wi
 ## Table of Contents
 
 - [Terminal Setup Guide](#terminal-setup-guide)
-	- [Table of Contents](#table-of-contents)
-	- [Prerequisites: System Update \& Git](#prerequisites-system-update--git)
-	- [Essential Terminal Utilities](#essential-terminal-utilities)
-		- [bat – A Better `cat`](#bat--a-better-cat)
-		- [eza – A Modern `ls` Replacement](#eza--a-modern-ls-replacement)
-		- [bpytop – Resource Monitor](#bpytop--resource-monitor)
-		- [fzf – Fuzzy Finder](#fzf--fuzzy-finder)
-		- [zoxide – Smarter `cd`](#zoxide--smarter-cd)
-		- [duf – Better `df` Alternative](#duf--better-df-alternative)
-		- [fastfetch – System Information Tool](#fastfetch--system-information-tool)
-	- [Fonts Installation](#fonts-installation)
-		- [Fira Code – Ligatures for Coding](#fira-code--ligatures-for-coding)
-			- [Install via Arch Linux Package Manager (Recommended)](#install-via-arch-linux-package-manager-recommended)
-			- [Manual Installation](#manual-installation)
-		- [JetBrains Mono Nerd Font – Coding Font with Icons](#jetbrains-mono-nerd-font--coding-font-with-icons)
-			- [Install via Arch Linux Package Manager (Recommended)](#install-via-arch-linux-package-manager-recommended-1)
-			- [Manual Installation](#manual-installation-1)
-		- [Optional: Fira Code Nerd Font](#optional-fira-code-nerd-font)
-		- [Refresh Font Cache](#refresh-font-cache)
-		- [Verify Installation](#verify-installation)
-	- [Zsh Installation \& Setup](#zsh-installation--setup)
-		- [Installing Zsh](#installing-zsh)
-		- [Making Zsh the Default Shell](#making-zsh-the-default-shell)
-			- [Verify Installation](#verify-installation-1)
-		- [Backing Up Existing Configurations](#backing-up-existing-configurations)
-	- [Oh My Posh Prompt Configuration](#oh-my-posh-prompt-configuration)
-		- [Installing Oh My Posh](#installing-oh-my-posh)
-		- [Creating a Custom Theme](#creating-a-custom-theme)
-	- [Zinit Plugin Manager](#zinit-plugin-manager)
-		- [Installing Zinit](#installing-zinit)
-		- [Verifying Zinit Installation](#verifying-zinit-installation)
-	- [Zsh Plugins Configuration](#zsh-plugins-configuration)
-		- [Plugin Descriptions \& Keybindings](#plugin-descriptions--keybindings)
-	- [Activate the Oh My Posh Prompt](#activate-the-oh-my-posh-prompt)
-	- [Zsh History Configuration](#zsh-history-configuration)
-		- [History Settings Explained](#history-settings-explained)
-	- [Completion Styling \& fzf-tab Preview](#completion-styling--fzf-tab-preview)
-	- [Setting Default Editors](#setting-default-editors)
-	- [Enable Auto CD](#enable-auto-cd)
-	- [Optional Aliases](#optional-aliases)
-		- [Alias Descriptions](#alias-descriptions)
-	- [Optional: Run fastfetch on Terminal Startup](#optional-run-fastfetch-on-terminal-startup)
-	- [Shell Integrations (fzf \& zoxide)](#shell-integrations-fzf--zoxide)
-	- [NVM Compatibility Warning](#nvm-compatibility-warning)
-	- [Complete `.zshrc` Reference](#complete-zshrc-reference)
-	- [Final Steps](#final-steps)
+  - [Table of Contents](#table-of-contents)
+  - [Prerequisites: System Update \& Git](#prerequisites-system-update--git)
+  - [Essential Terminal Utilities](#essential-terminal-utilities)
+    - [bat – A Better `cat`](#bat--a-better-cat)
+    - [eza – A Modern `ls` Replacement](#eza--a-modern-ls-replacement)
+    - [bpytop – Resource Monitor](#bpytop--resource-monitor)
+    - [fzf – Fuzzy Finder](#fzf--fuzzy-finder)
+    - [zoxide – Smarter `cd`](#zoxide--smarter-cd)
+    - [duf – Better `df` Alternative](#duf--better-df-alternative)
+    - [fastfetch – System Information Tool](#fastfetch--system-information-tool)
+    - [pkgfile – Command-Not-Found Handler](#pkgfile--command-not-found-handler)
+  - [Fonts Installation](#fonts-installation)
+    - [Fira Code – Ligatures for Coding](#fira-code--ligatures-for-coding)
+      - [Install via Arch Linux Package Manager (Recommended)](#install-via-arch-linux-package-manager-recommended)
+      - [Manual Installation](#manual-installation)
+    - [JetBrains Mono Nerd Font – Coding Font with Icons](#jetbrains-mono-nerd-font--coding-font-with-icons)
+      - [Install via Arch Linux Package Manager (Recommended)](#install-via-arch-linux-package-manager-recommended-1)
+      - [Manual Installation](#manual-installation-1)
+    - [Optional: Fira Code Nerd Font](#optional-fira-code-nerd-font)
+    - [Refresh Font Cache](#refresh-font-cache)
+    - [Verify Installation](#verify-installation)
+  - [Zsh Installation \& Setup](#zsh-installation--setup)
+    - [Installing Zsh](#installing-zsh)
+    - [Making Zsh the Default Shell](#making-zsh-the-default-shell)
+      - [Verify Installation](#verify-installation-1)
+    - [Backing Up Existing Configurations](#backing-up-existing-configurations)
+  - [Modular Configuration Layout](#modular-configuration-layout)
+    - [File Structure](#file-structure)
+    - [Deploying with GNU Stow](#deploying-with-gnu-stow)
+  - [Oh My Posh Prompt Configuration](#oh-my-posh-prompt-configuration)
+    - [Installing Oh My Posh](#installing-oh-my-posh)
+    - [Creating a Custom Theme](#creating-a-custom-theme)
+  - [Zinit Plugin Manager](#zinit-plugin-manager)
+    - [Installing Zinit](#installing-zinit)
+    - [Verifying Zinit Installation](#verifying-zinit-installation)
+  - [Environment Variables \& PATH](#environment-variables--path)
+    - [Default Editors](#default-editors)
+    - [Android SDK (Optional)](#android-sdk-optional)
+    - [Truecolor Support](#truecolor-support)
+  - [Zsh History Configuration](#zsh-history-configuration)
+  - [Completion System](#completion-system)
+    - [Optimized Completion Initialization](#optimized-completion-initialization)
+  - [Zsh Plugins Configuration](#zsh-plugins-configuration)
+    - [Async Loading with Zinit](#async-loading-with-zinit)
+    - [Plugin Descriptions \& Keybindings](#plugin-descriptions--keybindings)
+  - [zstyles](#zstyles)
+  - [Key Bindings](#key-bindings)
+  - [Native Utility Functions](#native-utility-functions)
+  - [Arch Linux Command-Not-Found](#arch-linux-command-not-found)
+  - [Prompt (oh-my-posh)](#prompt-oh-my-posh)
+  - [Aliases](#aliases)
+  - [Shell Integrations](#shell-integrations)
+    - [Fast Node Manager (fnm)](#fast-node-manager-fnm)
+    - [fzf Integration](#fzf-integration)
+    - [zoxide Integration](#zoxide-integration)
+    - [direnv](#direnv)
+  - [JetBrains Runtime Options (Optional)](#jetbrains-runtime-options-optional)
+  - [Kiro CLI Integration (Optional)](#kiro-cli-integration-optional)
+  - [Startup Application: fastfetch](#startup-application-fastfetch)
+  - [Complete `.zshrc` Reference](#complete-zshrc-reference)
+  - [Final Steps](#final-steps)
 
 ---
 
@@ -268,7 +283,36 @@ nvim ~/.config/fastfetch/config.jsonc
 
 ---
 
-## Fonts Installation
+### pkgfile – Command-Not-Found Handler
+
+`pkgfile` is a tool that searches the Arch Linux package file database. When combined with its Zsh hook, it suggests the package to install whenever you run a command that isn't found on your system.
+
+```bash
+sudo pacman -S pkgfile
+sudo pkgfile --update
+```
+
+The `--update` step downloads the file database and is required before first use. You should re-run it periodically to keep the database current.
+
+**Key Features:**
+
+- Tells you which package provides a missing command
+- Hooks into Zsh's `command_not_found_handler` automatically
+- Covers all packages in the official Arch repositories
+
+**Usage Examples:**
+
+```bash
+# Find which package provides a specific file or command
+pkgfile convert      # → imagemagick
+
+# Update the package file database
+sudo pkgfile --update
+```
+
+The shell hook is activated in `~/.config/zsh/functions.zsh` and runs automatically — no manual invocation needed. See the [Arch Linux Command-Not-Found](#arch-linux-command-not-found) section for the activation snippet.
+
+---
 
 Custom fonts greatly improve your terminal and coding experience.
 
@@ -394,6 +438,72 @@ touch ~/.zshrc
 
 ---
 
+## Modular Configuration Layout
+
+Instead of one large `~/.zshrc`, the configuration is split into focused modules stored under `~/.config/zsh/`. The main `~/.zshrc` simply sources them in the correct order via a small `_load` helper.
+
+### File Structure
+
+```plaintext
+~/.config/zsh/
+├── env.zsh           – Environment variables & PATH
+├── history.zsh       – History settings
+├── completion.zsh    – Completion system (compinit only)
+├── plugins.zsh       – Plugin declarations & cdreplay
+├── zstyles.zsh       – Completion styling & fzf-tab config
+├── keybindings.zsh   – Key bindings
+├── functions.zsh     – Utility functions & command-not-found
+├── aliases.zsh       – Aliases
+└── integrations.zsh  – Shell integrations (fnm, fzf, zoxide, direnv)
+```
+
+The `~/.zshrc` itself handles the Zinit bootstrap (which must run before any module), then sources the modules in the exact order that satisfies all inter-module dependencies. The Oh My Posh prompt init and the fastfetch startup block remain inline in `.zshrc` since they sit between modules and don't belong to any single file.
+
+> **⚠️ Load order matters:** `completion.zsh` must run before `plugins.zsh` so that `compinit` initialises the completion system before `zsh-completions` registers its definitions. `zstyles.zsh` must run after `plugins.zsh` so that `cdreplay -q` has already replayed any asynchronously captured completions before the styles are applied.
+
+### Deploying with GNU Stow
+
+[GNU Stow](https://www.gnu.org/software/stow/) manages dotfile symlinks by mirroring a source tree into a target directory. With the layout used in this repo, deployment is a single command.
+
+**Install Stow:**
+
+```bash
+sudo pacman -S stow
+```
+
+**Recommended source layout** (mirrors the home directory structure):
+
+```plaintext
+dotfiles/
+└── zsh/
+    ├── .zshrc
+    └── .config/
+        └── zsh/
+            ├── env.zsh
+            ├── history.zsh
+            ├── completion.zsh
+            ├── plugins.zsh
+            ├── zstyles.zsh
+            ├── keybindings.zsh
+            ├── functions.zsh
+            ├── aliases.zsh
+            └── integrations.zsh
+```
+
+**Stow the package:**
+
+```bash
+# Run from the dotfiles directory – stow symlinks everything into $HOME
+cd ~/dotfiles
+stow zsh
+```
+
+Stow creates `~/.zshrc → ~/dotfiles/zsh/.zshrc` and `~/.config/zsh/ → ~/dotfiles/zsh/.config/zsh/`. To remove the symlinks, run `stow -D zsh`.
+
+> **💡 Tip:** The dotfiles in this repo live under `assets/dotfiles/zsh/`. You can copy or reorganise them into any `dotfiles/` directory that suits your workflow before running Stow.
+
+---
+
 ## Oh My Posh Prompt Configuration
 
 [Oh My Posh](https://ohmyposh.dev/) is a cross-platform prompt theme engine that renders customizable shell prompts using configurable segments for Git status, language versions, execution time, and more.
@@ -421,263 +531,618 @@ touch ~/.config/ohmyposh/zen.toml
 
 ### Installing Zinit
 
-Add the following lines to your `~/.zshrc` file:
+In the modular layout the bootstrap lives at the top of `~/.zshrc`, before any module is sourced. If you are not using the modular layout, place it at the very top of `~/.zshrc` instead:
 
 ```bash
-# Set the directory we want to store zinit and plugins
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+# ============================================================================
+# Zinit Plugin Manager Setup
+# ============================================================================
 
-# Download Zinit, if it's not there yet
-if [ ! -d "$ZINIT_HOME" ]; then
-    mkdir -p "$(dirname $ZINIT_HOME)"
+# Directory where Zinit and its plugins are stored
+ZINIT_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/zinit/zinit.git"
+
+# Install Zinit if it is not already installed
+if [[ ! -d "$ZINIT_HOME" ]]; then
+    mkdir -p "$(dirname "$ZINIT_HOME")"
     git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
-# Source/Load zinit
-source "${ZINIT_HOME}/zinit.zsh"
+# Load Zinit
+source "$ZINIT_HOME/zinit.zsh"
 ```
 
-Save the file. To verify everything is working, open a new terminal and run:
+### Verifying Zinit Installation
+
+Open a new terminal and run:
 
 ```bash
 zinit zstatus
 ```
 
-### Verifying Zinit Installation
-
 Successful output will show Zinit version and status information, confirming the plugin manager is properly initialized.
 
 ---
 
-## Zsh Plugins Configuration
+## Environment Variables & PATH
 
-After setting up Zinit, add the following plugins to your `~/.zshrc`. These plugins enhance Zsh with syntax highlighting, completions, autosuggestions, and more.
+Set up your default editors and any development SDK paths. In the modular layout these go in `~/.config/zsh/env.zsh`.
 
-```bash
-# Add in ZSH Plugins
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
-
-# Add in snippets (Oh My ZSH plugins)
-zinit snippet OMZL::functions.zsh
-zinit snippet OMZL::git.zsh
-zinit snippet OMZP::git
-zinit snippet OMZP::sudo
-zinit snippet OMZP::command-not-found
-zinit snippet OMZL::clipboard.zsh
-zinit snippet OMZL::termsupport.zsh
-zinit snippet OMZP::extract
-zinit snippet OMZL::key-bindings.zsh
-zinit snippet OMZL::spectrum.zsh
-zinit snippet OMZL::theme-and-appearance.zsh
-
-# Load ZSH completions plugin
-autoload -U compinit && compinit
-
-# Replay any deferred completions (ensures all completions load correctly in turbo mode)
-zinit cdreplay -q
-```
-
-### Plugin Descriptions & Keybindings
-
-| Plugin                       | Description                                                                                                | Keybindings / Activation                                                                                                   |
-| ---------------------------- | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| **zsh-syntax-highlighting**  | Real-time syntax highlighting for commands as you type. Valid commands appear green, invalid ones red.     | Activates automatically when you type; no keybinding required.                                                             |
-| **zsh-completions**          | Enhanced tab-completion for various commands (Docker, kubectl, git-flow, etc.).                            | Press `Tab` while typing a command to see completions.                                                                     |
-| **zsh-autosuggestions**      | Suggests commands based on your history and completions, displayed in muted gray.                          | Type any command – suggestions appear automatically. Press `→` (right arrow) to accept, or `End` to accept to end-of-line. |
-| **fzf-tab**                  | Replaces default tab completion with fzf's fuzzy-finder interface.                                         | Press `Tab` to trigger fuzzy completion. Use arrow keys or `Ctrl+N`/`Ctrl+P` to navigate, `Enter` to select.               |
-| **fzf integration**          | Provides shell-wide fuzzy finder capabilities.                                                             | `Ctrl+T` – fuzzy find files; `Ctrl+R` – fuzzy search command history; `Alt+C` – cd into selected directory.                |
-| **functions.zsh**            | General‑purpose Zsh utility functions (e.g., `take` to create a directory and `cd` into it, `mkcd`, `md`). | No keybinding – use functions like `take myfolder`, `mkcd myfolder`, etc.                                                  |
-| **clipboard.zsh**            | Platform-agnostic clipboard helpers.                                                                       | `clipcopy` – copy stdin/argument to clipboard; `clippaste` – paste from clipboard to stdout.                               |
-| **termsupport.zsh**          | Sets terminal window/tab titles and provides helper functions.                                             | Automatically updates title with current command or directory. Also provides `title` function for manual setting.          |
-| **git snippets (OMZL)**      | Git library with aliases and convenience functions (e.g., `gst` for `git status`).                         | `gst`, `gaa`, `gcmsg`, etc. Type `alias \| grep git` to see all.                                                           |
-| **git plugin (OMZP)**        | Adds many more Git aliases and completions (complements OMZL::git.zsh).                                    | Same as above – combined with the library, you get a full set of Git shortcuts.                                            |
-| **sudo plugin**              | Press `Esc` twice to add `sudo` before the current command.                                                | `Esc` `Esc` (double press) prefixes current command with `sudo`.                                                           |
-| **command-not-found**        | Suggests packages to install when a command isn't found.                                                   | Type any non-existent command – suggestions appear automatically.                                                          |
-| **extract plugin**           | Extract various archive types with a single `extract` command.                                             | `extract <filename>` – automatically detects and extracts zip, tar, gz, bz2, rar, 7z, etc.                                 |
-| **key-bindings.zsh**         | Oh My Zsh's default key bindings (history search, line editing fixes).                                     | Up/down arrows – search history based on current prefix; `Ctrl+R` – reverse history search; Home/End/Delete work properly. |
-| **spectrum.zsh**             | Color functions and arrays for easy ANSI color usage in prompts or scripts.                                | Defines `$fg[color]`, `$bg[color]`, `$reset_color`. Use like `echo "${fg[red]}Error${reset_color}"`.                       |
-| **theme-and-appearance.zsh** | Sets `LS_COLORS`, enables terminal title (via termsupport), and other appearance defaults.                 | No keybinding – automatically applies settings. Only relevant if you occasionally use plain `ls` instead of `eza`.         |
-
----
-
-## Activate the Oh My Posh Prompt
-
-Add the following line to your `~/.zshrc` to load the theme:
+### Default Editors
 
 ```bash
-# Initialize Oh My Posh prompt
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
+# ============================================================================
+# Environment Variables
+# ============================================================================
+
+# Default editors
+export EDITOR="nvim"
+export VISUAL="$EDITOR"
 ```
 
-Place this line **after** the Zinit plugin manager setup but **before** the aliases or shell integrations (the exact order can be seen in the complete `.zshrc` reference file).
+### Android SDK (Optional)
+
+If you do Android development, add the SDK path:
+
+```bash
+# Android SDK (optional)
+export ANDROID_HOME="$HOME/Android/Sdk"
+```
+
+### Truecolor Support
+
+Ensure your terminal displays 24‑bit colors correctly:
+
+```bash
+# Enable truecolor (supported by most modern terminals)
+export COLORTERM=truecolor
+```
+
+Now, set up the `PATH` so that it stays clean and duplicate‑free:
+
+```bash
+# ============================================================================
+# PATH
+# ============================================================================
+
+# Keep PATH entries unique
+typeset -U path PATH
+
+# Android SDK (optional) – add the relevant sub‑directories
+path+=(
+    "$ANDROID_HOME/emulator"
+    "$ANDROID_HOME/tools"
+    "$ANDROID_HOME/tools/bin"
+    "$ANDROID_HOME/platform-tools"
+    "$ANDROID_HOME/cmdline-tools/latest/bin"
+)
+
+export PATH="${(j/:/)path}"
+```
+
+> **💡 Tip:** If you don't use Android development, simply omit the `ANDROID_HOME` and `path+=` lines.
 
 ---
 
 ## Zsh History Configuration
 
-Add these lines to your `~/.zshrc` to configure command history behavior:
+Keep a shared, deduplicated history that is saved immediately:
 
 ```bash
-# History
+# ============================================================================
+# ZSH History
+# ============================================================================
+
+export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=5000
-export HISTFILE=~/.zsh_history
 export SAVEHIST=$HISTSIZE
-export HISTDUP=erase
-setopt appendhistory # Append commands to history file, not overwrite
-setopt sharehistory # Share zsh history across all zsh sessions at the same time
-setopt hist_ignore_space # Ignore saving commands starting with a space to history by adding space before it
-setopt hist_ignore_all_dups # Remove all duplicates in history
-setopt hist_save_no_dups # Avoid saving duplicate entries
-setopt hist_ignore_dups # Ignore duplicates in the current session
-setopt hist_find_no_dups # Prevent any duplicates to be shown in history search
+
+# Append history instead of overwriting it
+setopt APPEND_HISTORY
+
+# Share history across all running shells
+setopt SHARE_HISTORY
+
+# Ignore commands beginning with a space
+setopt HIST_IGNORE_SPACE
+
+# Remove duplicate history entries
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_FIND_NO_DUPS
+
+# Save each command immediately
+setopt INC_APPEND_HISTORY
 ```
-
-### History Settings Explained
-
-| Setting                       | What it does                                                       |
-| ----------------------------- | ------------------------------------------------------------------ |
-| `HISTSIZE=5000`               | Maximum number of commands stored in memory                        |
-| `HISTFILE`                    | File where history is persisted                                    |
-| `setopt appendhistory`        | Commands are appended to the history file (not overwritten)        |
-| `setopt sharehistory`         | All open Zsh sessions share the same history                       |
-| `setopt hist_ignore_space`    | Commands starting with a space won't be saved (useful for secrets) |
-| `setopt hist_ignore_all_dups` | Removes duplicate commands from history                            |
 
 ---
 
-## Completion Styling & fzf-tab Preview
+## Completion System
 
-Add these lines to your `~/.zshrc` to customize completion styling and enable live previews for `cd` and `zoxide` commands:
+A fast completion system with a cached dump file is essential for snappy tab‑completion.
+
+### Optimized Completion Initialization
+
+Add this block **after** the `History` section:
 
 ```bash
-# Case-insensitive + partial/substring matching for completions
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-# Color completion menu items using same colors as 'ls'
+# ============================================================================
+# Completion System
+# ============================================================================
+
+# Load completion system
+autoload -Uz compinit
+
+# Load completion list module (recommended for fzf-tab)
+zmodload zsh/complist
+
+# Create cache directory if it doesn't exist
+mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
+
+# Initialize completion system using a cached dump file
+compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump"
+```
+
+---
+
+## Zsh Plugins Configuration
+
+Now we load the core plugins. All except syntax highlighting are loaded **asynchronously** to keep startup times low.
+
+### Async Loading with Zinit
+
+This block goes in `~/.config/zsh/plugins.zsh`. It must be sourced **after** `completion.zsh` (so `compinit` has already run) and the `cdreplay -q` call at the end must come **before** `zstyles.zsh` loads:
+
+```bash
+# ============================================================================
+# ZSH Plugins
+# ============================================================================
+
+# Load most plugins asynchronously for faster shell startup
+zinit ice wait lucid
+
+# Additional completion definitions
+zinit light zsh-users/zsh-completions
+
+# Fish-style autosuggestions
+zinit light zsh-users/zsh-autosuggestions
+
+# Better completion menu (fzf-powered)
+zinit light Aloxaf/fzf-tab
+
+# Syntax highlighting
+#
+# NOTE:
+# This should always be the last plugin loaded.
+zinit light zsh-users/zsh-syntax-highlighting
+
+# Replay any deferred completions loaded by Zinit
+zinit cdreplay -q
+```
+
+### Plugin Descriptions & Keybindings
+
+| Plugin                      | Description                                                                                            | Keybindings / Activation                                                                                                   |
+| --------------------------- | ------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
+| **zsh-syntax-highlighting** | Real-time syntax highlighting for commands as you type. Valid commands appear green, invalid ones red. | Activates automatically when you type; no keybinding required.                                                             |
+| **zsh-completions**         | Enhanced tab-completion for various commands (Docker, kubectl, git-flow, etc.).                        | Press `Tab` while typing a command to see completions.                                                                     |
+| **zsh-autosuggestions**     | Suggests commands based on your history and completions, displayed in muted gray.                      | Type any command – suggestions appear automatically. Press `→` (right arrow) to accept, or `End` to accept to end-of-line. |
+| **fzf-tab**                 | Replaces default tab completion with fzf's fuzzy-finder interface.                                     | Press `Tab` to trigger fuzzy completion. Use arrow keys or `Ctrl+N`/`Ctrl+P` to navigate, `Enter` to select.               |
+
+The fzf shell integration (providing `Ctrl+T`, `Ctrl+R`, `Alt+C`) is set up later in the Shell Integrations section.
+
+---
+
+## zstyles
+
+Fine‑tune the look and behaviour of completions, and configure fzf-tab directory previews. In the modular layout this goes in `~/.config/zsh/zstyles.zsh`, sourced after `plugins.zsh` (i.e. after `cdreplay -q`) so that fzf-tab is fully initialised before the styles are applied:
+
+```bash
+# ============================================================================
+# Completion Styling (zstyles)
+# ============================================================================
+
+# Case-insensitive completion + partial/substring matching
+zstyle ':completion:*' matcher-list \
+    'm:{a-zA-Z}={A-Za-z}' \
+    'r:|[._-]=* r:|=*' \
+    'l:|=* r:|=*'
+
+# Use LS_COLORS for colored completion menus
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-# Disable interactive selection menu (cycle completions inline instead)
+
+# Disable the traditional completion menu
+# Pressing Tab repeatedly cycles through matches instead.
 zstyle ':completion:*' menu no
-# When completing 'cd', preview directory contents with eza
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --color=always --group-directories-first --no-quotes $realpath'
-# When completing 'z' (zoxide), preview directory contents with eza
-zstyle ':fzf-tab:complete:\_\_zoxide_z:\*' fzf-preview 'eza --color=always --group-directories-first --no-quotes $realpath'
-```
 
-**What each line does:**
+# Show descriptions alongside completion candidates
+zstyle ':completion:*:descriptions' format '[%d]'
 
-- `matcher-list`: Makes completion case-insensitive and treats hyphens/underscores as word separators.
-- `list-colors`: Applies `LS_COLORS` colors to completion listings.
-- `fzf-tab preview lines`: When tab-completing a directory or using `z`, shows a live preview using `eza` of the target directory.
+# Group completion results
+zstyle ':completion:*' group-name ''
 
----
+# Sort completion results by name
+zstyle ':completion:*' file-sort name
 
-## Setting Default Editors
+# Enable a cache for expensive completions
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 
-Add these lines to your `~/.zprofile` file to set your default command-line editors. This example uses `nvim` (Neovim), but you can replace it with any editor of your choice (`vim`, `nano`, `code`, etc.):
+# Preview directories while completing "cd"
+zstyle ':fzf-tab:complete:cd:*' fzf-preview \
+    'eza --color=always --group-directories-first --icons --no-quotes $realpath'
 
-```bash
-# Default Editors
-export EDITOR=nvim
-export VISUAL=nvim
-```
-
-> **💡 Tip:** `VISUAL` is used for interactive editors, while `EDITOR` is used for non-interactive commands like `crontab -e`. Both are set here for full compatibility.
-
----
-
-## Enable Auto CD
-
-Add this line to your `~/.zshrc` to allow changing directories by simply typing the directory name (no `cd` needed):
-
-```bash
-# Auto CD - type directory name to enter it
-setopt autocd
+# Preview directories while completing zoxide
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview \
+    'eza --color=always --group-directories-first --icons --no-quotes $realpath'
 ```
 
 ---
 
-## Optional Aliases
+## Key Bindings
 
-Add these aliases before the `# Shell integrations` section in your `~/.zshrc` to create convenient shortcuts:
+Enable auto-cd, configure word separators, and set up all key bindings in one block:
 
 ```bash
+# ============================================================================
+# Key Bindings
+# ============================================================================
+
+# Automatically change into directories without typing "cd"
+setopt AUTO_CD
+
+# Treat "/" as a word separator so Ctrl+Left / Ctrl+Right
+# moves through path components instead of the entire path.
+WORDCHARS=${WORDCHARS//\/}
+
+# Use Emacs-style key bindings (default Zsh behavior)
+bindkey -e
+
+# Home
+bindkey '^[[H'  beginning-of-line
+bindkey '^[[1~' beginning-of-line
+bindkey '^[OH'  beginning-of-line
+
+# End
+bindkey '^[[F'  end-of-line
+bindkey '^[[4~' end-of-line
+bindkey '^[OF'  end-of-line
+
+# Delete
+bindkey '^[[3~' delete-char
+
+# Ctrl + Left
+bindkey '^[[1;5D' backward-word
+bindkey '^[[5D'   backward-word
+bindkey '^[^[[D'  backward-word
+
+# Ctrl + Right
+bindkey '^[[1;5C' forward-word
+bindkey '^[[5C'   forward-word
+bindkey '^[^[[C'  forward-word
+
+# Ctrl + Backspace
+bindkey '^H' backward-kill-word
+bindkey '^?' backward-delete-char
+
+# Ctrl + Delete
+bindkey '^[[3;5~' kill-word
+
+# Ctrl + R (fzf will override this later via shell integration, but this is a fallback)
+bindkey '^R' history-incremental-search-backward
+
+# Search history with Up / Down arrows using the current command prefix
+autoload -Uz up-line-or-beginning-search
+autoload -Uz down-line-or-beginning-search
+
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
+bindkey '^[[A' up-line-or-beginning-search
+bindkey '^[[B' down-line-or-beginning-search
+
+# Press Esc twice to prepend "sudo" to the current command
+sudo-command-line() {
+    [[ -z $BUFFER ]] && zle up-history
+    BUFFER="sudo $BUFFER"
+    CURSOR=${#BUFFER}
+}
+
+zle -N sudo-command-line
+bindkey '\e\e' sudo-command-line
+```
+
+---
+
+## Native Utility Functions
+
+The `extract` function replaces external plugins. It detects the archive type and calls the right tool:
+
+```bash
+# ============================================================================
+# Native Utility Functions
+# ============================================================================
+
+# Extract almost any archive using a single command
+extract() {
+    if [[ ! -f "$1" ]]; then
+        echo "extract: '$1' is not a valid file"
+        return 1
+    fi
+
+    case "$1" in
+        *.tar.bz2|*.tbz2) tar xjf "$1" ;;
+        *.tar.gz|*.tgz) tar xzf "$1" ;;
+        *.tar.xz|*.txz) tar xJf "$1" ;;
+        *.tar.zst|*.tzst) tar --zstd -xf "$1" ;;
+        *.tar) tar xf "$1" ;;
+        *.bz2) bunzip2 "$1" ;;
+        *.gz) gunzip "$1" ;;
+        *.xz) unxz "$1" ;;
+        *.zst) unzstd "$1" ;;
+        *.zip) unzip "$1" ;;
+        *.rar) unrar x "$1" ;;
+        *.7z) 7z x "$1" ;;
+        *.Z) uncompress "$1" ;;
+        *) echo "extract: unsupported archive type: $1" ;;
+    esac
+}
+```
+
+---
+
+## Arch Linux Command-Not-Found
+
+With `pkgfile` installed and its database updated (see [pkgfile – Command-Not-Found Handler](#pkgfile--command-not-found-handler)), activate the Zsh hook in `~/.config/zsh/functions.zsh`:
+
+```bash
+# ============================================================================
+# Arch Linux Command-Not-Found
+# ============================================================================
+
+if [[ -r /usr/share/doc/pkgfile/command-not-found.zsh ]]; then
+    source /usr/share/doc/pkgfile/command-not-found.zsh
+fi
+```
+
+---
+
+## Prompt (oh-my-posh)
+
+Now that all plugins and settings are loaded, initialise the prompt:
+
+```bash
+# ============================================================================
+# Oh My Posh Prompt
+# ============================================================================
+
+eval "$(oh-my-posh init zsh --config "$HOME/.config/ohmyposh/zen.toml")"
+```
+
+Place this line **after** the `pkgfile` block and **before** the aliases.
+
+---
+
+## Aliases
+
+This expanded set of aliases covers file management, git, package management, and more. Add it after the Oh My Posh prompt initialisation:
+
+```bash
+# ============================================================================
 # Aliases
+# ============================================================================
+
+# ----------------------------------------------------------------------------
+# File Management
+# ----------------------------------------------------------------------------
+
 alias ls='eza --icons --group-directories-first -G --no-quotes'
-alias ll='eza --icons --group-directories-first -lG --no-quotes'
+alias ll='eza --icons --group-directories-first -lhG --no-quotes'
+alias la='eza --icons --group-directories-first -aG --no-quotes'
+alias lla='eza --icons --group-directories-first -lahG --no-quotes'
 alias lt='eza --icons --group-directories-first --no-quotes -RTL'
+
 alias cat='bat'
 alias df='duf'
-alias vim='nvim'
+
+# Safer file operations
 alias cp='cp -i'
 alias mv='mv -i'
+alias mkdir='mkdir -pv'
+
+# Misc
 alias cls='clear'
-alias mkdir='mkdir -p'
+alias c='clear'
+
+# ----------------------------------------------------------------------------
+# Editors
+# ----------------------------------------------------------------------------
+
+alias vim='nvim'
+
+# ----------------------------------------------------------------------------
+# Git
+# ----------------------------------------------------------------------------
+
+alias g='git'
+
+alias ga='git add'
+alias gaa='git add --all'
+
+alias gb='git branch'
+alias gba='git branch -a'
+
+alias gc='git commit'
+alias gca='git commit --amend'
+
+alias gco='git checkout'
+alias gcb='git checkout -b'
+
+alias gs='git status'
+
+alias gd='git diff'
+alias gds='git diff --staged'
+
+alias gl='git pull'
+alias gp='git push'
+
+alias glog='git log --oneline --graph --decorate --all'
+
+# ----------------------------------------------------------------------------
+# Downloads
+# ----------------------------------------------------------------------------
+
+alias ytdl='yt-dlp --js node -f "bestvideo+bestaudio/best" --merge-output-format mkv'
+alias spdl='spotdl'
+
+# ----------------------------------------------------------------------------
+# Package Management (Arch Linux)
+# ----------------------------------------------------------------------------
+
+alias pacup='sudo pacman -Syu'
+alias pacin='sudo pacman -S'
+alias pacrm='sudo pacman -Rns'
+alias pacss='pacman -Ss'
+alias pacqi='pacman -Qi'
+alias pacfiles='pkgfile'
+
+# ----------------------------------------------------------------------------
+# Shell
+# ----------------------------------------------------------------------------
+
+alias reload='exec zsh'
+alias zshrc='$EDITOR ~/.zshrc'
+alias aliases='$EDITOR ~/.aliases'
+
+# ----------------------------------------------------------------------------
+# Utilities
+# ----------------------------------------------------------------------------
+
+alias path='printf "%s\n" "${path[@]}"'
+alias now='date "+%Y-%m-%d %H:%M:%S"'
 ```
 
-### Alias Descriptions
-
-| Alias   | Command                                                | Description                                               |
-| ------- | ------------------------------------------------------ | --------------------------------------------------------- |
-| `ls`    | `eza --icons --group-directories-first -G --no-quotes` | Colorful file listing with icons, directories shown first |
-| `ll`    | `eza ... -lG`                                          | Long format (detailed) listing with icons                 |
-| `lt`    | `eza ... -RTL`                                         | Recursive tree listing sorted by modification time        |
-| `cat`   | `bat`                                                  | Replaces `cat` with syntax-highlighting `bat`             |
-| `df`    | `duf`                                                  | Replaces `df` with colorful `duf`                         |
-| `vim`   | `nvim`                                                 | Uses Neovim when you type `vim`                           |
-| `cp`    | `cp -i`                                                | Interactive copy (prompts before overwriting)             |
-| `mv`    | `mv -i`                                                | Interactive move (prompts before overwriting)             |
-| `cls`   | `clear`                                                | Simple screen clearing                                    |
-| `mkdir` | `mkdir -p`                                             | Creates parent directories automatically (`-p` flag)      |
+You can safely remove any alias that doesn't apply to your workflow (e.g., `ytdl`, `spdl`, or custom VPN aliases you may have added separately).
 
 ---
 
-## Optional: Run fastfetch on Terminal Startup
+## Shell Integrations
 
-Add this line **before** the `# Shell integrations` section (but after aliases) to display system information every time you open a terminal:
+All shell integrations are grouped here and loaded after the aliases, in the order: fnm → fzf → zoxide → direnv.
+
+### Fast Node Manager (fnm)
+
+`fnm` is a speedy Node.js version manager that auto‑switches based on `.nvmrc` or `.node-version` files. Install it:
 
 ```bash
-# Run fastfetch on terminal startup
-if [ -f /usr/bin/fastfetch ]; then fastfetch; fi
+yay -S fnm-bin
 ```
 
----
-
-## Shell Integrations (fzf & zoxide)
-
-Add these lines to your `~/.zshrc` **after** the Oh My Posh activation but **before** aliases:
+Add its initialisation at the top of the shell integrations block:
 
 ```bash
-# fzf shell integration
+# Fast Node Manager (fnm)
+eval "$(fnm env --use-on-cd)"
+```
+
+### fzf Integration
+
+```bash
+# fzf
 eval "$(fzf --zsh)"
+```
 
-# zoxide - smarter cd with 'z' command
+### zoxide Integration
+
+```bash
+# zoxide
 eval "$(zoxide init --cmd cd zsh)"
 ```
 
----
+This lets `cd` benefit from zoxide's directory ranking while keeping the familiar command.
 
-## NVM Compatibility Warning
+### direnv
 
-> **⚠️ Warning for Node Version Manager (NVM) Users**
-
-If you have `nvm` (Node Version Manager) installed, you must add the following **before** the Oh My Posh initialization and shell integrations in your `~/.zshrc`:
+`direnv` loads per‑directory environment variables from `.envrc` files.
 
 ```bash
-# NVM configuration (if installed)
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+sudo pacman -S direnv
 ```
 
-**Why this matters:** NVM modifies your `PATH` and sets up shell functions. If initialized after Oh My Posh or fzf integrations, it may cause conflicts where Node commands are not found or prompt segments fail to display correctly. Place it **before** the "Shell integrations" section.
+Add the hook:
+
+```bash
+# direnv
+eval "$(direnv hook zsh)"
+```
+
+---
+
+## JetBrains Runtime Options (Optional)
+
+If you use JetBrains IDEs and have a custom `vmoptions` file, source it here:
+
+```bash
+# ============================================================================
+# JetBrains Runtime Options
+# ============================================================================
+
+JETBRAINS_VMOPTIONS="$HOME/.jetbrains.vmoptions.sh"
+
+[[ -f "$JETBRAINS_VMOPTIONS" ]] && source "$JETBRAINS_VMOPTIONS"
+```
+
+---
+
+## Kiro CLI Integration (Optional)
+
+If you're using the Kiro terminal, add its shell integration:
+
+```bash
+# ============================================================================
+# Kiro CLI Shell Integration
+# ============================================================================
+
+if [[ "$TERM_PROGRAM" == "kiro" ]]; then
+    source "$(kiro --locate-shell-integration-path zsh)"
+fi
+```
+
+---
+
+## Startup Application: fastfetch
+
+Display system information each time you open an interactive terminal. Add this at the very end:
+
+```bash
+# ============================================================================
+# Startup Applications
+# ============================================================================
+
+# Display system information when opening an interactive shell
+if [[ $- == *i* ]] && command -v fastfetch >/dev/null 2>&1; then
+    fastfetch
+fi
+```
 
 ---
 
 ## Complete `.zshrc` Reference
 
-You can find a complete `.zshrc` file content for reference in [.zshrc](../assets/dotfiles/zsh/.zshrc)
+The full set of ready‑to‑use files that match this guide lives under [`assets/dotfiles/zsh/`](../assets/dotfiles/zsh/):
+
+| File                                                          | Contents                                                          |
+| ------------------------------------------------------------- | ----------------------------------------------------------------- |
+| [`.zshrc`](../assets/dotfiles/zsh/.zshrc)                     | Main entry point — Zinit bootstrap + sources all modules in order |
+| [`env.zsh`](../assets/dotfiles/zsh/env.zsh)                   | Environment variables & PATH                                      |
+| [`history.zsh`](../assets/dotfiles/zsh/history.zsh)           | History settings                                                  |
+| [`completion.zsh`](../assets/dotfiles/zsh/completion.zsh)     | Completion system (`compinit` only)                               |
+| [`plugins.zsh`](../assets/dotfiles/zsh/plugins.zsh)           | Plugin declarations & `cdreplay -q`                               |
+| [`zstyles.zsh`](../assets/dotfiles/zsh/zstyles.zsh)           | Completion styling & fzf-tab config                               |
+| [`keybindings.zsh`](../assets/dotfiles/zsh/keybindings.zsh)   | Key bindings                                                      |
+| [`functions.zsh`](../assets/dotfiles/zsh/functions.zsh)       | Utility functions & command-not-found                             |
+| [`aliases.zsh`](../assets/dotfiles/zsh/aliases.zsh)           | Aliases                                                           |
+| [`integrations.zsh`](../assets/dotfiles/zsh/integrations.zsh) | Shell integrations (fnm, fzf, zoxide, direnv)                     |
 
 ---
 
@@ -685,7 +1150,7 @@ You can find a complete `.zshrc` file content for reference in [.zshrc](../asset
 
 After completing all configuration steps:
 
-1. **Close and reopen your terminal** (or run `source ~/.zshrc`) for all changes to take effect.
+1. **Close and reopen your terminal** (or run `exec zsh`) for all changes to take effect.
 
 2. **Verify the prompt appears correctly** with the Oh My Posh theme.
 
@@ -694,7 +1159,12 @@ After completing all configuration steps:
    - Type a partial command and press `Tab` to see fuzzy completions
    - Type `cd Docu` and press `Tab` – fzf-tab should show file previews
 
-4. **Test aliases:**
+4. **Test key bindings:**
+   - Press `Ctrl+Left`/`Ctrl+Right` to jump between path segments
+   - Press `Esc` twice quickly to prepend `sudo` to the current command
+   - Use `Ctrl+R` for fzf-powered history search
+
+5. **Test aliases:**
 
    ```bash
    ll          # Should show detailed file listing with icons
@@ -702,9 +1172,10 @@ After completing all configuration steps:
    duf         # Should show colorful disk usage
    ```
 
-5. **If something isn't working:**
+6. **If something isn't working:**
    - Ensure fonts are properly installed and set in your terminal emulator
    - Check that all packages were installed successfully
    - Verify the Oh My Posh config file exists at `~/.config/ohmyposh/zen.toml`
+   - Run `zinit zstatus` to confirm Zinit loaded correctly
 
-Your terminal is now fully configured with a powerful, modern setup!
+Your terminal is now fully configured with a powerful, modern, and lightning-fast setup!
