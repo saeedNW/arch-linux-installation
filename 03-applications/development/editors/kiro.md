@@ -48,15 +48,18 @@ The CLI tool `kiro-cli` will also be available.
 
 Kiro is based on VS Code and supports all VS Code extensions from the Open VSX Registry. The following extensions are recommended for a productive workflow.
 
-| Category                 | Extensions                                                                                                                                                                                                                                                |
-| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Core**                 | `advanced-new-file-plus`, `Better Comments Next`, `Bracket Pair Colorizer 2`, `Code Spell Checker`, `CodeSnap`, `Error Lens`, `Todo Tree` , `Toggle Quotes`                                                                                               |
-| **Git**                  | `Git Graph`, `GitLens`                                                                                                                                                                                                                                    |
-| **Linting & Formatting** | `ESLint`, `Prettier - Code formatter`, `Even Better TOML`, `inifmt`, `Black Formatter`                                                                                                                                                                    |
-| **Markdown**             | `Markdown All in One`, `Markdown Table`, `Markdown Table Prettifier`, `Markdownlint`, `Markdown Preview Mermaid Support`                                                                                                                                  |
-| **Language Support**     | `JavaScript (ES6) code snippets`, `Nextjs snippets`, `ES7+ React/Redux/React-Native snippets`, `HTML CSS Support`, `lua`, `Protobuf VSC`, `Docker`, `Docker DX`, `Container Tools`, `Python`, `Python Debugger`, `Python Environments`, `nginx.conf hint` |
-| **Theming**              | `Material Icon Theme`                                                                                                                                                                                                                                     |
-| **Utilities**            | `Import Cost`, `Pretty TypeScript Errors`, `Selection Stats & Line Counter`, `Live Server`, `Persian - Code Spell Checker`, `Open Remote - SSH`                                                                                                           |
+| Category                 | Extensions                                                                                                                                                                                 |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Core**                 | `advanced-new-file-plus`, `Better Comments Next`, `Bracket Pair Colorizer 2`, `Code Spell Checker`, `Persian - Code Spell Checker`, `CodeSnap`, `Error Lens`, `Todo Tree`, `Toggle Quotes` |
+| **Git**                  | `Git Graph`, `GitLens`                                                                                                                                                                     |
+| **Linting & Formatting** | `ESLint`, `Prettier - Code formatter`, `Even Better TOML`, `inifmt`, `Black Formatter`                                                                                                     |
+| **Markdown**             | `Markdown All in One`, `Markdown Table`, `Markdown Table Prettifier`, `Markdownlint`, `Markdown Preview Mermaid Support`                                                                   |
+| **Language Support**     | `HTML CSS Support`, `Lua`, `Protobuf VSC`, `Python`, `Python Debugger`, `Python Environments`, `nginx.conf hint`, `Pretty TypeScript Errors`, `Import Cost`, `Live Server`                 |
+| **Snippets**             | `JavaScript (ES6) code snippets`, `Next.js snippets`, `ES7+ React/Redux/React-Native snippets`                                                                                             |
+| **Containers & DevOps**  | `Docker`, `Docker DX`, `Container Tools`                                                                                                                                                   |
+| **Remote Development**   | `Open Remote - SSH`                                                                                                                                                                        |
+| **Theming**              | `Material Icon Theme`                                                                                                                                                                      |
+| **Utilities**            | `Selection Stats & Line Counter`                                                                                                                                                           |
 
 > **💡 Tip:** Install them via the Extensions view (`Ctrl+Shift+X`).
 
