@@ -4,7 +4,6 @@ return {
 	{
 		'nvim-treesitter/nvim-treesitter',
 		build = ':TSUpdate',
-		main = 'nvim-treesitter.configs',
 		opts = {
 			ensure_installed = {
 				'lua', 'python', 'javascript', 'typescript', 'vimdoc', 'vim', 'regex',

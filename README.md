@@ -15,12 +15,12 @@ Before proceeding with the installation, ensure you have the following:
 
 ## Quick Navigation
 
-- [Installation Guides](./01-installation/)
-  - [Arch Linux](./01-installation/arch-linux.md)
-  - [Arch Linux Post Installation](./01-installation/arch-post-install.md)
-  - [EndeavourOS KDE](./01-installation/endeavouros-kde.md)
-  - [EndeavourOS Gnome](./01-installation/endeavouros-gnome.md)
+- [Installation Guides](./installation/)
+  - [Arch Linux](./installation/arch-linux.md)
+  - [Arch Linux Post Installation](./installation/arch-post-install.md)
+  - [EndeavourOS KDE](./installation/endeavouros-kde.md)
+  - [EndeavourOS Gnome](./installation/endeavouros-gnome.md)
 
-- [Terminal Configuration](./02-terminal/terminal-configuration.md)
+- [Terminal Configuration](./terminal/terminal-configuration.md)
 
-- [Applications Guide](./03-applications/README.md)
+- [Applications Guide](./applications/README.md)

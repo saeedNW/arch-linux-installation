@@ -314,6 +314,8 @@ The shell hook is activated in `~/.config/zsh/functions.zsh` and runs automatica
 
 ---
 
+## Fonts Installation
+
 Custom fonts greatly improve your terminal and coding experience.
 
 ### Fira Code – Ligatures for Coding

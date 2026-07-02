@@ -86,8 +86,12 @@ return {
 
 	-- Color highlighter
 	{
-		'norcalli/nvim-colorizer.lua',
-		config = function() require('colorizer').setup() end,
+		'NvChad/nvim-colorizer.lua',
+		config = function()
+			require('colorizer').setup({
+				-- (optional) your custom settings, or leave empty for defaults
+			})
+		end,
 	},
 
 	-- Neo-tree
