@@ -7,15 +7,20 @@ Visual Studio Code is a popular source‑code editor developed by Microsoft. Thi
 ## Table of Contents
 
 - [Visual Studio Code (VS Code) Setup Guide](#visual-studio-code-vs-code-setup-guide)
-	- [Table of Contents](#table-of-contents)
-	- [1. Installation](#1-installation)
-	- [2. Post‑Installation (GNOME Only)](#2-postinstallation-gnome-only)
-	- [3. Recommended Extensions](#3-recommended-extensions)
-	- [4. Theme](#4-theme)
-	- [5. Recommended Settings](#5-recommended-settings)
-	- [6. Custom Keybindings](#6-custom-keybindings)
-	- [7. Final Steps](#7-final-steps)
-	- [8. Troubleshooting](#8-troubleshooting)
+  - [Table of Contents](#table-of-contents)
+  - [1. Installation](#1-installation)
+  - [2. Post‑Installation (GNOME Only)](#2-postinstallation-gnome-only)
+  - [3. Recommended Extensions](#3-recommended-extensions)
+  - [4. Recommended Settings](#4-recommended-settings)
+  - [5. Custom CSS](#5-custom-css)
+    - [Download](#download)
+    - [1. Create the CSS directory](#1-create-the-css-directory)
+    - [2. Copy the stylesheet](#2-copy-the-stylesheet)
+    - [3. Configure VS Code](#3-configure-vs-code)
+    - [4. Enable the custom CSS](#4-enable-the-custom-css)
+  - [6. Custom Keybindings](#6-custom-keybindings)
+  - [7. Final Steps](#7-final-steps)
+  - [8. Troubleshooting](#8-troubleshooting)
 
 ---
 
@@ -47,30 +52,23 @@ For other desktop environments (KDE Plasma, XFCE, etc.), this step is not needed
 
 The following extensions are recommended for a modern development workflow. They cover linting, formatting, Git integration, markdown, language support, and more.
 
-| Category                 | Extensions                                                                                                                                                                                                                                                                 |
-| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Core**                 | `advanced-new-file-plus`, `better comments Next`, `Bracket Pair Colorizer`, `Code Spell Checker`, `CodeSnap-plus`, `Error Lens`, `Todo Tree`, `Toggle Quotes`                                                                                                              |
-| **Git**                  | `Git Graph`, `GitLens`                                                                                                                                                                                                                                                     |
-| **Linting & Formatting** | `ESLint`, `Prettier - Code formatter`, `Even Better TOML`, `inifmt`, `Black Formatter`                                                                                                                                                                                     |
-| **Markdown**             | `Markdown All in One`, `Markdown Table`, `Markdown Table Prettifier`, `Markdownlint`, `Markdown Preview Mermaid Support`                                                                                                                                                   |
-| **Language Support**     | `JavaScript (ES6) code snippets`, `Nextjs snippets`, `node-snippets`, `ES7+ React/Redux/React-Native snippets`, `HTML CSS Support`, `lua`, `Protobuf VSC`, `Docker`, `Docker DX`, `Container Tools`, `Python`, `Python Debugger`, `Python Environments`, `nginx.conf hint` |
-| **Theming & Icons**      | `Material Icon Theme`, `Neo Kiro Theme`                                                                                                                                                                                                                                    |
-| **Utilities**            | `Import Cost`, `Persian - Code Spell Checker`, `Pretty TypeScript Errors`, `Selection Stats & Line Counter`                                                                                                                                                                |
+| Category                 | Extensions                                                                                                                                                                                      |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Core**                 | `advanced-new-file-plus`, `Better Comments Next`, `Bracket Pair Colorizer 3`, `Code Spell Checker`, `Persian - Code Spell Checker`, `CodeSnap-plus`, `Error Lens`, `Todo Tree`, `Toggle Quotes` |
+| **Git**                  | `Git Graph`, `GitLens`                                                                                                                                                                          |
+| **Linting & Formatting** | `ESLint`, `Prettier - Code formatter`, `Even Better TOML`, `inifmt`, `Black Formatter`                                                                                                          |
+| **Markdown**             | `Markdown All in One`, `Markdown Table`, `Markdown Table Prettifier`, `Markdownlint`, `Markdown Preview Mermaid Support`                                                                        |
+| **Language Support**     | `HTML CSS Support`, `Lua`, `Protobuf VSC`, `Python`, `Python Debugger`, `Python Environments`, `nginx.conf hint`, `Pretty TypeScript Errors`, `Import Cost`                                     |
+| **Snippets**             | `JavaScript (ES6) code snippets`, `Node snippets`, `ES7+ React/Redux/React-Native snippets`, `Next.js snippets`                                                                                 |
+| **Containers & DevOps**  | `Docker`, `Docker DX`, `Container Tools`                                                                                                                                                        |
+| **Theming & Icons**      | `Material Icon Theme`, `Kiro Theme`, `Custom CSS and JS Loader`                                                                                                                                 |
+| **Utilities**            | `Selection Stats & Line Counter`                                                                                                                                                                |
 
 > **💡 Tip:** You can install all of them at once by searching for each name in the Extensions view (`Ctrl+Shift+X`) and clicking **Install**.
 
 ---
 
-## 4. Theme
-
-- **Color Theme:** [Nord](https://marketplace.visualstudio.com/items?itemName=arcticicestudio.nord-visual-studio-code)
-- **Icon Theme:** `Atom Material Icons` (or any other you prefer)
-
-Set them in your `settings.json` (see next section).
-
----
-
-## 5. Recommended Settings
+## 4. Recommended Settings
 
 Create or edit your `settings.json` (`Ctrl+Shift+P` → `Preferences: Open Settings (JSON)`) and add the following configuration.
 
@@ -128,7 +126,7 @@ Create or edit your `settings.json` (`Ctrl+Shift+P` → `Preferences: Open Setti
 	// ? ===== Workbench =====
 
 	// * Use Neo Kiro Dark theme
-	"workbench.colorTheme": "Neo Kiro Dark",
+	"workbench.colorTheme": "Kiro Dark",
 
 	// * Disable workbench tips and onboarding hints
 	"workbench.tips.enabled": false,
@@ -141,6 +139,60 @@ Create or edit your `settings.json` (`Ctrl+Shift+P` → `Preferences: Open Setti
 
 	// * Skip the welcome/startup screen
 	"workbench.startupEditor": "none",
+
+	// * Customize workbench UI colors
+	"workbench.colorCustomizations": {
+		/* ------------------------------------------------------------------
+		 * Title Bar
+		 * ------------------------------------------------------------------ */
+		"titleBar.activeBackground": "#19151c",
+		"titleBar.inactiveBackground": "#151218",
+		"titleBar.activeForeground": "#ECE9F2",
+		"titleBar.inactiveForeground": "#9F99AB",
+		"titleBar.border": "#27212d",
+
+		/* ------------------------------------------------------------------
+		 * Side Bar
+		 * ------------------------------------------------------------------ */
+		"sideBar.foreground": "#e5e4e8",
+		"sideBarTitle.foreground": "#ECE9F2",
+
+		/* ------------------------------------------------------------------
+		 * Status Bar
+		 * ------------------------------------------------------------------ */
+		"statusBar.background": "#19151c",
+		"statusBar.foreground": "#ECE9F2",
+		"statusBar.border": "#27212d",
+
+		"statusBarItem.hoverBackground": "#2A2330",
+		"statusBarItem.activeBackground": "#32293A",
+
+		/* ------------------------------------------------------------------
+		 * Panels
+		 * ------------------------------------------------------------------ */
+		"panel.background": "#1d1821",
+		"panel.border": "#27212d",
+		"panelTitle.activeForeground": "#ECE9F2",
+		"panelTitle.inactiveForeground": "#8E889B",
+
+		/* ------------------------------------------------------------------
+		 * Editor Groups
+		 * ------------------------------------------------------------------ */
+		"editorGroup.border": "#27212d",
+		"editorGroupHeader.border": "#27212d",
+
+		/* ------------------------------------------------------------------
+		 * Tabs
+		 * ------------------------------------------------------------------ */
+		"tab.border": "#27212d",
+		"tab.activeBorderTop": "#7C63D4",
+
+		/* ------------------------------------------------------------------
+		 * Command Center
+		 * ------------------------------------------------------------------ */
+		"commandCenter.background": "#241F2A",
+		"commandCenter.border": "#332B3B"
+	},
 
 	// ? ===== Git & Source Control =====
 
@@ -327,11 +379,80 @@ Create or edit your `settings.json` (`Ctrl+Shift+P` → `Preferences: Open Setti
 	// * TypeScript
 	"[typescript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	}
+	},
+
+	// ? ===== Todo Tree =====
+
+	// * Path to the ripgrep executable (required on Arch Linux/VSCodium)
+	"todo-tree.ripgrep.ripgrep": "/usr/bin/rg",
+
+	// ? ===== Kilo Code =====
+
+	// * Skip certain commands in the integrated terminal
+	"terminal.integrated.commandsToSkipShell": [
+		"kilo-code.new.agentManagerOpen",
+		"kilo-code.new.agentManager.showTerminal"
+	],
+
+	// * Disable Kilo Code's agent work style
+	"kilo-code.new.agentWorkStyle": "unset",
+
+	// ? ===== Custom CSS & JS =====
+
+	// * Apply custom UI styling from a local CSS file
+	"vscode_custom_css.imports": ["file://${userHome}/.config/tweaks/vscode/style.css"]
 }
 ```
 
-> **💡 Tip:** The settings above disable GitHub Copilot by default. If you have a Copilot subscription, you can enable it or remove those lines.
+---
+
+## 5. Custom CSS
+
+This guide uses the **Custom CSS and JS Loader** extension to apply additional UI tweaks that cannot be configured through `settings.json` alone.
+
+### Download
+
+I've included the custom stylesheet I use, which you can download here:
+
+- **[`style.css`](../../../assets/dotfiles/vscode/style.css)**
+
+> **💡 Tip:** Save the file as `~/.config/tweaks/vscode/style.css` so it matches the configuration used in this guide.
+
+### 1. Create the CSS directory
+
+Create a directory to store your custom styles:
+
+```bash
+mkdir -p ~/.config/tweaks/vscode
+```
+
+### 2. Copy the stylesheet
+
+Move or copy the downloaded file to:
+
+```text
+~/.config/tweaks/vscode/style.css
+```
+
+### 3. Configure VS Code
+
+The following setting (already included in the configuration from the previous section) tells the extension to load your stylesheet:
+
+```jsonc
+"vscode_custom_css.imports": [
+	"file://${userHome}/.config/tweaks/vscode/style.css"
+]
+```
+
+### 4. Enable the custom CSS
+
+After placing the stylesheet:
+
+1. Open the Command Palette (`Ctrl+Shift+P`).
+2. Run **Enable Custom CSS and JS**.
+3. Restart or reload VS Code.
+
+> **⚠️ Note:** Every time VS Code updates, you'll typically need to run **Enable Custom CSS and JS** again because updates restore the original application files.
 
 ---
 

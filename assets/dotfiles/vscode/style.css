@@ -1,0 +1,266 @@
+/* ---------------------------------------------------
+ * Modern Command Palette (Balanced Edition)
+ * --------------------------------------------------- */
+
+:root {
+	/* Kiro-inspired accents */
+	--kiro-accent: rgb(124, 99, 212);
+	--kiro-accent-soft: rgba(124, 99, 212, 0.18);
+	--kiro-accent-hover: rgba(124, 99, 212, 0.1);
+
+	--kiro-border: rgba(124, 99, 212, 0.18);
+	--kiro-border-soft: rgba(124, 99, 212, 0.1);
+
+	--kiro-hover: rgba(255, 255, 255, 0.045);
+	--kiro-shadow: rgba(0, 0, 0, 0.35);
+}
+
+/* ---------------------------------------------------
+ * Command Palette
+ * --------------------------------------------------- */
+
+.quick-input-widget {
+	top: 50% !important;
+	left: 50% !important;
+	transform: translate(-50%, -50%) !important;
+
+	width: 630px !important;
+	max-width: 85vw !important;
+
+	border-radius: 16px !important;
+	overflow: hidden;
+
+	background: var(--vscode-editorWidget-background) !important;
+
+	border: 1px solid var(--kiro-border);
+
+	box-shadow:
+		0 20px 60px var(--kiro-shadow),
+		0 8px 20px rgba(0, 0, 0, 0.25);
+
+	backdrop-filter: blur(28px);
+
+	animation: commandPalette 0.18s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Background dim */
+.quick-input-widget::before {
+	content: '';
+	position: fixed;
+	inset: -200vw;
+	background: rgba(0, 0, 0, 0.08);
+	z-index: -1;
+}
+
+.quick-input-widget * {
+	border: none !important;
+}
+
+/* ---------------------------------------------------
+ * Search box
+ * --------------------------------------------------- */
+
+.quick-input-filter {
+	padding: 14px 18px !important;
+	border-bottom: 1px solid var(--kiro-border-soft) !important;
+}
+
+.quick-input-filter .monaco-inputbox {
+	background: transparent !important;
+	box-shadow: none !important;
+	padding: 6px 4px !important;
+	border-radius: 10px !important;
+}
+
+.quick-input-filter input {
+	font-size: 15px !important;
+	line-height: 1.5 !important;
+	padding: 6px 4px !important;
+}
+
+/* ---------------------------------------------------
+ * Results
+ * --------------------------------------------------- */
+
+.quick-input-list {
+	padding: 6px 0 !important;
+	max-height: 420px !important;
+}
+
+.monaco-list-row {
+	left: 6px !important;
+	width: calc(100% - 12px) !important;
+
+	box-sizing: border-box !important;
+	border-radius: 8px !important;
+
+	transition:
+		background 150ms ease,
+		transform 150ms ease,
+		box-shadow 150ms ease;
+}
+
+.monaco-list-row:hover {
+	background: var(--kiro-hover) !important;
+}
+
+.monaco-list-row.focused {
+	background: var(--kiro-accent-soft) !important;
+
+	outline: none !important;
+
+	transform: translateY(-1px);
+
+	box-shadow:
+		inset 0 0 0 1px var(--kiro-border),
+		0 4px 12px rgba(124, 99, 212, 0.18);
+}
+
+.codicon {
+	opacity: 0.9;
+}
+
+.quick-input-list .label-description {
+	opacity: 0.65;
+}
+
+.quick-input-titlebar {
+	display: none !important;
+}
+
+.quick-input-list,
+.quick-input-list .monaco-list,
+.quick-input-list .monaco-scrollable-element {
+	background: transparent !important;
+}
+
+/* ---------------------------------------------------
+ * Hide Scrollbars
+ * --------------------------------------------------- */
+
+.monaco-scrollable-element > .scrollbar,
+.monaco-scrollable-element > .invisible,
+.monaco-scrollable-element > .shadow {
+	display: none !important;
+}
+
+.quick-input-list .monaco-scrollable-element {
+	scrollbar-width: none !important;
+	-ms-overflow-style: none !important;
+}
+
+.quick-input-list .monaco-scrollable-element::-webkit-scrollbar {
+	display: none !important;
+	width: 0 !important;
+	height: 0 !important;
+}
+
+.quick-input-list .monaco-list-rows {
+	margin-right: 0 !important;
+	padding-right: 0 !important;
+}
+
+/* ---------------------------------------------------
+ * Floating Sidebar
+ * --------------------------------------------------- */
+
+.monaco-workbench .part.sidebar {
+	margin-right: 6px !important;
+	border-top-right-radius: 8px !important;
+	border-bottom-right-radius: 8px !important;
+	border-top-left-radius: 0 !important;
+	border-bottom-left-radius: 0 !important;
+	overflow: hidden !important;
+	border-right: unset !important;
+	box-shadow: 8px 0 24px rgba(0, 0, 0, 0.18);
+	background: var(--vscode-sideBar-background) !important;
+}
+
+.monaco-workbench .part.sidebar > .content {
+	border: none !important;
+}
+
+div#workbench\.parts\.auxiliarybar {
+	margin-left: 6px !important;
+	border-top-left-radius: 8px !important;
+	border-bottom-left-radius: 8px !important;
+	border-top-right-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+	overflow: hidden !important;
+	border-left: unset !important;
+	background: var(--vscode-sideBar-background) !important;
+}
+
+.monaco-split-view2.horizontal
+	> .monaco-scrollable-element
+	> .split-view-container
+	> .split-view-view:nth-child(2),
+.monaco-split-view2.horizontal
+	> .monaco-scrollable-element
+	> .split-view-container
+	> .split-view-view:nth-child(4) {
+	background: #19151c;
+}
+
+div#workbench\.parts\.panel {
+	margin-top: 6px !important;
+}
+
+body
+	> div.file-icons-enabled.monaco-enable-motion.monaco-workbench.linux.chromium.maximized.vs-dark.MohdZaid-kiro-theme-themes-kiro-dark-json
+	> div.monaco-grid-view
+	> div
+	> div
+	> div.monaco-scrollable-element
+	> div.split-view-container
+	> div:nth-child(3)
+	> div
+	> div
+	> div.monaco-scrollable-element
+	> div.split-view-container
+	> div:nth-child(3)
+	> div
+	> div
+	> div.monaco-scrollable-element
+	> div.split-view-container
+	> div:nth-child(2) {
+	background: #19151c !important;
+}
+
+/* ---------------------------------------------------
+ * Window
+ * --------------------------------------------------- */
+
+.titlebar {
+	background: var(--vscode-titleBar-activeBackground) !important;
+}
+
+.monaco-workbench .part.statusbar {
+	background: var(--vscode-statusBar-background) !important;
+	border-top: 1px solid var(--kiro-border-soft) !important;
+}
+
+/* ---------------------------------------------------
+ * Suggest Widget
+ * --------------------------------------------------- */
+
+/* Add breathing room */
+.suggest-widget .monaco-list {
+	padding: 8px 0 !important;
+}
+
+/* ---------------------------------------------------
+ * Animation
+ * --------------------------------------------------- */
+
+@keyframes commandPalette {
+	from {
+		opacity: 0;
+		transform: translate(-50%, -47%) scale(0.98);
+	}
+
+	to {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
