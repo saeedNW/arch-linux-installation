@@ -29,6 +29,7 @@ Tools for coding, version control, containers, API testing, and more.
 
 - **Node.js Ecosystem**
   - [NVM (Node Version Manager)](./development/nodejs/nvm.md)
+  - [fnm (Fast Node Manager)](./development/nodejs/fnm.md)
   - [Node Ecosystem](./development/nodejs/nodejs-ecosystem.md)
 
 - **Message Queues & Streaming**
