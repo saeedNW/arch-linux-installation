@@ -24,3 +24,5 @@ Before proceeding with the installation, ensure you have the following:
 - [Terminal Configuration](./terminal/terminal-configuration.md)
 
 - [Applications Guide](./applications/README.md)
+
+- [Customization Guide](./custom//README.md)
