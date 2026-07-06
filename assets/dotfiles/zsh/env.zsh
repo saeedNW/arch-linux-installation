@@ -12,6 +12,11 @@ export ANDROID_HOME="$HOME/Android/Sdk"
 # Enable truecolor (supported by most modern terminals)
 export COLORTERM=truecolor
 
+# Enable dircolors for colored ls output
+if (( $+commands[dircolors] )); then
+    eval "$(dircolors -b)"
+fi
+
 # ============================================================================
 # PATH
 # ============================================================================

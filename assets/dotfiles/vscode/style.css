@@ -135,32 +135,6 @@
 }
 
 /* ---------------------------------------------------
- * Hide Scrollbars
- * --------------------------------------------------- */
-
-.monaco-scrollable-element > .scrollbar,
-.monaco-scrollable-element > .invisible,
-.monaco-scrollable-element > .shadow {
-	display: none !important;
-}
-
-.quick-input-list .monaco-scrollable-element {
-	scrollbar-width: none !important;
-	-ms-overflow-style: none !important;
-}
-
-.quick-input-list .monaco-scrollable-element::-webkit-scrollbar {
-	display: none !important;
-	width: 0 !important;
-	height: 0 !important;
-}
-
-.quick-input-list .monaco-list-rows {
-	margin-right: 0 !important;
-	padding-right: 0 !important;
-}
-
-/* ---------------------------------------------------
  * Floating Sidebar
  * --------------------------------------------------- */
 
