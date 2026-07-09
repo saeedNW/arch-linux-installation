@@ -32,6 +32,9 @@ Tools for coding, version control, containers, API testing, and more.
   - [fnm (Fast Node Manager)](./development/nodejs/fnm.md)
   - [Node Ecosystem](./development/nodejs/nodejs-ecosystem.md)
 
+- **Golang Ecosystem**
+  - [Mise (Go Version Manager)](./development/golang/mise.md)
+
 - **Message Queues & Streaming**
   - [RabbitMQ](./development/messaging-streaming/rabbitmq.md) – Message broker
   - [Zookeeper & Kafka](./development/messaging-streaming/zookeeper-kafka.md) – Distributed streaming platform

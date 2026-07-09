@@ -5,6 +5,9 @@
 # Fast Node Manager (fnm)
 eval "$(fnm env --use-on-cd)"
 
+# Mise
+eval "$(mise activate zsh)"
+
 # fzf
 eval "$(fzf --zsh)"
 

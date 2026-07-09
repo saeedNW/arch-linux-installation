@@ -67,6 +67,7 @@ A well-configured terminal can dramatically improve your workflow. This guide wi
   - [Aliases](#aliases)
   - [Shell Integrations](#shell-integrations)
     - [Fast Node Manager (fnm)](#fast-node-manager-fnm)
+    - [Mise (One tool that manages dev tools)](#mise-one-tool-that-manages-dev-tools)
     - [fzf Integration](#fzf-integration)
     - [zoxide Integration](#zoxide-integration)
     - [direnv](#direnv)
@@ -456,7 +457,7 @@ Instead of one large `~/.zshrc`, the configuration is split into focused modules
 ├── keybindings.zsh   – Key bindings
 ├── functions.zsh     – Utility functions & command-not-found
 ├── aliases.zsh       – Aliases
-└── integrations.zsh  – Shell integrations (fnm, fzf, zoxide, direnv)
+└── integrations.zsh  – Shell integrations (fnm, mise, fzf, zoxide, direnv)
 ```
 
 The `~/.zshrc` itself handles the Zinit bootstrap (which must run before any module), then sources the modules in the exact order that satisfies all inter-module dependencies. The Oh My Posh prompt init and the fastfetch startup block remain inline in `.zshrc` since they sit between modules and don't belong to any single file.
@@ -1030,21 +1031,32 @@ You can safely remove any alias that doesn't apply to your workflow (e.g., `ytdl
 
 ## Shell Integrations
 
-All shell integrations are grouped here and loaded after the aliases, in the order: fnm → fzf → zoxide → direnv.
+All shell integrations are grouped here and loaded after the aliases, in the order: fnm → mise → fzf → zoxide → direnv.
 
 ### Fast Node Manager (fnm)
 
-`fnm` is a speedy Node.js version manager that auto‑switches based on `.nvmrc` or `.node-version` files. Install it:
+`fnm` is a speedy Node.js version manager that auto‑switches based on `.nvmrc` or `.node-version` files. You can find the installation in:
 
-```bash
-yay -S fnm-bin
-```
+- [fnm (Fast Node Manager)](../applications/development/nodejs/fnm.md)
 
 Add its initialisation at the top of the shell integrations block:
 
 ```bash
 # Fast Node Manager (fnm)
 eval "$(fnm env --use-on-cd)"
+```
+
+### Mise (One tool that manages dev tools)
+
+`mise` installs the tools your project needs, loads its env vars, and runs its tasks. You can find the installation in:
+
+- [Mise (Go Version Manager)](../applications/development/golang/mise.md)
+
+Add its initialisation right after fnm in the shell integrations block:
+
+```bash
+# Mise
+eval "$(mise activate zsh)"
 ```
 
 ### fzf Integration
@@ -1144,7 +1156,7 @@ The full set of ready‑to‑use files that match this guide lives under [`asset
 | [`keybindings.zsh`](../assets/dotfiles/zsh/keybindings.zsh)   | Key bindings                                                      |
 | [`functions.zsh`](../assets/dotfiles/zsh/functions.zsh)       | Utility functions & command-not-found                             |
 | [`aliases.zsh`](../assets/dotfiles/zsh/aliases.zsh)           | Aliases                                                           |
-| [`integrations.zsh`](../assets/dotfiles/zsh/integrations.zsh) | Shell integrations (fnm, fzf, zoxide, direnv)                     |
+| [`integrations.zsh`](../assets/dotfiles/zsh/integrations.zsh) | Shell integrations (fnm, mise, fzf, zoxide, direnv)               |
 
 ---
 
