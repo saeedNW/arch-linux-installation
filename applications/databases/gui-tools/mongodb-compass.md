@@ -27,10 +27,8 @@ MongoDB Compass is the official graphical user interface for exploring and manag
 On Arch Linux, you can install the Compass binary from the AUR:
 
 ```bash
-yay -S mongodb-compass
+yay -S mongodb-compass-bin
 ```
-
-After installation, launch Compass from your application menu or by running `mongodb-compass` in the terminal.
 
 ---
 

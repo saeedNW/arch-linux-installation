@@ -8,6 +8,11 @@ This directory contains installation and configuration guides for a wide range o
 
 Tools for coding, version control, containers, API testing, and more.
 
+- **AI Tools**
+  - [Claude Code](./development/ai-tools/claude-code.md) – Terminal AI coding assistant
+  - [Claude Desktop](./development/ai-tools/claude-desktop.md) – Official Anthropic AI desktop app
+  - [ZCode](./development/ai-tools/z-code-bin.md) – AI agents for planning, coding, review and deployment
+
 - **Editors**
   - [Neovim](./development/editors/neovim.md) – Modern Vim-based editor with LSP support
   - [Kiro](./development/editors/kiro.md) – Agentic AI development environment (Recommended & Most updated)
