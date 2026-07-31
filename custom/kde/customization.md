@@ -434,14 +434,15 @@ plasmashell --replace &
 2. Click **Add or Manage Widgets...**.
 3. Search for and install the following widgets from the KDE Store:
 
-| Widget                      | Purpose                                    | KDE Store Link                                |
-| --------------------------- | ------------------------------------------ | --------------------------------------------- |
-| **Andromeda Launcher**      | Application launcher                       | [Link](https://store.kde.org/p/2144212)       |
-| **Modern Clock**            | Advanced clock widget                      | [Link](https://store.kde.org/p/2135653)       |
-| **Dot Desktop Indicator**   | Virtual desktop indicator (replaces Ginti) | [Link](https://www.opendesktop.org/p/2353924) |
-| **Spectrum Audio Emulator** | Audio visualiser                           | [Link](https://store.kde.org/p/2201084)       |
-| **KDE Control Station**     | System control panel                       | [Link](https://www.pling.com/p/2196105)       |
-| **Plasmusic Toolbar**       | Music player controls                      | [Link](https://store.kde.org/p/2088872)       |
+| Widget                                  | Purpose                                    | KDE Store Link                                |
+| --------------------------------------- | ------------------------------------------ | --------------------------------------------- |
+| **Andromeda Launcher**                  | Application launcher                       | [Link](https://store.kde.org/p/2144212)       |
+| **Modern Clock**                        | Advanced clock widget                      | [Link](https://store.kde.org/p/2135653)       |
+| **Dot Desktop Indicator**               | Virtual desktop indicator (replaces Ginti) | [Link](https://www.opendesktop.org/p/2353924) |
+| **Spectrum Audio Emulator**             | Audio visualiser                           | [Link](https://store.kde.org/p/2201084)       |
+| **KDE Control Station**                 | System control panel                       | [Link](https://www.pling.com/p/2196105)       |
+| **Plasmusic Toolbar**                   | Music player controls                      | [Link](https://store.kde.org/p/2088872)       |
+| **Simple Separator for panel plasma 6** | simple but working separator               | [Link](https://store.kde.org/p/2137418)       |
 
 ---
 
@@ -464,7 +465,9 @@ plasmashell --replace &
    - Enable **Floating**.
    - Enable **Use system font setting**.
 
-5. Pin your most used applications to the panel (right‑click an app in the launcher → **Add to Panel**).
+5. Add **Simple Separator** between Andromeda Launcher and Icon-Only Task Manager
+
+6. Pin your most used applications to the panel (right‑click an app in the launcher → **Add to Panel**).
 
 ---
 
@@ -485,9 +488,11 @@ plasmashell --replace &
 | Order | Widget                  | Configuration                                                                                                                                                                               |
 | ----- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1     | **Modern Clock**        | Disable Date, Disable Day, Empty Style Character                                                                                                                                            |
-| 2     | **Keyboard Layout**     | Default                                                                                                                                                                                     |
-| 3     | **KDE Control Station** | Layout: `Control Center`; Enable: Animations, Show borders; Quick Toggles: Color Scheme Switcher, Screenshot Button; Disable: Brightness Control; Volume Control: `Thin slider`; Scale: 110 |
-| 4     | **System Tray**         | Default                                                                                                                                                                                     |
+| 2     | **Simple Separator**    | Default                                                                                                                                                                                     |
+| 3     | **Keyboard Layout**     | Default                                                                                                                                                                                     |
+| 4     | **Simple Separator**    | Default                                                                                                                                                                                     |
+| 5     | **KDE Control Station** | Layout: `Control Center`; Enable: Animations, Show borders; Quick Toggles: Color Scheme Switcher, Screenshot Button; Disable: Brightness Control; Volume Control: `Thin slider`; Scale: 110 |
+| 6     | **System Tray**         | Default                                                                                                                                                                                     |
 
 ---
 
@@ -508,8 +513,9 @@ plasmashell --replace &
 | Order | Widget                    | Configuration                                                                                                                                                                                                                                                                                                                                                               |
 | ----- | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1     | **Notifications**         | Default                                                                                                                                                                                                                                                                                                                                                                     |
-| 2     | **Plasmusic Toolbar**     | Disable: Show skip backward, Show play/pause, Show skip forward                                                                                                                                                                                                                                                                                                             |
-| 3     | **Dot Desktop Indicator** | Open the widget's settings and apply the following values: <br><br> • **Inactive symbol**: `●`<br> • **Active symbol**: `●`<br> • **Font size**: `14`<br> • **Spacing**: `6`<br> • **Inactive color**: `#3b4252`<br> • **Active color**: `#616e88`<br> • **Active symbol bold**: Disabled<br> • **Dim inactive symbol**: Disabled<br> • **Mouse wheel switching**: Disabled |
+| 2     | **Simple Separator**      | Default                                                                                                                                                                                                                                                                                                                                                                     |
+| 3     | **Plasmusic Toolbar**     | Disable: Show skip backward, Show play/pause, Show skip forward                                                                                                                                                                                                                                                                                                             |
+| 4     | **Dot Desktop Indicator** | Open the widget's settings and apply the following values: <br><br> • **Inactive symbol**: `●`<br> • **Active symbol**: `●`<br> • **Font size**: `14`<br> • **Spacing**: `6`<br> • **Inactive color**: `#3b4252`<br> • **Active color**: `#616e88`<br> • **Active symbol bold**: Disabled<br> • **Dim inactive symbol**: Disabled<br> • **Mouse wheel switching**: Disabled |
 
 > **📝 Note:** The **Dot Desktop Indicator** is the recommended replacement for the now‑deprecated **Ginti** widget. It is a lightweight, panel‑friendly virtual desktop indicator for Plasma 6, showing one dot per desktop (hollow for inactive, solid for active). The widget supports mouse‑wheel switching, configurable symbols, custom colors, and bold/dim effects.
 
