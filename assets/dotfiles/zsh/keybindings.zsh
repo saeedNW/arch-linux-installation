@@ -7,7 +7,7 @@ setopt AUTO_CD
 
 # Treat "/" as a word separator so Ctrl+Left / Ctrl+Right
 # moves through path components instead of the entire path.
-WORDCHARS=${WORDCHARS//\/}
+WORDCHARS=${${WORDCHARS//\/}//-}
 
 # Use Emacs-style key bindings (default Zsh behavior)
 bindkey -e

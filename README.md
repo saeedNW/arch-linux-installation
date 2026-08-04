@@ -21,7 +21,7 @@ Before proceeding with the installation, ensure you have the following:
   - [EndeavourOS KDE](./installation/endeavouros-kde.md)
   - [EndeavourOS Gnome](./installation/endeavouros-gnome.md)
 
-- [Terminal Configuration](./terminal/terminal-configuration.md)
+- [Terminal Configuration](./terminal/configuration.md)
 
 - [Applications Guide](./applications/README.md)
 
