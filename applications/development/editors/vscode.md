@@ -7,20 +7,20 @@ Visual Studio Code is a popular source‑code editor developed by Microsoft. Thi
 ## Table of Contents
 
 - [Visual Studio Code (VS Code) Setup Guide](#visual-studio-code-vs-code-setup-guide)
-	- [Table of Contents](#table-of-contents)
-	- [1. Installation](#1-installation)
-	- [2. Post‑Installation (GNOME Only)](#2-postinstallation-gnome-only)
-	- [3. Recommended Extensions](#3-recommended-extensions)
-	- [4. Recommended Settings](#4-recommended-settings)
-	- [5. Custom CSS](#5-custom-css)
-		- [Download](#download)
-		- [1. Create the CSS directory](#1-create-the-css-directory)
-		- [2. Copy the stylesheet](#2-copy-the-stylesheet)
-		- [3. Configure VS Code](#3-configure-vs-code)
-		- [4. Enable the custom CSS](#4-enable-the-custom-css)
-	- [6. Custom Keybindings](#6-custom-keybindings)
-	- [7. Final Steps](#7-final-steps)
-	- [8. Troubleshooting](#8-troubleshooting)
+  - [Table of Contents](#table-of-contents)
+  - [1. Installation](#1-installation)
+  - [2. Post‑Installation (GNOME Only)](#2-postinstallation-gnome-only)
+  - [3. Recommended Extensions](#3-recommended-extensions)
+  - [4. Recommended Settings](#4-recommended-settings)
+  - [5. Custom CSS](#5-custom-css)
+    - [Download](#download)
+    - [1. Create the CSS directory](#1-create-the-css-directory)
+    - [2. Copy the stylesheet](#2-copy-the-stylesheet)
+    - [3. Configure VS Code](#3-configure-vs-code)
+    - [4. Enable the custom CSS](#4-enable-the-custom-css)
+  - [6. Custom Keybindings](#6-custom-keybindings)
+  - [7. Final Steps](#7-final-steps)
+  - [8. Troubleshooting](#8-troubleshooting)
 
 ---
 
@@ -60,9 +60,9 @@ The following extensions are recommended for a modern development workflow. They
 | **Markdown**             | `Markdown All in One`, `Markdown Table`, `Markdown Table Prettifier`, `Markdownlint`, `Markdown Preview Mermaid Support`                                                                        |
 | **Language Support**     | `HTML CSS Support`, `Lua`, `Protobuf VSC`, `Python`, `Python Debugger`, `Python Environments`, `nginx.conf hint`, `Pretty TypeScript Errors`, `Import Cost`                                     |
 | **Snippets**             | `JavaScript (ES6) code snippets`, `Node snippets`, `ES7+ React/Redux/React-Native snippets`, `Next.js snippets`                                                                                 |
-| **Containers & DevOps**  | `Docker`, `Docker DX`, `Container Tools`, Remote - SSH                                                                                                                                          |
+| **Containers & DevOps**  | `Docker`, `Docker DX`, `Container Tools`, `Remote - SSH`                                                                                                                                        |
 | **Theming & Icons**      | `Material Icon Theme`, `Kiro Theme`, `Custom CSS and JS Loader`                                                                                                                                 |
-| **Utilities**            | `Selection Stats & Line Counter`                                                                                                                                                                |
+| **Utilities**            | `Selection Stats & Line Counter`, `Files2Prompt`                                                                                                                                                |
 
 > **💡 Tip:** You can install all of them at once by searching for each name in the Extensions view (`Ctrl+Shift+X`) and clicking **Install**.
 
